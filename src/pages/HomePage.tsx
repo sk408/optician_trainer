@@ -14,7 +14,11 @@ import {
   ListItem,
   ListItemIcon,
   ListItemText,
-  CardMedia
+  Stepper,
+  Step,
+  StepLabel,
+  StepContent,
+  Chip
 } from '@mui/material';
 import { 
   School as SchoolIcon,
@@ -24,7 +28,11 @@ import {
   Build as AdjustmentIcon,
   Straighten as MeasurementIcon,
   Calculate as CalculatorIcon,
-  MenuBook as GlossaryIcon
+  MenuBook as StudyIcon,
+  LightbulbOutlined as TipsIcon,
+  StarOutlined as BeginnerIcon,
+  Speed as IntermediateIcon,
+  Psychology as AdvancedIcon
 } from '@mui/icons-material';
 import { Link as RouterLink } from 'react-router-dom';
 import { useTheme } from '../components/ThemeContext';
@@ -32,56 +40,99 @@ import { useTheme } from '../components/ThemeContext';
 const HomePage: React.FC = () => {
   const { darkMode } = useTheme();
   
-  // Main feature cards
-  const mainFeatures = [
+  // Learning path steps for beginners
+  const learningPath = [
     {
-      title: 'Interactive Tutorial',
-      description: 'Step-by-step guide to vision testing and refraction techniques for beginners and advanced practitioners.',
-      icon: <SchoolIcon sx={{ fontSize: 50 }} />,
-      path: '/tutorial',
-      color: '#3f51b5'
+      label: 'Start with the Basics',
+      description: 'Begin with fundamental optical concepts and terminology to build a solid foundation.',
+      path: '/dispensing-basics',
+      buttonText: 'Start Basic Training'
     },
     {
-      title: 'Virtual Patients',
-      description: 'Practice with diverse virtual patients having various vision conditions and refractive errors.',
-      icon: <PersonIcon sx={{ fontSize: 50 }} />,
-      path: '/patients',
-      color: '#f50057'
-    },
-    {
-      title: 'Eye Anatomy Explorer',
-      description: 'Interactive 3D model of the eye to understand anatomy and how different refractive errors affect vision.',
-      icon: <EyeIcon sx={{ fontSize: 50 }} />,
+      label: 'Understand Eye Anatomy',
+      description: 'Learn how the eye works and how different conditions affect vision.',
       path: '/eye-anatomy',
-      color: '#00bcd4'
+      buttonText: 'Explore Eye Anatomy'
+    },
+    {
+      label: 'Practice with Simple Cases',
+      description: 'Apply your knowledge to straightforward patient scenarios.',
+      path: '/patients',
+      buttonText: 'Try Simple Cases'
+    },
+    {
+      label: 'Master Frame Fitting',
+      description: 'Learn the essentials of proper frame selection and adjustment.',
+      path: '/dispensing-basics',
+      buttonText: 'Learn Frame Fitting'
     }
   ];
   
-  // Secondary feature cards
-  const secondaryFeatures = [
+  // Study resources for different levels
+  const studyResources = [
     {
-      title: 'Contact Lens Fitting',
-      description: 'Learn principles and procedures for fitting contact lenses.',
-      icon: <ContactLensIcon />,
-      path: '/contact-lens-fitting'
+      title: 'Beginner Essentials',
+      description: 'Foundational knowledge every optician needs to know before starting practice.',
+      icon: <BeginnerIcon />,
+      path: '/study/all-topics',
+      level: 'beginner',
+      color: '#4caf50'
     },
     {
-      title: 'Frame Adjustments',
-      description: 'Master techniques for properly adjusting frames for comfort and optical alignment.',
-      icon: <AdjustmentIcon />,
-      path: '/dispensing-basics'
+      title: 'Interactive Tutorials',
+      description: 'Guided walkthroughs of common procedures with step-by-step instructions.',
+      icon: <SchoolIcon />,
+      path: '/dispensing-basics',
+      level: 'beginner',
+      color: '#3f51b5'
     },
     {
       title: 'Optical Measurements',
-      description: 'Learn essential optical measurements including PD, segment height, and vertex distance.',
+      description: 'Learn to take and interpret essential measurements with precision.',
       icon: <MeasurementIcon />,
-      path: '/optical-theory'
+      path: '/optical-theory',
+      level: 'intermediate',
+      color: '#ff9800'
     },
     {
-      title: 'Optical Calculations',
-      description: 'Practice calculations needed for lens design, prism, and prescription conversions.',
-      icon: <CalculatorIcon />,
-      path: '/optical-theory'
+      title: 'Simple Case Studies',
+      description: 'Practice with common patient scenarios designed for newcomers.',
+      icon: <PersonIcon />,
+      path: '/patients',
+      level: 'beginner',
+      color: '#f50057'
+    }
+  ];
+  
+  // Quick learning modules
+  const quickModules = [
+    {
+      title: 'Understanding Prescriptions',
+      description: 'Learn to read and interpret optical prescriptions confidently.',
+      icon: <StudyIcon />,
+      path: '/study/prescriptions',
+      duration: '20 min'
+    },
+    {
+      title: 'Basic Frame Adjustments',
+      description: 'Master essential adjustments for proper fit and comfort.',
+      icon: <AdjustmentIcon />,
+      path: '/dispensing-basics',
+      duration: '15 min'
+    },
+    {
+      title: 'Measuring PD',
+      description: 'Learn the correct technique for measuring pupillary distance.',
+      icon: <MeasurementIcon />,
+      path: '/optical-theory',
+      duration: '10 min'
+    },
+    {
+      title: 'Eye Anatomy Basics',
+      description: 'Understand fundamental structures of the eye and their functions.',
+      icon: <EyeIcon />,
+      path: '/eye-anatomy',
+      duration: '25 min'
     }
   ];
   
@@ -96,78 +147,100 @@ const HomePage: React.FC = () => {
           borderColor: darkMode ? 'divider' : 'rgba(0, 0, 0, 0.08)'
         }}
       >
-        <Container maxWidth="lg">
-          <Grid container spacing={4} alignItems="center">
-            <Grid item xs={12} md={7}>
-              <Typography
-                variant="h2"
-                component="h1"
-                gutterBottom
-                sx={{ 
-                  fontWeight: 700,
-                  fontSize: { xs: '2.5rem', md: '3.5rem' }
-                }}
-              >
-                Optician Trainer
-              </Typography>
-              <Typography
-                variant="h5"
-                color="textSecondary"
-                paragraph
-                sx={{ mb: 4 }}
-              >
-                Master dispensing techniques, frame adjustments, and optical principles through interactive simulations
-              </Typography>
-              <Box sx={{ display: 'flex', gap: 2, flexWrap: 'wrap' }}>
-                <Button 
-                  variant="contained" 
-                  color="primary" 
-                  component={RouterLink} 
-                  to="/tutorial"
-                  size="large"
-                >
-                  Start Learning
-                </Button>
-                <Button 
-                  variant="outlined" 
-                  color="primary" 
-                  component={RouterLink} 
-                  to="/patients"
-                  size="large"
-                >
-                  Practice with Patients
-                </Button>
-              </Box>
-            </Grid>
-            <Grid item xs={12} md={5}>
-              <Box 
-                sx={{ 
-                  borderRadius: 2, 
+        <Container maxWidth={false}>
+          <Typography
+            variant="h2"
+            component="h1"
+            gutterBottom
+            sx={{ 
+              fontWeight: 700,
+              fontSize: { xs: '2.5rem', md: '3.5rem' },
+              textAlign: 'center',
+              width: '100%',
+              mb: 3
+            }}
+          >
+            Optician Trainer for Beginners
+          </Typography>
+          <Typography
+            variant="h5"
+            color="textSecondary"
+            paragraph
+            sx={{ 
+              mb: 4,
+              textAlign: 'center',
+              maxWidth: '800px',
+              mx: 'auto'
+            }}
+          >
+            Your step-by-step guide to mastering optician skills from the ground up — no prior experience required
+          </Typography>
+          <Box sx={{ display: 'flex', gap: 2, flexWrap: 'wrap', justifyContent: 'center', mb: 6 }}>
+            <Button 
+              variant="contained" 
+              color="primary" 
+              component={RouterLink} 
+              to="/dispensing-basics"
+              size="large"
+              startIcon={<SchoolIcon />}
+            >
+              Begin Learning Path
+            </Button>
+            <Button 
+              variant="contained" 
+              color="primary" 
+              component={RouterLink} 
+              to="/dispensing-basics"
+              size="large"
+              startIcon={<SchoolIcon />}
+            >
+              Begin Learning Path
+            </Button>
+            <Button 
+              variant="outlined" 
+              color="primary" 
+              component={RouterLink} 
+              to="/study/all-topics"
+              size="large"
+              startIcon={<StudyIcon />}
+            >
+              Browse Study Materials
+            </Button>
+          </Box>
+          
+          <Grid container spacing={4} alignItems="center" justifyContent="center">
+            <Grid item xs={12} md={8} lg={6}>
+              <Paper
+                elevation={4}
+                sx={{
+                  borderRadius: 2,
                   overflow: 'hidden',
-                  boxShadow: 4
+                  p: 3,
+                  backgroundColor: darkMode ? 'rgba(66, 66, 66, 0.9)' : 'rgba(255, 255, 255, 0.9)',
+                  backdropFilter: 'blur(10px)',
+                  mx: 'auto',
+                  textAlign: 'center'
                 }}
               >
-                <img 
-                  src="/hero-image.jpg" 
-                  alt="Eye examination" 
-                  style={{ 
-                    width: '100%', 
-                    height: 'auto',
-                    display: 'block'
-                  }}
-                  onError={(e) => {
-                    // Fallback if image doesn't load
-                    e.currentTarget.style.display = 'none';
-                  }}
-                />
-              </Box>
+                <TipsIcon color="primary" sx={{ fontSize: 48, mb: 2 }} />
+                <Typography variant="h5" component="h2" gutterBottom>
+                  Perfect for Complete Beginners
+                </Typography>
+                <Typography variant="body1" paragraph>
+                  Whether you're preparing for an optician career, studying for certification exams, or just started your first job, we'll guide you through everything you need to know.
+                </Typography>
+                <Divider sx={{ my: 2 }} />
+                <Typography variant="subtitle2" color="textSecondary" sx={{ fontStyle: 'italic' }}>
+                  "I went from knowing nothing about optics to confidently fitting frames in just weeks." — Recent Graduate
+                </Typography>
+              </Paper>
             </Grid>
           </Grid>
         </Container>
       </Box>
       
-      {/* Main Features */}
-      <Container maxWidth="lg" sx={{ py: 8 }}>
+      {/* Learning Path Section */}
+      <Container maxWidth={false} sx={{ py: 8 }}>
         <Typography 
           variant="h4" 
           component="h2" 
@@ -175,7 +248,7 @@ const HomePage: React.FC = () => {
           gutterBottom
           sx={{ fontWeight: 'medium' }}
         >
-          Interactive Learning Tools
+          Your Beginner's Learning Path
         </Typography>
         <Typography 
           variant="subtitle1" 
@@ -184,63 +257,49 @@ const HomePage: React.FC = () => {
           paragraph
           sx={{ mb: 6, maxWidth: 700, mx: 'auto' }}
         >
-          Our comprehensive suite of training tools helps opticians master essential skills for eyewear dispensing, frame adjustment, and patient consultations.
+          Follow this guided pathway designed specifically for newcomers to build your optician skills step by step
         </Typography>
         
-        <Grid container spacing={4}>
-          {mainFeatures.map((feature, index) => (
-            <Grid item xs={12} md={4} key={index}>
-              <Card 
-                sx={{ 
-                  height: '100%', 
-                  display: 'flex', 
-                  flexDirection: 'column',
-                  transition: 'transform 0.3s ease-in-out',
-                  '&:hover': {
-                    transform: 'translateY(-8px)',
-                    boxShadow: 6
-                  }
-                }}
-              >
-                <Box 
-                  sx={{ 
-                    bgcolor: feature.color,
-                    py: 3,
-                    display: 'flex',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    color: 'white'
-                  }}
-                >
-                  {feature.icon}
-                </Box>
-                <CardContent sx={{ flexGrow: 1 }}>
-                  <Typography variant="h5" component="h3" gutterBottom>
-                    {feature.title}
+        <Box sx={{ maxWidth: 900, mx: 'auto', px: 2 }}>
+          <Stepper orientation="vertical" sx={{ mb: 4 }}>
+            {learningPath.map((step, index) => (
+              <Step key={index} active={true}>
+                <StepLabel>
+                  <Typography variant="h6">{step.label}</Typography>
+                </StepLabel>
+                <StepContent>
+                  <Typography variant="body1" paragraph>
+                    {step.description}
                   </Typography>
-                  <Typography variant="body2" color="textSecondary">
-                    {feature.description}
-                  </Typography>
-                </CardContent>
-                <CardActions>
                   <Button 
+                    variant="contained" 
+                    color="primary" 
                     component={RouterLink} 
-                    to={feature.path} 
-                    size="large" 
-                    fullWidth 
-                    variant="contained"
-                    sx={{ bgcolor: feature.color, '&:hover': { bgcolor: feature.color } }}
+                    to={step.path}
+                    size="medium"
                   >
-                    Explore
+                    {step.buttonText}
                   </Button>
-                </CardActions>
-              </Card>
-            </Grid>
-          ))}
-        </Grid>
+                </StepContent>
+              </Step>
+            ))}
+          </Stepper>
+          
+          <Box sx={{ textAlign: 'center', mt: 4 }}>
+            <Button
+              variant="outlined"
+              color="primary"
+              component={RouterLink}
+              to="/dispensing-basics"
+              sx={{ minWidth: 200 }}
+            >
+              View Complete Learning Path
+            </Button>
+          </Box>
+        </Box>
       </Container>
       
-      {/* Secondary Features */}
+      {/* Quick Start Modules */}
       <Box sx={{ 
         py: 8, 
         backgroundColor: darkMode ? 'background.paper' : '#f8f9fa',
@@ -248,7 +307,7 @@ const HomePage: React.FC = () => {
         borderBottom: '1px solid',
         borderColor: darkMode ? 'divider' : 'rgba(0, 0, 0, 0.08)'
       }}>
-        <Container maxWidth="lg">
+        <Container maxWidth={false}>
           <Typography 
             variant="h4" 
             component="h2" 
@@ -256,7 +315,7 @@ const HomePage: React.FC = () => {
             gutterBottom
             sx={{ fontWeight: 'medium' }}
           >
-            Specialized Optician Training
+            Quick Start Learning Modules
           </Typography>
           <Typography 
             variant="subtitle1" 
@@ -265,11 +324,11 @@ const HomePage: React.FC = () => {
             paragraph
             sx={{ mb: 6, maxWidth: 700, mx: 'auto' }}
           >
-            Expand your skills with specialized training modules covering essential aspects of optician practice.
+            Short, focused lessons to help you learn essential skills in bite-sized sessions
           </Typography>
           
           <Grid container spacing={3}>
-            {secondaryFeatures.map((feature, index) => (
+            {quickModules.map((module, index) => (
               <Grid item xs={12} sm={6} md={3} key={index}>
                 <Card 
                   variant="outlined" 
@@ -293,24 +352,30 @@ const HomePage: React.FC = () => {
                         alignItems: 'center',
                         justifyContent: 'center'
                       }}>
-                        {feature.icon}
+                        {module.icon}
                       </Box>
                       <Typography variant="h6" component="h3">
-                        {feature.title}
+                        {module.title}
                       </Typography>
                     </Box>
-                    <Typography variant="body2" color="textSecondary">
-                      {feature.description}
+                    <Typography variant="body2" color="textSecondary" sx={{ mb: 2 }}>
+                      {module.description}
                     </Typography>
+                    <Chip 
+                      label={module.duration} 
+                      size="small" 
+                      variant="outlined" 
+                      color="primary"
+                    />
                   </CardContent>
                   <CardActions>
                     <Button 
                       component={RouterLink} 
-                      to={feature.path} 
+                      to={module.path} 
                       size="small" 
                       color="primary"
                     >
-                      Learn More
+                      Start Module
                     </Button>
                   </CardActions>
                 </Card>
@@ -320,149 +385,116 @@ const HomePage: React.FC = () => {
         </Container>
       </Box>
       
-      {/* Features Overview */}
-      <Container maxWidth="lg" sx={{ py: 8 }}>
-        <Grid container spacing={6} alignItems="center">
-          <Grid item xs={12} md={6}>
-            <Typography variant="h4" component="h2" gutterBottom>
-              Practice Makes Perfect
-            </Typography>
-            <Typography paragraph>
-              Our virtual training environment lets you practice essential optician skills in a risk-free setting, from frame adjustments to accurate measurements.
-            </Typography>
-            
-            <List>
-              <ListItem>
-                <ListItemIcon>
-                  <Box sx={{ 
-                    width: 10, 
-                    height: 10, 
-                    borderRadius: '50%', 
-                    bgcolor: 'primary.main',
-                    mt: 0.5
-                  }} />
-                </ListItemIcon>
-                <ListItemText primary="Master frame selection and adjustment techniques" />
-              </ListItem>
-              <ListItem>
-                <ListItemIcon>
-                  <Box sx={{ 
-                    width: 10, 
-                    height: 10, 
-                    borderRadius: '50%', 
-                    bgcolor: 'primary.main',
-                    mt: 0.5
-                  }} />
-                </ListItemIcon>
-                <ListItemText primary="Learn accurate optical measurements for proper fitting" />
-              </ListItem>
-              <ListItem>
-                <ListItemIcon>
-                  <Box sx={{ 
-                    width: 10, 
-                    height: 10, 
-                    borderRadius: '50%', 
-                    bgcolor: 'primary.main',
-                    mt: 0.5
-                  }} />
-                </ListItemIcon>
-                <ListItemText primary="Practice prescription interpretation and verification" />
-              </ListItem>
-              <ListItem>
-                <ListItemIcon>
-                  <Box sx={{ 
-                    width: 10, 
-                    height: 10, 
-                    borderRadius: '50%', 
-                    bgcolor: 'primary.main',
-                    mt: 0.5
-                  }} />
-                </ListItemIcon>
-                <ListItemText primary="Understand optical principles and their practical applications" />
-              </ListItem>
-            </List>
-            
-            <Button 
-              variant="outlined" 
-              color="primary" 
-              component={RouterLink} 
-              to="/dispensing-basics"
-              sx={{ mt: 2 }}
-            >
-              Start Practicing
-            </Button>
-          </Grid>
-          <Grid item xs={12} md={6}>
-            <Paper 
-              elevation={4} 
-              sx={{ 
-                p: 2, 
-                borderRadius: 2, 
-                height: 400, 
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                bgcolor: darkMode ? 'background.paper' : '#ffffff',
-                overflow: 'hidden'
-              }}
-            >
-              <div style={{ width: '100%', height: '100%', position: 'relative' }}>
-                <Box sx={{ 
-                  position: 'absolute',
-                  top: 10,
-                  left: 10,
-                  padding: '4px 8px',
-                  borderRadius: 1,
-                  bgcolor: 'rgba(0,0,0,0.6)',
-                  color: 'white',
-                  zIndex: 1,
-                  fontSize: 12
-                }}>
-                  Interactive Frame Fitting Simulator
+      {/* Study Resources */}
+      <Container maxWidth={false} sx={{ py: 8 }}>
+        <Typography 
+          variant="h4" 
+          component="h2" 
+          align="center" 
+          gutterBottom
+          sx={{ fontWeight: 'medium' }}
+        >
+          Beginner-Friendly Study Resources
+        </Typography>
+        <Typography 
+          variant="subtitle1" 
+          align="center" 
+          color="textSecondary" 
+          paragraph
+          sx={{ mb: 6, maxWidth: 700, mx: 'auto' }}
+        >
+          Comprehensive materials designed to build your knowledge from the ground up
+        </Typography>
+        
+        <Grid container spacing={4}>
+          {studyResources.map((resource, index) => (
+            <Grid item xs={12} md={6} lg={3} key={index}>
+              <Card 
+                sx={{ 
+                  height: '100%', 
+                  display: 'flex', 
+                  flexDirection: 'column',
+                  transition: 'transform 0.3s ease-in-out',
+                  '&:hover': {
+                    transform: 'translateY(-8px)',
+                    boxShadow: 6
+                  }
+                }}
+              >
+                <Box 
+                  sx={{ 
+                    bgcolor: resource.color,
+                    py: 3,
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    color: 'white',
+                    position: 'relative'
+                  }}
+                >
+                  {resource.icon}
+                  <Chip 
+                    label={resource.level} 
+                    size="small" 
+                    sx={{ 
+                      position: 'absolute', 
+                      top: 8, 
+                      right: 8,
+                      bgcolor: 'rgba(255,255,255,0.2)',
+                      color: 'white'
+                    }} 
+                  />
                 </Box>
-                <img 
-                  src="/refraction-simulator.jpg" 
-                  alt="Frame fitting simulator" 
-                  style={{ 
-                    width: '100%', 
-                    height: '100%', 
-                    objectFit: 'cover',
-                    borderRadius: 8
-                  }}
-                  onError={(e) => {
-                    // Fallback if image doesn't load
-                    e.currentTarget.style.display = 'none';
-                  }}
-                />
-              </div>
-            </Paper>
-          </Grid>
+                <CardContent sx={{ flexGrow: 1 }}>
+                  <Typography variant="h5" component="h3" gutterBottom>
+                    {resource.title}
+                  </Typography>
+                  <Typography variant="body2" color="textSecondary">
+                    {resource.description}
+                  </Typography>
+                </CardContent>
+                <CardActions>
+                  <Button 
+                    component={RouterLink} 
+                    to={resource.path} 
+                    size="large" 
+                    fullWidth 
+                    variant="contained"
+                    sx={{ bgcolor: resource.color, '&:hover': { bgcolor: resource.color } }}
+                  >
+                    Start Learning
+                  </Button>
+                </CardActions>
+              </Card>
+            </Grid>
+          ))}
         </Grid>
       </Container>
       
-      {/* Call to Action */}
+      {/* Beginner Success */}
       <Box sx={{ 
         py: 6, 
         bgcolor: 'primary.main', 
         color: 'primary.contrastText',
         textAlign: 'center'
       }}>
-        <Container maxWidth="md">
+        <Container maxWidth={false}>
           <Typography variant="h4" component="h2" gutterBottom>
-            Ready to improve your optician skills?
+            Start Your Optician Journey Today
           </Typography>
-          <Typography paragraph sx={{ mb: 4 }}>
-            Start with our comprehensive tutorial or explore our specialized training modules.
+          <Typography paragraph sx={{ mb: 4, maxWidth: 800, mx: 'auto' }}>
+            Take the first step to becoming a skilled optician with our beginner-friendly training program. No prior experience needed — just bring your curiosity and willingness to learn.
           </Typography>
           <Box sx={{ display: 'flex', justifyContent: 'center', gap: 2, flexWrap: 'wrap' }}>
             <Button 
               variant="contained" 
               color="secondary" 
               component={RouterLink} 
-              to="/tutorial"
+              to="/dispensing-basics"
               size="large"
+              startIcon={<SchoolIcon />}
             >
-              Start Tutorial
+              Start with Basics
             </Button>
             <Button 
               variant="outlined" 
@@ -475,10 +507,11 @@ const HomePage: React.FC = () => {
                 }
               }} 
               component={RouterLink} 
-              to="/dispensing-basics"
+              to="/study/flashcards"
               size="large"
+              startIcon={<StudyIcon />}
             >
-              Dispensing Basics
+              Study Flashcards
             </Button>
           </Box>
         </Container>

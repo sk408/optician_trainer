@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react';
-import { createTheme, ThemeProvider as MuiThemeProvider } from '@mui/material/styles';
+import { createTheme, ThemeProvider as MuiThemeProvider, responsiveFontSizes } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import { useTheme } from './ThemeContext';
 
@@ -17,7 +17,7 @@ export const AppThemeProvider: React.FC<AppThemeProviderProps> = ({ children }) 
     1;
 
   // Define theme based on current settings
-  const theme = createTheme({
+  let theme = createTheme({
     palette: {
       mode: darkMode ? 'dark' : 'light',
       primary: {
@@ -54,30 +54,111 @@ export const AppThemeProvider: React.FC<AppThemeProviderProps> = ({ children }) 
     },
     typography: {
       fontSize: 14 * fontSizeMultiplier,
-      h1: { fontSize: '2.5rem' * fontSizeMultiplier },
-      h2: { fontSize: '2rem' * fontSizeMultiplier },
-      h3: { fontSize: '1.75rem' * fontSizeMultiplier },
-      h4: { fontSize: '1.5rem' * fontSizeMultiplier },
-      h5: { fontSize: '1.25rem' * fontSizeMultiplier },
-      h6: { fontSize: '1rem' * fontSizeMultiplier },
-      body1: { fontSize: '1rem' * fontSizeMultiplier },
-      body2: { fontSize: '0.875rem' * fontSizeMultiplier },
+      fontFamily: [
+        'Roboto',
+        '"Helvetica Neue"',
+        'Arial',
+        'sans-serif',
+      ].join(','),
+      h1: { 
+        fontSize: '2.5rem',
+        fontWeight: 500,
+        lineHeight: 1.2,
+      },
+      h2: { 
+        fontSize: '2rem',
+        fontWeight: 500,
+        lineHeight: 1.2,
+      },
+      h3: { 
+        fontSize: '1.75rem',
+        fontWeight: 500,
+        lineHeight: 1.2,
+      },
+      h4: { 
+        fontSize: '1.5rem',
+        fontWeight: 500,
+        lineHeight: 1.2,
+      },
+      h5: { 
+        fontSize: '1.25rem',
+        fontWeight: 500,
+        lineHeight: 1.2,
+      },
+      h6: { 
+        fontSize: '1rem',
+        fontWeight: 500,
+        lineHeight: 1.2,
+      },
+      body1: { 
+        fontSize: '1rem',
+        lineHeight: 1.5,
+      },
+      body2: { 
+        fontSize: '0.875rem',
+        lineHeight: 1.5,
+      },
       button: { 
-        fontSize: '0.875rem' * fontSizeMultiplier,
+        fontSize: '0.875rem',
+        fontWeight: 500,
+        textTransform: 'none',
+      },
+      subtitle1: {
+        fontSize: '1rem',
+        lineHeight: 1.5,
+        fontWeight: 500,
+      },
+      subtitle2: {
+        fontSize: '0.875rem',
+        lineHeight: 1.5,
         fontWeight: 500,
       },
     },
     components: {
+      MuiCssBaseline: {
+        styleOverrides: {
+          html: {
+            WebkitFontSmoothing: 'auto',
+          },
+          body: {
+            overflow: 'auto',
+          },
+          // Ensure proper viewport settings for mobile
+          '@viewport': {
+            width: 'device-width',
+            initialScale: 1,
+          },
+          // Touch enhancements
+          '@media (pointer: coarse)': {
+            'button, [role="button"]': {
+              minHeight: '44px',
+              minWidth: '44px',
+            },
+          },
+        },
+      },
       MuiButton: {
         styleOverrides: {
           root: {
             borderRadius: highContrastMode ? 0 : 4,
             textTransform: 'none',
             fontWeight: highContrastMode ? 700 : 500,
-            // Increased padding for better touch targets on larger font sizes
+            // Responsive padding for touch devices
+            '@media (pointer: coarse)': {
+              padding: '10px 16px',
+              minHeight: '44px',
+            },
+            // Increased padding for larger font sizes
             ...(fontSize === 'large' && {
-              padding: '8px 16px',
+              padding: '10px 20px',
             }),
+          },
+          sizeLarge: {
+            padding: '12px 24px',
+            fontSize: '1rem',
+          },
+          sizeSmall: {
+            padding: '6px 12px',
           },
         },
       },
@@ -91,15 +172,75 @@ export const AppThemeProvider: React.FC<AppThemeProviderProps> = ({ children }) 
           },
         },
       },
-      // Accessibility-focused overrides
-      MuiFocusVisible: {
+      MuiContainer: {
+        defaultProps: {
+          maxWidth: false,
+          disableGutters: false
+        },
         styleOverrides: {
           root: {
-            outline: highContrastMode ? `3px solid ${darkMode ? '#ffffff' : '#000000'}` : undefined,
+            width: '100%',
+            margin: '0 auto',
+            '@media (max-width: 600px)': {
+              padding: '0 12px',
+            },
+          },
+        },
+      },
+      MuiToolbar: {
+        styleOverrides: {
+          root: {
+            '@media (max-width: 600px)': {
+              minHeight: 56,
+              paddingLeft: 12,
+              paddingRight: 12,
+            },
+          },
+        },
+      },
+      MuiListItem: {
+        styleOverrides: {
+          root: {
+            // Better touch targets on mobile
+            '@media (pointer: coarse)': {
+              paddingTop: 8,
+              paddingBottom: 8,
+            },
+          },
+        },
+      },
+      // Accessibility-focused overrides
+      MuiButtonBase: {
+        defaultProps: {
+          disableRipple: highContrastMode,
+        },
+        styleOverrides: {
+          root: {
+            '&.Mui-focusVisible': {
+              outline: highContrastMode ? `3px solid ${darkMode ? '#ffffff' : '#000000'}` : undefined,
+            },
           },
         },
       },
     },
+    // Add responsive breakpoints
+    breakpoints: {
+      values: {
+        xs: 0,
+        sm: 600,
+        md: 960,
+        lg: 1280,
+        xl: 1920,
+      },
+    },
+    // Responsive spacing
+    spacing: (factor: number) => `${0.25 * factor}rem`,
+  });
+
+  // Apply responsive font sizing
+  theme = responsiveFontSizes(theme, {
+    breakpoints: ['xs', 'sm', 'md', 'lg', 'xl'],
+    factor: 2, // Stronger scaling factor
   });
 
   return (

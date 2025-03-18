@@ -17,13 +17,19 @@ import {
   Divider,
   IconButton,
   Tooltip,
-  Alert
+  Alert,
+  Chip,
+  CardMedia,
+  CardActions,
+  Stack
 } from '@mui/material';
 import { 
   Visibility as VisibilityIcon, 
   VisibilityOff as VisibilityOffIcon,
   Refresh as RefreshIcon, 
-  Save as SaveIcon
+  Save as SaveIcon,
+  School as SchoolIcon,
+  Check as CheckIcon
 } from '@mui/icons-material';
 import { useTheme } from './ThemeContext';
 import RefractionChart from './RefractionChart';
@@ -39,6 +45,140 @@ const CYLINDER_RANGE = { min: -6, max: 0, step: 0.25 }; // Negative cylinder not
 const AXIS_RANGE = { min: 0, max: 180, step: 5 };
 const ADD_POWER_RANGE = { min: 0, max: 3, step: 0.25 };
 
+// Added optician-specific guidance for beginners
+const OPTICIAN_GUIDANCE = {
+  visualAcuity: [
+    'Patients with uncorrected visual acuity worse than 20/40 typically need standard or high-index lenses',
+    'Metal frames may be more adjustable for asymmetric fits',
+    'Consider recommending anti-fatigue lenses for patients who report eye strain'
+  ],
+  retinoscopy: [
+    'Patients with sphere power > ±4.00 will benefit from high-index lenses to reduce thickness',
+    'Astigmatism (cylinder) over -2.00 requires careful frame selection to minimize lens thickness',
+    'Consider lens material options based on prescription power'
+  ],
+  subjectiveRefraction: [
+    'Higher prescriptions may require frame styles with stronger support',
+    'Semi-rimless and rimless frames are not ideal for prescriptions stronger than ±4.00',
+    'Patients with astigmatism may benefit from aspherical lenses to reduce distortion'
+  ],
+  binocularBalance: [
+    'Significant differences between eyes may require specialized frame adjustments',
+    'Ensure equal pupillary distances are measured for optimal optical centering',
+    'Consider anti-reflective coatings to improve vision quality in all lighting conditions'
+  ],
+  nearVision: [
+    'Patients with add power >+1.50 are candidates for progressive or bifocal lenses',
+    'Progressive-friendly frames need adequate vertical height (minimum 28-30mm)',
+    'Digital device users benefit from blue light filtering options'
+  ],
+  finalPrescription: [
+    'Match lens options to lifestyle needs and prescription requirements',
+    "Consider patient's occupation and hobbies when recommending lens options",
+    'Higher prescriptions require careful frame size selection to minimize edge thickness'
+  ]
+};
+
+// Sample frame data for beginners to choose from
+const BEGINNER_FRAMES = [
+  {
+    id: 'frame1',
+    name: 'Classic Metal',
+    material: 'Metal',
+    style: 'Full-rim',
+    idealFor: 'Medium to high prescriptions',
+    image: 'https://placehold.co/300x150/cccccc/333333?text=Classic+Metal',
+    recommendedPrescription: 'All prescription types',
+    features: ['Adjustable nose pads', 'Sturdy construction', 'Good for high index lenses']
+  },
+  {
+    id: 'frame2',
+    name: 'Modern Semi-Rimless',
+    material: 'Metal/Plastic',
+    style: 'Semi-rimless',
+    idealFor: 'Low to medium prescriptions',
+    image: 'https://placehold.co/300x150/cccccc/333333?text=Semi-Rimless',
+    recommendedPrescription: 'Under ±4.00 sphere, minimal cylinder',
+    features: ['Lightweight', 'Modern appearance', 'Not ideal for strong prescriptions']
+  },
+  {
+    id: 'frame3',
+    name: 'Bold Acetate',
+    material: 'Acetate',
+    style: 'Full-rim',
+    idealFor: 'High prescriptions with astigmatism',
+    image: 'https://placehold.co/300x150/cccccc/333333?text=Bold+Acetate',
+    recommendedPrescription: 'All prescription types, good for astigmatism',
+    features: ['Sturdy', 'Wide color options', 'Hides thick lenses well']
+  }
+];
+
+// Sample lens recommendations based on prescription
+const getLensRecommendations = (prescription: PrescriptionData[]) => {
+  // Find maximum absolute sphere and cylinder values
+  const maxAbsSphere = Math.max(
+    ...prescription.map(p => Math.abs(p.sphere))
+  );
+  const maxAbsCylinder = Math.max(
+    ...prescription.map(p => Math.abs(p.cylinder))
+  );
+  const hasAddPower = prescription.some(p => p.addPower && p.addPower > 0);
+  
+  // Basic lens recommendations
+  const recommendations = [];
+  
+  // Index recommendation based on sphere power
+  if (maxAbsSphere < 2) {
+    recommendations.push({
+      type: 'index',
+      name: 'Standard Index (1.50)',
+      description: 'Suitable for lower prescriptions up to ±2.00',
+      isRecommended: true
+    });
+  } else if (maxAbsSphere < 4) {
+    recommendations.push({
+      type: 'index',
+      name: 'Mid-Index (1.59)',
+      description: 'Good balance of thinness and cost for medium prescriptions',
+      isRecommended: true
+    });
+  } else {
+    recommendations.push({
+      type: 'index',
+      name: 'High-Index (1.67)',
+      description: 'Recommended for stronger prescriptions to minimize thickness',
+      isRecommended: true
+    });
+  }
+  
+  // Coating recommendations
+  recommendations.push({
+    type: 'coating',
+    name: 'Anti-Reflective Coating',
+    description: 'Reduces glare and improves clarity, especially for higher prescriptions',
+    isRecommended: maxAbsSphere > 1.5 || maxAbsCylinder > 1
+  });
+  
+  // Lens design recommendations
+  if (hasAddPower) {
+    recommendations.push({
+      type: 'design',
+      name: 'Progressive Lenses',
+      description: 'No-line multifocals for patients with add power (presbyopia)',
+      isRecommended: true
+    });
+  } else {
+    recommendations.push({
+      type: 'design',
+      name: 'Single Vision',
+      description: 'Standard lenses for distance correction',
+      isRecommended: true
+    });
+  }
+  
+  return recommendations;
+};
+
 const TestingInterface: React.FC<TestingInterfaceProps> = ({
   patientId,
   onComplete,
@@ -47,6 +187,9 @@ const TestingInterface: React.FC<TestingInterfaceProps> = ({
   showGuidance = true,
 }) => {
   const { darkMode, includeSphereCorrection, includeCylinderCorrection } = useTheme();
+  
+  // Check if beginner mode is enabled (passed from URL parameter)
+  const isBeginnerMode = window.location.search.includes('mode=beginner');
   
   // State for testing session
   const [session, setSession] = useState<TestSession | null>(null);
@@ -67,6 +210,14 @@ const TestingInterface: React.FC<TestingInterfaceProps> = ({
   const [guidanceSuccess, setGuidanceSuccess] = useState<string[]>([]);
   const [testCompleted, setTestCompleted] = useState(false);
   const [testResult, setTestResult] = useState<TestResult | null>(null);
+  
+  // Add a state for optician-specific context
+  const [showOpticianContext, setShowOpticianContext] = useState(isBeginnerMode);
+  
+  // Add states for optician-specific components
+  const [showFrameSelection, setShowFrameSelection] = useState(false);
+  const [selectedFrame, setSelectedFrame] = useState('');
+  const [lensRecommendations, setLensRecommendations] = useState<any[]>([]);
   
   // Initialize testing session
   useEffect(() => {
@@ -193,32 +344,73 @@ const TestingInterface: React.FC<TestingInterfaceProps> = ({
     if (mode === 'tutorial' || mode === 'practice') {
       switch (nextStep) {
         case 1: // Retinoscopy
-          setGuidanceTips([
-            'Move the retinoscope across the pupil and observe the light reflex',
-            'Change your working distance to get a clearer view'
-          ]);
+          if (isBeginnerMode) {
+            setGuidanceTips([
+              ...OPTICIAN_GUIDANCE.retinoscopy,
+              'Move the retinoscope across the pupil and observe the light reflex',
+              'Change your working distance to get a clearer view'
+            ]);
+          } else {
+            setGuidanceTips([
+              'Move the retinoscope across the pupil and observe the light reflex',
+              'Change your working distance to get a clearer view'
+            ]);
+          }
           break;
         case 2: // Subjective Refraction
-          setGuidanceTips([
-            'Ask the patient which option provides clearer vision',
-            'Make small adjustments to sphere, cylinder, and axis'
-          ]);
+          if (isBeginnerMode) {
+            setGuidanceTips([
+              ...OPTICIAN_GUIDANCE.subjectiveRefraction,
+              'Ask the patient which option provides clearer vision',
+              'Make small adjustments to sphere, cylinder, and axis'
+            ]);
+          } else {
+            setGuidanceTips([
+              'Ask the patient which option provides clearer vision',
+              'Make small adjustments to sphere, cylinder, and axis'
+            ]);
+          }
           break;
         case 3: // Binocular Balance
           setShowActualRx(false);
-          setGuidanceTips([
-            'Ensure both eyes are working together properly',
-            'Check for comfortable binocular vision'
-          ]);
+          if (isBeginnerMode) {
+            setGuidanceTips([
+              ...OPTICIAN_GUIDANCE.binocularBalance,
+              'Ensure both eyes are working together properly',
+              'Check for comfortable binocular vision'
+            ]);
+          } else {
+            setGuidanceTips([
+              'Ensure both eyes are working together properly',
+              'Check for comfortable binocular vision'
+            ]);
+          }
           break;
         case 4: // Near Vision
-          setGuidanceTips([
-            'Test near vision acuity to determine if reading glasses are needed',
-            'Adjust add power for presbyopic patients'
-          ]);
+          if (isBeginnerMode) {
+            setGuidanceTips([
+              ...OPTICIAN_GUIDANCE.nearVision,
+              'Test near vision acuity to determine if reading glasses are needed',
+              'Adjust add power for presbyopic patients'
+            ]);
+          } else {
+            setGuidanceTips([
+              'Test near vision acuity to determine if reading glasses are needed',
+              'Adjust add power for presbyopic patients'
+            ]);
+          }
           break;
         case 5: // Final Prescription
-          setGuidanceSuccess(['You\'ve completed all testing steps. Finalize the prescription now.']);
+          if (isBeginnerMode) {
+            setGuidanceSuccess([
+              'You\'ve completed all testing steps. Now you\'ll learn how to select frames and lenses for this prescription.'
+            ]);
+            setGuidanceTips([
+              ...OPTICIAN_GUIDANCE.finalPrescription
+            ]);
+          } else {
+            setGuidanceSuccess(['You\'ve completed all testing steps. Finalize the prescription now.']);
+          }
           break;
       }
     }
@@ -246,7 +438,14 @@ const TestingInterface: React.FC<TestingInterfaceProps> = ({
     setShowActualRx(prev => !prev);
   };
   
-  // Complete the test and calculate results
+  // Generate lens recommendations when prescription changes in beginner mode
+  useEffect(() => {
+    if (isBeginnerMode && prescription.length > 0) {
+      setLensRecommendations(getLensRecommendations(prescription));
+    }
+  }, [isBeginnerMode, prescription]);
+  
+  // Modified Complete test function
   const handleCompleteTest = () => {
     if (!session) return;
     
@@ -297,226 +496,402 @@ const TestingInterface: React.FC<TestingInterfaceProps> = ({
     // Show success message
     setGuidanceSuccess([`Test completed with ${accuracy}% accuracy`]);
     
+    // For beginner mode, show frame selection after completing the test
+    if (isBeginnerMode) {
+      setShowFrameSelection(true);
+    }
+    
     // Call the onComplete callback if provided
     if (onComplete) {
       onComplete(result);
     }
   };
   
+  // Handle frame selection
+  const handleFrameSelect = (frameId: string) => {
+    setSelectedFrame(frameId);
+    
+    // Update guidance
+    setGuidanceSuccess([
+      'Good choice! You\'ve selected a frame that works with this prescription.',
+      'Now you can review the lens recommendations based on the patient\'s needs.'
+    ]);
+  };
+  
+  // Set initial guidance specific to opticians for beginner mode
+  useEffect(() => {
+    if (isBeginnerMode && currentStep === 0) {
+      setGuidanceTips([
+        ...OPTICIAN_GUIDANCE.visualAcuity,
+        'Start by testing the patient\'s visual acuity to establish a baseline',
+        'Cover one eye at a time to test each eye independently'
+      ]);
+    }
+  }, [isBeginnerMode, currentStep]);
+  
   return (
     <Box>
-      <Grid container spacing={3}>
-        {/* Left side - Controls and chart */}
-        <Grid item xs={12} md={showGuidance ? 8 : 12}>
+      {/* Beginner Mode Indicator */}
+      {isBeginnerMode && (
+        <Alert 
+          severity="info" 
+          sx={{ mb: 2 }}
+          icon={<SchoolIcon />}
+        >
+          <Typography variant="body1" fontWeight="medium">Optician Training Mode</Typography>
+          <Typography variant="body2">
+            Learn how to select appropriate frames and lenses based on this patient's prescription needs.
+          </Typography>
+        </Alert>
+      )}
+      
+      {/* Frame selection view shown after test completion in beginner mode */}
+      {showFrameSelection ? (
+        <Box>
+          <Typography variant="h5" gutterBottom>
+            Frame & Lens Selection
+          </Typography>
+          <Typography paragraph>
+            Based on the patient's prescription, recommend an appropriate frame and lenses.
+          </Typography>
+          
           <Grid container spacing={3}>
-            {/* Controls */}
-            <Grid item xs={12} md={4}>
-              <Card>
-                <CardContent>
-                  <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 2 }}>
-                    <Typography variant="h6">Controls</Typography>
-                    <Box>
-                      <Tooltip title="Reset values">
-                        <IconButton onClick={handleReset} size="small">
-                          <RefreshIcon />
-                        </IconButton>
-                      </Tooltip>
-                      {mode === 'practice' && (
-                        <Tooltip title={showActualRx ? "Hide actual Rx" : "Show actual Rx"}>
-                          <IconButton onClick={toggleShowActualRx} size="small">
-                            {showActualRx ? <VisibilityOffIcon /> : <VisibilityIcon />}
-                          </IconButton>
-                        </Tooltip>
-                      )}
-                    </Box>
-                  </Box>
-                  
-                  <FormControl fullWidth margin="normal">
-                    <InputLabel>Current Eye</InputLabel>
-                    <Select
-                      value={currentEye}
-                      label="Current Eye"
-                      onChange={handleEyeChange}
-                    >
-                      <MenuItem value="right">Right Eye (OD)</MenuItem>
-                      <MenuItem value="left">Left Eye (OS)</MenuItem>
-                    </Select>
-                  </FormControl>
-                  
-                  {/* Sphere control */}
-                  <Box sx={{ mt: 3 }}>
-                    <Typography id="sphere-slider" gutterBottom>
-                      Sphere (D): {sphere.toFixed(2)}
-                    </Typography>
-                    <Slider
-                      disabled={currentStep < 2 && mode === 'exam'}
-                      value={sphere}
-                      onChange={handleSphereChange}
-                      aria-labelledby="sphere-slider"
-                      min={SPHERE_RANGE.min}
-                      max={SPHERE_RANGE.max}
-                      step={SPHERE_RANGE.step}
-                      valueLabelDisplay="auto"
-                      marks={[
-                        { value: SPHERE_RANGE.min, label: SPHERE_RANGE.min.toString() },
-                        { value: 0, label: '0' },
-                        { value: SPHERE_RANGE.max, label: SPHERE_RANGE.max.toString() },
-                      ]}
-                    />
-                  </Box>
-                  
-                  {/* Cylinder control */}
-                  <Box sx={{ mt: 3 }}>
-                    <Typography id="cylinder-slider" gutterBottom>
-                      Cylinder (D): {cylinder.toFixed(2)}
-                    </Typography>
-                    <Slider
-                      disabled={(currentStep < 2 && mode === 'exam') || !includeCylinderCorrection}
-                      value={cylinder}
-                      onChange={handleCylinderChange}
-                      aria-labelledby="cylinder-slider"
-                      min={CYLINDER_RANGE.min}
-                      max={CYLINDER_RANGE.max}
-                      step={CYLINDER_RANGE.step}
-                      valueLabelDisplay="auto"
-                      marks={[
-                        { value: CYLINDER_RANGE.min, label: CYLINDER_RANGE.min.toString() },
-                        { value: 0, label: '0' },
-                      ]}
-                    />
-                  </Box>
-                  
-                  {/* Axis control */}
-                  <Box sx={{ mt: 3 }}>
-                    <Typography id="axis-slider" gutterBottom>
-                      Axis (°): {axis}
-                    </Typography>
-                    <Slider
-                      disabled={(currentStep < 2 && mode === 'exam') || cylinder === 0 || !includeCylinderCorrection}
-                      value={axis}
-                      onChange={handleAxisChange}
-                      aria-labelledby="axis-slider"
-                      min={AXIS_RANGE.min}
-                      max={AXIS_RANGE.max}
-                      step={AXIS_RANGE.step}
-                      valueLabelDisplay="auto"
-                      marks={[
-                        { value: 0, label: '0°' },
-                        { value: 90, label: '90°' },
-                        { value: 180, label: '180°' },
-                      ]}
-                    />
-                  </Box>
-                  
-                  {/* Add power (only shown in near vision testing step) */}
-                  {currentStep >= 4 && (
-                    <Box sx={{ mt: 3 }}>
-                      <Typography id="add-power-slider" gutterBottom>
-                        Add Power (D): {addPower.toFixed(2)}
-                      </Typography>
-                      <Slider
-                        value={addPower}
-                        onChange={handleAddPowerChange}
-                        aria-labelledby="add-power-slider"
-                        min={ADD_POWER_RANGE.min}
-                        max={ADD_POWER_RANGE.max}
-                        step={ADD_POWER_RANGE.step}
-                        valueLabelDisplay="auto"
-                        marks={[
-                          { value: 0, label: '0' },
-                          { value: 1.5, label: '1.5' },
-                          { value: 3, label: '3.0' },
-                        ]}
-                      />
-                    </Box>
-                  )}
-                </CardContent>
-              </Card>
-            </Grid>
-            
-            {/* Refraction Chart */}
+            {/* Frame options */}
             <Grid item xs={12} md={8}>
-              <RefractionChart 
-                prescription={prescription}
-                comparePrescription={showActualRx ? [
-                  { eye: 'right', sphere: -2.75, cylinder: -0.75, axis: 90 },
-                  { eye: 'left', sphere: -3.25, cylinder: -0.50, axis: 85 }
-                ] : undefined}
-                currentSphere={sphere}
-                currentCylinder={cylinder}
-                currentAxis={axis}
-                testActive={true}
-                interactive={currentStep >= 2}
-                title={`Refraction Test - ${currentStep >= 5 ? 'Final Prescription' : 'Step ' + (currentStep + 1)}`}
-                width={undefined}
-                height={400}
-              />
+              <Typography variant="h6" gutterBottom>
+                Recommended Frames
+              </Typography>
+              <Grid container spacing={2}>
+                {BEGINNER_FRAMES.map((frame) => (
+                  <Grid item xs={12} md={4} key={frame.id}>
+                    <Card 
+                      sx={{ 
+                        height: '100%',
+                        border: selectedFrame === frame.id ? '2px solid #2196f3' : 'none',
+                        boxShadow: selectedFrame === frame.id ? '0 0 8px rgba(33, 150, 243, 0.5)' : 'inherit'
+                      }}
+                    >
+                      <CardMedia
+                        component="img"
+                        height="140"
+                        image={frame.image}
+                        alt={frame.name}
+                      />
+                      <CardContent>
+                        <Typography variant="h6" component="div">
+                          {frame.name}
+                        </Typography>
+                        <Typography variant="body2" color="text.secondary" gutterBottom>
+                          {frame.material} · {frame.style}
+                        </Typography>
+                        <Typography variant="body2" gutterBottom>
+                          <strong>Ideal for:</strong> {frame.idealFor}
+                        </Typography>
+                        <Box mt={1}>
+                          {frame.features.map((feature, index) => (
+                            <Typography key={index} variant="body2" sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
+                              • {feature}
+                            </Typography>
+                          ))}
+                        </Box>
+                      </CardContent>
+                      <CardActions>
+                        <Button 
+                          size="small" 
+                          color="primary"
+                          variant={selectedFrame === frame.id ? "contained" : "outlined"}
+                          onClick={() => handleFrameSelect(frame.id)}
+                          startIcon={selectedFrame === frame.id ? <CheckIcon /> : null}
+                          fullWidth
+                        >
+                          {selectedFrame === frame.id ? "Selected" : "Select Frame"}
+                        </Button>
+                      </CardActions>
+                    </Card>
+                  </Grid>
+                ))}
+              </Grid>
             </Grid>
             
-            {/* Test status and navigation */}
-            <Grid item xs={12}>
-              <Paper sx={{ p: 2, mt: 2 }}>
-                <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                  <Box>
-                    <Typography variant="subtitle1">
-                      Current step: {currentStep + 1} of 6
-                    </Typography>
-                    {testResult && (
-                      <Alert severity={testResult.accuracy >= 75 ? "success" : "info"} sx={{ mt: 1 }}>
-                        Accuracy: {testResult.accuracy}% - {testResult.feedback}
-                      </Alert>
-                    )}
-                  </Box>
-                  
-                  <Box>
-                    <Button
-                      variant="outlined"
-                      disabled={currentStep === 0}
-                      onClick={handleBack}
-                      sx={{ mr: 1 }}
-                    >
-                      Back
-                    </Button>
-                    
-                    {currentStep < 5 ? (
-                      <Button 
-                        variant="contained" 
-                        onClick={handleNext}
-                      >
-                        Next
-                      </Button>
-                    ) : (
-                      <Button 
-                        variant="contained" 
-                        color="success"
-                        onClick={handleCompleteTest}
-                        disabled={testCompleted}
-                        startIcon={<SaveIcon />}
-                      >
-                        Complete Test
-                      </Button>
-                    )}
-                  </Box>
-                </Box>
+            {/* Lens recommendations */}
+            <Grid item xs={12} md={4}>
+              <Paper sx={{ p: 2 }}>
+                <Typography variant="h6" gutterBottom>
+                  Lens Recommendations
+                </Typography>
+                <Typography variant="body2" paragraph>
+                  Based on the prescription: 
+                  OD: {prescription.find(p => p.eye === 'right')?.sphere.toFixed(2)}/{prescription.find(p => p.eye === 'right')?.cylinder.toFixed(2)} x {prescription.find(p => p.eye === 'right')?.axis}
+                  OS: {prescription.find(p => p.eye === 'left')?.sphere.toFixed(2)}/{prescription.find(p => p.eye === 'left')?.cylinder.toFixed(2)} x {prescription.find(p => p.eye === 'left')?.axis}
+                </Typography>
+                
+                <Divider sx={{ my: 2 }} />
+                
+                <Stack spacing={2}>
+                  {lensRecommendations.map((rec, index) => (
+                    <Box key={index}>
+                      <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                        <Typography variant="body1" fontWeight="medium">
+                          {rec.name}
+                        </Typography>
+                        <Chip 
+                          size="small" 
+                          color={rec.isRecommended ? "success" : "default"}
+                          label={rec.isRecommended ? "Recommended" : "Optional"}
+                        />
+                      </Box>
+                      <Typography variant="body2" color="text.secondary">
+                        {rec.description}
+                      </Typography>
+                    </Box>
+                  ))}
+                </Stack>
+                
+                <Divider sx={{ my: 2 }} />
+                
+                <Button 
+                  variant="contained" 
+                  color="primary" 
+                  fullWidth
+                  disabled={!selectedFrame}
+                >
+                  Complete Recommendation
+                </Button>
               </Paper>
             </Grid>
           </Grid>
-        </Grid>
-        
-        {/* Right side - Guidance panel */}
-        {showGuidance && (
-          <Grid item xs={12} md={4}>
-            <GuidancePanel 
-              currentStep={currentStep}
-              patientName=""
-              eyeType={currentEye}
-              tips={guidanceTips}
-              errors={guidanceErrors}
-              success={guidanceSuccess}
-            />
+        </Box>
+      ) : (
+        <Grid container spacing={3}>
+          <Grid item xs={12} md={showGuidance ? 8 : 12}>
+            <Grid container spacing={3}>
+              {/* Controls */}
+              <Grid item xs={12} md={4}>
+                <Card>
+                  <CardContent>
+                    <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 2 }}>
+                      <Typography variant="h6">Controls</Typography>
+                      <Box>
+                        <Tooltip title="Reset values">
+                          <IconButton onClick={handleReset} size="small">
+                            <RefreshIcon />
+                          </IconButton>
+                        </Tooltip>
+                        {mode === 'practice' && (
+                          <Tooltip title={showActualRx ? "Hide actual Rx" : "Show actual Rx"}>
+                            <IconButton onClick={toggleShowActualRx} size="small">
+                              {showActualRx ? <VisibilityOffIcon /> : <VisibilityIcon />}
+                            </IconButton>
+                          </Tooltip>
+                        )}
+                      </Box>
+                    </Box>
+                    
+                    <FormControl fullWidth margin="normal">
+                      <InputLabel>Current Eye</InputLabel>
+                      <Select
+                        value={currentEye}
+                        label="Current Eye"
+                        onChange={handleEyeChange}
+                      >
+                        <MenuItem value="right">Right Eye (OD)</MenuItem>
+                        <MenuItem value="left">Left Eye (OS)</MenuItem>
+                      </Select>
+                    </FormControl>
+                    
+                    {/* Sphere control */}
+                    <Box sx={{ mt: 3 }}>
+                      <Typography id="sphere-slider" gutterBottom>
+                        Sphere (D): {sphere.toFixed(2)}
+                      </Typography>
+                      <Slider
+                        disabled={currentStep < 2 && mode === 'exam'}
+                        value={sphere}
+                        onChange={handleSphereChange}
+                        aria-labelledby="sphere-slider"
+                        min={SPHERE_RANGE.min}
+                        max={SPHERE_RANGE.max}
+                        step={SPHERE_RANGE.step}
+                        valueLabelDisplay="auto"
+                        marks={[
+                          { value: SPHERE_RANGE.min, label: SPHERE_RANGE.min.toString() },
+                          { value: 0, label: '0' },
+                          { value: SPHERE_RANGE.max, label: SPHERE_RANGE.max.toString() },
+                        ]}
+                      />
+                    </Box>
+                    
+                    {/* Cylinder control */}
+                    <Box sx={{ mt: 3 }}>
+                      <Typography id="cylinder-slider" gutterBottom>
+                        Cylinder (D): {cylinder.toFixed(2)}
+                      </Typography>
+                      <Slider
+                        disabled={(currentStep < 2 && mode === 'exam') || !includeCylinderCorrection}
+                        value={cylinder}
+                        onChange={handleCylinderChange}
+                        aria-labelledby="cylinder-slider"
+                        min={CYLINDER_RANGE.min}
+                        max={CYLINDER_RANGE.max}
+                        step={CYLINDER_RANGE.step}
+                        valueLabelDisplay="auto"
+                        marks={[
+                          { value: CYLINDER_RANGE.min, label: CYLINDER_RANGE.min.toString() },
+                          { value: 0, label: '0' },
+                        ]}
+                      />
+                    </Box>
+                    
+                    {/* Axis control */}
+                    <Box sx={{ mt: 3 }}>
+                      <Typography id="axis-slider" gutterBottom>
+                        Axis (°): {axis}
+                      </Typography>
+                      <Slider
+                        disabled={(currentStep < 2 && mode === 'exam') || cylinder === 0 || !includeCylinderCorrection}
+                        value={axis}
+                        onChange={handleAxisChange}
+                        aria-labelledby="axis-slider"
+                        min={AXIS_RANGE.min}
+                        max={AXIS_RANGE.max}
+                        step={AXIS_RANGE.step}
+                        valueLabelDisplay="auto"
+                        marks={[
+                          { value: 0, label: '0°' },
+                          { value: 90, label: '90°' },
+                          { value: 180, label: '180°' },
+                        ]}
+                      />
+                    </Box>
+                    
+                    {/* Add power (only shown in near vision testing step) */}
+                    {currentStep >= 4 && (
+                      <Box sx={{ mt: 3 }}>
+                        <Typography id="add-power-slider" gutterBottom>
+                          Add Power (D): {addPower.toFixed(2)}
+                        </Typography>
+                        <Slider
+                          value={addPower}
+                          onChange={handleAddPowerChange}
+                          aria-labelledby="add-power-slider"
+                          min={ADD_POWER_RANGE.min}
+                          max={ADD_POWER_RANGE.max}
+                          step={ADD_POWER_RANGE.step}
+                          valueLabelDisplay="auto"
+                          marks={[
+                            { value: 0, label: '0' },
+                            { value: 1.5, label: '1.5' },
+                            { value: 3, label: '3.0' },
+                          ]}
+                        />
+                      </Box>
+                    )}
+                  </CardContent>
+                </Card>
+              </Grid>
+              
+              {/* Refraction Chart */}
+              <Grid item xs={12} md={8}>
+                <RefractionChart 
+                  prescription={prescription}
+                  comparePrescription={showActualRx ? [
+                    { eye: 'right', sphere: -2.75, cylinder: -0.75, axis: 90 },
+                    { eye: 'left', sphere: -3.25, cylinder: -0.50, axis: 85 }
+                  ] : undefined}
+                  currentSphere={sphere}
+                  currentCylinder={cylinder}
+                  currentAxis={axis}
+                  testActive={true}
+                  interactive={currentStep >= 2}
+                  title={`Refraction Test - ${currentStep >= 5 ? 'Final Prescription' : 'Step ' + (currentStep + 1)}`}
+                  width={undefined}
+                  height={400}
+                />
+              </Grid>
+              
+              {/* Test status and navigation */}
+              <Grid item xs={12}>
+                <Paper sx={{ p: 2, mt: 2 }}>
+                  <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                    <Box>
+                      <Typography variant="subtitle1">
+                        Current step: {currentStep + 1} of 6
+                      </Typography>
+                      {isBeginnerMode && (
+                        <Box sx={{ mt: 1 }}>
+                          <Chip 
+                            icon={<SchoolIcon fontSize="small" />}
+                            label="Optician Focus"
+                            size="small"
+                            color="primary"
+                            sx={{ mr: 1 }}
+                          />
+                          {currentStep === 5 && (
+                            <Chip 
+                              label="Frame & Lens Selection" 
+                              size="small" 
+                              color="secondary"
+                            />
+                          )}
+                        </Box>
+                      )}
+                      {testResult && (
+                        <Alert severity={testResult.accuracy >= 75 ? "success" : "info"} sx={{ mt: 1 }}>
+                          Accuracy: {testResult.accuracy}% - {testResult.feedback}
+                        </Alert>
+                      )}
+                    </Box>
+                    
+                    <Box>
+                      <Button
+                        variant="outlined"
+                        disabled={currentStep === 0}
+                        onClick={handleBack}
+                        sx={{ mr: 1 }}
+                      >
+                        Back
+                      </Button>
+                      
+                      {currentStep < 5 ? (
+                        <Button 
+                          variant="contained" 
+                          onClick={handleNext}
+                        >
+                          Next
+                        </Button>
+                      ) : (
+                        <Button 
+                          variant="contained" 
+                          color="success"
+                          onClick={handleCompleteTest}
+                          disabled={testCompleted}
+                          startIcon={<SaveIcon />}
+                        >
+                          {isBeginnerMode ? 'Proceed to Frame Selection' : 'Complete Test'}
+                        </Button>
+                      )}
+                    </Box>
+                  </Box>
+                </Paper>
+              </Grid>
+            </Grid>
           </Grid>
-        )}
-      </Grid>
+          
+          {/* Right side - Guidance panel */}
+          {showGuidance && (
+            <Grid item xs={12} md={4}>
+              <GuidancePanel 
+                currentStep={currentStep}
+                patientName=""
+                eyeType={currentEye}
+                tips={guidanceTips}
+                errors={guidanceErrors}
+                success={guidanceSuccess}
+              />
+            </Grid>
+          )}
+        </Grid>
+      )}
     </Box>
   );
 };

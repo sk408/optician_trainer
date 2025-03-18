@@ -20,9 +20,10 @@ import {
   FormControlLabel,
   Menu,
   MenuItem,
-  ListItemButton
+  ListItemButton,
+  useTheme as useMuiTheme
 } from '@mui/material';
-import { useTheme as useMuiTheme } from '@mui/material/styles';
+import { useTheme } from './ThemeContext';
 import {
   Menu as MenuIcon,
   Home as HomeIcon,
@@ -41,7 +42,6 @@ import {
   TextFields as TextFieldsIcon,
   MenuBook as MenuBookIcon
 } from '@mui/icons-material';
-import { useTheme } from './ThemeContext';
 
 interface LayoutProps {
   children?: React.ReactNode;
@@ -53,11 +53,6 @@ const NAVIGATION_ITEMS = [
     title: 'Home',
     path: '/',
     icon: <HomeIcon />
-  },
-  {
-    title: 'Tutorial',
-    path: '/tutorial',
-    icon: <SchoolIcon />
   },
   {
     title: 'Study',
@@ -95,6 +90,7 @@ const Layout: React.FC<LayoutProps> = () => {
   const location = useLocation();
   const muiTheme = useMuiTheme();
   const isSmallScreen = useMediaQuery(muiTheme.breakpoints.down('md'));
+  const isMobile = useMediaQuery(muiTheme.breakpoints.down('sm'));
   const { 
     darkMode, 
     setDarkMode, 
@@ -222,20 +218,34 @@ const Layout: React.FC<LayoutProps> = () => {
   return (
     <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
       {/* App Bar */}
-      <AppBar position="sticky">
-        <Toolbar>
+      <AppBar position="sticky" elevation={darkMode ? 2 : 1}>
+        <Toolbar sx={{ 
+          px: { xs: 1, sm: 2, md: 3 },
+          height: { xs: 56, sm: 64, md: 64 },
+          transition: 'all 0.3s'
+        }}>
           <IconButton
-            size="large"
+            size={isMobile ? "medium" : "large"}
             edge="start"
             color="inherit"
             aria-label="menu"
-            sx={{ mr: 2 }}
+            sx={{ mr: isMobile ? 1 : 2 }}
             onClick={toggleDrawer(true)}
           >
             <MenuIcon />
           </IconButton>
           
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+          <Typography 
+            variant={isMobile ? "subtitle1" : "h6"} 
+            component="div" 
+            sx={{ 
+              flexGrow: 1,
+              fontWeight: 'medium',
+              whiteSpace: 'nowrap',
+              overflow: 'hidden',
+              textOverflow: 'ellipsis'
+            }}
+          >
             Optician Trainer
           </Typography>
           
@@ -244,18 +254,19 @@ const Layout: React.FC<LayoutProps> = () => {
               <Button color="inherit" component={RouterLink} to="/">
                 Home
               </Button>
-              <Button color="inherit" component={RouterLink} to="/tutorial">
-                Tutorial
-              </Button>
               <Button color="inherit" component={RouterLink} to="/patients">
                 Patients
               </Button>
             </Box>
           )}
           
-          <Box sx={{ display: 'flex', alignItems: 'center', ml: 1 }}>
+          <Box sx={{ display: 'flex', alignItems: 'center', ml: isMobile ? 0.5 : 1 }}>
             <Tooltip title="Toggle Dark Mode">
-              <IconButton color="inherit" onClick={() => setDarkMode(!darkMode)}>
+              <IconButton 
+                color="inherit" 
+                onClick={() => setDarkMode(!darkMode)}
+                size={isMobile ? "small" : "medium"}
+              >
                 {darkMode ? <LightModeIcon /> : <DarkModeIcon />}
               </IconButton>
             </Tooltip>
@@ -267,6 +278,7 @@ const Layout: React.FC<LayoutProps> = () => {
                 aria-controls={isSettingsMenuOpen ? 'settings-menu' : undefined}
                 aria-haspopup="true"
                 aria-expanded={isSettingsMenuOpen ? 'true' : undefined}
+                size={isMobile ? "small" : "medium"}
               >
                 <SettingsIcon />
               </IconButton>
@@ -330,46 +342,78 @@ const Layout: React.FC<LayoutProps> = () => {
         anchor="left"
         open={drawerOpen}
         onClose={toggleDrawer(false)}
+        sx={{
+          '& .MuiDrawer-paper': {
+            width: { xs: '85%', sm: 280 },
+            maxWidth: 320
+          }
+        }}
       >
         {drawerContent}
       </Drawer>
       
       {/* Main content */}
-      <Box component="main" sx={{ flexGrow: 1 }}>
-        <Outlet />
+      <Box 
+        component="main" 
+        sx={{ 
+          flexGrow: 1,
+          pt: { xs: 2, sm: 3, md: 4 },
+          pb: { xs: 6, sm: 8, md: 10 },
+          px: { xs: 1, sm: 2, md: 3 },
+          width: '100%',
+          display: 'flex',
+          justifyContent: 'center'
+        }}
+      >
+        <Box sx={{ 
+          width: '100%', 
+          maxWidth: '100%', 
+          margin: '0 auto',
+        }}>
+          <Outlet />
+        </Box>
       </Box>
       
       {/* Footer */}
       <Box
         component="footer"
         sx={{
-          py: 3,
-          px: 2,
+          py: { xs: 2, sm: 3 },
+          px: { xs: 1, sm: 2 },
           mt: 'auto',
           backgroundColor: darkMode 
             ? (muiTheme.palette.mode === 'dark' ? 'background.paper' : '#272727')
-            : (muiTheme.palette.mode === 'light' ? 'background.paper' : '#f5f5f5')
+            : (muiTheme.palette.mode === 'light' ? 'background.paper' : '#f5f5f5'),
+          width: '100%',
+          display: 'flex',
+          justifyContent: 'center'
         }}
       >
-        <Container maxWidth="lg">
-          <Typography variant="body2" color="text.secondary" align="center">
-            Optician Trainer — Vision Testing & Refraction Training
-          </Typography>
-          <Typography variant="body2" color="text.secondary" align="center">
-            © {new Date().getFullYear()} All Rights Reserved
-          </Typography>
-          <Typography variant="body2" color="text.secondary" align="center" sx={{ mt: 1 }}>
-            <RouterLink to="/" style={{ color: 'inherit', marginRight: '16px' }}>
-              Home
-            </RouterLink>
-            <RouterLink to="/tutorial" style={{ color: 'inherit', marginRight: '16px' }}>
-              Tutorial
-            </RouterLink>
-            <RouterLink to="/patients" style={{ color: 'inherit' }}>
-              Patients
-            </RouterLink>
-          </Typography>
-        </Container>
+        <Box sx={{ width: '100%', maxWidth: '100%' }}>
+          <Container maxWidth={false}>
+            <Typography variant="body2" color="text.secondary" align="center">
+              Optician Trainer — Vision Testing & Refraction Training
+            </Typography>
+            <Typography variant="body2" color="text.secondary" align="center">
+              © {new Date().getFullYear()} All Rights Reserved
+            </Typography>
+            <Typography variant="body2" color="text.secondary" align="center" sx={{ mt: 1 }}>
+              <Box sx={{ 
+                display: 'flex', 
+                flexWrap: 'wrap', 
+                justifyContent: 'center', 
+                gap: { xs: 1, sm: 2 } 
+              }}>
+                <RouterLink to="/" style={{ color: 'inherit' }}>
+                  Home
+                </RouterLink>
+                <RouterLink to="/patients" style={{ color: 'inherit' }}>
+                  Patients
+                </RouterLink>
+              </Box>
+            </Typography>
+          </Container>
+        </Box>
       </Box>
     </Box>
   );

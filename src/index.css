@@ -11,6 +11,21 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  
+  /* Prevent font-size adjustment after orientation changes in iOS */
+  -webkit-text-size-adjust: 100%;
+}
+
+/* Modern CSS reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* Responsive images */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
 a {
@@ -28,6 +43,9 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  
+  /* Improve touch on mobile */
+  touch-action: manipulation;
 }
 
 h1 {
@@ -45,6 +63,10 @@ button {
   background-color: #1a1a1a;
   cursor: pointer;
   transition: border-color 0.25s;
+  
+  /* Enhance touch target size */
+  min-height: 44px;
+  min-width: 44px;
 }
 button:hover {
   border-color: #646cff;
@@ -52,6 +74,17 @@ button:hover {
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
+}
+
+/* Media queries for responsive design */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 2.5em;
+  }
+  
+  button {
+    padding: 0.5em 1em;
+  }
 }
 
 @media (prefers-color-scheme: light) {
@@ -65,4 +98,22 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+
+/* Add viewport-based font sizing for truly responsive typography */
+@media screen and (min-width: 320px) {
+  html {
+    font-size: calc(16px + 0.5vw);
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  html {
+    font-size: 22px;
+  }
+}
+
+/* Fix for iOS scrolling momentum */
+html {
+  -webkit-overflow-scrolling: touch;
 }

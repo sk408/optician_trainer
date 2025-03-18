@@ -14,7 +14,6 @@ import '@fontsource/roboto/700.css';
 
 // Lazy-loaded routes for better performance
 const HomePage = lazy(() => import('./pages/HomePage'));
-const TutorialPage = lazy(() => import('./pages/TutorialPage'));
 const PatientsPage = lazy(() => import('./pages/PatientsPage'));
 const TestingPage = lazy(() => import('./pages/TestingPage'));
 const EyeAnatomyPage = lazy(() => import('./pages/EyeAnatomyPage'));
@@ -33,6 +32,12 @@ const StudyDashboardPage = lazy(() => import('./pages/StudyDashboardPage'));
 const ExamPrepPage = lazy(() => import('./pages/ExamPrepPage'));
 const FlashcardsPage = lazy(() => import('./pages/FlashcardsPage'));
 
+// Tutorial pages for beginners
+const PrescriptionBasicsPage = lazy(() => import('./pages/tutorials/PrescriptionBasicsPage'));
+// Future tutorial pages (we'll implement these later)
+// const FrameSelectionPage = lazy(() => import('./pages/tutorials/FrameSelectionPage'));
+// const LensOptionsPage = lazy(() => import('./pages/tutorials/LensOptionsPage'));
+
 // Loading component for Suspense
 const LoadingComponent = () => (
   <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
@@ -49,10 +54,6 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <HomePage />,
-      },
-      {
-        path: 'tutorial',
-        element: <TutorialPage />,
       },
       {
         path: 'patients',
@@ -86,6 +87,21 @@ const router = createBrowserRouter([
       {
         path: 'optical-theory',
         element: <OpticalTheoryPage />,
+      },
+      // Tutorial pages for beginners
+      {
+        path: 'tutorial/prescription-basics',
+        element: <PrescriptionBasicsPage />,
+      },
+      {
+        path: 'tutorial/frame-selection',
+        // Temporary redirect to prescription basics until implemented
+        element: <PrescriptionBasicsPage />,
+      },
+      {
+        path: 'tutorial/lens-options',
+        // Temporary redirect to prescription basics until implemented
+        element: <PrescriptionBasicsPage />,
       },
       // Enhanced study system routes
       {

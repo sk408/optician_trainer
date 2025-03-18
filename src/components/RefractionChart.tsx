@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import { 
   Chart as ChartJS, 
   CategoryScale, 
@@ -13,7 +13,7 @@ import {
   ChartOptions
 } from 'chart.js';
 import { Scatter } from 'react-chartjs-2';
-import { Paper, Typography, Box, useTheme as useMuiTheme } from '@mui/material';
+import { Paper, Typography, Box, useTheme as useMuiTheme, useMediaQuery } from '@mui/material';
 import { useTheme } from './ThemeContext';
 import { RefractionChartProps, PrescriptionData } from '../interfaces';
 
@@ -31,8 +31,8 @@ ChartJS.register(
 
 const RefractionChart: React.FC<RefractionChartProps> = ({
   prescription,
-  width = 600,
-  height = 400,
+  width,
+  height,
   showLegend = true,
   title = 'Refraction Chart',
   comparePrescription,
@@ -46,6 +46,50 @@ const RefractionChart: React.FC<RefractionChartProps> = ({
   const chartRef = useRef<ChartJS<"scatter">>(null);
   const { darkMode, highContrastMode } = useTheme();
   const muiTheme = useMuiTheme();
+  
+  // Get screen size for responsive adjustments
+  const isXsScreen = useMediaQuery(muiTheme.breakpoints.down('sm'));
+  const isSmScreen = useMediaQuery(muiTheme.breakpoints.between('sm', 'md'));
+  const isMdScreen = useMediaQuery(muiTheme.breakpoints.between('md', 'lg'));
+  
+  // Calculate responsive dimensions if width/height not specified
+  const getResponsiveWidth = () => {
+    if (width) return width;
+    if (isXsScreen) return '100%';
+    if (isSmScreen) return 450;
+    if (isMdScreen) return 550;
+    return 600; // default for larger screens
+  };
+  
+  const getResponsiveHeight = () => {
+    if (height) return height;
+    if (isXsScreen) return 300;
+    if (isSmScreen) return 350;
+    return 400; // default for larger screens
+  };
+  
+  // Calculate responsive point sizes
+  const getPointRadius = () => {
+    if (isXsScreen) return 6;
+    if (isSmScreen) return 7;
+    return 8;
+  };
+  
+  const getPointHoverRadius = () => {
+    if (isXsScreen) return 8;
+    if (isSmScreen) return 10;
+    return 12;
+  };
+  
+  // State for responsive dimensions
+  const [responsiveWidth, setResponsiveWidth] = useState(getResponsiveWidth());
+  const [responsiveHeight, setResponsiveHeight] = useState(getResponsiveHeight());
+  
+  // Update dimensions on screen size changes
+  useEffect(() => {
+    setResponsiveWidth(getResponsiveWidth());
+    setResponsiveHeight(getResponsiveHeight());
+  }, [isXsScreen, isSmScreen, isMdScreen, width, height]);
   
   const convertToCartesian = (data: PrescriptionData[]) => {
     return data.map(p => {
@@ -110,6 +154,10 @@ const RefractionChart: React.FC<RefractionChartProps> = ({
       eye: 'right', // Default, will be colored differently
     }]) : [];
   
+  // Responsive point radius
+  const pointRadius = getPointRadius();
+  const pointHoverRadius = getPointHoverRadius();
+  
   const data: ChartData<"scatter"> = {
     datasets: [
       {
@@ -118,8 +166,8 @@ const RefractionChart: React.FC<RefractionChartProps> = ({
         backgroundColor: highContrastMode ? '#ff0000' : 'rgba(255, 99, 132, 0.8)',
         borderColor: highContrastMode ? '#ff0000' : 'rgba(255, 99, 132, 1)',
         borderWidth: 1,
-        pointRadius: 8,
-        pointHoverRadius: 12,
+        pointRadius: pointRadius,
+        pointHoverRadius: pointHoverRadius,
       },
       {
         label: 'Left Eye',
@@ -127,8 +175,8 @@ const RefractionChart: React.FC<RefractionChartProps> = ({
         backgroundColor: highContrastMode ? '#0000ff' : 'rgba(54, 162, 235, 0.8)',
         borderColor: highContrastMode ? '#0000ff' : 'rgba(54, 162, 235, 1)',
         borderWidth: 1,
-        pointRadius: 8,
-        pointHoverRadius: 12,
+        pointRadius: pointRadius,
+        pointHoverRadius: pointHoverRadius,
       },
       ...(compareData.length > 0 ? [
         {
@@ -137,9 +185,9 @@ const RefractionChart: React.FC<RefractionChartProps> = ({
           backgroundColor: highContrastMode ? '#ff7700' : 'rgba(255, 159, 64, 0.8)',
           borderColor: highContrastMode ? '#ff7700' : 'rgba(255, 159, 64, 1)',
           borderWidth: 1,
-          pointRadius: 6,
+          pointRadius: pointRadius - 2,
           pointStyle: 'triangle',
-          pointHoverRadius: 10,
+          pointHoverRadius: pointHoverRadius - 2,
         },
         {
           label: 'Comparison Left Eye',
@@ -147,9 +195,9 @@ const RefractionChart: React.FC<RefractionChartProps> = ({
           backgroundColor: highContrastMode ? '#00ffff' : 'rgba(75, 192, 192, 0.8)',
           borderColor: highContrastMode ? '#00ffff' : 'rgba(75, 192, 192, 1)',
           borderWidth: 1,
-          pointRadius: 6,
+          pointRadius: pointRadius - 2,
           pointStyle: 'triangle',
-          pointHoverRadius: 10,
+          pointHoverRadius: pointHoverRadius - 2,
         }
       ] : []),
       ...(currentPoint.length > 0 && testActive ? [
@@ -159,9 +207,9 @@ const RefractionChart: React.FC<RefractionChartProps> = ({
           backgroundColor: highContrastMode ? '#ffff00' : 'rgba(153, 102, 255, 0.8)',
           borderColor: highContrastMode ? '#ffff00' : 'rgba(153, 102, 255, 1)',
           borderWidth: 2,
-          pointRadius: 10,
+          pointRadius: pointRadius + 2,
           pointStyle: 'star',
-          pointHoverRadius: 14,
+          pointHoverRadius: pointHoverRadius + 2,
         }
       ] : []),
     ],
@@ -173,38 +221,49 @@ const RefractionChart: React.FC<RefractionChartProps> = ({
     scales: {
       x: {
         title: {
-          display: true,
+          display: !isXsScreen,
           text: 'Sphere (D)',
           color: darkMode ? '#e0e0e0' : '#333333',
           font: {
             weight: 'bold' as const,
+            size: isXsScreen ? 10 : 12,
           },
         },
         min: -10,
         max: 10,
         ticks: {
           color: darkMode ? '#e0e0e0' : '#333333',
+          font: {
+            size: isXsScreen ? 8 : 10,
+          },
+          maxRotation: isXsScreen ? 45 : 0,
         },
         grid: {
           color: darkMode ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.1)',
+          display: !isXsScreen,
         },
       },
       y: {
         title: {
-          display: true,
+          display: !isXsScreen,
           text: 'Cylinder (D)',
           color: darkMode ? '#e0e0e0' : '#333333',
           font: {
             weight: 'bold' as const,
+            size: isXsScreen ? 10 : 12,
           },
         },
         min: -6,
         max: 6,
         ticks: {
           color: darkMode ? '#e0e0e0' : '#333333',
+          font: {
+            size: isXsScreen ? 8 : 10,
+          },
         },
         grid: {
           color: darkMode ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.1)',
+          display: !isXsScreen,
         },
       },
     },
@@ -216,14 +275,24 @@ const RefractionChart: React.FC<RefractionChartProps> = ({
             return `${original.eye === 'right' ? 'OD' : 'OS'}: Sphere ${original.sphere}D, Cylinder ${original.cylinder}D, Axis ${original.axis}°`;
           },
         },
+        titleFont: {
+          size: isXsScreen ? 10 : 12,
+        },
+        bodyFont: {
+          size: isXsScreen ? 10 : 12,
+        },
+        padding: isXsScreen ? 6 : 10,
       },
       legend: {
-        display: showLegend,
+        display: isXsScreen ? false : showLegend,
+        position: isSmScreen ? 'bottom' : 'top',
         labels: {
           color: darkMode ? '#e0e0e0' : '#333333',
           font: {
-            size: 12,
+            size: isXsScreen ? 10 : 12,
           },
+          boxWidth: isXsScreen ? 8 : 12,
+          padding: isXsScreen ? 6 : 10,
         },
       },
       title: {
@@ -231,9 +300,10 @@ const RefractionChart: React.FC<RefractionChartProps> = ({
         text: title,
         color: darkMode ? '#e0e0e0' : '#333333',
         font: {
-          size: 16,
+          size: isXsScreen ? 14 : 16,
           weight: 'bold' as const,
         },
+        padding: { top: 5, bottom: isXsScreen ? 5 : 10 },
       },
     },
   };
@@ -242,17 +312,26 @@ const RefractionChart: React.FC<RefractionChartProps> = ({
     <Paper 
       elevation={3} 
       sx={{ 
-        p: 2, 
+        p: { xs: 1, sm: 2 }, 
         bgcolor: darkMode ? muiTheme.palette.background.paper : '#ffffff',
         borderRadius: '8px',
-        width: width, 
-        height: height + 50, // Adding space for the title and legend
+        width: responsiveWidth, 
+        height: 'auto',
+        maxWidth: '100%',
+        overflow: 'hidden',
       }}
     >
-      <Typography variant="h6" align="center" gutterBottom>
-        {title}
-      </Typography>
-      <Box sx={{ width: '100%', height }}>
+      {title && !isXsScreen && (
+        <Typography 
+          variant={isXsScreen ? "subtitle1" : "h6"} 
+          align="center" 
+          gutterBottom
+          sx={{ fontWeight: 'medium' }}
+        >
+          {title}
+        </Typography>
+      )}
+      <Box sx={{ width: '100%', height: responsiveHeight }}>
         <Scatter 
           ref={chartRef}
           data={data} 

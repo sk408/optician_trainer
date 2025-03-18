@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="700px" height="300px" viewBox="0 0 700 300" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect x="0" y="0" width="700" height="300" fill="#f8f9fa" />
+  
+  <!-- Divider -->
+  <line x1="350" y1="30" x2="350" y2="270" stroke="#cccccc" stroke-width="2" stroke-dasharray="5,5" />
+  
+  <!-- Titles -->
+  <text x="175" y="30" font-family="Arial" font-size="18" text-anchor="middle" font-weight="bold">Specular Reflection</text>
+  <text x="525" y="30" font-family="Arial" font-size="18" text-anchor="middle" font-weight="bold">Diffuse Reflection</text>
+  
+  <!-- Surface - Specular -->
+  <line x1="50" y1="200" x2="300" y2="200" stroke="#333333" stroke-width="3" />
+  
+  <!-- Surface - Diffuse -->
+  <path d="M400,190 Q410,205 420,195 Q430,185 440,205 Q450,215 460,200 Q470,185 480,195 Q490,205 500,190 Q510,180 520,195 Q530,210 540,195 Q550,185 560,200 Q570,210 580,195 Q590,185 600,200 Q610,215 620,195 Q630,185 640,205 Q650,190 650,200" 
+        stroke="#333333" fill="none" stroke-width="3" />
+        
+  <!-- Normal line - Specular -->
+  <line x1="175" y1="200" x2="175" y2="120" stroke="#999999" stroke-width="1" stroke-dasharray="3,3" />
+  <text x="178" y="115" font-family="Arial" font-size="12">Normal</text>
+  
+  <!-- Normal line - Diffuse -->
+  <line x1="525" y1="195" x2="525" y2="115" stroke="#999999" stroke-width="1" stroke-dasharray="3,3" />
+  <text x="528" y="110" font-family="Arial" font-size="12">Normal</text>
+  
+  <!-- Incident rays - Specular -->
+  <line x1="120" y1="120" x2="175" y2="200" stroke="#ff6600" stroke-width="2" />
+  <polygon points="120,120 128,127 126,114" fill="#ff6600" />
+  <text x="110" y="110" font-family="Arial" font-size="12">Incident</text>
+  <text x="110" y="125" font-family="Arial" font-size="12">Light</text>
+  
+  <!-- Reflected rays - Specular -->
+  <line x1="175" y1="200" x2="230" y2="120" stroke="#0066ff" stroke-width="2" />
+  <polygon points="230,120 222,127 224,114" fill="#0066ff" />
+  <text x="235" y="110" font-family="Arial" font-size="12">Reflected</text>
+  <text x="235" y="125" font-family="Arial" font-size="12">Light</text>
+  
+  <!-- Angle indicators - Specular -->
+  <path d="M175,200 A40,40 0 0,1 160,165" stroke="#ff6600" fill="none" stroke-width="1" />
+  <text x="150" y="170" font-family="Arial" font-size="10" fill="#ff6600">θ</text>
+  
+  <path d="M175,200 A40,40 0 0,0 190,165" stroke="#0066ff" fill="none" stroke-width="1" />
+  <text x="195" y="170" font-family="Arial" font-size="10" fill="#0066ff">θ</text>
+  
+  <!-- Incident rays - Diffuse -->
+  <line x1="470" y1="120" x2="525" y2="195" stroke="#ff6600" stroke-width="2" />
+  <polygon points="470,120 478,127 476,114" fill="#ff6600" />
+  <text x="460" y="110" font-family="Arial" font-size="12">Incident</text>
+  <text x="460" y="125" font-family="Arial" font-size="12">Light</text>
+  
+  <!-- Reflected rays - Diffuse, multiple directions -->
+  <line x1="525" y1="195" x2="490" y2="140" stroke="#0066ff" stroke-width="1.5" />
+  <polygon points="490,140 494,148 500,140" fill="#0066ff" />
+  
+  <line x1="525" y1="195" x2="510" y2="125" stroke="#0066ff" stroke-width="1.5" />
+  <polygon points="510,125 514,133 520,125" fill="#0066ff" />
+  
+  <line x1="525" y1="195" x2="535" y2="120" stroke="#0066ff" stroke-width="1.5" />
+  <polygon points="535,120 539,128 545,120" fill="#0066ff" />
+  
+  <line x1="525" y1="195" x2="555" y2="125" stroke="#0066ff" stroke-width="1.5" />
+  <polygon points="555,125 559,133 565,125" fill="#0066ff" />
+  
+  <line x1="525" y1="195" x2="575" y2="145" stroke="#0066ff" stroke-width="1.5" />
+  <polygon points="575,145 579,153 585,145" fill="#0066ff" />
+  
+  <text x="575" y="110" font-family="Arial" font-size="12">Scattered</text>
+  <text x="575" y="125" font-family="Arial" font-size="12">Reflection</text>
+  
+  <!-- Descriptions -->
+  <text x="175" y="250" font-family="Arial" font-size="14" text-anchor="middle">Smooth surface: Light reflects</text>
+  <text x="175" y="270" font-family="Arial" font-size="14" text-anchor="middle">at a predictable angle (mirrors)</text>
+  
+  <text x="525" y="250" font-family="Arial" font-size="14" text-anchor="middle">Rough surface: Light scatters</text>
+  <text x="525" y="270" font-family="Arial" font-size="14" text-anchor="middle">in multiple directions (paper, wall)</text>
+</svg> 

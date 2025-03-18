@@ -1,0 +1,144 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+
+# Optician Trainer Project Rules
+
+## Project Structure
+- This is a Vite TypeScript application for optician training
+- Recently migrated from Create React App (CRA) to Vite
+- Employs MUI v6 (Material UI) for UI components
+- Uses Three.js with React Three Fiber/Drei for 3D rendering (specifically for eye models)
+- Uses Chart.js and Recharts for data visualization
+- Uses React Router v7 for navigation
+- Implements code splitting with lazy loading for improved performance
+
+## Component Organization
+- `src/components/` contains reusable UI components
+- `src/pages/` contains route-level page components
+- `src/services/` contains business logic and data fetching
+- `src/hooks/` contains custom React hooks
+- `src/types/` and `src/interfaces/` contain TypeScript type definitions
+- `src/constants/` contains app-wide constants and configuration
+- `src/assets/` contains static assets like images
+
+## Code Conventions
+- React functional components with hooks are preferred
+- TypeScript interfaces should be used for props and state
+- Component files should be named in PascalCase
+- Components should have focused responsibilities (single responsibility principle)
+- MUI components should be used for consistent styling
+- Chart components should use a consistent color scheme
+- Lazy loading is used for route-level components to improve initial load time
+
+## Project-Specific Guidelines
+- Refraction component handles vision test data visualization
+- Testing interface components manage user interaction during eye exams
+- 3D eye models use Three.js through React Three Fiber and Drei
+- Patient data follows specific optometric terminology and structure
+- VisionChart handles visual acuity and field testing visualization
+- Theme context provides accessibility features including high-contrast and font size options
+- Comprehensive modules for retinoscopy, eye anatomy, and frame fitting guides
+
+## Important Files
+- `src/App.tsx` - Main application routes and structure
+- `src/components/TestingInterface.tsx` - Core testing functionality
+- `src/components/RefractionChart.tsx` - Visualizes refraction results
+- `src/components/ThemeContext.tsx` - Theme and accessibility management
+- `src/components/ThemeProvider.tsx` - MUI theme implementation
+- `src/components/GuidancePanel.tsx` - User instructions and guidance
+- `src/components/EyeModel3D.tsx` - 3D eye model visualization
+
+## Common Patterns
+- Use of useState and useEffect for component state management
+- Context API for theme, settings, and accessibility features
+- Lazy loading with Suspense for code splitting and performance optimization
+- Pages typically contain layout and pull in specific feature components
+- 3D components handle their own state but may receive config props
+- Local storage for persisting user settings and preferences
+
+## Code Examples
+
+### Component Pattern
+Components generally follow this pattern:
+```tsx
+interface ComponentProps {
+  // Props defined with TypeScript interfaces
+  propName: PropType;
+}
+
+const Component: React.FC<ComponentProps> = ({
+  propName,
+  optionalProp = defaultValue
+}) => {
+  // State hooks
+  const [state, setState] = useState<StateType>(initialState);
+  
+  // Effect hooks
+  useEffect(() => {
+    // Effects logic
+  }, [dependencies]);
+  
+  // Helper functions
+  const handleEvent = () => {
+    // Event handling logic
+  };
+  
+  // Component render
+  return (
+    <Container>
+      {/* Component JSX */}
+    </Container>
+  );
+};
+```
+
+### RefractionChart Component
+The RefractionChart component is central to visualizing vision test results:
+```tsx
+interface RefractionChartProps {
+  prescription: PrescriptionData[];
+  width?: number;
+  height?: number;
+  showLegend?: boolean;
+  title?: string;
+  comparePrescription?: PrescriptionData[]; 
+  currentSphere?: number;
+  currentCylinder?: number;
+  currentAxis?: number;
+  testActive?: boolean;
+  onPositionClick?: (sphere: number, cylinder: number, axis: number) => void;
+  interactive?: boolean;
+}
+```
+
+### Theme Context
+The application uses React Context for theme management and accessibility features:
+```tsx
+interface ThemeContextProps {
+  darkMode: boolean;
+  setDarkMode: (mode: boolean) => void;
+  highContrastMode: boolean;
+  setHighContrastMode: (mode: boolean) => void;
+  fontSize: string;
+  setFontSize: (size: string) => void;
+  includeSphereCorrection: boolean;
+  setIncludeSphereCorrection: (include: boolean) => void;
+  includeCylinderCorrection: boolean;
+  setIncludeCylinderCorrection: (include: boolean) => void;
+}
+```
+
+## Domain-Specific Knowledge
+- Sphere power is measured in diopters (e.g., +1.00, -2.50)
+- Cylinder power is measured in diopters for astigmatism correction
+- Axis is measured in degrees (0-180)
+- Visual acuity is typically recorded using Snellen notation (e.g., 20/20, 20/40)
+- Add power refers to additional correction needed for presbyopia
+- Pupillary Distance (PD) is measured in millimeters
+- Phoropter is used for refraction testing
+- Tonometry measures intraocular pressure
+- Ophthalmoscopy examines the fundus of the eye
+- Prism diopters measure the amount of prismatic correction

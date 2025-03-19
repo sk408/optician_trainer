@@ -1,0 +1,91 @@
+<svg width="700px" height="500px" viewBox="0 0 700 500" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect x="0" y="0" width="700" height="500" fill="#f5f5f5"/>
+  <text x="350" y="40" font-family="Arial" font-size="24" font-weight="bold" text-anchor="middle">Progressive Lens Design</text>
+  
+  <!-- Lens Outline -->
+  <path d="M 150,100 Q 175,90 200,90 L 500,90 Q 525,90 550,100 Q 600,120 650,200 Q 675,250 650,300 Q 600,380 550,400 Q 525,410 500,410 L 200,410 Q 175,410 150,400 Q 100,380 50,300 Q 25,250 50,200 Q 100,120 150,100 Z" 
+        fill="white" stroke="#333" stroke-width="2"/>
+  
+  <!-- Distance Zone -->
+  <path d="M 150,100 Q 175,90 200,90 L 500,90 Q 525,90 550,100 Q 600,120 650,200 Q 660,220 660,230 L 40,230 Q 40,220 50,200 Q 100,120 150,100 Z" 
+        fill="#e6f2ff" stroke="#333" stroke-width="1" fill-opacity="0.7"/>
+  <text x="350" y="160" font-family="Arial" font-size="18" font-weight="bold" text-anchor="middle">Distance Vision</text>
+  
+  <!-- Intermediate Zone -->
+  <path d="M 40,230 L 660,230 Q 665,260 660,270 L 40,270 Q 35,260 40,230 Z" 
+        fill="#ffe6cc" stroke="#333" stroke-width="1" fill-opacity="0.7"/>
+  <text x="350" y="255" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">Intermediate</text>
+  
+  <!-- Reading Zone -->
+  <path d="M 40,270 L 660,270 Q 665,280 650,300 Q 600,380 550,400 Q 525,410 500,410 L 200,410 Q 175,410 150,400 Q 100,380 50,300 Q 35,280 40,270 Z" 
+        fill="#e6ffe6" stroke="#333" stroke-width="1" fill-opacity="0.7"/>
+  <text x="350" y="340" font-family="Arial" font-size="18" font-weight="bold" text-anchor="middle">Reading Zone</text>
+  
+  <!-- Corridor -->
+  <path d="M 330,230 L 370,230 L 380,270 L 320,270 Z" 
+        fill="#ffccff" stroke="#333" stroke-width="1" fill-opacity="0.8"/>
+  <text x="350" y="190" font-family="Arial" font-size="14" text-anchor="middle">Corridor</text>
+  <line x1="350" y1="195" x2="350" y2="250" stroke="#333" stroke-width="1" stroke-dasharray="3,3"/>
+  
+  <!-- Peripheral Distortion Zones -->
+  <path d="M 150,100 Q 100,150 75,200 Q 50,250 75,300 Q 100,350 150,400 L 100,400 Q 75,375 50,300 Q 25,250 50,200 Q 75,125 100,100 Z" 
+        fill="#ffcccc" stroke="#333" stroke-width="1" fill-opacity="0.5"/>
+  <path d="M 550,100 Q 600,150 625,200 Q 650,250 625,300 Q 600,350 550,400 L 600,400 Q 625,375 650,300 Q 675,250 650,200 Q 625,125 600,100 Z" 
+        fill="#ffcccc" stroke="#333" stroke-width="1" fill-opacity="0.5"/>
+  
+  <!-- Annotations -->
+  
+  <!-- Distance Zone -->
+  <line x1="100" y1="160" x2="40" y2="120" stroke="#0066cc" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <text x="40" y="110" font-family="Arial" font-size="14" font-weight="bold" fill="#0066cc">Distance Zone</text>
+  <text x="40" y="130" font-family="Arial" font-size="12" fill="#0066cc">For far vision</text>
+  
+  <!-- Intermediate Zone -->
+  <line x1="80" y1="250" x2="20" y2="250" stroke="#ff9900" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <text x="20" y="240" font-family="Arial" font-size="14" font-weight="bold" text-anchor="end" fill="#ff9900">Intermediate</text>
+  <text x="20" y="260" font-family="Arial" font-size="12" text-anchor="end" fill="#ff9900">Computer distance</text>
+  
+  <!-- Reading Zone -->
+  <line x1="100" y1="340" x2="40" y2="380" stroke="#009933" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <text x="40" y="390" font-family="Arial" font-size="14" font-weight="bold" fill="#009933">Reading Zone</text>
+  <text x="40" y="410" font-family="Arial" font-size="12" fill="#009933">Near vision</text>
+  
+  <!-- Peripheral Distortion -->
+  <line x1="120" y1="300" x2="60" y2="330" stroke="#cc0000" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <text x="60" y="340" font-family="Arial" font-size="14" font-weight="bold" fill="#cc0000">Peripheral</text>
+  <text x="60" y="360" font-family="Arial" font-size="12" fill="#cc0000">Distortion</text>
+  
+  <!-- Corridor -->
+  <line x1="420" y1="250" x2="500" y2="250" stroke="#9900cc" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <text x="510" y="240" font-family="Arial" font-size="14" font-weight="bold" fill="#9900cc">Progression</text>
+  <text x="510" y="260" font-family="Arial" font-size="12" fill="#9900cc">Corridor</text>
+  
+  <!-- Fitting Cross -->
+  <line x1="345" y1="180" x2="355" y2="180" stroke="#333" stroke-width="2"/>
+  <line x1="350" y1="175" x2="350" y2="185" stroke="#333" stroke-width="2"/>
+  <circle cx="350" cy="180" r="5" fill="none" stroke="#333" stroke-width="1"/>
+  <line x1="370" y1="180" x2="430" y2="150" stroke="#333" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <text x="440" y="140" font-family="Arial" font-size="14" font-weight="bold" fill="#333">Fitting Cross</text>
+  <text x="440" y="160" font-family="Arial" font-size="12" fill="#333">Pupil alignment point</text>
+  
+  <!-- Legend -->
+  <rect x="450" y="300" width="200" height="150" rx="10" ry="10" fill="white" stroke="#333" stroke-width="1"/>
+  <text x="550" y="325" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">Power Progression</text>
+  
+  <!-- Distance Power -->
+  <rect x="470" y="340" width="20" height="20" fill="#e6f2ff" stroke="#333" stroke-width="1"/>
+  <text x="500" y="355" font-family="Arial" font-size="14" text-anchor="start">Distance Power</text>
+  
+  <!-- Intermediate Power -->
+  <rect x="470" y="370" width="20" height="20" fill="#ffe6cc" stroke="#333" stroke-width="1"/>
+  <text x="500" y="385" font-family="Arial" font-size="14" text-anchor="start">Intermediate</text>
+  
+  <!-- Reading Power (Add) -->
+  <rect x="470" y="400" width="20" height="20" fill="#e6ffe6" stroke="#333" stroke-width="1"/>
+  <text x="500" y="415" font-family="Arial" font-size="14" text-anchor="start">Reading (Add)</text>
+  
+  <!-- Distortion Zone -->
+  <rect x="470" y="430" width="20" height="20" fill="#ffcccc" stroke="#333" stroke-width="1"/>
+  <text x="500" y="445" font-family="Arial" font-size="14" text-anchor="start">Distortion Zone</text>
+</svg> 

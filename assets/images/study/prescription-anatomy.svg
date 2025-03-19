@@ -1,0 +1,81 @@
+<svg width="700px" height="500px" viewBox="0 0 700 500" xmlns="http://www.w3.org/2000/svg">
+  <!-- Prescription Background -->
+  <rect x="50" y="50" width="600" height="400" rx="10" ry="10" fill="#f8f9fa" stroke="#333" stroke-width="2"/>
+  
+  <!-- Prescription Header -->
+  <rect x="50" y="50" width="600" height="80" rx="10" ry="10" fill="#e6f2ff" stroke="#333" stroke-width="2"/>
+  <text x="350" y="90" font-family="Arial" font-size="24" font-weight="bold" text-anchor="middle">PRESCRIPTION</text>
+  <text x="350" y="115" font-family="Arial" font-size="16" text-anchor="middle">Dr. John Smith, Optometrist</text>
+  
+  <!-- Prescription Table -->
+  <rect x="100" y="150" width="500" height="250" fill="none" stroke="#333" stroke-width="2"/>
+  
+  <!-- Table Header Row -->
+  <rect x="100" y="150" width="500" height="40" fill="#e6e6e6" stroke="#333" stroke-width="2"/>
+  <rect x="100" y="150" width="100" height="40" fill="#e6e6e6" stroke="#333" stroke-width="2"/>
+  <text x="150" y="175" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">Eye</text>
+  
+  <rect x="200" y="150" width="100" height="40" fill="#e6e6e6" stroke="#333" stroke-width="2"/>
+  <text x="250" y="175" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">Sphere</text>
+  
+  <rect x="300" y="150" width="100" height="40" fill="#e6e6e6" stroke="#333" stroke-width="2"/>
+  <text x="350" y="175" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">Cylinder</text>
+  
+  <rect x="400" y="150" width="100" height="40" fill="#e6e6e6" stroke="#333" stroke-width="2"/>
+  <text x="450" y="175" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">Axis</text>
+  
+  <rect x="500" y="150" width="100" height="40" fill="#e6e6e6" stroke="#333" stroke-width="2"/>
+  <text x="550" y="175" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">Add</text>
+  
+  <!-- OD Row -->
+  <rect x="100" y="190" width="100" height="40" fill="white" stroke="#333" stroke-width="2"/>
+  <text x="150" y="215" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">OD (Right)</text>
+  
+  <rect x="200" y="190" width="100" height="40" fill="white" stroke="#333" stroke-width="2"/>
+  <text x="250" y="215" font-family="Arial" font-size="14" text-anchor="middle">-2.25</text>
+  
+  <rect x="300" y="190" width="100" height="40" fill="white" stroke="#333" stroke-width="2"/>
+  <text x="350" y="215" font-family="Arial" font-size="14" text-anchor="middle">-0.75</text>
+  
+  <rect x="400" y="190" width="100" height="40" fill="white" stroke="#333" stroke-width="2"/>
+  <text x="450" y="215" font-family="Arial" font-size="14" text-anchor="middle">180</text>
+  
+  <rect x="500" y="190" width="100" height="40" fill="white" stroke="#333" stroke-width="2"/>
+  <text x="550" y="215" font-family="Arial" font-size="14" text-anchor="middle">+2.00</text>
+  
+  <!-- OS Row -->
+  <rect x="100" y="230" width="100" height="40" fill="white" stroke="#333" stroke-width="2"/>
+  <text x="150" y="255" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">OS (Left)</text>
+  
+  <rect x="200" y="230" width="100" height="40" fill="white" stroke="#333" stroke-width="2"/>
+  <text x="250" y="255" font-family="Arial" font-size="14" text-anchor="middle">-2.00</text>
+  
+  <rect x="300" y="230" width="100" height="40" fill="white" stroke="#333" stroke-width="2"/>
+  <text x="350" y="255" font-family="Arial" font-size="14" text-anchor="middle">-0.50</text>
+  
+  <rect x="400" y="230" width="100" height="40" fill="white" stroke="#333" stroke-width="2"/>
+  <text x="450" y="255" font-family="Arial" font-size="14" text-anchor="middle">175</text>
+  
+  <rect x="500" y="230" width="100" height="40" fill="white" stroke="#333" stroke-width="2"/>
+  <text x="550" y="255" font-family="Arial" font-size="14" text-anchor="middle">+2.00</text>
+  
+  <!-- Annotations -->
+  <line x1="250" y1="230" x2="150" y2="300" stroke="#ff6600" stroke-width="2" stroke-dasharray="5,5"/>
+  <text x="130" y="320" font-family="Arial" font-size="12" fill="#ff6600">Sphere: Corrects nearsightedness/farsightedness</text>
+  
+  <line x1="350" y1="210" x2="250" y2="340" stroke="#0066cc" stroke-width="2" stroke-dasharray="5,5"/>
+  <text x="230" y="360" font-family="Arial" font-size="12" fill="#0066cc">Cylinder: Corrects astigmatism</text>
+  
+  <line x1="450" y1="210" x2="350" y2="380" stroke="#339933" stroke-width="2" stroke-dasharray="5,5"/>
+  <text x="330" y="400" font-family="Arial" font-size="12" fill="#339933">Axis: Direction of astigmatism (0-180°)</text>
+  
+  <line x1="550" y1="210" x2="450" y2="420" stroke="#990099" stroke-width="2" stroke-dasharray="5,5"/>
+  <text x="430" y="440" font-family="Arial" font-size="12" fill="#990099">Add: Additional power for reading (presbyopia)</text>
+  
+  <!-- PD Measurement -->
+  <rect x="100" y="300" width="500" height="40" fill="#f0f0f0" stroke="#333" stroke-width="2"/>
+  <text x="150" y="325" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">PD:</text>
+  <text x="200" y="325" font-family="Arial" font-size="14" text-anchor="left">64 mm</text>
+  <line x1="220" y1="325" x2="300" y2="460" stroke="#cc3300" stroke-width="2" stroke-dasharray="5,5"/>
+  <text x="310" y="480" font-family="Arial" font-size="12" fill="#cc3300">PD: Pupillary Distance for lens centering</text>
+</svg> 

@@ -1,0 +1,93 @@
+<svg width="800px" height="500px" viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect x="0" y="0" width="800" height="500" fill="#f0f0f0"/>
+  <text x="400" y="40" font-family="Arial" font-size="24" font-weight="bold" text-anchor="middle">Eyeglass Frame Measurements</text>
+  
+  <!-- Frame Outline -->
+  <!-- Left Lens -->
+  <ellipse cx="250" cy="200" rx="100" ry="80" fill="white" stroke="#333" stroke-width="3"/>
+  
+  <!-- Right Lens -->
+  <ellipse cx="550" cy="200" rx="100" ry="80" fill="white" stroke="#333" stroke-width="3"/>
+  
+  <!-- Bridge -->
+  <path d="M 350,200 C 370,180 430,180 450,200" fill="white" stroke="#333" stroke-width="3"/>
+  
+  <!-- Left Temple -->
+  <path d="M 150,200 C 120,200 90,100 60,100" fill="none" stroke="#333" stroke-width="3"/>
+  
+  <!-- Right Temple -->
+  <path d="M 650,200 C 680,200 710,100 740,100" fill="none" stroke="#333" stroke-width="3"/>
+  
+  <!-- Measurement Lines and Labels -->
+  
+  <!-- A: Eye Size / Lens Width -->
+  <line x1="150" y1="200" x2="350" y2="200" stroke="#0066cc" stroke-width="3"/>
+  <path d="M 150,190 L 150,210 M 350,190 L 350,210" stroke="#0066cc" stroke-width="2"/>
+  <text x="250" y="185" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle" fill="#0066cc">A</text>
+  
+  <!-- B: Bridge Width -->
+  <line x1="350" y1="200" x2="450" y2="200" stroke="#cc3300" stroke-width="3"/>
+  <path d="M 350,190 L 350,210 M 450,190 L 450,210" stroke="#cc3300" stroke-width="2"/>
+  <text x="400" y="185" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle" fill="#cc3300">B</text>
+  
+  <!-- C: Temple Length -->
+  <path d="M 650,200 C 680,200 710,100 740,100" fill="none" stroke="#009933" stroke-width="3"/>
+  <path d="M 650,190 L 650,210" stroke="#009933" stroke-width="2"/>
+  <path d="M 740,90 L 740,110" stroke="#009933" stroke-width="2"/>
+  <text x="700" y="140" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle" fill="#009933">C</text>
+  
+  <!-- D: Lens Height -->
+  <line x1="250" y1="120" x2="250" y2="280" stroke="#9900cc" stroke-width="3"/>
+  <path d="M 240,120 L 260,120 M 240,280 L 260,280" stroke="#9900cc" stroke-width="2"/>
+  <text x="230" y="200" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle" fill="#9900cc">D</text>
+  
+  <!-- ED: Effective Diameter -->
+  <path d="M 270,130 A 90,70 0 0 1 270,270" stroke="#ff6600" stroke-width="2" stroke-dasharray="5,3" fill="none"/>
+  <path d="M 265,130 L 275,130 M 265,270 L 275,270" stroke="#ff6600" stroke-width="2"/>
+  <text x="290" y="200" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle" fill="#ff6600">ED</text>
+  
+  <!-- DBL: Distance Between Lenses -->
+  <line x1="350" y1="230" x2="450" y2="230" stroke="#666699" stroke-width="2" stroke-dasharray="5,3"/>
+  <path d="M 350,225 L 350,235 M 450,225 L 450,235" stroke="#666699" stroke-width="2"/>
+  <text x="400" y="250" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle" fill="#666699">DBL</text>
+  
+  <!-- Measurement Legend -->
+  <rect x="100" y="320" width="600" height="150" rx="10" ry="10" fill="white" stroke="#333" stroke-width="1"/>
+  <text x="400" y="345" font-family="Arial" font-size="18" font-weight="bold" text-anchor="middle">Measurement Legend</text>
+  
+  <!-- A: Eye Size / Lens Width -->
+  <circle cx="130" cy="370" r="10" fill="#0066cc"/>
+  <text x="150" y="375" font-family="Arial" font-size="16" font-weight="bold" fill="#0066cc">A:</text>
+  <text x="180" y="375" font-family="Arial" font-size="14" fill="#0066cc">Eye Size / Lens Width (mm)</text>
+  
+  <!-- B: Bridge Width -->
+  <circle cx="130" cy="400" r="10" fill="#cc3300"/>
+  <text x="150" y="405" font-family="Arial" font-size="16" font-weight="bold" fill="#cc3300">B:</text>
+  <text x="180" y="405" font-family="Arial" font-size="14" fill="#cc3300">Bridge Width (mm)</text>
+  
+  <!-- C: Temple Length -->
+  <circle cx="130" cy="430" r="10" fill="#009933"/>
+  <text x="150" y="435" font-family="Arial" font-size="16" font-weight="bold" fill="#009933">C:</text>
+  <text x="180" y="435" font-family="Arial" font-size="14" fill="#009933">Temple Length (mm)</text>
+  
+  <!-- D: Lens Height -->
+  <circle cx="130" cy="460" r="10" fill="#9900cc"/>
+  <text x="150" y="465" font-family="Arial" font-size="16" font-weight="bold" fill="#9900cc">D:</text>
+  <text x="180" y="465" font-family="Arial" font-size="14" fill="#9900cc">Lens Height (mm)</text>
+  
+  <!-- ED: Effective Diameter -->
+  <circle cx="430" cy="370" r="10" fill="#ff6600"/>
+  <text x="450" y="375" font-family="Arial" font-size="16" font-weight="bold" fill="#ff6600">ED:</text>
+  <text x="485" y="375" font-family="Arial" font-size="14" fill="#ff6600">Effective Diameter (mm)</text>
+  
+  <!-- DBL: Distance Between Lenses -->
+  <circle cx="430" cy="400" r="10" fill="#666699"/>
+  <text x="450" y="405" font-family="Arial" font-size="16" font-weight="bold" fill="#666699">DBL:</text>
+  <text x="485" y="405" font-family="Arial" font-size="14" fill="#666699">Distance Between Lenses (mm)</text>
+  
+  <!-- Frame Size Format -->
+  <rect x="430" cy="430" width="250" height="30" rx="5" ry="5" fill="#e6e6e6" stroke="#333" stroke-width="1"/>
+  <text x="555" y="450" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">Frame Size Format: A-B-C</text>
+  <text x="520" y="475" font-family="Arial" font-size="14" text-anchor="middle" fill="#333">Example: 52-18-140</text>
+</svg> 

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="800px" height="300px" viewBox="0 0 800 300" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="visibleSpectrum" x1="0%" y1="0%" x2="100%" y1="0%">
+    <linearGradient id="visibleSpectrum" x1="0%" x2="100%">
       <stop offset="0%" stop-color="#6a0dad" /> <!-- Violet -->
       <stop offset="16.6%" stop-color="#0000ff" /> <!-- Blue -->
       <stop offset="33.3%" stop-color="#00ff00" /> <!-- Green -->
@@ -10,7 +10,7 @@
       <stop offset="83.3%" stop-color="#ff0000" /> <!-- Red -->
       <stop offset="100%" stop-color="#8b0000" /> <!-- Dark Red -->
     </linearGradient>
-    <linearGradient id="emSpectrumGradient" x1="0%" y1="0%" x2="100%" y1="0%">
+    <linearGradient id="emSpectrumGradient" x1="0%" x2="100%">
       <stop offset="0%" stop-color="#451d6a" /> <!-- Gamma rays -->
       <stop offset="14%" stop-color="#3b3b8c" /> <!-- X-rays -->
       <stop offset="28%" stop-color="#22408c" /> <!-- Ultraviolet -->

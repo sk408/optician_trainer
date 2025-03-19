@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800px" height="300px" viewBox="0 0 800 300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="visibleSpectrum" x1="0%" y1="0%" x2="100%" y1="0%">
+      <stop offset="0%" stop-color="#6a0dad" /> <!-- Violet -->
+      <stop offset="16.6%" stop-color="#0000ff" /> <!-- Blue -->
+      <stop offset="33.3%" stop-color="#00ff00" /> <!-- Green -->
+      <stop offset="50%" stop-color="#ffff00" /> <!-- Yellow -->
+      <stop offset="66.6%" stop-color="#ff7f00" /> <!-- Orange -->
+      <stop offset="83.3%" stop-color="#ff0000" /> <!-- Red -->
+      <stop offset="100%" stop-color="#8b0000" /> <!-- Dark Red -->
+    </linearGradient>
+    <linearGradient id="emSpectrumGradient" x1="0%" y1="0%" x2="100%" y1="0%">
+      <stop offset="0%" stop-color="#451d6a" /> <!-- Gamma rays -->
+      <stop offset="14%" stop-color="#3b3b8c" /> <!-- X-rays -->
+      <stop offset="28%" stop-color="#22408c" /> <!-- Ultraviolet -->
+      <stop offset="43%" stop-color="#22808c" /> <!-- Visible - represented differently -->
+      <stop offset="57%" stop-color="#2d8c3b" /> <!-- Infrared -->
+      <stop offset="71%" stop-color="#8c8c22" /> <!-- Microwaves -->
+      <stop offset="85%" stop-color="#8c3b22" /> <!-- Radio waves -->
+      <stop offset="100%" stop-color="#6e2e1a" /> <!-- Long radio waves -->
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect x="0" y="0" width="800" height="300" fill="#f8f9fa" />
+  
+  <!-- Title -->
+  <text x="400" y="40" font-family="Arial" font-size="24" text-anchor="middle" font-weight="bold">Electromagnetic Spectrum</text>
+  
+  <!-- Full spectrum bar -->
+  <rect x="50" y="80" width="700" height="60" fill="url(#emSpectrumGradient)" />
+  
+  <!-- Wavelength scale -->
+  <line x1="50" y1="160" x2="750" y2="160" stroke="black" stroke-width="2" />
+  <line x1="50" y1="155" x2="50" y2="165" stroke="black" stroke-width="2" />
+  <line x1="150" y1="155" x2="150" y2="165" stroke="black" stroke-width="2" />
+  <line x1="250" y1="155" x2="250" y2="165" stroke="black" stroke-width="2" />
+  <line x1="350" y1="155" x2="350" y2="165" stroke="black" stroke-width="2" />
+  <line x1="450" y1="155" x2="450" y2="165" stroke="black" stroke-width="2" />
+  <line x1="550" y1="155" x2="550" y2="165" stroke="black" stroke-width="2" />
+  <line x1="650" y1="155" x2="650" y2="165" stroke="black" stroke-width="2" />
+  <line x1="750" y1="155" x2="750" y2="165" stroke="black" stroke-width="2" />
+  
+  <!-- Wavelength labels -->
+  <text x="50" y="185" font-family="Arial" font-size="12" text-anchor="middle">10⁻¹² m</text>
+  <text x="150" y="185" font-family="Arial" font-size="12" text-anchor="middle">10⁻¹⁰ m</text>
+  <text x="250" y="185" font-family="Arial" font-size="12" text-anchor="middle">10⁻⁸ m</text>
+  <text x="350" y="185" font-family="Arial" font-size="12" text-anchor="middle">10⁻⁶ m</text>
+  <text x="450" y="185" font-family="Arial" font-size="12" text-anchor="middle">10⁻⁴ m</text>
+  <text x="550" y="185" font-family="Arial" font-size="12" text-anchor="middle">10⁻² m</text>
+  <text x="650" y="185" font-family="Arial" font-size="12" text-anchor="middle">1 m</text>
+  <text x="750" y="185" font-family="Arial" font-size="12" text-anchor="middle">10² m</text>
+  
+  <!-- Labels for different parts of the spectrum -->
+  <text x="75" y="65" font-family="Arial" font-size="14" text-anchor="middle">Gamma Rays</text>
+  <text x="175" y="65" font-family="Arial" font-size="14" text-anchor="middle">X-Rays</text>
+  <text x="275" y="65" font-family="Arial" font-size="14" text-anchor="middle">Ultraviolet</text>
+  <text x="375" y="65" font-family="Arial" font-size="14" text-anchor="middle" font-weight="bold">Visible</text>
+  <text x="475" y="65" font-family="Arial" font-size="14" text-anchor="middle">Infrared</text>
+  <text x="575" y="65" font-family="Arial" font-size="14" text-anchor="middle">Microwave</text>
+  <text x="675" y="65" font-family="Arial" font-size="14" text-anchor="middle">Radio Waves</text>
+  
+  <!-- Visible light expanded section -->
+  <text x="400" y="220" font-family="Arial" font-size="18" text-anchor="middle" font-weight="bold">Visible Light Spectrum</text>
+  <rect x="250" y="240" width="300" height="40" fill="url(#visibleSpectrum)" rx="5" ry="5" />
+  
+  <!-- Visible light wavelength labels -->
+  <text x="250" y="260" font-family="Arial" font-size="12" text-anchor="end" fill="white">380 nm</text>
+  <text x="550" y="260" font-family="Arial" font-size="12" text-anchor="start" fill="white">700 nm</text>
+  
+  <!-- Color labels -->
+  <text x="270" y="295" font-family="Arial" font-size="12" text-anchor="middle">Violet</text>
+  <text x="320" y="295" font-family="Arial" font-size="12" text-anchor="middle">Blue</text>
+  <text x="370" y="295" font-family="Arial" font-size="12" text-anchor="middle">Green</text>
+  <text x="420" y="295" font-family="Arial" font-size="12" text-anchor="middle">Yellow</text>
+  <text x="470" y="295" font-family="Arial" font-size="12" text-anchor="middle">Orange</text>
+  <text x="520" y="295" font-family="Arial" font-size="12" text-anchor="middle">Red</text>
+  
+  <!-- Connection lines from full spectrum to visible section -->
+  <line x1="350" y1="140" x2="250" y2="240" stroke="#666" stroke-width="1" stroke-dasharray="5,5" />
+  <line x1="400" y1="140" x2="550" y2="240" stroke="#666" stroke-width="1" stroke-dasharray="5,5" />
+</svg> 

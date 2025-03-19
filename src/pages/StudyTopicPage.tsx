@@ -353,7 +353,7 @@ const StudyTopicPage: React.FC = () => {
   
   if (loading || !topic) {
     return (
-      <Container maxWidth="lg">
+      <Container maxWidth={false}>
         <Box display="flex" justifyContent="center" alignItems="center" minHeight="50vh">
           <CircularProgress />
         </Box>
@@ -362,7 +362,7 @@ const StudyTopicPage: React.FC = () => {
   }
   
   return (
-    <Container maxWidth="lg" sx={{ py: 4 }}>
+    <Container maxWidth={false} sx={{ py: 4 }}>
       <Box mb={3}>
         <Breadcrumbs separator={<NextIcon fontSize="small" />} aria-label="breadcrumb">
           <Link to="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none', color: 'inherit' }}>

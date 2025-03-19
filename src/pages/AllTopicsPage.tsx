@@ -57,7 +57,10 @@ function TabPanel(props: TabPanelProps) {
 const AllTopicsPage: React.FC = () => {
   const [loading, setLoading] = useState(true);
   const [tabValue, setTabValue] = useState(0);
-  const [topics, setTopics] = useState<{ topic: StudyTopic & { examType: string, sectionId: string }, progress: TopicProgress | null }[]>([]);
+  const [topics, setTopics] = useState<{ 
+    topic: StudyTopic & { examType: "ABO" | "NCLE", sectionId: string }, 
+    progress: TopicProgress | null 
+  }[]>([]);
   const [searchTerm, setSearchTerm] = useState('');
   const [difficulty, setDifficulty] = useState<string>('all');
   const [examType, setExamType] = useState<string>('all');
@@ -67,7 +70,10 @@ const AllTopicsPage: React.FC = () => {
     const loadTopics = async () => {
       setLoading(true);
       const allTopics = StudyProgressService.getAllTopicsWithProgress();
-      setTopics(allTopics as { topic: StudyTopic & { examType: string, sectionId: string }, progress: TopicProgress | null }[]);
+      setTopics(allTopics as { 
+        topic: StudyTopic & { examType: "ABO" | "NCLE", sectionId: string }, 
+        progress: TopicProgress | null 
+      }[]);
       setLoading(false);
     };
 
@@ -138,7 +144,7 @@ const AllTopicsPage: React.FC = () => {
 
   if (loading) {
     return (
-      <Container maxWidth="lg">
+      <Container maxWidth={false}>
         <Box display="flex" justifyContent="center" alignItems="center" minHeight="50vh">
           <CircularProgress />
         </Box>
@@ -147,7 +153,7 @@ const AllTopicsPage: React.FC = () => {
   }
 
   return (
-    <Container maxWidth="lg" sx={{ py: 4 }}>
+    <Container maxWidth={false} sx={{ py: 4 }}>
       <Typography variant="h4" gutterBottom>
         ABO-NCLE Study Topics
       </Typography>

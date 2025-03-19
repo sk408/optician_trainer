@@ -20,12 +20,16 @@ import {
   TableHead,
   TableRow,
   Alert,
-  Chip
+  Chip,
+  Accordion,
+  AccordionSummary,
+  AccordionDetails
 } from '@mui/material';
 import { 
   ArrowBack as ArrowBackIcon, 
   ArrowForward as ArrowForwardIcon,
-  School as SchoolIcon 
+  School as SchoolIcon,
+  ExpandMore as ExpandMoreIcon
 } from '@mui/icons-material';
 import { Link as RouterLink } from 'react-router-dom';
 
@@ -93,8 +97,108 @@ const PRESCRIPTION_EXAMPLES = [
   }
 ];
 
+// Beginner-friendly glossary of terms
+const OPTICIAN_GLOSSARY = [
+  {
+    term: 'Prescription',
+    simpleDef: 'Written instructions for eyeglasses that tell the optician what kind of lenses you need to see clearly',
+    technicalDef: 'A formal document specifying the parameters of corrective lenses to address refractive errors and other vision conditions'
+  },
+  {
+    term: 'Sphere (SPH)',
+    simpleDef: 'The main power of your lens that corrects nearsightedness or farsightedness',
+    technicalDef: 'The dioptric power of a lens, measured in diopters (D), that corrects myopia (negative values) or hyperopia (positive values)'
+  },
+  {
+    term: 'Cylinder (CYL)',
+    simpleDef: 'Extra lens power that corrects blurry or distorted vision caused by an irregularly shaped eye',
+    technicalDef: 'The lens power that corrects astigmatism, measured in diopters, typically written as a negative value in standard notation'
+  },
+  {
+    term: 'Axis',
+    simpleDef: 'The direction (like a compass direction) where the cylinder correction is placed on your lens',
+    technicalDef: 'The orientation of the cylinder power on the lens, measured in degrees from 1 to 180'
+  },
+  {
+    term: 'Add Power (ADD)',
+    simpleDef: 'Extra magnification in the bottom part of glasses to help you see things up close, usually needed as you get older',
+    technicalDef: 'Additional lens power in the lower segment of multifocal lenses to correct presbyopia, measured in positive diopters'
+  },
+  {
+    term: 'Diopter (D)',
+    simpleDef: 'The unit used to measure how strong your glasses lenses need to be',
+    technicalDef: 'The unit of measurement for lens power, defined as the reciprocal of the focal length in meters'
+  },
+  {
+    term: 'Myopia',
+    simpleDef: 'Nearsightedness - you can see things up close clearly, but distant objects are blurry',
+    technicalDef: 'A refractive error where light focuses in front of the retina, causing distant objects to appear blurry'
+  },
+  {
+    term: 'Hyperopia',
+    simpleDef: 'Farsightedness - you may see distant objects more clearly than near objects',
+    technicalDef: 'A refractive error where light focuses behind the retina, potentially causing difficulty with near vision'
+  },
+  {
+    term: 'Astigmatism',
+    simpleDef: 'A common condition where your eye isn\'t perfectly round, causing blurry or distorted vision at all distances',
+    technicalDef: 'A refractive error caused by an irregularly shaped cornea or lens, resulting in light focusing at multiple points'
+  },
+  {
+    term: 'Presbyopia',
+    simpleDef: 'Age-related difficulty seeing things up close, usually starting around age 40-45',
+    technicalDef: 'The gradual loss of the eye\'s ability to focus on near objects due to decreased flexibility of the crystalline lens'
+  },
+  {
+    term: 'Progressive Lenses',
+    simpleDef: 'No-line multifocal glasses that let you see at all distances - far, middle, and near',
+    technicalDef: 'Multifocal lenses with a gradual transition between distance, intermediate and near vision zones without visible lines'
+  },
+  {
+    term: 'Bifocal Lenses',
+    simpleDef: 'Glasses with a visible line separating the distance part (top) from the reading part (bottom)',
+    technicalDef: 'Lenses containing two optical powers, typically for distance vision in the upper segment and near vision in the lower segment'
+  }
+];
+
 // Tutorial step content
 const TUTORIAL_STEPS = [
+  {
+    label: 'Glossary of Terms',
+    content: (
+      <Box>
+        <Typography paragraph>
+          Before diving into prescription details, let's understand some key terms used in the optical world. Toggle between simple and technical definitions based on your comfort level.
+        </Typography>
+        
+        {OPTICIAN_GLOSSARY.map((item, index) => (
+          <Accordion key={index} sx={{ mb: 1 }}>
+            <AccordionSummary
+              expandIcon={<ExpandMoreIcon />}
+              aria-controls={`glossary-content-${index}`}
+              id={`glossary-header-${index}`}
+            >
+              <Typography fontWeight="medium">{item.term}</Typography>
+            </AccordionSummary>
+            <AccordionDetails>
+              <Typography paragraph color="primary.main" fontWeight="medium">
+                Simple Definition:
+              </Typography>
+              <Typography paragraph>
+                {item.simpleDef}
+              </Typography>
+              <Typography paragraph color="secondary.main" fontWeight="medium">
+                Technical Definition:
+              </Typography>
+              <Typography>
+                {item.technicalDef}
+              </Typography>
+            </AccordionDetails>
+          </Accordion>
+        ))}
+      </Box>
+    )
+  },
   {
     label: 'Understanding Prescription Notation',
     content: (
@@ -606,7 +710,7 @@ const PrescriptionBasicsPage: React.FC = () => {
   };
 
   return (
-    <Container maxWidth="lg" sx={{ py: 4 }}>
+    <Container maxwidth={false} sx={{ py: 4 }}>
       <Paper sx={{ p: 3, mb: 4 }}>
         <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
           <SchoolIcon color="primary" sx={{ mr: 1, fontSize: 30 }} />

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Outlet, Link as RouterLink, useLocation } from 'react-router-dom';
 import {
   AppBar,
@@ -21,7 +21,8 @@ import {
   Menu,
   MenuItem,
   ListItemButton,
-  useTheme as useMuiTheme
+  useTheme as useMuiTheme,
+  Badge
 } from '@mui/material';
 import { useTheme } from './ThemeContext';
 import {
@@ -40,7 +41,8 @@ import {
   LightMode as LightModeIcon,
   Contrast as ContrastIcon,
   TextFields as TextFieldsIcon,
-  MenuBook as MenuBookIcon
+  MenuBook as MenuBookIcon,
+  EmojiPeople as BeginnerIcon
 } from '@mui/icons-material';
 
 interface LayoutProps {
@@ -99,6 +101,32 @@ const Layout: React.FC<LayoutProps> = () => {
     fontSize, 
     setFontSize 
   } = useTheme();
+  
+  // Beginner mode state
+  const [beginnerMode, setBeginnerMode] = useState<boolean>(() => {
+    const savedMode = localStorage.getItem('beginnerMode');
+    return savedMode ? JSON.parse(savedMode) : false;
+  });
+  
+  // Save beginner mode preference
+  useEffect(() => {
+    localStorage.setItem('beginnerMode', JSON.stringify(beginnerMode));
+    
+    // Update URL with beginner mode parameter
+    const url = new URL(window.location.href);
+    if (beginnerMode) {
+      url.searchParams.set('mode', 'beginner');
+    } else {
+      url.searchParams.delete('mode');
+    }
+    
+    window.history.replaceState({}, '', url.toString());
+  }, [beginnerMode]);
+  
+  // Toggle beginner mode
+  const handleBeginnerModeToggle = () => {
+    setBeginnerMode(!beginnerMode);
+  };
   
   // Drawer state
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -215,6 +243,106 @@ const Layout: React.FC<LayoutProps> = () => {
     </Box>
   );
   
+  // Modified settings menu
+  const settingsMenu = (
+    <Menu
+      anchorEl={settingsAnchorEl}
+      open={isSettingsMenuOpen}
+      onClose={handleSettingsClose}
+      transformOrigin={{ horizontal: 'right', vertical: 'top' }}
+      anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
+    >
+      <MenuItem>
+        <FormControlLabel
+          control={
+            <Switch
+              checked={darkMode}
+              onChange={() => setDarkMode(!darkMode)}
+              color="primary"
+            />
+          }
+          label={
+            <Box sx={{ display: 'flex', alignItems: 'center' }}>
+              {darkMode ? <DarkModeIcon sx={{ mr: 1 }} /> : <LightModeIcon sx={{ mr: 1 }} />}
+              <Typography>{darkMode ? 'Dark Mode' : 'Light Mode'}</Typography>
+            </Box>
+          }
+        />
+      </MenuItem>
+      
+      <MenuItem>
+        <FormControlLabel
+          control={
+            <Switch
+              checked={highContrastMode}
+              onChange={() => setHighContrastMode(!highContrastMode)}
+              color="primary"
+            />
+          }
+          label={
+            <Box sx={{ display: 'flex', alignItems: 'center' }}>
+              <ContrastIcon sx={{ mr: 1 }} />
+              <Typography>High Contrast</Typography>
+            </Box>
+          }
+        />
+      </MenuItem>
+      
+      <MenuItem>
+        <FormControlLabel
+          control={
+            <Switch
+              checked={beginnerMode}
+              onChange={handleBeginnerModeToggle}
+              color="secondary"
+            />
+          }
+          label={
+            <Box sx={{ display: 'flex', alignItems: 'center' }}>
+              <BeginnerIcon sx={{ mr: 1 }} />
+              <Typography>Beginner Mode</Typography>
+              {beginnerMode && (
+                <Badge color="secondary" variant="dot" sx={{ ml: 1 }} />
+              )}
+            </Box>
+          }
+        />
+      </MenuItem>
+      
+      <Divider />
+      
+      <MenuItem>
+        <Typography variant="body2" color="textSecondary" sx={{ mb: 1 }}>
+          Font Size
+        </Typography>
+      </MenuItem>
+      
+      <MenuItem onClick={() => handleFontSizeChange('small')}>
+        <Box sx={{ display: 'flex', alignItems: 'center' }}>
+          <TextFieldsIcon fontSize="small" sx={{ mr: 1 }} />
+          <Typography>Small</Typography>
+          {fontSize === 'small' && <Typography sx={{ ml: 1 }}>✓</Typography>}
+        </Box>
+      </MenuItem>
+      
+      <MenuItem onClick={() => handleFontSizeChange('medium')}>
+        <Box sx={{ display: 'flex', alignItems: 'center' }}>
+          <TextFieldsIcon sx={{ mr: 1 }} />
+          <Typography>Medium</Typography>
+          {fontSize === 'medium' && <Typography sx={{ ml: 1 }}>✓</Typography>}
+        </Box>
+      </MenuItem>
+      
+      <MenuItem onClick={() => handleFontSizeChange('large')}>
+        <Box sx={{ display: 'flex', alignItems: 'center' }}>
+          <TextFieldsIcon fontSize="large" sx={{ mr: 1 }} />
+          <Typography>Large</Typography>
+          {fontSize === 'large' && <Typography sx={{ ml: 1 }}>✓</Typography>}
+        </Box>
+      </MenuItem>
+    </Menu>
+  );
+  
   return (
     <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
       {/* App Bar */}
@@ -288,54 +416,7 @@ const Layout: React.FC<LayoutProps> = () => {
       </AppBar>
       
       {/* Settings Menu */}
-      <Menu
-        id="settings-menu"
-        anchorEl={settingsAnchorEl}
-        open={isSettingsMenuOpen}
-        onClose={handleSettingsClose}
-        MenuListProps={{
-          'aria-labelledby': 'settings-button',
-        }}
-      >
-        <MenuItem onClick={() => setHighContrastMode(!highContrastMode)}>
-          <ListItemIcon>
-            <ContrastIcon fontSize="small" />
-          </ListItemIcon>
-          <ListItemText>
-            {highContrastMode ? 'Disable' : 'Enable'} High Contrast
-          </ListItemText>
-        </MenuItem>
-        
-        <Divider />
-        
-        <MenuItem disabled>
-          <ListItemIcon>
-            <TextFieldsIcon fontSize="small" />
-          </ListItemIcon>
-          <ListItemText>Font Size</ListItemText>
-        </MenuItem>
-        
-        <MenuItem 
-          onClick={() => handleFontSizeChange('small')}
-          selected={fontSize === 'small'}
-        >
-          <ListItemText inset>Small</ListItemText>
-        </MenuItem>
-        
-        <MenuItem 
-          onClick={() => handleFontSizeChange('medium')}
-          selected={fontSize === 'medium'}
-        >
-          <ListItemText inset>Medium</ListItemText>
-        </MenuItem>
-        
-        <MenuItem 
-          onClick={() => handleFontSizeChange('large')}
-          selected={fontSize === 'large'}
-        >
-          <ListItemText inset>Large</ListItemText>
-        </MenuItem>
-      </Menu>
+      {settingsMenu}
       
       {/* Drawer */}
       <Drawer

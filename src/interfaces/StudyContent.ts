@@ -72,4 +72,10 @@ export interface TopicStudyContent {
   sections: StudyContentSection[];
   summary: string;
   references?: string[];
+  practiceQuestions?: {
+    question: string;
+    options: string[];
+    correctAnswer: number;
+    explanation?: string;
+  }[];
 } 

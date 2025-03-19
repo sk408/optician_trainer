@@ -16,13 +16,33 @@ export { lowVisionAidsContent } from './lowVisionAidsContent';
 export { sunglassesAndTintsContent } from './sunglassesAndTintsContent';
 export { frameAdjustmentContent } from './frameAdjustmentContent';
 export { childrenEyewearContent } from './childrenEyewearContent';
+// Measurement content
+export { pdMeasurementContent } from './pdMeasurementContent';
 // Optical theory content
 export { basicOpticsContent } from './basicOpticsContent';
 export { lensTypesContent } from './lensTypesContent';
+// Prism content
+export { prismBasicsContent } from './prismBasicsContent';
 // Future modules still to be implemented - uncomment when files are created
 export { occupationalLensesContent } from './occupationalLensesContent';
 export { prescriptionAnalysisContent } from './prescriptionAnalysisContent';
 export { refractiveErrorsAdvancedContent } from './refractiveErrorsAdvancedContent';
+// New contact lens modules
+export { contactLensComplicationsContent } from './contactLensComplicationsContent';
+export { contactLensCareContent } from './contactLensCareContent';
+export { contactLensFittingContent } from './contactLensFittingContent';
+// Laboratory procedures module
+export { laboratoryProceduresContent } from './laboratoryProceduresContent';
+// New regulations and contact lens design modules
+export { regulationsStandardsContent } from './regulationsStandardsContent';
+export { contactLensDesignMaterialsContent } from './contactLensDesignMaterialsContent';
+export { contactLensEducationFollowupContent } from './contactLensEducationFollowupContent';
+// New study content modules for ABO and NCLE
+export { dispensingMeasurementsContent } from './dispensingMeasurementsContent';
+export { frameStylesSelectionContent } from './frameStylesSelectionContent';
+export { contactLensPreFittingContent } from './contactLensPreFittingContent';
+export { contactLensDesignsDetailedContent } from './contactLensDesignsDetailedContent';
+export { contactLensFittingEvaluationContent } from './contactLensFittingEvaluationContent';
 
 // Define study topics by category for better organization in UI
 export const studyTopicsByCategory = {
@@ -112,20 +132,106 @@ export const studyTopicsByCategory = {
       title: 'Children\'s Eyewear',
       description: 'Special considerations for fitting and dispensing eyewear to children',
       difficulty: 'beginner' as const
+    },
+    {
+      id: 'laboratory-procedures',
+      title: 'Laboratory Procedures and Quality Control',
+      description: 'Lens fabrication processes, verification techniques, and quality standards',
+      difficulty: 'intermediate' as const
+    },
+    {
+      id: 'regulations-standards',
+      title: 'Regulations and Standards in Opticianry',
+      description: 'Industry standards, regulatory requirements, and professional guidelines',
+      difficulty: 'intermediate' as const
+    },
+    {
+      id: 'dispensing-measurements',
+      title: 'Patient Measurements for Dispensing',
+      description: 'Techniques and protocols for taking accurate patient measurements for optimal eyewear dispensing',
+      difficulty: 'intermediate' as const
+    }
+  ],
+  lenses: [
+    {
+      id: 'sunglasses-tints',
+      title: 'Sunglasses & Lens Tints',
+      description: 'Characteristics and applications of different sunglass types and lens tints',
+      difficulty: 'beginner' as const
+    },
+    {
+      id: 'occupational-lenses',
+      title: 'Occupational Lenses & Safety Eyewear',
+      description: 'Specialized lenses for workplace requirements and safety standards',
+      difficulty: 'intermediate' as const
+    },
+    {
+      id: 'sports-vision',
+      title: 'Sports Vision & Performance Eyewear',
+      description: 'Eyewear solutions designed for athletic performance and eye protection',
+      difficulty: 'intermediate' as const
     }
   ],
   contactLenses: [
     {
-      id: 'cl-overview',
+      id: 'contact-lens-overview',
       title: 'Introduction to Contact Lenses',
-      description: 'Basic understanding of what contact lenses are and their types',
+      description: 'Basic overview of contact lenses, types, and benefits',
       difficulty: 'beginner' as const
     },
     {
       id: 'eye-anatomy-cl',
-      title: 'Eye Anatomy for Contact Lenses',
-      description: 'Understanding the structures of the eye relevant to contact lens wear',
+      title: 'Ocular Anatomy for Contact Lenses',
+      description: 'Specific ocular anatomy relevant to contact lens fitting and wear',
       difficulty: 'beginner' as const
+    },
+    {
+      id: 'cl-fitting',
+      title: 'Contact Lens Fitting and Evaluation',
+      description: 'Techniques and considerations for fitting contact lenses',
+      difficulty: 'intermediate' as const
+    },
+    {
+      id: 'contact-lens-design-materials',
+      title: 'Contact Lens Design and Materials',
+      description: 'Understanding different contact lens designs and material properties',
+      difficulty: 'intermediate' as const
+    },
+    {
+      id: 'contact-lens-education-followup',
+      title: 'Patient Education and Follow-up for Contact Lenses',
+      description: 'Proper techniques for educating patients and follow-up care protocols',
+      difficulty: 'intermediate' as const
+    },
+    {
+      id: 'cl-care',
+      title: 'Contact Lens Care and Maintenance',
+      description: 'Proper care, cleaning, and maintenance of contact lenses',
+      difficulty: 'beginner' as const
+    },
+    {
+      id: 'cl-complications',
+      title: 'Contact Lens Complications',
+      description: 'Common complications, causes, and management strategies',
+      difficulty: 'advanced' as const
+    },
+    {
+      id: 'cl-pre-fitting',
+      title: 'Contact Lens Pre-Fitting Evaluation',
+      description: 'Comprehensive assessment techniques before contact lens fitting including patient history and ocular evaluation',
+      difficulty: 'intermediate' as const
+    },
+    {
+      id: 'cl-designs-detailed',
+      title: 'Detailed Contact Lens Designs',
+      description: 'In-depth exploration of various contact lens designs including soft, RGP, and specialty lenses',
+      difficulty: 'advanced' as const
+    },
+    {
+      id: 'cl-fitting-evaluation',
+      title: 'Contact Lens Fitting and Evaluation',
+      description: 'Techniques for fitting and evaluating different types of contact lenses to ensure optimal performance',
+      difficulty: 'intermediate' as const
     }
   ],
   professional: [
@@ -140,6 +246,14 @@ export const studyTopicsByCategory = {
       title: 'Low Vision Aids & Assistive Devices',
       description: 'Solutions for patients with significant visual impairment',
       difficulty: 'advanced' as const
+    }
+  ],
+  frames: [
+    {
+      id: 'frame-styles-selection',
+      title: 'Frame Styles and Selection Criteria',
+      description: 'Understanding frame styles and selection criteria for different face shapes, prescriptions, and needs',
+      difficulty: 'intermediate' as const
     }
   ]
 };
@@ -164,7 +278,9 @@ export const intermediateLearningPath = [
   'prescription-analysis',
   'refractive-errors-advanced',
   'occupational-lenses',
-  'sports-vision'
+  'sports-vision',
+  'laboratory-procedures',
+  'regulations-standards'
 ];
 
 export const advancedLearningPath = [
@@ -176,8 +292,13 @@ export const advancedLearningPath = [
 export const contactLensLearningPath = [
   'eye-anatomy',
   'refractive-errors',
-  'cl-overview',
-  'eye-anatomy-cl'
+  'contact-lens-overview',
+  'eye-anatomy-cl',
+  'contact-lens-design-materials',
+  'cl-fitting',
+  'contact-lens-education-followup',
+  'cl-care',
+  'cl-complications'
 ];
 
 // Export study modules with metadata for search and navigation
@@ -343,5 +464,113 @@ export const studyModuleData = [
     estimatedTimeMinutes: 45,
     prerequisiteIds: ['eye-anatomy', 'cl-overview'],
     relatedIds: ['cl-overview', 'refractive-errors']
+  },
+  {
+    id: 'cl-fitting',
+    title: 'Contact Lens Fitting and Evaluation',
+    category: 'contactLenses',
+    difficulty: 'intermediate',
+    estimatedTimeMinutes: 40,
+    prerequisiteIds: ['contact-lens-overview'],
+    relatedIds: ['eye-anatomy-cl']
+  },
+  {
+    id: 'cl-care',
+    title: 'Contact Lens Care and Maintenance',
+    category: 'contactLenses',
+    difficulty: 'beginner',
+    estimatedTimeMinutes: 35,
+    prerequisiteIds: ['contact-lens-overview'],
+    relatedIds: ['eye-anatomy-cl']
+  },
+  {
+    id: 'cl-complications',
+    title: 'Contact Lens Complications',
+    category: 'contactLenses',
+    difficulty: 'intermediate',
+    estimatedTimeMinutes: 40,
+    prerequisiteIds: ['contact-lens-overview'],
+    relatedIds: ['eye-anatomy-cl']
+  },
+  {
+    id: 'laboratory-procedures',
+    title: 'Laboratory Procedures and Quality Control',
+    category: 'dispensing',
+    difficulty: 'intermediate',
+    estimatedTimeMinutes: 60,
+    prerequisiteIds: ['lens-basics', 'frame-basics'],
+    relatedIds: ['lens-coatings', 'lens-materials', 'regulations-standards']
+  },
+  {
+    id: 'regulations-standards',
+    title: 'Regulations and Standards in Opticianry',
+    category: 'dispensing',
+    difficulty: 'intermediate',
+    estimatedTimeMinutes: 50,
+    prerequisiteIds: ['lens-basics', 'frame-basics'],
+    relatedIds: ['laboratory-procedures', 'cl-fitting', 'patient-communication']
+  },
+  {
+    id: 'contact-lens-design-materials',
+    title: 'Contact Lens Design and Materials',
+    category: 'contactLenses',
+    difficulty: 'intermediate',
+    estimatedTimeMinutes: 60,
+    prerequisiteIds: ['contact-lens-overview', 'eye-anatomy-cl'],
+    relatedIds: ['cl-fitting', 'cl-care']
+  },
+  {
+    id: 'contact-lens-education-followup',
+    title: 'Patient Education and Follow-up for Contact Lenses',
+    category: 'contactLenses',
+    difficulty: 'intermediate',
+    estimatedTimeMinutes: 45,
+    prerequisiteIds: ['contact-lens-overview'],
+    relatedIds: ['cl-care', 'cl-complications', 'cl-fitting', 'contact-lens-design-materials']
+  },
+  {
+    id: 'dispensing-measurements',
+    title: 'Patient Measurements for Dispensing',
+    category: 'dispensing',
+    difficulty: 'intermediate',
+    estimatedTimeMinutes: 40,
+    prerequisiteIds: ['frame-basics', 'lens-basics'],
+    relatedIds: ['frame-adjustment', 'patient-communication']
+  },
+  {
+    id: 'frame-styles-selection',
+    title: 'Frame Styles and Selection Criteria',
+    category: 'frames',
+    difficulty: 'intermediate',
+    estimatedTimeMinutes: 45,
+    prerequisiteIds: ['frame-basics'],
+    relatedIds: ['frame-basics']
+  },
+  {
+    id: 'cl-pre-fitting',
+    title: 'Contact Lens Pre-Fitting Evaluation',
+    category: 'contactLenses',
+    difficulty: 'intermediate',
+    estimatedTimeMinutes: 40,
+    prerequisiteIds: ['contact-lens-overview'],
+    relatedIds: ['eye-anatomy-cl']
+  },
+  {
+    id: 'cl-designs-detailed',
+    title: 'Detailed Contact Lens Designs',
+    category: 'contactLenses',
+    difficulty: 'advanced',
+    estimatedTimeMinutes: 50,
+    prerequisiteIds: ['contact-lens-overview'],
+    relatedIds: ['eye-anatomy-cl']
+  },
+  {
+    id: 'cl-fitting-evaluation',
+    title: 'Contact Lens Fitting and Evaluation',
+    category: 'contactLenses',
+    difficulty: 'intermediate',
+    estimatedTimeMinutes: 40,
+    prerequisiteIds: ['contact-lens-overview'],
+    relatedIds: ['eye-anatomy-cl']
   }
 ]; 

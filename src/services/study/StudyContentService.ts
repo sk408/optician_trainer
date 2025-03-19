@@ -17,13 +17,33 @@ import {
   sunglassesAndTintsContent,
   frameAdjustmentContent,
   childrenEyewearContent,
+  // Measurement content
+  pdMeasurementContent,
   // Optical theory content
   basicOpticsContent,
   lensTypesContent,
   // Now including all available content modules
   refractiveErrorsAdvancedContent,
   occupationalLensesContent,
-  prescriptionAnalysisContent
+  prescriptionAnalysisContent,
+  // New contact lens modules
+  contactLensComplicationsContent,
+  contactLensCareContent,
+  contactLensFittingContent,
+  // Laboratory procedures module
+  laboratoryProceduresContent,
+  // Regulations and contact lens design modules
+  regulationsStandardsContent,
+  contactLensDesignMaterialsContent,
+  contactLensEducationFollowupContent,
+  // ABO and NCLE specific modules
+  dispensingMeasurementsContent,
+  frameStylesSelectionContent,
+  contactLensPreFittingContent,
+  contactLensDesignsDetailedContent,
+  contactLensFittingEvaluationContent,
+  // Newly added prism content
+  prismBasicsContent
 } from '../../constants/studyContent';
 
 // Map of topic IDs to their study content
@@ -32,6 +52,9 @@ const studyContentMap: Record<string, TopicStudyContent> = {
   'frame-basics': frameBasicsContent,
   'lens-basics': lensBasicsContent,
   'patient-communication': patientCommunicationContent,
+  'pd-measurement': pdMeasurementContent,
+  'prescription-analysis': prescriptionAnalysisContent,
+  'prism': prismBasicsContent,
   'refractive-errors': refractiveErrorsContent,
   'lens-materials': lensMaterialsContent,
   'lens-coatings': lensCoatingsContent,
@@ -51,7 +74,22 @@ const studyContentMap: Record<string, TopicStudyContent> = {
   // Now including all available content:
   'refractive-errors-advanced': refractiveErrorsAdvancedContent,
   'occupational-lenses': occupationalLensesContent,
-  'prescription-analysis': prescriptionAnalysisContent
+  // New contact lens modules
+  'cl-complications': contactLensComplicationsContent,
+  'cl-care': contactLensCareContent,
+  'cl-fitting': contactLensFittingContent,
+  // Laboratory procedures module
+  'laboratory-procedures': laboratoryProceduresContent,
+  // Regulations and contact lens design modules
+  'regulations-standards': regulationsStandardsContent,
+  'contact-lens-design-materials': contactLensDesignMaterialsContent,
+  'contact-lens-education-followup': contactLensEducationFollowupContent,
+  // ABO and NCLE specific modules
+  'dispensing-measurements': dispensingMeasurementsContent,
+  'frame-styles-selection': frameStylesSelectionContent,
+  'cl-pre-fitting': contactLensPreFittingContent,
+  'cl-designs-detailed': contactLensDesignsDetailedContent,
+  'cl-fitting-evaluation': contactLensFittingEvaluationContent
 };
 
 class StudyContentService {

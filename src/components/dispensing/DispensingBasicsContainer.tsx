@@ -15,6 +15,9 @@ import {
 import { useTheme } from '../ThemeContext';
 import OverviewPanel from './OverviewPanel';
 import FrameMeasurementsPanel from './FrameMeasurementsPanel';
+import AdjustmentsPanel from './AdjustmentsPanel';
+import TroubleshootingPanel from './TroubleshootingPanel';
+import PracticePanel from './PracticePanel';
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -80,21 +83,15 @@ const DispensingBasicsContainer: React.FC = () => {
       </TabPanel>
 
       <TabPanel value={tabValue} index={2}>
-        <Box sx={{ p: 2 }}>
-          <p>Adjustments content will be implemented in a separate component.</p>
-        </Box>
+        <AdjustmentsPanel />
       </TabPanel>
 
       <TabPanel value={tabValue} index={3}>
-        <Box sx={{ p: 2 }}>
-          <p>Troubleshooting content will be implemented in a separate component.</p>
-        </Box>
+        <TroubleshootingPanel />
       </TabPanel>
 
       <TabPanel value={tabValue} index={4}>
-        <Box sx={{ p: 2 }}>
-          <p>Practice content will be implemented in a separate component.</p>
-        </Box>
+        <PracticePanel />
       </TabPanel>
     </Paper>
   );

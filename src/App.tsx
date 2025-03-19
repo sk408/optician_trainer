@@ -31,6 +31,7 @@ const StudyTopicPage = lazy(() => import('./pages/StudyTopicPage'));
 const StudyDashboardPage = lazy(() => import('./pages/StudyDashboardPage'));
 const ExamPrepPage = lazy(() => import('./pages/ExamPrepPage'));
 const FlashcardsPage = lazy(() => import('./pages/FlashcardsPage'));
+const ComprehensiveExamPage = lazy(() => import('./pages/ComprehensiveExamPage'));
 
 // Tutorial pages for beginners
 const PrescriptionBasicsPage = lazy(() => import('./pages/tutorials/PrescriptionBasicsPage'));
@@ -135,6 +136,15 @@ const router = createBrowserRouter([
       {
         path: 'exam-prep',
         element: <ExamPrepPage />,
+      },
+      // New comprehensive exam routes
+      {
+        path: 'comprehensive-exam/:examType',
+        element: <ComprehensiveExamPage />,
+      },
+      {
+        path: 'comprehensive-exam',
+        element: <ComprehensiveExamPage />,
       },
     ],
   },

@@ -95,7 +95,7 @@ const TestingPage: React.FC = () => {
   
   return (
     <Box sx={{ minHeight: '100vh', py: 4 }}>
-      <Container maxWidth="lg">
+      <Container maxWidth={false}>
         <Paper sx={{ p: 4, borderRadius: 2, mb: 4 }}>
           <Grid container spacing={2} alignItems="center">
             <Grid item xs={12} md={8}>

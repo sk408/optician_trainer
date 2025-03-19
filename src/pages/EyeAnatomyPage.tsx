@@ -18,7 +18,8 @@ import {
   ListItem,
   ListItemText,
   ListItemIcon,
-  Divider
+  Divider,
+  ListItemButton
 } from '@mui/material';
 import { 
   Visibility as VisibilityIcon,
@@ -134,7 +135,7 @@ const EyeAnatomyPage: React.FC = () => {
   
   return (
     <Box sx={{ minHeight: '100vh', py: 4 }}>
-      <Container maxWidth="lg">
+      <Container maxWidth={false}>
         <Paper sx={{ p: 4, borderRadius: 2, mb: 4 }}>
           <Typography variant="h4" component="h1" gutterBottom>
             Eye Anatomy Explorer
@@ -273,8 +274,7 @@ const EyeAnatomyPage: React.FC = () => {
                   <List>
                     {VISION_CONDITIONS.map((condition, index) => (
                       <React.Fragment key={index}>
-                        <ListItem 
-                          button 
+                        <ListItemButton 
                           selected={selectedCondition === index}
                           onClick={() => handleConditionChange(index)}
                         >
@@ -284,7 +284,7 @@ const EyeAnatomyPage: React.FC = () => {
                           <ListItemText 
                             primary={condition.name} 
                           />
-                        </ListItem>
+                        </ListItemButton>
                         {selectedCondition === index && (
                           <Box sx={{ pl: 4, pr: 2, pb: 2 }}>
                             <Typography variant="body2" paragraph>

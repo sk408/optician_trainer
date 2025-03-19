@@ -3,7 +3,7 @@ import { TopicStudyContent } from '../../interfaces/StudyContent';
 export const patientCommunicationContent: TopicStudyContent = {
   topicId: 'patient-communication',
   title: 'Patient Communication & Service Skills',
-  introduction: 'Effective communication and service skills are as important for opticians as technical knowledge. This module covers fundamental aspects of patient interactions, explaining complex optical concepts in simple terms, and providing exceptional service in an optical setting. These skills help build patient trust, ensure accurate understanding of their needs, and enhance practice success.',
+  introduction: 'Effective communication and service skills are just as important for opticians as technical knowledge. Many patients will be unfamiliar with optical terminology, so your ability to explain complex concepts in simple terms is essential. This module will help you develop the communication skills needed to build patient trust, understand their needs, and provide exceptional service - skills that often determine whether a patient returns to your practice.',
   objectives: [
     'Develop effective communication techniques for the optical environment',
     'Learn how to explain complex optical concepts in accessible language',
@@ -22,7 +22,7 @@ export const patientCommunicationContent: TopicStudyContent = {
           id: 'basics-intro',
           type: 'paragraph',
           content: {
-            text: 'Communication in an optical setting requires balancing technical accuracy with language patients can understand. Effective communication builds trust, ensures needs are met, and improves patient satisfaction and compliance.'
+            text: 'Communication in an optical setting requires balancing technical accuracy with language patients can understand. Think of yourself as a translator between the technical optical world and the everyday world of your patients. Effective communication builds trust, ensures needs are met, and improves patient satisfaction and compliance.'
           }
         },
         {
@@ -37,7 +37,7 @@ export const patientCommunicationContent: TopicStudyContent = {
           id: 'active-listening-para',
           type: 'paragraph',
           content: {
-            text: 'Active listening involves fully focusing on what the patient is saying rather than passively hearing their words. This skill helps identify both stated and unstated needs.'
+            text: 'Active listening involves fully focusing on what the patient is saying rather than passively hearing their words or thinking about what you\'ll say next. This skill helps identify both stated and unstated needs. Remember that many patients don\'t know how to express their vision issues in technical terms.'
           }
         },
         {
@@ -45,12 +45,12 @@ export const patientCommunicationContent: TopicStudyContent = {
           type: 'list',
           content: {
             items: [
-              'Maintain appropriate eye contact to show engagement',
+              'Maintain appropriate eye contact to show engagement (but be mindful of cultural differences)',
               'Use body language that shows attention (leaning slightly forward, nodding)',
-              'Avoid interrupting while the patient speaks',
-              'Ask clarifying questions to ensure understanding',
-              'Paraphrase what you heard to confirm accuracy',
-              'Take notes on important points when appropriate'
+              'Avoid interrupting while the patient speaks, even if you think you know what they\'re trying to say',
+              'Ask clarifying questions like "Can you tell me more about when you notice this blurriness?"',
+              'Paraphrase what you heard to confirm accuracy: "So you\'re having trouble seeing your computer screen clearly, is that right?"',
+              'Take notes on important points when appropriate, especially unique vision needs'
             ],
             ordered: false
           }
@@ -67,7 +67,7 @@ export const patientCommunicationContent: TopicStudyContent = {
           id: 'first-impressions-para',
           type: 'paragraph',
           content: {
-            text: 'The first 30 seconds of interaction set the tone for the entire patient experience. Professional appearance and demeanor create confidence in your expertise.'
+            text: 'The first 30 seconds of interaction set the tone for the entire patient experience. Professional appearance and demeanor create confidence in your expertise. Remember that getting new glasses can be stressful for patients - they may be worried about cost, appearance, or adapting to a new prescription.'
           }
         },
         {
@@ -75,11 +75,11 @@ export const patientCommunicationContent: TopicStudyContent = {
           type: 'list',
           content: {
             items: [
-              'Greet patients by name and with a smile when possible',
-              'Introduce yourself and explain your role (\"I\'m Sarah, I\'ll be your optician today\")',
-              'Maintain a professional appearance that reflects optical expertise',
-              'Acknowledge waiting patients if you\'re busy with others',
-              'Use positive language (\"I\'d be happy to help\" rather than \"I have to\")'
+              'Greet patients by name and with a smile when possible ("Good morning, Mr. Johnson, welcome to our practice")',
+              'Introduce yourself and explain your role ("I\'m Sarah, I\'ll be your optician today helping you select and fit your new eyewear")',
+              'Maintain a professional appearance that reflects optical expertise (clean, professional attire and well-fitting eyewear if you wear glasses)',
+              'Acknowledge waiting patients if you\'re busy with others ("I\'ll be with you in about 5 minutes, Ms. Garcia")',
+              'Use positive language ("I\'d be happy to help you find frames that work with your prescription" rather than "Your prescription limits your options")'
             ],
             ordered: false
           }
@@ -90,7 +90,7 @@ export const patientCommunicationContent: TopicStudyContent = {
           content: {
             type: 'note',
             title: 'Communication Barriers',
-            text: 'Be aware of potential barriers to effective communication, including hearing impairments, language differences, technical jargon, vision limitations without corrective eyewear, and cognitive disabilities. Adapt your approach to address these barriers appropriately.'
+            text: 'Be aware of potential barriers to effective communication, including hearing impairments, language differences, technical jargon, vision limitations without corrective eyewear, and cognitive disabilities. Adapt your approach to address these barriers appropriately. For example, for a patient with hearing difficulties, face them directly when speaking and reduce background noise when possible. For patients without their glasses, provide a hand-held mirror positioned at a distance they can see clearly.'
           }
         }
       ]
@@ -104,7 +104,7 @@ export const patientCommunicationContent: TopicStudyContent = {
           id: 'needs-intro',
           type: 'paragraph',
           content: {
-            text: 'A complete understanding of the patient\'s vision needs, lifestyle, preferences, and concerns is essential for making appropriate recommendations. Effective questioning techniques help uncover this information.'
+            text: 'A complete understanding of the patient\'s vision needs, lifestyle, preferences, and concerns is essential for making appropriate recommendations. Think of yourself as a detective, gathering clues about how the patient uses their eyes throughout the day. Effective questioning techniques help uncover this information, even when patients don\'t know what\'s relevant to share.'
           }
         },
         {
@@ -123,9 +123,9 @@ export const patientCommunicationContent: TopicStudyContent = {
             rows: [
               ['Open-ended', 'Gather detailed information', '"What activities do you typically do while wearing your glasses?"'],
               ['Closed', 'Confirm specific information', '"Do you use a computer at work?"'],
-              ['Probing', 'Explore concerns in greater detail', '"You mentioned having headaches - when do they typically occur?"'],
-              ['Reflective', 'Clarify and show understanding', '"So you find your current glasses uncomfortable after a few hours?"'],
-              ['Lifestyle', 'Understand daily activities', '"Tell me about your typical day and how you use your vision."']
+              ['Probing', 'Explore concerns in greater detail', '"You mentioned having headaches - when do they typically occur? Before or after reading?"'],
+              ['Reflective', 'Clarify and show understanding', '"So you find your current glasses uncomfortable after a few hours of computer work?"'],
+              ['Lifestyle', 'Understand daily activities', '"Walk me through your typical day and how you use your vision, from morning to evening."']
             ],
             caption: 'Types of questions and their uses in patient assessment'
           }
@@ -142,7 +142,7 @@ export const patientCommunicationContent: TopicStudyContent = {
           id: 'lifestyle-para',
           type: 'paragraph',
           content: {
-            text: 'Understanding a patient\'s lifestyle helps determine the most appropriate eyewear options. Key areas to explore include:'
+            text: 'Understanding a patient\'s lifestyle helps determine the most appropriate eyewear options. Patients often don\'t realize how their daily activities impact their eyewear needs. Key areas to explore include:'
           }
         },
         {
@@ -150,12 +150,12 @@ export const patientCommunicationContent: TopicStudyContent = {
           type: 'list',
           content: {
             items: [
-              'Occupation and work environment (computer usage, exposure to impacts or chemicals)',
-              'Hobbies and recreational activities (sports, reading, crafts, outdoor activities)',
-              'Digital device usage patterns (screen time, multiple devices, viewing distances)',
-              'Driving habits (frequency, night driving, sun exposure)',
-              'Previous eyewear experiences (likes, dislikes, comfort issues)',
-              'Cosmetic preferences and style considerations'
+              'Occupation and work environment (computer usage, distance to monitor, exposure to impacts or chemicals, multiple working distances)',
+              'Hobbies and recreational activities (sports, reading, crafts, outdoor activities, water exposure)',
+              'Digital device usage patterns (screen time, multiple devices, viewing distances, device sizes)',
+              'Driving habits (frequency, night driving, sun exposure, dashboard visibility needs)',
+              'Previous eyewear experiences (likes, dislikes, comfort issues, adaptation problems)',
+              'Cosmetic preferences and style considerations (fashion preferences, frame size and color preferences)'
             ],
             ordered: false
           }
@@ -173,12 +173,12 @@ export const patientCommunicationContent: TopicStudyContent = {
           type: 'list',
           content: {
             items: [
-              'Previous prescription information and changes',
-              'Adaptation issues with past eyewear',
-              'Comfort concerns with previous frames or lenses',
-              'Relevant medical conditions affecting vision or eyewear needs',
-              'Allergies that might impact frame material selection',
-              'Duration of current eyewear and reason for change'
+              'Previous prescription information and changes ("How have your glasses changed over the years?")',
+              'Adaptation issues with past eyewear ("How long did it take to get used to your last pair of glasses?")',
+              'Comfort concerns with previous frames or lenses ("Do your current glasses cause any discomfort?")',
+              'Relevant medical conditions affecting vision or eyewear needs (diabetes, dry eye, allergies)',
+              'Allergies that might impact frame material selection (nickel allergies, skin sensitivities)',
+              'Duration of current eyewear and reason for change ("What prompted you to get new glasses now?")'
             ],
             ordered: false
           }
@@ -189,7 +189,7 @@ export const patientCommunicationContent: TopicStudyContent = {
           content: {
             type: 'tip',
             title: 'Creating a Comfortable Environment',
-            text: 'Patients will share more information when they feel comfortable. Create a private consultation space where possible, use a conversational tone rather than simply completing a checklist, and show genuine interest in their responses.'
+            text: 'Patients will share more information when they feel comfortable. Create a private consultation space where possible, use a conversational tone rather than simply completing a checklist, and show genuine interest in their responses. Avoid making patients feel rushed, even when you\'re busy. A simple statement like "Let\'s take a few minutes to understand exactly what you need from your new glasses" can set a positive tone.'
           }
         }
       ]

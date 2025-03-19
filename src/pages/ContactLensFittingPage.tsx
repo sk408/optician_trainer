@@ -206,7 +206,7 @@ const ContactLensFittingPage: React.FC = () => {
   
   return (
     <Box sx={{ minHeight: '100vh', py: 4 }}>
-      <Container maxWidth="lg">
+      <Container maxWidth={false}>
         <Paper sx={{ p: 4, borderRadius: 2, mb: 4 }}>
           <Typography variant="h4" component="h1" gutterBottom>
             Contact Lens Fitting

@@ -32,7 +32,10 @@ import {
   LightbulbOutlined as TipsIcon,
   StarOutlined as BeginnerIcon,
   Speed as IntermediateIcon,
-  Psychology as AdvancedIcon
+  Psychology as AdvancedIcon,
+  Timer as TimerIcon,
+  Check as CheckIcon,
+  MenuBook
 } from '@mui/icons-material';
 import { Link as RouterLink } from 'react-router-dom';
 import { useTheme } from '../components/ThemeContext';
@@ -160,7 +163,7 @@ const HomePage: React.FC = () => {
               mb: 3
             }}
           >
-            Optician Trainer for Beginners
+            Optician Trainer & Certification Prep
           </Typography>
           <Typography
             variant="h5"
@@ -173,7 +176,7 @@ const HomePage: React.FC = () => {
               mx: 'auto'
             }}
           >
-            Your step-by-step guide to mastering optician skills from the ground up — no prior experience required
+            Master optician skills and prepare for ABO-NCLE certification exams with our comprehensive training platform
           </Typography>
           <Box sx={{ display: 'flex', gap: 2, flexWrap: 'wrap', justifyContent: 'center', mb: 6 }}>
             <Button 
@@ -186,16 +189,7 @@ const HomePage: React.FC = () => {
             >
               Begin Learning Path
             </Button>
-            <Button 
-              variant="contained" 
-              color="primary" 
-              component={RouterLink} 
-              to="/dispensing-basics"
-              size="large"
-              startIcon={<SchoolIcon />}
-            >
-              Begin Learning Path
-            </Button>
+
             <Button 
               variant="outlined" 
               color="primary" 
@@ -205,6 +199,17 @@ const HomePage: React.FC = () => {
               startIcon={<StudyIcon />}
             >
               Browse Study Materials
+            </Button>
+
+            <Button 
+              variant="contained" 
+              color="secondary" 
+              component={RouterLink} 
+              to="/comprehensive-exam"
+              size="large"
+              startIcon={<MenuBook />}
+            >
+              Practice Certification Exams
             </Button>
           </Box>
           
@@ -230,9 +235,7 @@ const HomePage: React.FC = () => {
                   Whether you're preparing for an optician career, studying for certification exams, or just started your first job, we'll guide you through everything you need to know.
                 </Typography>
                 <Divider sx={{ my: 2 }} />
-                <Typography variant="subtitle2" color="textSecondary" sx={{ fontStyle: 'italic' }}>
-                  "I went from knowing nothing about optics to confidently fitting frames in just weeks." — Recent Graduate
-                </Typography>
+
               </Paper>
             </Grid>
           </Grid>
@@ -470,6 +473,204 @@ const HomePage: React.FC = () => {
           ))}
         </Grid>
       </Container>
+      
+      {/* Comprehensive Exam Section */}
+      <Box sx={{ 
+        py: 8, 
+        backgroundColor: darkMode ? 'background.paper' : '#f0f7ff',
+        borderTop: '1px solid',
+        borderBottom: '1px solid',
+        borderColor: darkMode ? 'divider' : 'rgba(0, 0, 0, 0.08)'
+      }}>
+        <Container maxWidth={false}>
+          <Typography 
+            variant="h4" 
+            component="h2" 
+            align="center" 
+            gutterBottom
+            sx={{ fontWeight: 'medium' }}
+          >
+            Comprehensive Certification Exams
+          </Typography>
+          <Typography 
+            variant="subtitle1" 
+            align="center" 
+            color="textSecondary" 
+            paragraph
+            sx={{ mb: 6, maxWidth: 700, mx: 'auto' }}
+          >
+            Full-length practice exams that simulate the actual ABO and NCLE certification tests
+          </Typography>
+          
+          <Grid container spacing={4} justifyContent="center">
+            {/* ABO Exam Card */}
+            <Grid item xs={12} md={6} lg={5}>
+              <Card 
+                sx={{ 
+                  height: '100%', 
+                  display: 'flex', 
+                  flexDirection: 'column',
+                  borderRadius: 2,
+                  boxShadow: 3,
+                  transition: 'all 0.3s ease',
+                  '&:hover': {
+                    transform: 'scale(1.02)',
+                    boxShadow: 6
+                  }
+                }}
+              >
+                <Box 
+                  sx={{ 
+                    bgcolor: '#3f51b5',
+                    py: 4,
+                    px: 3,
+                    display: 'flex',
+                    flexDirection: 'column',
+                    color: 'white',
+                    position: 'relative'
+                  }}
+                >
+                  <Typography variant="h4" component="h3" gutterBottom fontWeight="bold">
+                    ABO Certification Exam
+                  </Typography>
+                  <Typography variant="subtitle1">
+                    American Board of Opticianry
+                  </Typography>
+                  <Box sx={{ display: 'flex', mt: 2, gap: 2 }}>
+                    <Chip 
+                      label="150 minutes" 
+                      size="small" 
+                      sx={{ bgcolor: 'rgba(255,255,255,0.2)', color: 'white' }} 
+                      icon={<TimerIcon style={{ color: 'white' }} />}
+                    />
+                    <Chip 
+                      label="125 questions" 
+                      size="small" 
+                      sx={{ bgcolor: 'rgba(255,255,255,0.2)', color: 'white' }} 
+                    />
+                  </Box>
+                </Box>
+                <CardContent sx={{ flexGrow: 1, p: 3 }}>
+                  <List>
+                    <ListItem>
+                      <ListItemIcon><CheckIcon color="primary" /></ListItemIcon>
+                      <ListItemText primary="Ophthalmic Optics & Principles" />
+                    </ListItem>
+                    <ListItem>
+                      <ListItemIcon><CheckIcon color="primary" /></ListItemIcon>
+                      <ListItemText primary="Prescription Analysis & Interpretation" />
+                    </ListItem>
+                    <ListItem>
+                      <ListItemIcon><CheckIcon color="primary" /></ListItemIcon>
+                      <ListItemText primary="Products & Materials" />
+                    </ListItem>
+                    <ListItem>
+                      <ListItemIcon><CheckIcon color="primary" /></ListItemIcon>
+                      <ListItemText primary="Dispensing Procedures & Regulations" />
+                    </ListItem>
+                  </List>
+                </CardContent>
+                <CardActions sx={{ p: 3, pt: 0 }}>
+                  <Button 
+                    component={RouterLink} 
+                    to="/comprehensive-exam/abo" 
+                    size="large" 
+                    fullWidth 
+                    variant="contained"
+                    color="primary"
+                    startIcon={<SchoolIcon />}
+                  >
+                    Start ABO Practice Exam
+                  </Button>
+                </CardActions>
+              </Card>
+            </Grid>
+            
+            {/* NCLE Exam Card */}
+            <Grid item xs={12} md={6} lg={5}>
+              <Card 
+                sx={{ 
+                  height: '100%', 
+                  display: 'flex', 
+                  flexDirection: 'column',
+                  borderRadius: 2,
+                  boxShadow: 3,
+                  transition: 'all 0.3s ease',
+                  '&:hover': {
+                    transform: 'scale(1.02)',
+                    boxShadow: 6
+                  }
+                }}
+              >
+                <Box 
+                  sx={{ 
+                    bgcolor: '#f50057',
+                    py: 4,
+                    px: 3,
+                    display: 'flex',
+                    flexDirection: 'column',
+                    color: 'white',
+                    position: 'relative'
+                  }}
+                >
+                  <Typography variant="h4" component="h3" gutterBottom fontWeight="bold">
+                    NCLE Certification Exam
+                  </Typography>
+                  <Typography variant="subtitle1">
+                    National Contact Lens Examiners
+                  </Typography>
+                  <Box sx={{ display: 'flex', mt: 2, gap: 2 }}>
+                    <Chip 
+                      label="150 minutes" 
+                      size="small" 
+                      sx={{ bgcolor: 'rgba(255,255,255,0.2)', color: 'white' }} 
+                      icon={<TimerIcon style={{ color: 'white' }} />}
+                    />
+                    <Chip 
+                      label="125 questions" 
+                      size="small" 
+                      sx={{ bgcolor: 'rgba(255,255,255,0.2)', color: 'white' }} 
+                    />
+                  </Box>
+                </Box>
+                <CardContent sx={{ flexGrow: 1, p: 3 }}>
+                  <List>
+                    <ListItem>
+                      <ListItemIcon><CheckIcon color="secondary" /></ListItemIcon>
+                      <ListItemText primary="Ocular Anatomy & Physiology" />
+                    </ListItem>
+                    <ListItem>
+                      <ListItemIcon><CheckIcon color="secondary" /></ListItemIcon>
+                      <ListItemText primary="Contact Lens Fitting & Design" />
+                    </ListItem>
+                    <ListItem>
+                      <ListItemIcon><CheckIcon color="secondary" /></ListItemIcon>
+                      <ListItemText primary="Patient Care & Education" />
+                    </ListItem>
+                    <ListItem>
+                      <ListItemIcon><CheckIcon color="secondary" /></ListItemIcon>
+                      <ListItemText primary="Contact Lens Complications" />
+                    </ListItem>
+                  </List>
+                </CardContent>
+                <CardActions sx={{ p: 3, pt: 0 }}>
+                  <Button 
+                    component={RouterLink} 
+                    to="/comprehensive-exam/ncle" 
+                    size="large" 
+                    fullWidth 
+                    variant="contained"
+                    color="secondary"
+                    startIcon={<ContactLensIcon />}
+                  >
+                    Start NCLE Practice Exam
+                  </Button>
+                </CardActions>
+              </Card>
+            </Grid>
+          </Grid>
+        </Container>
+      </Box>
       
       {/* Beginner Success */}
       <Box sx={{ 

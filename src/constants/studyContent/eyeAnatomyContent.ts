@@ -3,7 +3,7 @@ import { TopicStudyContent } from '../../interfaces/StudyContent';
 export const eyeAnatomyContent: TopicStudyContent = {
   topicId: 'eye-anatomy',
   title: 'Human Eye Anatomy & Function',
-  introduction: 'Understanding the anatomy and function of the human eye is fundamental for any optician. This knowledge helps you comprehend how vision works, why vision problems occur, and how optical solutions can correct them. This module provides a comprehensive introduction to eye anatomy that will serve as the foundation for your optician career.',
+  introduction: 'Understanding the anatomy and function of the human eye is fundamental for any optician. This knowledge helps you comprehend how vision works, why vision problems occur, and how optical solutions can correct them. Don\'t worry if you\'re new to these terms - we\'ll explain everything in simple language that you can then use with your patients.',
   objectives: [
     'Identify the major anatomical structures of the eye',
     'Understand the function of each part of the eye in the visual process',
@@ -22,7 +22,7 @@ export const eyeAnatomyContent: TopicStudyContent = {
           id: 'eye-intro',
           type: 'paragraph',
           content: {
-            text: 'The human eye is an incredibly complex sensory organ that allows us to perceive the world around us. Despite being only about one inch in diameter, it contains over two million working parts that function together to convert light into electrical signals that the brain interprets as visual images.'
+            text: 'The human eye is an incredibly complex sensory organ that allows us to perceive the world around us. Despite being only about one inch in diameter (about the size of a ping pong ball), it contains over two million working parts that function together to convert light into electrical signals that the brain interprets as visual images.'
           }
         },
         {
@@ -39,7 +39,7 @@ export const eyeAnatomyContent: TopicStudyContent = {
           id: 'eye-comparison',
           type: 'paragraph',
           content: {
-            text: 'The eye is often compared to a camera, as both capture light and create images. However, the eye is vastly more sophisticated than any camera ever made, capable of automatic focusing, adjusting to varying light conditions, and processing incredible detail and color variation.'
+            text: 'The eye is often compared to a camera, as both capture light and create images. Think of the front of your eye (cornea and lens) as the camera lens, the iris as the aperture that controls light, and the retina as the film or digital sensor that captures the image. However, the eye is vastly more sophisticated than any camera ever made, capable of automatic focusing, adjusting to varying light conditions, and processing incredible detail and color variation.'
           }
         }
       ]
@@ -53,7 +53,7 @@ export const eyeAnatomyContent: TopicStudyContent = {
           id: 'external-intro',
           type: 'paragraph',
           content: {
-            text: 'Before examining the internal components of the eye, it\'s important to understand the external structures that protect the eye and assist in its function.'
+            text: 'Before examining the internal components of the eye, it\'s important to understand the external structures that protect the eye and assist in its function. These are the parts you can see when looking at someone\'s face.'
           }
         },
         {
@@ -69,7 +69,7 @@ export const eyeAnatomyContent: TopicStudyContent = {
           type: 'definition',
           content: {
             term: 'Eyelids',
-            definition: 'Thin folds of skin that protect the eye from foreign objects, spread tears over the cornea, and limit light entry.',
+            definition: 'Thin folds of skin that protect the eye from foreign objects, spread tears over the cornea, and limit light entry. Think of them as natural blinds or shutters for your eyes.',
             related: ['blink-reflex', 'eyelashes']
           }
         },
@@ -78,7 +78,7 @@ export const eyeAnatomyContent: TopicStudyContent = {
           type: 'definition',
           content: {
             term: 'Eyelashes',
-            definition: 'Short hairs growing from the edges of the eyelids that help protect the eye from debris.',
+            definition: 'Short hairs growing from the edges of the eyelids that help protect the eye from debris. They work like guards, keeping dust and small particles from entering your eyes.',
             related: ['eyelids']
           }
         },
@@ -87,7 +87,7 @@ export const eyeAnatomyContent: TopicStudyContent = {
           type: 'definition',
           content: {
             term: 'Orbit',
-            definition: 'The bony socket in the skull that houses and protects the eyeball.',
+            definition: 'The bony socket in the skull that houses and protects the eyeball. This is the eye\'s "room" in your skull, providing protection much like a helmet protects your head.',
             related: ['extraocular-muscles']
           }
         },
@@ -95,7 +95,7 @@ export const eyeAnatomyContent: TopicStudyContent = {
           id: 'lacrimal-system',
           type: 'heading',
           content: {
-            text: 'Lacrimal System',
+            text: 'Lacrimal System (Tear System)',
             level: 3
           }
         },
@@ -104,7 +104,7 @@ export const eyeAnatomyContent: TopicStudyContent = {
           type: 'definition',
           content: {
             term: 'Lacrimal Glands',
-            definition: 'Glands located above the outer corner of each eye that produce tears to keep the eye moist and clean.',
+            definition: 'Glands located above the outer corner of each eye that produce tears to keep the eye moist and clean. These are your eye\'s natural "cleaning system" that works constantly to keep your eyes comfortable.',
             related: ['tears', 'lacrimal-ducts']
           }
         },
@@ -113,7 +113,7 @@ export const eyeAnatomyContent: TopicStudyContent = {
           type: 'definition',
           content: {
             term: 'Lacrimal Ducts',
-            definition: 'Small channels that drain tears from the eye into the nasal cavity.',
+            definition: 'Small channels that drain tears from the eye into the nasal cavity. This is why your nose often runs when you cry - the tears are flowing through these ducts from your eyes to your nose.',
             related: ['lacrimal-gland']
           }
         },
@@ -123,14 +123,14 @@ export const eyeAnatomyContent: TopicStudyContent = {
           content: {
             type: 'info',
             title: 'The Importance of Tears',
-            text: 'Tears are essential for maintaining eye health. They lubricate the eye, wash away particles, and contain antibodies that protect against infection. Conditions like dry eye can significantly impact vision comfort and quality.'
+            text: 'Tears are essential for maintaining eye health. They lubricate the eye (like oil in a machine), wash away particles (like windshield washer fluid), and contain antibodies that protect against infection. Conditions like dry eye can significantly impact vision comfort and quality. Many patients with dry eyes will need special eyedrops to supplement their natural tears.'
           }
         },
         {
           id: 'extraocular-muscles-heading',
           type: 'heading',
           content: {
-            text: 'Extraocular Muscles',
+            text: 'Extraocular Muscles (Eye Movement Muscles)',
             level: 3
           }
         },
@@ -138,7 +138,7 @@ export const eyeAnatomyContent: TopicStudyContent = {
           id: 'extraocular-muscles-para',
           type: 'paragraph',
           content: {
-            text: 'Six muscles control the movement of each eye. These muscles work in coordination to allow precise eye movements and focusing on objects at different distances.'
+            text: 'Six muscles control the movement of each eye. These muscles work in coordination to allow precise eye movements and focusing on objects at different distances. Think of these as the "steering system" for your eyes.'
           }
         },
         {
@@ -146,12 +146,12 @@ export const eyeAnatomyContent: TopicStudyContent = {
           type: 'list',
           content: {
             items: [
-              'Superior rectus - moves the eye upward',
-              'Inferior rectus - moves the eye downward',
-              'Lateral rectus - moves the eye outward (away from the nose)',
-              'Medial rectus - moves the eye inward (toward the nose)',
-              'Superior oblique - rotates the eye inward and downward',
-              'Inferior oblique - rotates the eye outward and upward'
+              'Superior rectus - moves the eye upward (looking up)',
+              'Inferior rectus - moves the eye downward (looking down)',
+              'Lateral rectus - moves the eye outward, away from the nose (looking to the side)',
+              'Medial rectus - moves the eye inward, toward the nose (looking toward your nose)',
+              'Superior oblique - rotates the eye inward and downward (complex movements)',
+              'Inferior oblique - rotates the eye outward and upward (complex movements)'
             ],
             ordered: false
           }
@@ -162,28 +162,28 @@ export const eyeAnatomyContent: TopicStudyContent = {
           content: {
             type: 'note',
             title: 'Clinical Note',
-            text: 'Imbalances in these muscles can lead to strabismus (crossed eyes) or diplopia (double vision). Understanding these conditions is important when fitting certain types of corrective lenses.'
+            text: 'Imbalances in these muscles can lead to strabismus (crossed eyes) or diplopia (double vision). When these muscles don\'t work together properly, one eye might turn in a different direction than the other, or a person might see two images instead of one. Understanding these conditions is important when fitting certain types of corrective lenses.'
           }
         }
       ]
     },
     {
       id: 'anterior-segment',
-      title: 'Anterior Segment of the Eye',
+      title: 'Anterior Segment of the Eye (Front Part)',
       type: 'main',
       content: [
         {
           id: 'anterior-intro',
           type: 'paragraph',
           content: {
-            text: 'The anterior (front) segment of the eye includes structures from the cornea to the lens. These components are crucial for focusing light onto the retina.'
+            text: 'The anterior (front) segment of the eye includes structures from the cornea to the lens. These components are crucial for focusing light onto the retina, similar to how the lens of a camera focuses light onto film or a digital sensor.'
           }
         },
         {
           id: 'cornea-heading',
           type: 'heading',
           content: {
-            text: 'The Cornea',
+            text: 'The Cornea (Front Window)',
             level: 3
           }
         },
@@ -192,7 +192,7 @@ export const eyeAnatomyContent: TopicStudyContent = {
           type: 'definition',
           content: {
             term: 'Cornea',
-            definition: 'The clear, dome-shaped front surface of the eye that provides most of the eye\'s focusing power. It bends (refracts) light as it enters the eye.',
+            definition: 'The clear, dome-shaped front surface of the eye that provides most of the eye\'s focusing power. It bends (refracts) light as it enters the eye. Think of it as the front window of the eye - it must stay clear for light to enter properly.',
             related: ['refraction', 'corneal-layers']
           }
         },
@@ -200,7 +200,7 @@ export const eyeAnatomyContent: TopicStudyContent = {
           id: 'cornea-para',
           type: 'paragraph',
           content: {
-            text: 'The cornea provides approximately 2/3 of the eye\'s total focusing power. It has no blood vessels, receiving oxygen directly from the air. Its transparency is crucial for clear vision.'
+            text: 'The cornea provides approximately 2/3 of the eye\'s total focusing power. It has no blood vessels, receiving oxygen directly from the air (like your skin breathes). Its transparency is crucial for clear vision - any clouding or irregularity here will significantly affect sight.'
           }
         },
         {
@@ -209,7 +209,7 @@ export const eyeAnatomyContent: TopicStudyContent = {
           content: {
             type: 'important',
             title: 'Important',
-            text: 'Corneal conditions such as keratoconus, corneal abrasions, and dystrophies can significantly impact vision and may require special contact lens fittings or other interventions.'
+            text: 'Corneal conditions such as keratoconus (cone-shaped cornea), corneal abrasions (scratches), and dystrophies (inherited disorders) can significantly impact vision and may require special contact lens fittings or other interventions. When patients mention having a "scratched cornea" or "cornea problems," these conditions may be what they\'re referring to.'
           }
         },
         {
@@ -217,7 +217,7 @@ export const eyeAnatomyContent: TopicStudyContent = {
           type: 'definition',
           content: {
             term: 'Anterior Chamber',
-            definition: 'The fluid-filled space between the cornea and the iris, filled with aqueous humor.',
+            definition: 'The fluid-filled space between the cornea and the iris, filled with aqueous humor. This is like a small reservoir of clear fluid in the front part of the eye.',
             related: ['aqueous-humor', 'iridocorneal-angle']
           }
         },
@@ -226,7 +226,7 @@ export const eyeAnatomyContent: TopicStudyContent = {
           type: 'definition',
           content: {
             term: 'Aqueous Humor',
-            definition: 'Clear fluid that fills the anterior chamber, providing nutrients to the cornea and lens while maintaining intraocular pressure.',
+            definition: 'Clear fluid that fills the anterior chamber, providing nutrients to the cornea and lens while maintaining intraocular pressure. This fluid is constantly produced and drained - similar to how water flows into and out of a sink with the tap on and the drain open.',
             related: ['anterior-chamber', 'intraocular-pressure']
           }
         },
@@ -235,7 +235,7 @@ export const eyeAnatomyContent: TopicStudyContent = {
           type: 'definition',
           content: {
             term: 'Iris',
-            definition: 'The colored part of the eye that controls the size of the pupil, regulating the amount of light entering the eye.',
+            definition: 'The colored part of the eye that controls the size of the pupil, regulating the amount of light entering the eye. Just like the aperture on a camera adjusts to different lighting conditions, your iris expands and contracts to control light entry.',
             related: ['pupil', 'eye-color']
           }
         },
@@ -243,7 +243,7 @@ export const eyeAnatomyContent: TopicStudyContent = {
           id: 'iris-para',
           type: 'paragraph',
           content: {
-            text: 'The iris contains pigmented cells that determine eye color. It has two types of muscles: the sphincter pupillae (constricts the pupil in bright light) and the dilator pupillae (enlarges the pupil in dim light).'
+            text: 'The iris contains pigmented cells that determine eye color (blue, green, brown, etc.). It has two types of muscles: the sphincter pupillae (constricts the pupil in bright light) and the dilator pupillae (enlarges the pupil in dim light). When an eye doctor puts in drops that "dilate" your eyes, they\'re temporarily disabling the sphincter muscle, making your pupils stay large.'
           }
         },
         {
@@ -619,5 +619,117 @@ export const eyeAnatomyContent: TopicStudyContent = {
     'Brooks, C. W., & Borish, I. M. (2007). System for Ophthalmic Dispensing (3rd ed.). Butterworth-Heinemann.',
     'Jalie, M. (2008). Ophthalmic Lenses and Dispensing (3rd ed.). Butterworth-Heinemann.',
     'Remington, L. A. (2012). Clinical Anatomy and Physiology of the Visual System (3rd ed.). Butterworth-Heinemann.'
+  ],
+  practiceQuestions: [
+    {
+      question: 'Which structure provides approximately 2/3 of the eye\'s focusing power?',
+      options: [
+        'Lens',
+        'Cornea',
+        'Iris',
+        'Vitreous humor'
+      ],
+      correctAnswer: 1,
+      explanation: 'The cornea provides approximately 2/3 (about 43 diopters) of the eye\'s total focusing power (around 60 diopters), making it the primary refracting structure. The lens provides the remaining focusing power and can change shape to adjust focus.'
+    },
+    {
+      question: 'What structure controls the amount of light entering the eye?',
+      options: [
+        'Cornea',
+        'Lens',
+        'Iris',
+        'Pupil'
+      ],
+      correctAnswer: 2,
+      explanation: 'The iris is the colored part of the eye that controls the size of the pupil. It contains muscles that contract or relax to adjust how much light enters the eye, similar to the aperture of a camera.'
+    },
+    {
+      question: 'Which cells in the retina are responsible for color vision?',
+      options: [
+        'Rods',
+        'Cones',
+        'Bipolar cells',
+        'Ganglion cells'
+      ],
+      correctAnswer: 1,
+      explanation: 'Cones are specialized photoreceptor cells responsible for color vision and detailed central vision. They function best in bright light and are concentrated in the macula, particularly in the fovea.'
+    },
+    {
+      question: 'Where is the blind spot located in the eye?',
+      options: [
+        'Center of the macula',
+        'Periphery of the retina',
+        'At the optic nerve head',
+        'On the cornea'
+      ],
+      correctAnswer: 2,
+      explanation: 'The blind spot is located at the optic nerve head (optic disc), where the optic nerve exits the eye. This area lacks photoreceptors, so no visual information can be detected there.'
+    },
+    {
+      question: 'In presbyopia, which structure loses its elasticity?',
+      options: [
+        'Cornea',
+        'Crystalline lens',
+        'Iris',
+        'Retina'
+      ],
+      correctAnswer: 1,
+      explanation: 'Presbyopia results from the gradual loss of elasticity in the crystalline lens and/or weakening of the ciliary muscles. This reduces the ability to focus on near objects and typically becomes noticeable around age 40-45.'
+    },
+    {
+      question: 'What is the function of the ciliary body?',
+      options: [
+        'Controls pupil size',
+        'Changes lens shape for focusing',
+        'Produces tears',
+        'Converts light into neural signals'
+      ],
+      correctAnswer: 1,
+      explanation: 'The ciliary body contains muscles that control the shape of the lens for focusing (accommodation) and produces aqueous humor. When ciliary muscles contract, the lens becomes more convex for near vision; when they relax, the lens flattens for distance vision.'
+    },
+    {
+      question: 'Which part of the eye contains the highest concentration of cone photoreceptors?',
+      options: [
+        'Peripheral retina',
+        'Optic disc',
+        'Fovea centralis',
+        'Cornea'
+      ],
+      correctAnswer: 2,
+      explanation: 'The fovea centralis, located in the center of the macula, contains the highest concentration of cone photoreceptors and provides the sharpest vision. It has no blood vessels to interfere with light reaching the photoreceptors.'
+    },
+    {
+      question: 'What is the purpose of the vitreous humor?',
+      options: [
+        'To focus light rays',
+        'To maintain eye shape and support retina',
+        'To supply oxygen to the lens',
+        'To produce aqueous fluid'
+      ],
+      correctAnswer: 1,
+      explanation: 'The vitreous humor is a clear, gel-like substance that fills the space between the lens and the retina. It helps maintain the eye\'s shape, supports the retina, and keeps it properly positioned against the back of the eye.'
+    },
+    {
+      question: 'Which condition results from an elongated eyeball?',
+      options: [
+        'Hyperopia',
+        'Myopia',
+        'Presbyopia',
+        'Color blindness'
+      ],
+      correctAnswer: 1,
+      explanation: 'Myopia (nearsightedness) typically results from an eyeball that is too long, causing light to focus in front of the retina rather than directly on it. This makes distant objects appear blurry while near objects remain clear.'
+    },
+    {
+      question: 'What is the function of the sclera?',
+      options: [
+        'To focus light',
+        'To protect and maintain eye shape',
+        'To control pupil size',
+        'To convert light to electrical signals'
+      ],
+      correctAnswer: 1,
+      explanation: 'The sclera is the white, opaque, protective outer layer of the eye. It maintains the eye\'s shape, provides structural support and protection, and serves as an attachment site for the extraocular muscles that control eye movement.'
+    }
   ]
 }; 

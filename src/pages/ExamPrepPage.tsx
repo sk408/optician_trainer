@@ -143,7 +143,7 @@ const ExamPrepPage: React.FC = () => {
   
   if (loading) {
     return (
-      <Container maxWidth="lg">
+      <Container maxWidth={false}>
         <Box display="flex" justifyContent="center" alignItems="center" minHeight="50vh">
           <CircularProgress />
         </Box>
@@ -152,7 +152,7 @@ const ExamPrepPage: React.FC = () => {
   }
   
   return (
-    <Container maxWidth="lg" sx={{ py: 4 }}>
+    <Container maxWidth={false} sx={{ py: 4 }}>
       <Typography variant="h4" gutterBottom>
         ABO-NCLE Exam Preparation
       </Typography>
@@ -450,6 +450,69 @@ const ExamPrepPage: React.FC = () => {
           </Grid>
         </Grid>
       </Box>
+      
+      <Grid container spacing={2} sx={{ mt: 3 }}>
+        <Grid item xs={12}>
+          <Typography variant="h6" gutterBottom>
+            Comprehensive Full-Length Exams
+          </Typography>
+          <Typography variant="body2" color="text.secondary" paragraph>
+            Take a comprehensive full-length exam that simulates the actual certification exam.
+          </Typography>
+        </Grid>
+        
+        <Grid item xs={12} md={6}>
+          <Card variant="outlined">
+            <CardContent>
+              <Typography variant="h6">ABO Comprehensive Exam</Typography>
+              <Typography variant="body2" color="text.secondary" paragraph>
+                150 questions covering all ABO exam topics in a simulated test environment
+              </Typography>
+              <Box display="flex" alignItems="center" gap={2}>
+                <TimerIcon color="action" />
+                <Typography variant="body2">2.5 hours</Typography>
+              </Box>
+            </CardContent>
+            <CardActions>
+              <Button 
+                component={RouterLink} 
+                to="/comprehensive-exam/abo" 
+                variant="contained" 
+                color="primary"
+                fullWidth
+              >
+                Start Exam
+              </Button>
+            </CardActions>
+          </Card>
+        </Grid>
+        
+        <Grid item xs={12} md={6}>
+          <Card variant="outlined">
+            <CardContent>
+              <Typography variant="h6">NCLE Comprehensive Exam</Typography>
+              <Typography variant="body2" color="text.secondary" paragraph>
+                150 questions covering all NCLE exam topics in a simulated test environment
+              </Typography>
+              <Box display="flex" alignItems="center" gap={2}>
+                <TimerIcon color="action" />
+                <Typography variant="body2">2.5 hours</Typography>
+              </Box>
+            </CardContent>
+            <CardActions>
+              <Button 
+                component={RouterLink} 
+                to="/comprehensive-exam/ncle" 
+                variant="contained" 
+                color="primary"
+                fullWidth
+              >
+                Start Exam
+              </Button>
+            </CardActions>
+          </Card>
+        </Grid>
+      </Grid>
     </Container>
   );
 };

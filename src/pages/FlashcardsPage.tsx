@@ -203,7 +203,7 @@ const FlashcardsPage: React.FC = () => {
   
   if (loading) {
     return (
-      <Container maxWidth="lg">
+      <Container maxWidth={false}>
         <Box display="flex" justifyContent="center" alignItems="center" minHeight="50vh">
           <CircularProgress />
         </Box>
@@ -212,7 +212,7 @@ const FlashcardsPage: React.FC = () => {
   }
   
   return (
-    <Container maxWidth="lg" sx={{ py: 4 }}>
+    <Container maxWidth={false} sx={{ py: 4 }}>
       <Typography variant="h4" gutterBottom>
         ABO-NCLE Flashcards
       </Typography>

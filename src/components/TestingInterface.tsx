@@ -21,7 +21,10 @@ import {
   Chip,
   CardMedia,
   CardActions,
-  Stack
+  Stack,
+  Switch,
+  FormControlLabel,
+  Collapse
 } from '@mui/material';
 import { 
   Visibility as VisibilityIcon, 
@@ -29,7 +32,9 @@ import {
   Refresh as RefreshIcon, 
   Save as SaveIcon,
   School as SchoolIcon,
-  Check as CheckIcon
+  Check as CheckIcon,
+  Help as HelpIcon,
+  Info as InfoIcon
 } from '@mui/icons-material';
 import { useTheme } from './ThemeContext';
 import RefractionChart from './RefractionChart';
@@ -45,37 +50,51 @@ const CYLINDER_RANGE = { min: -6, max: 0, step: 0.25 }; // Negative cylinder not
 const AXIS_RANGE = { min: 0, max: 180, step: 5 };
 const ADD_POWER_RANGE = { min: 0, max: 3, step: 0.25 };
 
-// Added optician-specific guidance for beginners
+// Enhanced beginner-friendly tooltips
+const BEGINNER_TOOLTIPS = {
+  sphere: "This is the main lens power that corrects nearsightedness (negative numbers) or farsightedness (positive numbers). Think of it as the 'overall strength' of the glasses.",
+  cylinder: "This corrects astigmatism (blurry/distorted vision). It's like adding an extra curve to the lens to fix distortion caused by an irregularly shaped eye.",
+  axis: "This is the direction (measured in degrees, like a compass) where the cylinder correction needs to be placed on the lens.",
+  addPower: "This is extra magnification in the bottom part of glasses to help see things up close. It's usually needed as people get older (age 40+)."
+};
+
+// Added optician-specific guidance for beginners with simplified explanations
 const OPTICIAN_GUIDANCE = {
   visualAcuity: [
     'Patients with uncorrected visual acuity worse than 20/40 typically need standard or high-index lenses',
     'Metal frames may be more adjustable for asymmetric fits',
-    'Consider recommending anti-fatigue lenses for patients who report eye strain'
+    'Consider recommending anti-fatigue lenses for patients who report eye strain',
+    'BEGINNER: If a patient can\'t read the big "E" on the chart (20/200), they likely need a stronger prescription'
   ],
   retinoscopy: [
     'Patients with sphere power > ±4.00 will benefit from high-index lenses to reduce thickness',
     'Astigmatism (cylinder) over -2.00 requires careful frame selection to minimize lens thickness',
-    'Consider lens material options based on prescription power'
+    'Consider lens material options based on prescription power',
+    'BEGINNER: Stronger prescriptions (over ±4.00) need special "high-index" lenses to avoid thick, heavy glasses'
   ],
   subjectiveRefraction: [
     'Higher prescriptions may require frame styles with stronger support',
     'Semi-rimless and rimless frames are not ideal for prescriptions stronger than ±4.00',
-    'Patients with astigmatism may benefit from aspherical lenses to reduce distortion'
+    'Patients with astigmatism may benefit from aspherical lenses to reduce distortion',
+    'BEGINNER: For stronger prescriptions, recommend frames that completely surround the lens (full-rim) for better support'
   ],
   binocularBalance: [
     'Significant differences between eyes may require specialized frame adjustments',
     'Ensure equal pupillary distances are measured for optimal optical centering',
-    'Consider anti-reflective coatings to improve vision quality in all lighting conditions'
+    'Consider anti-reflective coatings to improve vision quality in all lighting conditions',
+    'BEGINNER: If one eye needs a much stronger prescription than the other, proper lens centering is extra important'
   ],
   nearVision: [
     'Patients with add power >+1.50 are candidates for progressive or bifocal lenses',
     'Progressive-friendly frames need adequate vertical height (minimum 28-30mm)',
-    'Digital device users benefit from blue light filtering options'
+    'Digital device users benefit from blue light filtering options',
+    'BEGINNER: For patients over 45, make sure frames are tall enough (at least 30mm) to fit progressive lenses properly'
   ],
   finalPrescription: [
     'Match lens options to lifestyle needs and prescription requirements',
     "Consider patient's occupation and hobbies when recommending lens options",
-    'Higher prescriptions require careful frame size selection to minimize edge thickness'
+    'Higher prescriptions require careful frame size selection to minimize edge thickness',
+    'BEGINNER: Ask what the patient does for work and fun - this helps you recommend the right lens options for their lifestyle'
   ]
 };
 
@@ -89,7 +108,8 @@ const BEGINNER_FRAMES = [
     idealFor: 'Medium to high prescriptions',
     image: 'https://placehold.co/300x150/cccccc/333333?text=Classic+Metal',
     recommendedPrescription: 'All prescription types',
-    features: ['Adjustable nose pads', 'Sturdy construction', 'Good for high index lenses']
+    features: ['Adjustable nose pads', 'Sturdy construction', 'Good for high index lenses'],
+    beginnerExplanation: 'Metal frames with nose pads are versatile and can be adjusted for a better fit. Good for most prescriptions.'
   },
   {
     id: 'frame2',
@@ -99,7 +119,8 @@ const BEGINNER_FRAMES = [
     idealFor: 'Low to medium prescriptions',
     image: 'https://placehold.co/300x150/cccccc/333333?text=Semi-Rimless',
     recommendedPrescription: 'Under ±4.00 sphere, minimal cylinder',
-    features: ['Lightweight', 'Modern appearance', 'Not ideal for strong prescriptions']
+    features: ['Lightweight', 'Modern appearance', 'Not ideal for strong prescriptions'],
+    beginnerExplanation: 'These frames have no bottom rim. They look stylish but aren\'t good for strong prescriptions (over ±4.00).'
   },
   {
     id: 'frame3',
@@ -109,7 +130,8 @@ const BEGINNER_FRAMES = [
     idealFor: 'High prescriptions with astigmatism',
     image: 'https://placehold.co/300x150/cccccc/333333?text=Bold+Acetate',
     recommendedPrescription: 'All prescription types, good for astigmatism',
-    features: ['Sturdy', 'Wide color options', 'Hides thick lenses well']
+    features: ['Sturdy', 'Wide color options', 'Hides thick lenses well'],
+    beginnerExplanation: 'Plastic frames with thicker rims that hide strong prescription lenses well. Available in many colors.'
   }
 ];
 
@@ -133,21 +155,24 @@ const getLensRecommendations = (prescription: PrescriptionData[]) => {
       type: 'index',
       name: 'Standard Index (1.50)',
       description: 'Suitable for lower prescriptions up to ±2.00',
-      isRecommended: true
+      isRecommended: true,
+      beginnerExplanation: 'Basic lens material for mild prescriptions. Affordable but thicker for stronger prescriptions.'
     });
   } else if (maxAbsSphere < 4) {
     recommendations.push({
       type: 'index',
       name: 'Mid-Index (1.59)',
       description: 'Good balance of thinness and cost for medium prescriptions',
-      isRecommended: true
+      isRecommended: true,
+      beginnerExplanation: 'Medium-thin lens material. Good balance between price and thickness for moderate prescriptions.'
     });
   } else {
     recommendations.push({
       type: 'index',
       name: 'High-Index (1.67)',
       description: 'Recommended for stronger prescriptions to minimize thickness',
-      isRecommended: true
+      isRecommended: true,
+      beginnerExplanation: 'Premium thin lens material. Makes strong prescriptions much thinner and lighter, but costs more.'
     });
   }
   
@@ -156,7 +181,8 @@ const getLensRecommendations = (prescription: PrescriptionData[]) => {
     type: 'coating',
     name: 'Anti-Reflective Coating',
     description: 'Reduces glare and improves clarity, especially for higher prescriptions',
-    isRecommended: maxAbsSphere > 1.5 || maxAbsCylinder > 1
+    isRecommended: maxAbsSphere > 1.5 || maxAbsCylinder > 1,
+    beginnerExplanation: 'Reduces glare from lights and screens. Makes glasses look better by eliminating reflections.'
   });
   
   // Lens design recommendations
@@ -165,14 +191,16 @@ const getLensRecommendations = (prescription: PrescriptionData[]) => {
       type: 'design',
       name: 'Progressive Lenses',
       description: 'No-line multifocals for patients with add power (presbyopia)',
-      isRecommended: true
+      isRecommended: true,
+      beginnerExplanation: 'Glasses that let you see at all distances without a visible line. Good for patients over 40.'
     });
   } else {
     recommendations.push({
       type: 'design',
       name: 'Single Vision',
       description: 'Standard lenses for distance correction',
-      isRecommended: true
+      isRecommended: true,
+      beginnerExplanation: 'Regular glasses that correct vision for one distance only (usually for seeing far away).'
     });
   }
   
@@ -188,8 +216,24 @@ const TestingInterface: React.FC<TestingInterfaceProps> = ({
 }) => {
   const { darkMode, includeSphereCorrection, includeCylinderCorrection } = useTheme();
   
-  // Check if beginner mode is enabled (passed from URL parameter)
-  const isBeginnerMode = window.location.search.includes('mode=beginner');
+  // State for beginner mode
+  const [beginnerMode, setBeginnerMode] = useState<boolean>(() => {
+    const savedMode = localStorage.getItem('beginnerMode');
+    return savedMode ? JSON.parse(savedMode) : window.location.search.includes('mode=beginner');
+  });
+  
+  // Save beginner mode preference
+  useEffect(() => {
+    localStorage.setItem('beginnerMode', JSON.stringify(beginnerMode));
+  }, [beginnerMode]);
+  
+  // State for showing explanations
+  const [showExplanations, setShowExplanations] = useState<{[key: string]: boolean}>({
+    sphere: false,
+    cylinder: false,
+    axis: false,
+    addPower: false
+  });
   
   // State for testing session
   const [session, setSession] = useState<TestSession | null>(null);
@@ -212,7 +256,7 @@ const TestingInterface: React.FC<TestingInterfaceProps> = ({
   const [testResult, setTestResult] = useState<TestResult | null>(null);
   
   // Add a state for optician-specific context
-  const [showOpticianContext, setShowOpticianContext] = useState(isBeginnerMode);
+  const [showOpticianContext, setShowOpticianContext] = useState(beginnerMode);
   
   // Add states for optician-specific components
   const [showFrameSelection, setShowFrameSelection] = useState(false);
@@ -344,7 +388,7 @@ const TestingInterface: React.FC<TestingInterfaceProps> = ({
     if (mode === 'tutorial' || mode === 'practice') {
       switch (nextStep) {
         case 1: // Retinoscopy
-          if (isBeginnerMode) {
+          if (beginnerMode) {
             setGuidanceTips([
               ...OPTICIAN_GUIDANCE.retinoscopy,
               'Move the retinoscope across the pupil and observe the light reflex',
@@ -358,7 +402,7 @@ const TestingInterface: React.FC<TestingInterfaceProps> = ({
           }
           break;
         case 2: // Subjective Refraction
-          if (isBeginnerMode) {
+          if (beginnerMode) {
             setGuidanceTips([
               ...OPTICIAN_GUIDANCE.subjectiveRefraction,
               'Ask the patient which option provides clearer vision',
@@ -373,7 +417,7 @@ const TestingInterface: React.FC<TestingInterfaceProps> = ({
           break;
         case 3: // Binocular Balance
           setShowActualRx(false);
-          if (isBeginnerMode) {
+          if (beginnerMode) {
             setGuidanceTips([
               ...OPTICIAN_GUIDANCE.binocularBalance,
               'Ensure both eyes are working together properly',
@@ -387,7 +431,7 @@ const TestingInterface: React.FC<TestingInterfaceProps> = ({
           }
           break;
         case 4: // Near Vision
-          if (isBeginnerMode) {
+          if (beginnerMode) {
             setGuidanceTips([
               ...OPTICIAN_GUIDANCE.nearVision,
               'Test near vision acuity to determine if reading glasses are needed',
@@ -401,7 +445,7 @@ const TestingInterface: React.FC<TestingInterfaceProps> = ({
           }
           break;
         case 5: // Final Prescription
-          if (isBeginnerMode) {
+          if (beginnerMode) {
             setGuidanceSuccess([
               'You\'ve completed all testing steps. Now you\'ll learn how to select frames and lenses for this prescription.'
             ]);
@@ -440,10 +484,10 @@ const TestingInterface: React.FC<TestingInterfaceProps> = ({
   
   // Generate lens recommendations when prescription changes in beginner mode
   useEffect(() => {
-    if (isBeginnerMode && prescription.length > 0) {
+    if (beginnerMode && prescription.length > 0) {
       setLensRecommendations(getLensRecommendations(prescription));
     }
-  }, [isBeginnerMode, prescription]);
+  }, [beginnerMode, prescription]);
   
   // Modified Complete test function
   const handleCompleteTest = () => {
@@ -497,7 +541,7 @@ const TestingInterface: React.FC<TestingInterfaceProps> = ({
     setGuidanceSuccess([`Test completed with ${accuracy}% accuracy`]);
     
     // For beginner mode, show frame selection after completing the test
-    if (isBeginnerMode) {
+    if (beginnerMode) {
       setShowFrameSelection(true);
     }
     
@@ -520,19 +564,27 @@ const TestingInterface: React.FC<TestingInterfaceProps> = ({
   
   // Set initial guidance specific to opticians for beginner mode
   useEffect(() => {
-    if (isBeginnerMode && currentStep === 0) {
+    if (beginnerMode && currentStep === 0) {
       setGuidanceTips([
         ...OPTICIAN_GUIDANCE.visualAcuity,
         'Start by testing the patient\'s visual acuity to establish a baseline',
         'Cover one eye at a time to test each eye independently'
       ]);
     }
-  }, [isBeginnerMode, currentStep]);
+  }, [beginnerMode, currentStep]);
+  
+  // Add toggleExplanation function
+  const toggleExplanation = (field: string) => {
+    setShowExplanations(prev => ({
+      ...prev,
+      [field]: !prev[field]
+    }));
+  };
   
   return (
     <Box>
       {/* Beginner Mode Indicator */}
-      {isBeginnerMode && (
+      {beginnerMode && (
         <Alert 
           severity="info" 
           sx={{ mb: 2 }}
@@ -817,7 +869,7 @@ const TestingInterface: React.FC<TestingInterfaceProps> = ({
                       <Typography variant="subtitle1">
                         Current step: {currentStep + 1} of 6
                       </Typography>
-                      {isBeginnerMode && (
+                      {beginnerMode && (
                         <Box sx={{ mt: 1 }}>
                           <Chip 
                             icon={<SchoolIcon fontSize="small" />}
@@ -867,7 +919,7 @@ const TestingInterface: React.FC<TestingInterfaceProps> = ({
                           disabled={testCompleted}
                           startIcon={<SaveIcon />}
                         >
-                          {isBeginnerMode ? 'Proceed to Frame Selection' : 'Complete Test'}
+                          {beginnerMode ? 'Proceed to Frame Selection' : 'Complete Test'}
                         </Button>
                       )}
                     </Box>

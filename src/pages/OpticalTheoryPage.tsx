@@ -98,7 +98,7 @@ const OpticalTheoryPage: React.FC = () => {
   };
 
   return (
-    <Container maxWidth="lg">
+    <Container maxWidth={false}>
       <Typography variant="h3" component="h1" gutterBottom>
         Optical Theory
       </Typography>

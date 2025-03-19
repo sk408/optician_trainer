@@ -67,6 +67,8 @@ export interface ThemeContextProps {
   setIncludeSphereCorrection: (include: boolean) => void;
   includeCylinderCorrection: boolean;
   setIncludeCylinderCorrection: (include: boolean) => void;
+  beginnerMode: boolean;
+  setBeginnerMode: (mode: boolean) => void;
 }
 
 export interface RefractionChartProps {

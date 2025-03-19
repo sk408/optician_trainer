@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="600" height="300" viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="600" height="300" fill="white"/>
+  
+  <!-- Eye outline -->
+  <ellipse cx="300" cy="150" rx="150" ry="100" fill="white" stroke="#333" stroke-width="2"/>
+  
+  <!-- Cornea -->
+  <path d="M150,150 Q130,100 150,50 Q170,100 150,150" fill="#E6F7FF" stroke="#333" stroke-width="2"/>
+  
+  <!-- Lens -->
+  <ellipse cx="200" cy="150" rx="25" ry="40" fill="#E6F7FF" stroke="#333" stroke-width="2"/>
+  
+  <!-- Retina -->
+  <path d="M450,70 Q470,150 450,230" fill="none" stroke="#333" stroke-width="2"/>
+  
+  <!-- Light rays for hyperopia -->
+  <path d="M100,100 L250,150" stroke="#FFD700" stroke-width="3"/>
+  <path d="M100,150 L250,150" stroke="#FFD700" stroke-width="3"/>
+  <path d="M100,200 L250,150" stroke="#FFD700" stroke-width="3"/>
+  
+  <!-- Converging light rays (not yet focused at retina) -->
+  <path d="M250,150 L450,120" stroke="#FFD700" stroke-width="3"/>
+  <path d="M250,150 L450,150" stroke="#FFD700" stroke-width="3"/>
+  <path d="M250,150 L450,180" stroke="#FFD700" stroke-width="3"/>
+  
+  <!-- Extended light rays to focal point behind retina -->
+  <path d="M450,120 L550,140" stroke="#FFD700" stroke-width="2" stroke-dasharray="5,3"/>
+  <path d="M450,150 L550,150" stroke="#FFD700" stroke-width="2" stroke-dasharray="5,3"/>
+  <path d="M450,180 L550,160" stroke="#FFD700" stroke-width="2" stroke-dasharray="5,3"/>
+  
+  <!-- Focal point (behind retina) -->
+  <circle cx="550" cy="150" r="5" fill="red"/>
+  
+  <!-- Labels -->
+  <text x="300" y="240" font-family="Arial" font-size="16" text-anchor="middle" fill="#333">Hyperopia: Light focuses behind the retina</text>
+  <text x="550" y="135" font-family="Arial" font-size="14" text-anchor="middle" fill="red">Focal point</text>
+  <text x="450" y="60" font-family="Arial" font-size="14" text-anchor="middle" fill="#333">Retina</text>
+</svg> 

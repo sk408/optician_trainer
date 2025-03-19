@@ -1,0 +1,84 @@
+<svg width="800px" height="500px" viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect x="0" y="0" width="800" height="500" fill="#f8f9fa"/>
+  <text x="400" y="40" font-family="Arial" font-size="24" font-weight="bold" text-anchor="middle">Eyeglass Frame Anatomy</text>
+  
+  <!-- Frame Outline -->
+  <!-- Left Lens -->
+  <ellipse cx="250" cy="200" rx="100" ry="80" fill="none" stroke="#333" stroke-width="3"/>
+  
+  <!-- Right Lens -->
+  <ellipse cx="550" cy="200" rx="100" ry="80" fill="none" stroke="#333" stroke-width="3"/>
+  
+  <!-- Bridge -->
+  <path d="M 350,200 C 370,180 430,180 450,200" fill="none" stroke="#333" stroke-width="3"/>
+  
+  <!-- Left Temple -->
+  <path d="M 150,200 C 120,200 90,100 60,100" fill="none" stroke="#333" stroke-width="3"/>
+  
+  <!-- Right Temple -->
+  <path d="M 650,200 C 680,200 710,100 740,100" fill="none" stroke="#333" stroke-width="3"/>
+  
+  <!-- Temple Tips -->
+  <path d="M 60,100 C 50,100 40,110 40,120 L 40,160 C 40,170 50,180 60,180 L 80,180 C 90,180 80,100 60,100" fill="none" stroke="#333" stroke-width="2"/>
+  <path d="M 740,100 C 750,100 760,110 760,120 L 760,160 C 760,170 750,180 740,180 L 720,180 C 710,180 720,100 740,100" fill="none" stroke="#333" stroke-width="2"/>
+  
+  <!-- Nose Pads -->
+  <path d="M 370,220 C 380,230 390,240 380,250 C 375,255 365,255 360,250 C 350,240 360,230 370,220" fill="none" stroke="#333" stroke-width="2"/>
+  <path d="M 430,220 C 420,230 410,240 420,250 C 425,255 435,255 440,250 C 450,240 440,230 430,220" fill="none" stroke="#333" stroke-width="2"/>
+  
+  <!-- Annotations -->
+  
+  <!-- Rim/Eye Wire -->
+  <line x1="250" y1="120" x2="150" y2="80" stroke="#0066cc" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <text x="120" y="70" font-family="Arial" font-size="14" font-weight="bold" fill="#0066cc">Rim/Eye Wire</text>
+  <text x="120" y="90" font-family="Arial" font-size="12" fill="#0066cc">Surrounds the lens</text>
+  
+  <!-- Bridge -->
+  <line x1="400" y1="180" x2="400" y2="120" stroke="#cc3300" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <text x="400" y="110" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle" fill="#cc3300">Bridge</text>
+  <text x="400" y="130" font-family="Arial" font-size="12" text-anchor="middle" fill="#cc3300">Connects the two eye wires</text>
+  
+  <!-- Temple/Arm -->
+  <line x1="700" y1="140" x2="700" y2="80" stroke="#009933" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <text x="700" y="70" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle" fill="#009933">Temple/Arm</text>
+  <text x="700" y="90" font-family="Arial" font-size="12" text-anchor="middle" fill="#009933">Extends over the ears</text>
+  
+  <!-- Temple Tip -->
+  <line x1="60" y1="140" x2="20" y2="140" stroke="#9900cc" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <text x="20" y="130" font-family="Arial" font-size="14" font-weight="bold" text-anchor="end" fill="#9900cc">Temple Tip</text>
+  <text x="20" y="150" font-family="Arial" font-size="12" text-anchor="end" fill="#9900cc">Plastic cover for comfort</text>
+  
+  <!-- Hinge -->
+  <line x1="150" y1="200" x2="100" y2="230" stroke="#ff6600" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <text x="80" y="240" font-family="Arial" font-size="14" font-weight="bold" fill="#ff6600">Hinge</text>
+  <text x="80" y="260" font-family="Arial" font-size="12" fill="#ff6600">Allows temples to fold</text>
+  
+  <!-- Nose Pads -->
+  <line x1="400" y1="240" x2="400" y2="280" stroke="#666699" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <text x="400" y="300" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle" fill="#666699">Nose Pads</text>
+  <text x="400" y="320" font-family="Arial" font-size="12" text-anchor="middle" fill="#666699">Support the frame on the nose</text>
+  
+  <!-- Frame Measurements -->
+  <text x="400" y="360" font-family="Arial" font-size="18" font-weight="bold" text-anchor="middle">Frame Measurements</text>
+  
+  <!-- Lens Width -->
+  <line x1="150" y1="200" x2="350" y2="200" stroke="#003366" stroke-width="2"/>
+  <text x="250" y="390" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle" fill="#003366">Eye Size / Lens Width</text>
+  <text x="250" y="410" font-family="Arial" font-size="12" text-anchor="middle" fill="#003366">Horizontal width of the lens</text>
+  
+  <!-- Bridge Width -->
+  <line x1="350" y1="200" x2="450" y2="200" stroke="#990000" stroke-width="2"/>
+  <text x="400" y="440" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle" fill="#990000">Bridge Width (DBL)</text>
+  <text x="400" y="460" font-family="Arial" font-size="12" text-anchor="middle" fill="#990000">Distance between lenses</text>
+  
+  <!-- Temple Length -->
+  <line x1="650" y1="200" x2="740" y2="180" stroke="#006600" stroke-width="2"/>
+  <text x="600" y="390" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle" fill="#006600">Temple Length</text>
+  <text x="600" y="410" font-family="Arial" font-size="12" text-anchor="middle" fill="#006600">Length of the side arms</text>
+  
+  <!-- Lens Height -->
+  <line x1="250" y1="120" x2="250" y2="280" stroke="#660066" stroke-width="2"/>
+  <text x="180" y="440" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle" fill="#660066">Lens Height</text>
+  <text x="180" y="460" font-family="Arial" font-size="12" text-anchor="middle" fill="#660066">Vertical height of the lens</text>
+</svg> 

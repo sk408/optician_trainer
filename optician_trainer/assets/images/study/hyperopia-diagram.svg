@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="800" height="600" fill="#f8f9fa"/>
+  
+  <!-- Title -->
+  <text x="400" y="50" font-family="Arial, sans-serif" font-size="24" text-anchor="middle" font-weight="bold">Hyperopia (Farsightedness)</text>
+  
+  <!-- Eye Diagram - Hyperopic Eye -->
+  <g transform="translate(150, 200)">
+    <!-- Outer Eye Shape -->
+    <ellipse cx="250" cy="100" rx="250" ry="100" fill="#f0f0f0" stroke="#2c3e50" stroke-width="3"/>
+    
+    <!-- Lens -->
+    <ellipse cx="80" cy="100" rx="30" ry="70" fill="#d6eaf8" stroke="#2c3e50" stroke-width="2"/>
+    
+    <!-- Iris -->
+    <path d="M80,30 Q80,50 80,170 Z" fill="#7fb3d5" fill-opacity="0.6" stroke="#2c3e50" stroke-width="1"/>
+    
+    <!-- Pupil -->
+    <circle cx="80" cy="100" r="15" fill="#2c3e50"/>
+    
+    <!-- Cornea -->
+    <path d="M30,60 Q50,100 30,140" fill="none" stroke="#2c3e50" stroke-width="2" stroke-dasharray="3,3"/>
+    
+    <!-- Retina -->
+    <path d="M500,30 Q500,100 500,170" fill="none" stroke="#e74c3c" stroke-width="3"/>
+    
+    <!-- Eye Labels -->
+    <text x="80" y="20" font-family="Arial, sans-serif" font-size="14" text-anchor="middle">Lens</text>
+    <text x="500" y="20" font-family="Arial, sans-serif" font-size="14" text-anchor="middle">Retina</text>
+    <text x="30" y="40" font-family="Arial, sans-serif" font-size="14" text-anchor="middle">Cornea</text>
+    
+    <!-- Light Rays - Parallel Incoming -->
+    <line x1="-50" y1="70" x2="80" y2="85" stroke="#ff9800" stroke-width="2"/>
+    <line x1="-50" y1="100" x2="80" y2="100" stroke="#ff9800" stroke-width="2"/>
+    <line x1="-50" y1="130" x2="80" y2="115" stroke="#ff9800" stroke-width="2"/>
+    
+    <!-- Light Rays - Refracted but failing to converge at retina -->
+    <line x1="80" y1="85" x2="550" y2="50" stroke="#ff9800" stroke-width="2" stroke-dasharray="5,5"/>
+    <line x1="80" y1="100" x2="550" y2="100" stroke="#ff9800" stroke-width="2" stroke-dasharray="5,5"/>
+    <line x1="80" y1="115" x2="550" y2="150" stroke="#ff9800" stroke-width="2" stroke-dasharray="5,5"/>
+    
+    <!-- Actual Focal Point - Behind Retina -->
+    <circle cx="600" cy="100" r="8" fill="#e74c3c"/>
+    <text x="600" y="130" font-family="Arial, sans-serif" font-size="14" text-anchor="middle">Focal Point</text>
+    
+    <!-- Reference Lines for Focal Point -->
+    <line x1="500" y1="100" x2="600" y2="100" stroke="#e74c3c" stroke-width="1" stroke-dasharray="3,3"/>
+    <line x1="600" y1="30" x2="600" y2="170" stroke="#e74c3c" stroke-width="1" stroke-dasharray="3,3"/>
+  </g>
+  
+  <!-- Corrected View with Convex Lens -->
+  <g transform="translate(150, 400)">
+    <!-- Title -->
+    <text x="250" y="-20" font-family="Arial, sans-serif" font-size="18" text-anchor="middle" font-weight="bold">Correction with Convex Lens</text>
+    
+    <!-- Outer Eye Shape -->
+    <ellipse cx="250" cy="100" rx="250" ry="100" fill="#f0f0f0" stroke="#2c3e50" stroke-width="3"/>
+    
+    <!-- Lens -->
+    <ellipse cx="80" cy="100" rx="30" ry="70" fill="#d6eaf8" stroke="#2c3e50" stroke-width="2"/>
+    
+    <!-- Iris -->
+    <path d="M80,30 Q80,50 80,170 Z" fill="#7fb3d5" fill-opacity="0.6" stroke="#2c3e50" stroke-width="1"/>
+    
+    <!-- Pupil -->
+    <circle cx="80" cy="100" r="15" fill="#2c3e50"/>
+    
+    <!-- Cornea -->
+    <path d="M30,60 Q50,100 30,140" fill="none" stroke="#2c3e50" stroke-width="2" stroke-dasharray="3,3"/>
+    
+    <!-- Retina -->
+    <path d="M500,30 Q500,100 500,170" fill="none" stroke="#e74c3c" stroke-width="3"/>
+    
+    <!-- Corrective Lens - Convex -->
+    <path d="M-70,50 Q-50,60 -70,70 M-70,70 Q-50,80 -70,90 M-70,90 Q-50,100 -70,110 M-70,110 Q-50,120 -70,130 M-70,130 Q-50,140 -70,150" fill="none" stroke="#3498db" stroke-width="3"/>
+    <ellipse cx="-60" cy="100" rx="15" ry="60" fill="#3498db" fill-opacity="0.3" stroke="#3498db" stroke-width="2"/>
+    <text x="-60" y="180" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#3498db">Convex Lens</text>
+    
+    <!-- Light Rays with Correction - Parallel Incoming -->
+    <line x1="-120" y1="70" x2="-60" y2="70" stroke="#ff9800" stroke-width="2"/>
+    <line x1="-120" y1="100" x2="-60" y2="100" stroke="#ff9800" stroke-width="2"/>
+    <line x1="-120" y1="130" x2="-60" y2="130" stroke="#ff9800" stroke-width="2"/>
+    
+    <!-- Light Rays - First Refraction by Corrective Lens -->
+    <line x1="-60" y1="70" x2="80" y2="90" stroke="#ff9800" stroke-width="2"/>
+    <line x1="-60" y1="100" x2="80" y2="100" stroke="#ff9800" stroke-width="2"/>
+    <line x1="-60" y1="130" x2="80" y2="110" stroke="#ff9800" stroke-width="2"/>
+    
+    <!-- Light Rays - Second Refraction by Eye Lens now converging properly at retina -->
+    <line x1="80" y1="90" x2="500" y2="130" stroke="#ff9800" stroke-width="2" stroke-dasharray="5,5"/>
+    <line x1="80" y1="100" x2="500" y2="100" stroke="#ff9800" stroke-width="2" stroke-dasharray="5,5"/>
+    <line x1="80" y1="110" x2="500" y2="70" stroke="#ff9800" stroke-width="2" stroke-dasharray="5,5"/>
+    
+    <!-- Focal Point on Retina -->
+    <circle cx="500" cy="100" r="8" fill="#2ecc71"/>
+    <text x="530" y="100" font-family="Arial, sans-serif" font-size="14" text-anchor="start" fill="#2ecc71">Corrected Focal Point</text>
+  </g>
+  
+  <!-- Descriptive Text -->
+  <g transform="translate(600, 180)">
+    <rect width="180" height="160" rx="10" fill="#edf2f7" stroke="#2c3e50" stroke-width="1"/>
+    <text x="90" y="30" font-family="Arial, sans-serif" font-size="16" text-anchor="middle" font-weight="bold">Hyperopia</text>
+    <text x="10" y="60" font-family="Arial, sans-serif" font-size="12">• Eyeball too short</text>
+    <text x="10" y="80" font-family="Arial, sans-serif" font-size="12">• Focal point falls behind</text>
+    <text x="15" y="95" font-family="Arial, sans-serif" font-size="12">  the retina</text>
+    <text x="10" y="115" font-family="Arial, sans-serif" font-size="12">• Near vision blurred</text>
+    <text x="10" y="135" font-family="Arial, sans-serif" font-size="12">• Corrected with convex</text>
+    <text x="15" y="150" font-family="Arial, sans-serif" font-size="12">  (plus) lenses</text>
+  </g>
+  
+  <g transform="translate(600, 380)">
+    <rect width="180" height="140" rx="10" fill="#edf2f7" stroke="#2c3e50" stroke-width="1"/>
+    <text x="90" y="30" font-family="Arial, sans-serif" font-size="16" text-anchor="middle" font-weight="bold">Symptoms</text>
+    <text x="10" y="60" font-family="Arial, sans-serif" font-size="12">• Eyestrain</text>
+    <text x="10" y="80" font-family="Arial, sans-serif" font-size="12">• Headaches</text>
+    <text x="10" y="100" font-family="Arial, sans-serif" font-size="12">• Blurry near vision</text>
+    <text x="10" y="120" font-family="Arial, sans-serif" font-size="12">• Squinting</text>
+  </g>
+</svg> 

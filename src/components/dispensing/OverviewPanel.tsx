@@ -20,6 +20,7 @@ import {
   Info as InfoIcon,
   Download as DownloadIcon
 } from '@mui/icons-material';
+import { toolsImages } from '../../constants/mediaAssets';
 
 const OverviewPanel: React.FC = () => {
   return (
@@ -228,7 +229,7 @@ const OverviewPanel: React.FC = () => {
               <CardMedia
                 component="img"
                 height="140"
-                image="/assets/images/tools/pupillometer.jpg"
+                image={toolsImages.pupillometer.path}
                 alt="Pupillometer"
               />
               <CardContent>
@@ -247,7 +248,7 @@ const OverviewPanel: React.FC = () => {
               <CardMedia
                 component="img"
                 height="140"
-                image="/assets/images/tools/adjustment-pliers.jpg"
+                image={toolsImages.adjustmentPliers.path}
                 alt="Adjustment Pliers"
               />
               <CardContent>
@@ -266,7 +267,7 @@ const OverviewPanel: React.FC = () => {
               <CardMedia
                 component="img"
                 height="140"
-                image="/assets/images/tools/frame-heater.jpg"
+                image={toolsImages.frameHeater.path}
                 alt="Frame Heater"
               />
               <CardContent>
@@ -285,7 +286,7 @@ const OverviewPanel: React.FC = () => {
               <CardMedia
                 component="img"
                 height="140"
-                image="/assets/images/tools/lensometer.jpg"
+                image={toolsImages.lensometer.path}
                 alt="Lensometer"
               />
               <CardContent>

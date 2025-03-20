@@ -1,4 +1,5 @@
 import { TopicStudyContent } from '../../interfaces/StudyContent';
+import { eyeAnatomyClImages } from '../mediaAssets';
 
 export const eyeAnatomyClContent: TopicStudyContent = {
   topicId: 'eye-anatomy-cl',
@@ -29,7 +30,7 @@ export const eyeAnatomyClContent: TopicStudyContent = {
           id: 'cornea-anatomy-image',
           type: 'image',
           content: {
-            src: '/assets/images/study/cornea-layers.jpg',
+            src: eyeAnatomyClImages.corneaLayers.path,
             alt: 'Cross-section of corneal layers',
             caption: 'The five layers of the cornea: epithelium, Bowman\'s layer, stroma, Descemet\'s membrane, and endothelium',
             width: '75%'
@@ -168,7 +169,7 @@ export const eyeAnatomyClContent: TopicStudyContent = {
           id: 'topography-maps',
           type: 'image',
           content: {
-            src: '/assets/images/study/corneal-topography-map.jpg',
+            src: eyeAnatomyClImages.cornealTopographyMap.path,
             alt: 'Corneal topography map showing different curvature patterns',
             caption: 'Corneal topography map with color-coding representing different curvatures across the corneal surface',
             width: '80%'
@@ -219,7 +220,7 @@ export const eyeAnatomyClContent: TopicStudyContent = {
           id: 'tear-film-image',
           type: 'image',
           content: {
-            src: '/assets/images/study/tear-film-layers.jpg',
+            src: eyeAnatomyClImages.tearFilmLayers.path,
             alt: 'The three layers of the tear film',
             caption: 'The tear film consists of three layers: lipid (outermost), aqueous (middle), and mucin (innermost)',
             width: '70%'
@@ -410,7 +411,7 @@ export const eyeAnatomyClContent: TopicStudyContent = {
           id: 'eyelid-anatomy-image',
           type: 'image',
           content: {
-            src: '/assets/images/study/eyelid-anatomy.jpg',
+            src: eyeAnatomyClImages.eyelidAnatomy.path,
             alt: 'Cross-section of eyelid anatomy',
             caption: 'Cross-section showing eyelid structures including the tarsus, meibomian glands, and muscle layers',
             width: '75%'

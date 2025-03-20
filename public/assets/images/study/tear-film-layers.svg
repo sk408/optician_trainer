@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="200" viewBox="0 0 300 200">
+    <title>Tear Film Layers</title>
+    <defs>
+        <linearGradient id="lipidGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#ffecb3" />
+            <stop offset="100%" stop-color="#ffd966" />
+        </linearGradient>
+        <linearGradient id="aqueousGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#b3e0ff" />
+            <stop offset="100%" stop-color="#80c1ff" />
+        </linearGradient>
+        <linearGradient id="mucinGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#d1c4e9" />
+            <stop offset="100%" stop-color="#b39ddb" />
+        </linearGradient>
+        <linearGradient id="corneaGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#e6e6fa" />
+            <stop offset="100%" stop-color="#d8d8eb" />
+        </linearGradient>
+    </defs>
+    
+    <!-- Background -->
+    <rect width="300" height="200" fill="#f8f8f8" />
+    
+    <!-- Title -->
+    <text x="150" y="25" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#333">Tear Film Layers</text>
+    
+    <!-- Tear Film Cross-Section -->
+    <g transform="translate(40, 65)">
+        <!-- Lipid Layer (~0.1 μm) -->
+        <path d="M0,0 C30,-3 60,-5 90,-4 C120,-3 150,-1 180,0 C210,1 240,0 270,2 L270,5 C240,3 210,4 180,3 C150,2 120,4 90,5 C60,6 30,4 0,3 Z" fill="url(#lipidGradient)" stroke="#333" stroke-width="0.5" />
+        <text x="276" y="4" font-family="Arial, sans-serif" font-size="10" text-anchor="start" fill="#333">Lipid Layer (0.1 μm)</text>
+        <line x1="270" y1="4" x2="275" y2="4" stroke="#333" stroke-width="0.5" />
+        
+        <!-- Aqueous Layer (~7 μm) -->
+        <path d="M0,3 C30,4 60,6 90,5 C120,4 150,2 180,3 C210,4 240,3 270,5 L270,20 C240,18 210,19 180,20 C150,21 120,19 90,18 C60,17 30,19 0,20 Z" fill="url(#aqueousGradient)" stroke="#333" stroke-width="0.5" />
+        <text x="276" y="12" font-family="Arial, sans-serif" font-size="10" text-anchor="start" fill="#333">Aqueous Layer (7 μm)</text>
+        <line x1="270" y1="12" x2="275" y2="12" stroke="#333" stroke-width="0.5" />
+        
+        <!-- Mucin Layer (~0.8 μm) -->
+        <path d="M0,20 C30,19 60,17 90,18 C120,19 150,21 180,20 C210,19 240,18 270,20 L270,25 C240,24 210,23 180,24 C150,25 120,26 90,25 C60,24 30,23 0,24 Z" fill="url(#mucinGradient)" stroke="#333" stroke-width="0.5" />
+        <text x="276" y="22" font-family="Arial, sans-serif" font-size="10" text-anchor="start" fill="#333">Mucin Layer (0.8 μm)</text>
+        <line x1="270" y1="22" x2="275" y2="22" stroke="#333" stroke-width="0.5" />
+        
+        <!-- Corneal Epithelium -->
+        <path d="M0,24 C30,23 60,24 90,25 C120,26 150,25 180,24 C210,23 240,24 270,25 L270,65 C240,67 210,66 180,65 C150,64 120,63 90,64 C60,65 30,67 0,66 Z" fill="url(#corneaGradient)" stroke="#333" stroke-width="0.5" />
+        <text x="276" y="45" font-family="Arial, sans-serif" font-size="10" text-anchor="start" fill="#333">Corneal Epithelium</text>
+        <line x1="270" y1="45" x2="275" y2="45" stroke="#333" stroke-width="0.5" />
+    </g>
+    
+    <!-- Cellular Detail in Corneal Epithelium -->
+    <g transform="translate(80, 120)">
+        <!-- Epithelial cells -->
+        <path d="M0,0 C3,-1 6,1 9,0 C12,-1 15,1 18,0 C21,-1 24,1 27,0" fill="none" stroke="#333" stroke-width="0.3" stroke-dasharray="1,1" />
+        <path d="M0,5 C3,4 6,6 9,5 C12,4 15,6 18,5 C21,4 24,6 27,5" fill="none" stroke="#333" stroke-width="0.3" stroke-dasharray="1,1" />
+        <path d="M0,10 C3,9 6,11 9,10 C12,9 15,11 18,10 C21,9 24,11 27,10" fill="none" stroke="#333" stroke-width="0.3" stroke-dasharray="1,1" />
+    </g>
+    
+    <!-- Microvilli on Epithelium Surface -->
+    <g transform="translate(120, 90)">
+        <line x1="0" y1="0" x2="0" y2="-3" stroke="#333" stroke-width="0.5" />
+        <line x1="3" y1="0" x2="3" y2="-2" stroke="#333" stroke-width="0.5" />
+        <line x1="6" y1="0" x2="6" y2="-3.5" stroke="#333" stroke-width="0.5" />
+        <line x1="9" y1="0" x2="9" y2="-2.5" stroke="#333" stroke-width="0.5" />
+        <line x1="12" y1="0" x2="12" y2="-3" stroke="#333" stroke-width="0.5" />
+        <line x1="15" y1="0" x2="15" y2="-2" stroke="#333" stroke-width="0.5" />
+        <text x="30" y="-2" font-family="Arial, sans-serif" font-size="8" text-anchor="start" fill="#333">Microvilli</text>
+        <line x1="15" y1="-2" x2="25" y2="-2" stroke="#333" stroke-width="0.5" stroke-dasharray="2,1" />
+    </g>
+    
+    <!-- Layer Functions -->
+    <text x="40" y="160" font-family="Arial, sans-serif" font-size="9" text-anchor="start" fill="#555">• Lipid Layer: Prevents evaporation, stabilizes tear film</text>
+    <text x="40" y="170" font-family="Arial, sans-serif" font-size="9" text-anchor="start" fill="#555">• Aqueous Layer: Provides oxygen, nutrients, antibacterial proteins</text>
+    <text x="40" y="180" font-family="Arial, sans-serif" font-size="9" text-anchor="start" fill="#555">• Mucin Layer: Anchors tear film to cornea, aids in lubrication</text>
+    <text x="40" y="195" font-family="Arial, sans-serif" font-size="8" text-anchor="start" fill="#555">© Optician Trainer</text>
+</svg>

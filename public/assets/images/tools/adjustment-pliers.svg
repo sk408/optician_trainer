@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="200" viewBox="0 0 300 200">
+    <title>Adjustment Pliers</title>
+    <defs>
+        <linearGradient id="metalGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#e0e0e0" />
+            <stop offset="50%" stop-color="#b0b0b0" />
+            <stop offset="100%" stop-color="#909090" />
+        </linearGradient>
+        <linearGradient id="handleGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#2a5298" />
+            <stop offset="100%" stop-color="#1a3366" />
+        </linearGradient>
+    </defs>
+    
+    <!-- Handles -->
+    <path d="M60,170 C55,140 65,120 75,100 L95,110 C85,125 80,140 82,165 Z" fill="url(#handleGradient)" stroke="#000" stroke-width="1" />
+    <path d="M240,170 C245,140 235,120 225,100 L205,110 C215,125 220,140 218,165 Z" fill="url(#handleGradient)" stroke="#000" stroke-width="1" />
+
+    <!-- Spring -->
+    <path d="M82,165 L88,155 L94,165 L100,155 L106,165 L112,155 L118,165 L124,155 L130,165 L136,155 L142,165 L148,155 L154,165 L160,155 L166,165 L172,155 L178,165 L184,155 L190,165 L196,155 L202,165 L208,155 L214,165 L218,165" fill="none" stroke="#666" stroke-width="3" />
+
+    <!-- Main arms -->
+    <path d="M75,100 L130,40 L170,40 L225,100" fill="none" stroke="#666" stroke-width="4" />
+
+    <!-- Tips -->
+    <path d="M130,40 L125,30 C125,25 135,25 135,30 L130,40 Z" fill="url(#metalGradient)" stroke="#000" stroke-width="1" />
+    <path d="M170,40 L175,30 C175,25 165,25 165,30 L170,40 Z" fill="url(#metalGradient)" stroke="#000" stroke-width="1" />
+
+    <!-- Jaw joint -->
+    <circle cx="150" cy="40" r="5" fill="#666" stroke="#000" stroke-width="1" />
+
+    <!-- Reflections -->
+    <path d="M70,140 L75,142" stroke="#fff" stroke-width="1" opacity="0.7" />
+    <path d="M230,140 L225,142" stroke="#fff" stroke-width="1" opacity="0.7" />
+    <path d="M128,38 L132,38" stroke="#fff" stroke-width="1" opacity="0.8" />
+    <path d="M168,38 L172,38" stroke="#fff" stroke-width="1" opacity="0.8" />
+</svg>

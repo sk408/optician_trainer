@@ -1,4 +1,5 @@
 import { TopicStudyContent } from '../../interfaces/StudyContent';
+import { contactLensDesignMaterialsImages } from '../mediaAssets';
 
 export const contactLensDesignMaterialsContent: TopicStudyContent = {
   topicId: 'contact-lens-design-materials',
@@ -46,7 +47,7 @@ export const contactLensDesignMaterialsContent: TopicStudyContent = {
           id: 'lens-categories-image',
           type: 'image',
           content: {
-            src: '/assets/images/study/contact-lens-categories.jpg',
+            src: contactLensDesignMaterialsImages.contactLensCategories.path,
             alt: 'Categories of contact lenses showing soft, RGP, and specialty designs',
             caption: 'Major categories of contact lenses: soft lenses, rigid gas permeable (RGP) lenses, and specialty designs',
             width: '80%'
@@ -247,7 +248,7 @@ export const contactLensDesignMaterialsContent: TopicStudyContent = {
           id: 'rgp-zones-image',
           type: 'image',
           content: {
-            src: '/assets/images/study/rgp-design-zones.jpg',
+            src: contactLensDesignMaterialsImages.rgpDesignZones.path,
             alt: 'Cross-section diagram of RGP lens showing different zones',
             caption: 'Cross-section of an RGP lens showing optical zone, peripheral curves, and edge design',
             width: '70%'
@@ -331,7 +332,7 @@ export const contactLensDesignMaterialsContent: TopicStudyContent = {
           id: 'scleral-diagram',
           type: 'image',
           content: {
-            src: '/assets/images/study/scleral-lens-vault.jpg',
+            src: contactLensDesignMaterialsImages.scleralLensVault.path,
             alt: 'Cross-section diagram of a scleral lens showing corneal vault',
             caption: 'Cross-section of a scleral lens showing vault over the cornea and landing zone on the sclera',
             width: '70%'

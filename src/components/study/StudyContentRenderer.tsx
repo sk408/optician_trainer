@@ -217,7 +217,10 @@ const ImageRenderer: React.FC<ImageRendererProps> = ({ content }) => {
             height: content.height, 
             width: content.width,
             maxWidth: '100%',
-            margin: '0 auto'
+            maxHeight: { xs: '300px', sm: '400px', md: '500px' },
+            objectFit: 'contain',
+            margin: '0 auto',
+            display: 'block'
           }}
         />
         {content.caption && (

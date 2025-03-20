@@ -22,6 +22,7 @@ import {
   Info as InfoIcon,
   StraightenOutlined as MeasureIcon
 } from '@mui/icons-material';
+import { dispensingImages } from '../../constants/mediaAssets';
 
 const FrameMeasurementsPanel: React.FC = () => {
   const [monoValue, setMonoValue] = useState('');
@@ -43,7 +44,7 @@ const FrameMeasurementsPanel: React.FC = () => {
         <CardMedia
           component="img"
           height="250"
-          image="/assets/images/dispensing/frame-measurements-diagram.jpg"
+          image={dispensingImages.frameMeasurementsDiagram.path}
           alt="Frame Measurements Diagram"
           sx={{ width: '100%', maxWidth: 800, margin: '0 auto', border: '1px solid #ddd' }}
         />
@@ -293,8 +294,8 @@ const FrameMeasurementsPanel: React.FC = () => {
               <CardMedia
                 component="img"
                 height="180"
-                image="/assets/images/dispensing/seg-height-measurement.jpg"
-                alt="Segment Height Measurement"
+                image={dispensingImages.frameMeasurementsDiagram.path}
+                alt="Frame Measurements Diagram"
                 sx={{ width: '100%', maxWidth: 400, margin: '0 auto', border: '1px solid #ddd' }}
               />
             </Box>

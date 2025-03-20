@@ -14,6 +14,7 @@ import {
   ListItemText
 } from '@mui/material';
 import { CheckCircleOutline as CheckIcon } from '@mui/icons-material';
+import { otherImages } from '../../constants/mediaAssets';
 
 const BasicOpticsComponent: React.FC = () => {
   return (
@@ -64,7 +65,7 @@ const BasicOpticsComponent: React.FC = () => {
             <CardMedia
               component="img"
               height="200"
-              image="/images/visible-spectrum.jpg"
+              image={otherImages.visibleSpectrum.path}
               alt="Visible Light Spectrum"
               sx={{ objectFit: 'contain', bgcolor: 'background.paper' }}
             />

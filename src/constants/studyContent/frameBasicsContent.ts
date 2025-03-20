@@ -1,4 +1,5 @@
 import { TopicStudyContent } from '../../interfaces/StudyContent';
+import { frameBasicsImages } from '../mediaAssets';
 
 export const frameBasicsContent: TopicStudyContent = {
   topicId: 'frame-basics',
@@ -36,7 +37,7 @@ export const frameBasicsContent: TopicStudyContent = {
           id: 'frame-diagram',
           type: 'image',
           content: {
-            src: '/assets/images/study/frame-anatomy-diagram.jpg',
+            src: frameBasicsImages.frameAnatomyDiagram.path,
             alt: 'Labeled diagram of eyeglass frame parts',
             caption: 'Main components of a standard eyeglass frame',
             width: '80%'
@@ -420,7 +421,7 @@ export const frameBasicsContent: TopicStudyContent = {
           id: 'measurement-diagram',
           type: 'image',
           content: {
-            src: '/assets/images/study/frame-measurements-diagram.jpg',
+            src: frameBasicsImages.frameMeasurementsDiagram.path,
             alt: 'Diagram showing standard frame measurements',
             caption: 'Standard frame measurement locations and notation',
             width: '80%'

@@ -329,8 +329,8 @@ const StudyTopicPage: React.FC = () => {
         setQuizScore(topicProgress.quizScore || 0);
       }
     } else {
-      // Topic not found - redirect to all topics page
-      navigate('/study/all-topics');
+      // Topic not found - redirect to study dashboard instead of all topics page
+      navigate('/study');
       return;
     }
     
@@ -369,8 +369,8 @@ const StudyTopicPage: React.FC = () => {
             <HomeIcon sx={{ mr: 0.5 }} fontSize="inherit" />
             Home
           </Link>
-          <Link to="/study/all-topics" style={{ textDecoration: 'none', color: 'inherit' }}>
-            Study Topics
+          <Link to="/study" style={{ textDecoration: 'none', color: 'inherit' }}>
+            Study Dashboard
           </Link>
           <Typography color="text.primary">{topic.title}</Typography>
         </Breadcrumbs>

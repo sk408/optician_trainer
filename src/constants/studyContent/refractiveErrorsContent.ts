@@ -1,4 +1,5 @@
 import { TopicStudyContent } from '../../interfaces/StudyContent';
+import { refractiveErrorsImages } from '../mediaAssets';
 
 export const refractiveErrorsContent: TopicStudyContent = {
   topicId: 'refractive-errors',
@@ -62,9 +63,11 @@ export const refractiveErrorsContent: TopicStudyContent = {
           id: 'intro-image',
           type: 'image',
           content: {
-            src: '/assets/images/study/refractive-errors-intro.png',
+            src: refractiveErrorsImages.intro.path,
             alt: 'Diagram showing how light focuses in a normal eye vs. eyes with refractive errors',
-            caption: 'Comparison of light focusing in normal vision versus refractive errors'
+            caption: 'Comparison of light focusing in normal vision versus refractive errors',
+            width: '100%',
+            height: 'auto'
           }
         },
         {
@@ -211,9 +214,9 @@ export const refractiveErrorsContent: TopicStudyContent = {
           id: 'myopia-simplified-diagram',
           type: 'image',
           content: {
-            src: '/assets/images/study/myopia-simplified.png',
-            alt: 'Simple diagram comparing normal vision to myopic vision',
-            caption: 'Left: How a person with normal vision sees a street sign. Right: How a person with myopia sees the same sign.'
+            src: refractiveErrorsImages.myopiaSimplified.path,
+            alt: 'Simplified diagram showing how light focuses in myopia',
+            caption: 'Myopia: Light focuses in front of the retina, causing distant objects to appear blurry'
           }
         },
         {
@@ -249,9 +252,9 @@ export const refractiveErrorsContent: TopicStudyContent = {
           id: 'myopia-image',
           type: 'image',
           content: {
-            src: '/assets/images/study/myopia-diagram.png',
-            alt: 'Diagram showing light focusing in a myopic eye',
-            caption: 'In myopia, light focuses in front of the retina instead of on it'
+            src: refractiveErrorsImages.myopiaDiagram.path,
+            alt: 'Detailed diagram of myopia showing uncorrected and corrected vision',
+            caption: 'Myopia: Uncorrected (top) vs. Corrected with concave lens (bottom)'
           }
         },
         {
@@ -423,9 +426,9 @@ export const refractiveErrorsContent: TopicStudyContent = {
           id: 'hyperopia-simplified-diagram',
           type: 'image',
           content: {
-            src: '/assets/images/study/hyperopia-simplified.png',
-            alt: 'Simple diagram comparing normal vision to hyperopic vision',
-            caption: 'Left: How a person with normal vision sees a book. Right: How a person with hyperopia sees the same book.'
+            src: refractiveErrorsImages.hyperopiaSimplified.path,
+            alt: 'Simplified diagram showing how light focuses in hyperopia',
+            caption: 'Hyperopia: Light focuses behind the retina, causing nearby objects to appear blurry'
           }
         },
         {
@@ -463,7 +466,7 @@ export const refractiveErrorsContent: TopicStudyContent = {
           id: 'hyperopia-image',
           type: 'image',
           content: {
-            src: '/assets/images/study/hyperopia-diagram.png',
+            src: refractiveErrorsImages.hyperopiaDiagram.path,
             alt: 'Diagram showing light focusing in a hyperopic eye',
             caption: 'In hyperopia, light would focus behind the retina if not corrected'
           }
@@ -574,9 +577,9 @@ export const refractiveErrorsContent: TopicStudyContent = {
           id: 'astigmatism-simplified-diagram',
           type: 'image',
           content: {
-            src: '/assets/images/study/astigmatism-simplified.png',
-            alt: 'Simple diagram comparing normal vision to astigmatic vision',
-            caption: 'Left: How a person with normal vision sees a clock. Right: How a person with astigmatism might see the same clock (notice the directional blur).'
+            src: refractiveErrorsImages.astigmatismSimplified.path,
+            alt: 'Simplified diagram showing how light focuses in astigmatism',
+            caption: 'Astigmatism: Light focuses at multiple points due to irregular cornea shape'
           }
         },
         {
@@ -614,7 +617,7 @@ export const refractiveErrorsContent: TopicStudyContent = {
           id: 'astigmatism-image',
           type: 'image',
           content: {
-            src: '/assets/images/study/astigmatism-diagram.png',
+            src: refractiveErrorsImages.astigmatismDiagram.path,
             alt: 'Diagram showing light focusing in an eye with astigmatism',
             caption: 'In astigmatism, light rays focus at multiple points instead of a single point'
           }
@@ -737,9 +740,9 @@ export const refractiveErrorsContent: TopicStudyContent = {
           id: 'presbyopia-simplified-diagram',
           type: 'image',
           content: {
-            src: '/assets/images/study/presbyopia-simplified.png',
-            alt: 'Simple diagram showing presbyopia progression with age',
-            caption: 'Left: A young lens can easily change shape to focus on near objects. Right: An older lens is stiffer and can\'t focus on near objects as well.'
+            src: refractiveErrorsImages.presbyopiaSimplified.path,
+            alt: 'Simplified diagram showing how the lens loses flexibility in presbyopia',
+            caption: 'Presbyopia: Age-related loss of lens flexibility makes focusing on near objects difficult'
           }
         },
         {
@@ -777,7 +780,7 @@ export const refractiveErrorsContent: TopicStudyContent = {
           id: 'presbyopia-image',
           type: 'image',
           content: {
-            src: '/assets/images/study/presbyopia-diagram.png',
+            src: refractiveErrorsImages.presbyopiaDiagram.path,
             alt: 'Diagram showing how the lens changes with age',
             caption: 'The lens becomes less flexible with age, leading to presbyopia'
           }
@@ -884,9 +887,9 @@ export const refractiveErrorsContent: TopicStudyContent = {
           id: 'prescription-visual-aid',
           type: 'image',
           content: {
-            src: '/assets/images/study/prescription-anatomy.png',
-            alt: 'Annotated eyeglass prescription showing each component',
-            caption: 'Anatomy of an eyeglass prescription with each component labeled'
+            src: refractiveErrorsImages.prescriptionAnatomy.path,
+            alt: 'Diagram showing the components of an eyeglass prescription',
+            caption: 'Anatomy of an eyeglass prescription showing sphere, cylinder, and axis values'
           }
         },
         {
@@ -1160,9 +1163,9 @@ export const refractiveErrorsContent: TopicStudyContent = {
           id: 'visual-summary',
           type: 'image',
           content: {
-            src: '/assets/images/study/refractive-errors-summary.png',
-            alt: 'Visual summary of the four main refractive errors',
-            caption: 'Visual comparison of the four main refractive errors and their corrections'
+            src: refractiveErrorsImages.refractiveErrorsSummary.path,
+            alt: 'Summary chart comparing the four main refractive errors',
+            caption: 'Summary of refractive errors, their causes, symptoms, and corrections'
           }
         },
         {

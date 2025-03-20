@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="700" height="420" viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="700" height="420" fill="white"/>
+  
+  <!-- Title -->
+  <text x="350" y="40" font-family="Arial" font-size="24" text-anchor="middle" font-weight="bold" fill="#333">Common Lens Forms</text>
+  
+  <!-- Row 1: Convex Lenses -->
+  <g transform="translate(0,80)">
+    <!-- Title for Row 1 -->
+    <text x="350" y="0" font-family="Arial" font-size="18" text-anchor="middle" fill="#333">Convex (Plus) Lenses</text>
+    
+    <!-- Biconvex -->
+    <g transform="translate(100,60)">
+      <path d="M20,0 Q40,-40 60,0 Q40,40 20,0 Z" fill="#E6F7FF" stroke="#333" stroke-width="2"/>
+      <text x="40" y="60" font-family="Arial" font-size="14" text-anchor="middle" fill="#333">Biconvex</text>
+      <text x="40" y="80" font-family="Arial" font-size="12" text-anchor="middle" fill="#666">(+) Both sides curve out</text>
+    </g>
+    
+    <!-- Plano-Convex -->
+    <g transform="translate(280,60)">
+      <path d="M20,0 L20,-40 L60,-40 L60,40 L20,40 L20,0 Q40,40 60,0 Z" fill="#E6F7FF" stroke="#333" stroke-width="2"/>
+      <text x="40" y="60" font-family="Arial" font-size="14" text-anchor="middle" fill="#333">Plano-Convex</text>
+      <text x="40" y="80" font-family="Arial" font-size="12" text-anchor="middle" fill="#666">(+) Flat and outward curve</text>
+    </g>
+    
+    <!-- Convex Meniscus -->
+    <g transform="translate(460,60)">
+      <path d="M20,0 Q30,-40 60,0 Q30,30 20,0 Z" fill="#E6F7FF" stroke="#333" stroke-width="2"/>
+      <text x="40" y="60" font-family="Arial" font-size="14" text-anchor="middle" fill="#333">Convex Meniscus</text>
+      <text x="40" y="80" font-family="Arial" font-size="12" text-anchor="middle" fill="#666">(+) Outward curve stronger</text>
+    </g>
+  </g>
+  
+  <!-- Row 2: Concave Lenses -->
+  <g transform="translate(0,230)">
+    <!-- Title for Row 2 -->
+    <text x="350" y="0" font-family="Arial" font-size="18" text-anchor="middle" fill="#333">Concave (Minus) Lenses</text>
+    
+    <!-- Biconcave -->
+    <g transform="translate(100,60)">
+      <path d="M20,0 Q0,-40 20,-40 L60,-40 Q80,-40 60,0 Q80,40 60,40 L20,40 Q0,40 20,0 Z" fill="#E6F7FF" stroke="#333" stroke-width="2"/>
+      <text x="40" y="60" font-family="Arial" font-size="14" text-anchor="middle" fill="#333">Biconcave</text>
+      <text x="40" y="80" font-family="Arial" font-size="12" text-anchor="middle" fill="#666">(-) Both sides curve in</text>
+    </g>
+    
+    <!-- Plano-Concave -->
+    <g transform="translate(280,60)">
+      <path d="M20,0 L20,-40 L60,-40 Q80,-40 60,0 Q80,40 60,40 L20,40 L20,0 Z" fill="#E6F7FF" stroke="#333" stroke-width="2"/>
+      <text x="40" y="60" font-family="Arial" font-size="14" text-anchor="middle" fill="#333">Plano-Concave</text>
+      <text x="40" y="80" font-family="Arial" font-size="12" text-anchor="middle" fill="#666">(-) Flat and inward curve</text>
+    </g>
+    
+    <!-- Concave Meniscus -->
+    <g transform="translate(460,60)">
+      <path d="M20,0 Q10,-35 20,-40 L60,-40 Q70,-35 60,0 Q70,35 60,40 L20,40 Q10,35 20,0 Z" fill="#E6F7FF" stroke="#333" stroke-width="2"/>
+      <text x="40" y="60" font-family="Arial" font-size="14" text-anchor="middle" fill="#333">Concave Meniscus</text>
+      <text x="40" y="80" font-family="Arial" font-size="12" text-anchor="middle" fill="#666">(-) Inward curve stronger</text>
+    </g>
+  </g>
+  
+  <!-- Description -->
+  <g transform="translate(0,380)">
+    <text x="350" y="0" font-family="Arial" font-size="14" text-anchor="middle" fill="#333">
+      Lens form affects optical properties including thickness, weight, aberrations, and cosmetic appearance.
+    </text>
+    <text x="350" y="25" font-family="Arial" font-size="14" text-anchor="middle" fill="#333">
+      The choice of form depends on the prescription needs and frame selection.
+    </text>
+  </g>
+  
+  <!-- Legend -->
+  <g transform="translate(550,130)">
+    <rect width="120" height="75" fill="#f8f8f8" stroke="#ccc" rx="5" ry="5"/>
+    <text x="60" y="20" font-family="Arial" font-size="14" text-anchor="middle" font-weight="bold" fill="#333">Legend</text>
+    <circle cx="20" cy="40" r="6" fill="#E6F7FF" stroke="#333"/>
+    <text x="30" y="44" font-family="Arial" font-size="12" text-anchor="start" fill="#333">Lens material</text>
+    <line x1="10" y1="60" x2="30" y2="60" stroke="#333" stroke-width="2"/>
+    <text x="40" y="64" font-family="Arial" font-size="12" text-anchor="start" fill="#333">Lens surface</text>
+  </g>
+</svg> 

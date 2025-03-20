@@ -377,92 +377,392 @@ export const ocularAnatomyQuestions: ExamQuestion[] = [
   },
   {
     id: 'ncle-anatomy-025',
-    question: 'What unit is used to measure oxygen permeability (Dk) of contact lens materials?',
+    question: 'Which of the following is the primary function of the corneal endothelium?',
     options: [
-      'cm²/s',
-      'mL O₂ × cm / (cm² × s × mmHg)',
-      'mmHg/hour',
-      'mL/min'
+      'Providing structural support',
+      'Maintaining corneal transparency through fluid regulation',
+      'Protecting the eye from UV radiation',
+      'Providing nutrients to the corneal epithelium'
     ],
     correctAnswer: 1,
-    explanation: 'Oxygen permeability (Dk) is measured in units of mL O₂ × cm / (cm² × s × mmHg). It describes how much oxygen can pass through a material of a specific thickness.',
+    explanation: 'The primary function of the corneal endothelium is to maintain corneal transparency through fluid regulation. It acts as a pump to remove excess fluid from the stroma, preventing corneal edema and maintaining clarity.',
     category: 'ocular-anatomy',
-    subcategory: 'corneal-physiology',
-    difficulty: 'hard'
+    subcategory: 'anterior-segment',
+    difficulty: 'medium'
   },
   {
     id: 'ncle-anatomy-026',
-    question: 'What is corneal edema?',
+    question: 'What is the approximate diameter of the normal adult cornea?',
     options: [
-      'Thinning of the cornea due to contact lens wear',
-      'Normal variation in corneal curvature',
-      'Swelling of the cornea due to increased hydration',
-      'Drying of the corneal epithelium'
+      '9-10 mm',
+      '11-12 mm',
+      '13-14 mm',
+      '15-16 mm'
+    ],
+    correctAnswer: 1,
+    explanation: 'The normal adult cornea has an approximate diameter of 11-12 mm horizontally (white-to-white distance or HVID). This measurement is important in contact lens fitting.',
+    category: 'ocular-anatomy',
+    subcategory: 'anterior-segment',
+    difficulty: 'easy'
+  },
+  {
+    id: 'ncle-anatomy-027',
+    question: 'Which of the following statements about corneal endothelial cells is TRUE?',
+    options: [
+      'They regenerate quickly when damaged',
+      'Their density increases with age',
+      'They are approximately 5 microns thick',
+      'They are incapable of mitosis in the adult human eye'
+    ],
+    correctAnswer: 3,
+    explanation: 'Corneal endothelial cells are incapable of mitosis (cell division) in the adult human eye. When endothelial cells are lost due to age, disease, or trauma, the remaining cells spread out to cover the posterior corneal surface, resulting in decreased cell density over time.',
+    category: 'ocular-anatomy',
+    subcategory: 'anterior-segment',
+    difficulty: 'hard'
+  },
+  {
+    id: 'ncle-anatomy-028',
+    question: 'What is the most common shape of the normal cornea when viewed from the front?',
+    options: [
+      'Perfectly circular',
+      'Horizontally oval',
+      'Vertically oval',
+      'Triangular'
+    ],
+    correctAnswer: 1,
+    explanation: 'When viewed from the front, the normal cornea is horizontally oval, with the horizontal diameter (11-12 mm) being slightly larger than the vertical diameter (10-11 mm).',
+    category: 'ocular-anatomy',
+    subcategory: 'anterior-segment',
+    difficulty: 'easy'
+  },
+  {
+    id: 'ncle-anatomy-029',
+    question: 'Which layer of the cornea makes up approximately 90% of the corneal thickness?',
+    options: [
+      'Epithelium',
+      'Bowman\'s layer',
+      'Stroma',
+      'Descemet\'s membrane'
     ],
     correctAnswer: 2,
-    explanation: 'Corneal edema is swelling of the cornea due to increased hydration, often from reduced oxygen availability or endothelial dysfunction. It can lead to blurred vision and discomfort.',
+    explanation: 'The stroma makes up approximately 90% of the corneal thickness. It consists of regularly arranged collagen fibrils, which contribute to the cornea\'s transparency and strength.',
+    category: 'ocular-anatomy',
+    subcategory: 'anterior-segment',
+    difficulty: 'medium'
+  },
+  {
+    id: 'ncle-anatomy-030',
+    question: 'What structure is responsible for producing aqueous humor?',
+    options: [
+      'Iris',
+      'Lens',
+      'Ciliary body',
+      'Trabecular meshwork'
+    ],
+    correctAnswer: 2,
+    explanation: 'The ciliary body is responsible for producing aqueous humor, which fills the anterior chamber and provides nutrients to the avascular cornea and lens.',
+    category: 'ocular-anatomy',
+    subcategory: 'anterior-segment',
+    difficulty: 'easy'
+  },
+  {
+    id: 'ncle-anatomy-031',
+    question: 'Which of the following best describes the limbus?',
+    options: [
+      'The center of the cornea',
+      'The junction between the cornea and sclera',
+      'The outer edge of the iris',
+      'The junction between the iris and ciliary body'
+    ],
+    correctAnswer: 1,
+    explanation: 'The limbus is the junction (transition zone) between the cornea and sclera. It contains stem cells that are important for corneal epithelial regeneration.',
+    category: 'ocular-anatomy',
+    subcategory: 'anterior-segment',
+    difficulty: 'easy'
+  },
+  {
+    id: 'ncle-anatomy-032',
+    question: 'What is the primary purpose of the conjunctiva?',
+    options: [
+      'To produce tears',
+      'To protect and lubricate the exposed surface of the eye',
+      'To regulate the amount of light entering the eye',
+      'To help focus light onto the retina'
+    ],
+    correctAnswer: 1,
+    explanation: 'The primary purpose of the conjunctiva is to protect and lubricate the exposed surface of the eye. It is a thin, transparent membrane that covers the anterior sclera (bulbar conjunctiva) and lines the inner surfaces of the eyelids (palpebral conjunctiva).',
+    category: 'ocular-anatomy',
+    subcategory: 'anterior-segment',
+    difficulty: 'easy'
+  },
+  {
+    id: 'ncle-anatomy-033',
+    question: 'What is the normal central corneal thickness in humans?',
+    options: [
+      '200-300 microns',
+      '350-450 microns',
+      '500-600 microns',
+      '700-800 microns'
+    ],
+    correctAnswer: 2,
+    explanation: 'The normal central corneal thickness in humans is approximately 500-600 microns (0.5-0.6 mm). This thickness is important in assessing conditions like glaucoma and for determining candidacy for certain refractive surgeries.',
+    category: 'ocular-anatomy',
+    subcategory: 'anterior-segment',
+    difficulty: 'medium'
+  },
+  {
+    id: 'ncle-anatomy-034',
+    question: 'Which of the following describes the normal corneal curvature?',
+    options: [
+      'Steeper centrally than peripherally',
+      'Uniform across the entire surface',
+      'Steeper peripherally than centrally',
+      'Variable depending on age only'
+    ],
+    correctAnswer: 0,
+    explanation: 'The normal cornea is steeper centrally than peripherally, becoming progressively flatter toward the limbus. This prolate shape contributes to the optical properties of the eye.',
+    category: 'ocular-anatomy',
+    subcategory: 'anterior-segment',
+    difficulty: 'medium'
+  },
+  {
+    id: 'ncle-anatomy-035',
+    question: 'What is the primary source of oxygen for the cornea during waking hours?',
+    options: [
+      'Blood vessels in the cornea',
+      'Atmospheric oxygen through the tear film',
+      'Aqueous humor',
+      'Vitreous humor'
+    ],
+    correctAnswer: 1,
+    explanation: 'During waking hours, the primary source of oxygen for the cornea is atmospheric oxygen that diffuses through the tear film. The cornea is avascular (has no blood vessels), so it requires alternate means of oxygen supply.',
     category: 'ocular-anatomy',
     subcategory: 'corneal-physiology',
     difficulty: 'easy'
   },
   {
-    id: 'ncle-anatomy-027',
-    question: 'What is the minimum oxygen transmissibility (Dk/t) recommended for daily wear soft contact lenses?',
+    id: 'ncle-anatomy-036',
+    question: 'What is the approximate pH of normal tears?',
     options: [
-      '10-15',
-      '20-30',
-      '35-50',
-      'Greater than 87'
+      '5.0-5.5',
+      '6.5-7.0',
+      '7.3-7.7',
+      '8.0-8.5'
+    ],
+    correctAnswer: 2,
+    explanation: 'The approximate pH of normal tears is 7.3-7.7, which is slightly alkaline. This pH helps maintain ocular surface health and comfort.',
+    category: 'ocular-anatomy',
+    subcategory: 'tear-film',
+    difficulty: 'medium'
+  },
+  {
+    id: 'ncle-anatomy-037',
+    question: 'Which of the following is NOT a layer of the tear film according to the classic three-layer model?',
+    options: [
+      'Mucin layer',
+      'Aqueous layer',
+      'Lipid layer',
+      'Protein layer'
+    ],
+    correctAnswer: 3,
+    explanation: 'According to the classic three-layer model, the tear film consists of a mucin (mucous) layer adjacent to the cornea, an aqueous (watery) middle layer, and a lipid (oily) outer layer. There is no distinct protein layer, although proteins are present within the aqueous layer.',
+    category: 'ocular-anatomy',
+    subcategory: 'tear-film',
+    difficulty: 'medium'
+  },
+  {
+    id: 'ncle-anatomy-038',
+    question: 'Which glands produce the lipid layer of the tear film?',
+    options: [
+      'Meibomian glands',
+      'Lacrimal glands',
+      'Goblet cells',
+      'Glands of Zeis'
+    ],
+    correctAnswer: 0,
+    explanation: 'The meibomian glands, located in the tarsal plates of the eyelids, produce the lipid (oil) layer of the tear film. This layer helps prevent evaporation of the aqueous layer and provides a smooth optical surface.',
+    category: 'ocular-anatomy',
+    subcategory: 'tear-film',
+    difficulty: 'easy'
+  },
+  {
+    id: 'ncle-anatomy-039',
+    question: 'Which structure produces the aqueous component of tears?',
+    options: [
+      'Meibomian glands',
+      'Lacrimal gland',
+      'Goblet cells',
+      'Glands of Wolfring'
     ],
     correctAnswer: 1,
-    explanation: 'The minimum oxygen transmissibility (Dk/t) recommended for daily wear soft contact lenses is generally 20-30 to prevent corneal hypoxia and its complications.',
+    explanation: 'The lacrimal gland produces the bulk of the aqueous (watery) component of tears, which makes up the middle layer of the tear film. The accessory lacrimal glands (glands of Krause and Wolfring) also contribute to aqueous tear production.',
+    category: 'ocular-anatomy',
+    subcategory: 'tear-film',
+    difficulty: 'easy'
+  },
+  {
+    id: 'ncle-anatomy-040',
+    question: 'What is the primary function of the mucin layer of the tear film?',
+    options: [
+      'To prevent tear evaporation',
+      'To kill bacteria',
+      'To make the hydrophobic corneal epithelium wettable',
+      'To nourish the cornea'
+    ],
+    correctAnswer: 2,
+    explanation: 'The primary function of the mucin layer is to make the naturally hydrophobic (water-repelling) corneal epithelium wettable. It creates an interface that allows the aqueous layer to spread evenly across the ocular surface.',
+    category: 'ocular-anatomy',
+    subcategory: 'tear-film',
+    difficulty: 'medium'
+  },
+  {
+    id: 'ncle-anatomy-041',
+    question: 'What cells are primarily responsible for producing the mucin layer of the tear film?',
+    options: [
+      'Meibomian gland cells',
+      'Lacrimal gland cells',
+      'Goblet cells',
+      'Epithelial cells'
+    ],
+    correctAnswer: 2,
+    explanation: 'Goblet cells, found in the conjunctiva, are primarily responsible for producing the mucin (mucous) layer of the tear film, although corneal epithelial cells also produce membrane-bound mucins.',
+    category: 'ocular-anatomy',
+    subcategory: 'tear-film',
+    difficulty: 'medium'
+  },
+  {
+    id: 'ncle-anatomy-042',
+    question: 'What is the typical tear film thickness?',
+    options: [
+      '3-5 microns',
+      '7-10 microns',
+      '15-20 microns',
+      '30-40 microns'
+    ],
+    correctAnswer: 1,
+    explanation: 'The typical tear film thickness is approximately 7-10 microns. This thin layer plays a crucial role in maintaining ocular surface health and optical clarity.',
+    category: 'ocular-anatomy',
+    subcategory: 'tear-film',
+    difficulty: 'medium'
+  },
+  {
+    id: 'ncle-anatomy-043',
+    question: 'What happens to corneal thickness after prolonged wear of low-oxygen transmissible contact lenses?',
+    options: [
+      'It decreases',
+      'It increases due to corneal edema',
+      'It remains unchanged',
+      'It fluctuates randomly'
+    ],
+    correctAnswer: 1,
+    explanation: 'After prolonged wear of low-oxygen transmissible contact lenses, corneal thickness increases due to corneal edema (swelling). This is caused by hypoxia (oxygen deprivation) that leads to increased stromal fluid retention.',
     category: 'ocular-anatomy',
     subcategory: 'corneal-physiology',
     difficulty: 'medium'
   },
   {
-    id: 'ncle-anatomy-028',
-    question: 'What is the minimum Dk/t value recommended for extended wear (overnight) contact lenses?',
+    id: 'ncle-anatomy-044',
+    question: 'What is the primary metabolic pathway the cornea uses to produce energy under normal aerobic conditions?',
     options: [
-      'At least 24',
-      'At least 35',
-      'At least 87',
-      'At least 125'
-    ],
-    correctAnswer: 2,
-    explanation: 'The minimum Dk/t value recommended for extended wear (overnight) contact lenses is at least 87, often referred to as the Holden-Mertz criteria, to prevent significant corneal swelling during overnight wear.',
-    category: 'ocular-anatomy',
-    subcategory: 'corneal-physiology',
-    difficulty: 'hard'
-  },
-  {
-    id: 'ncle-anatomy-029',
-    question: 'What is the main metabolic pathway used by the cornea in normal conditions?',
-    options: [
-      'Anaerobic glycolysis',
-      'Aerobic glycolysis',
-      'Krebs cycle',
+      'Pentose phosphate pathway',
+      'Glycolysis only',
+      'Glycolysis and Krebs cycle',
       'Beta-oxidation'
     ],
     correctAnswer: 2,
-    explanation: 'Under normal conditions with sufficient oxygen, the cornea primarily uses the Krebs cycle (aerobic metabolism) as its main metabolic pathway, which is more efficient than anaerobic glycolysis.',
+    explanation: 'Under normal aerobic conditions, the cornea primarily uses glycolysis followed by the Krebs cycle (citric acid cycle) to produce energy efficiently. When oxygen is limited, the cornea shifts to anaerobic glycolysis alone, which is less efficient.',
     category: 'ocular-anatomy',
     subcategory: 'corneal-physiology',
     difficulty: 'hard'
   },
   {
-    id: 'ncle-anatomy-030',
-    question: 'What is the process by which the corneal epithelium regenerates?',
+    id: 'ncle-anatomy-045',
+    question: 'What is the average corneal refractive index?',
     options: [
-      'Centripetal movement from the limbus',
-      'Centrifugal movement from the central cornea',
-      'Random cell division throughout the cornea',
-      'Cell division only at sites of injury'
+      '1.336',
+      '1.376',
+      '1.416',
+      '1.456'
     ],
-    correctAnswer: 0,
-    explanation: 'The corneal epithelium regenerates through centripetal movement of cells from the limbus toward the center of the cornea. Stem cells at the limbus divide to produce cells that migrate centrally and differentiate to replace lost epithelial cells.',
+    correctAnswer: 1,
+    explanation: 'The average corneal refractive index is approximately 1.376. This is higher than the refractive index of tears (1.336) and contributes to the cornea\'s role in light refraction.',
+    category: 'ocular-anatomy',
+    subcategory: 'anterior-segment',
+    difficulty: 'medium'
+  },
+  {
+    id: 'ncle-anatomy-046',
+    question: 'What is the primary reason for the cornea\'s transparency?',
+    options: [
+      'Its high water content',
+      'The regular arrangement of collagen fibrils in the stroma',
+      'The absence of nerves',
+      'Its smooth surface'
+    ],
+    correctAnswer: 1,
+    explanation: 'The primary reason for the cornea\'s transparency is the regular arrangement of collagen fibrils in the stroma, with spacing less than the wavelength of visible light. This minimizes light scatter and allows light to pass through.',
     category: 'ocular-anatomy',
     subcategory: 'corneal-physiology',
     difficulty: 'medium'
+  },
+  {
+    id: 'ncle-anatomy-047',
+    question: 'Which of the following is NOT a common cause of reduced corneal sensitivity?',
+    options: [
+      'Long-term contact lens wear',
+      'Keratoconus',
+      'Age',
+      'LASIK surgery'
+    ],
+    correctAnswer: 1,
+    explanation: 'Keratoconus is not typically associated with reduced corneal sensitivity. In fact, patients with keratoconus often have normal or even increased corneal sensitivity. Long-term contact lens wear, aging, and LASIK surgery can all reduce corneal sensitivity due to effects on corneal nerves.',
+    category: 'ocular-anatomy',
+    subcategory: 'corneal-physiology',
+    difficulty: 'hard'
+  },
+  {
+    id: 'ncle-anatomy-048',
+    question: 'What is corneal neovascularization?',
+    options: [
+      'Normal growth of the cornea',
+      'Growth of new blood vessels into the normally avascular cornea',
+      'Thinning of the cornea',
+      'Hardening of the corneal tissue'
+    ],
+    correctAnswer: 1,
+    explanation: 'Corneal neovascularization is the growth of new blood vessels into the normally avascular (without blood vessels) cornea. It can be a response to hypoxia, inflammation, or trauma and can compromise corneal clarity.',
+    category: 'ocular-anatomy',
+    subcategory: 'corneal-physiology',
+    difficulty: 'medium'
+  },
+  {
+    id: 'ncle-anatomy-049',
+    question: 'What is the average tear production rate (basal tears) per minute?',
+    options: [
+      '0.5-1 μL',
+      '1-2 μL',
+      '5-10 μL',
+      '15-30 μL'
+    ],
+    correctAnswer: 1,
+    explanation: 'The average tear production rate for basal (continuous) tears is approximately 1-2 microliters (μL) per minute. This is significantly less than reflex tearing, which can produce up to 100 μL per minute.',
+    category: 'ocular-anatomy',
+    subcategory: 'tear-film',
+    difficulty: 'hard'
+  },
+  {
+    id: 'ncle-anatomy-050',
+    question: 'What is the normal tear break-up time (TBUT)?',
+    options: [
+      'Less than 5 seconds',
+      '10-15 seconds or longer',
+      '30-40 seconds',
+      '1-2 minutes'
+    ],
+    correctAnswer: 1,
+    explanation: 'The normal tear break-up time (TBUT) is 10-15 seconds or longer. TBUT is the time it takes for dry spots to appear in the tear film after a blink, and shorter times may indicate tear film instability or dry eye.',
+    category: 'ocular-anatomy',
+    subcategory: 'tear-film',
+    difficulty: 'easy'
   }
 ]; 

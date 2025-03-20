@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link as RouterLink } from 'react-router-dom';
+import { Link as RouterLink, useLocation } from 'react-router-dom';
 import {
   Container,
   Typography,
@@ -56,7 +56,10 @@ interface ProgressState {
 }
 
 const StudyDashboardPage: React.FC = () => {
-  const [examType, setExamType] = useState<'abo' | 'ncle'>('abo');
+  const location = useLocation();
+  const [examType, setExamType] = useState<'abo' | 'ncle'>(
+    location.pathname.endsWith('/ncle') ? 'ncle' : 'abo'
+  );
   const [loading, setLoading] = useState(true);
   const [progress, setProgress] = useState<ProgressState>({
     totalTopics: 0,
@@ -67,6 +70,15 @@ const StudyDashboardPage: React.FC = () => {
   });
   const [availableContent, setAvailableContent] = useState<string[]>([]);
   const { darkMode } = useTheme();
+
+  // Update examType when location changes
+  useEffect(() => {
+    if (location.pathname.endsWith('/ncle')) {
+      setExamType('ncle');
+    } else if (location.pathname.endsWith('/abo')) {
+      setExamType('abo');
+    }
+  }, [location.pathname]);
 
   useEffect(() => {
     // In a real app, this would fetch data from an API
@@ -243,7 +255,7 @@ const StudyDashboardPage: React.FC = () => {
                     key={section.id}
                     label={`${section.title} (${section.weightPercentage}%)`} 
                     component={RouterLink}
-                    to={`/study/all-topics`}
+                    to={`/study/${examType}`}
                     clickable
                   />
                 ))}
@@ -253,10 +265,10 @@ const StudyDashboardPage: React.FC = () => {
                 variant="outlined" 
                 color="primary" 
                 component={RouterLink}
-                to="/study/all-topics"
+                to={`/study/${examType}`}
                 endIcon={<MenuBookIcon />}
               >
-                Browse All {examType.toUpperCase()} Topics
+                Browse {examType.toUpperCase()} Topics
               </Button>
             </Box>
           </Paper>
@@ -387,13 +399,13 @@ const StudyDashboardPage: React.FC = () => {
         <Box sx={{ mt: 4, textAlign: 'center' }}>
           <Button 
             component={RouterLink} 
-            to="/study/all-topics" 
+            to="/study" 
             variant="outlined" 
             color="primary" 
             startIcon={<MenuBookIcon />}
             size="large"
           >
-            View All Topics
+            View Study Dashboard
           </Button>
         </Box>
       </Box>

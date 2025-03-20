@@ -1,4 +1,5 @@
 import { TopicStudyContent } from '../../interfaces/StudyContent';
+import { sportsVisionImages } from '../mediaAssets';
 
 export const sportsVisionContent: TopicStudyContent = {
   topicId: 'sports-vision',
@@ -153,7 +154,7 @@ export const sportsVisionContent: TopicStudyContent = {
           id: 'strap-systems-image',
           type: 'image',
           content: {
-            src: '/assets/images/study/sports-eyewear-strap.jpg',
+            src: sportsVisionImages.sportsEyewearStrap.path,
             alt: 'Sports eyewear strap retention system',
             caption: 'Strap systems provide additional security for high-impact or water sports',
             width: 400
@@ -486,7 +487,7 @@ export const sportsVisionContent: TopicStudyContent = {
           id: 'inserts-image',
           type: 'image',
           content: {
-            src: '/assets/images/study/rx-insert-eyewear.jpg',
+            src: sportsVisionImages.rxInsertEyewear.path,
             alt: 'Sports eyewear with prescription insert',
             caption: 'Prescription insert system showing the separate prescription carrier behind the outer protective lens',
             width: 400

@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="200" viewBox="0 0 300 200">
+    <title>Seg Height Measurement</title>
+    <defs>
+        <linearGradient id="faceGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#ffdfc4" />
+            <stop offset="100%" stop-color="#f5d0b0" />
+        </linearGradient>
+        <linearGradient id="frameGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#6a4a3c" />
+            <stop offset="100%" stop-color="#8b5a2b" />
+        </linearGradient>
+        <linearGradient id="lensGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#e6f7ff" stop-opacity="0.6" />
+            <stop offset="100%" stop-color="#bfefff" stop-opacity="0.4" />
+        </linearGradient>
+        <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+            <feDropShadow dx="1" dy="1" stdDeviation="1" flood-opacity="0.3" />
+        </filter>
+    </defs>
+    
+    <!-- Background -->
+    <rect width="300" height="200" rx="5" fill="#f8f8f8" />
+    
+    <!-- Title -->
+    <text x="150" y="20" font-family="Arial" font-size="12" font-weight="bold" text-anchor="middle">Segment Height Measurement</text>
+    
+    <!-- Face Outline -->
+    <ellipse cx="150" cy="95" rx="50" ry="60" fill="url(#faceGradient)" />
+    
+    <!-- Ears -->
+    <path d="M100,95 Q90,105 95,115 Q100,125 105,115" fill="#f5d0b0" />
+    <path d="M200,95 Q210,105 205,115 Q200,125 195,115" fill="#f5d0b0" />
+    
+    <!-- Eyebrows -->
+    <path d="M120,60 Q135,55 150,60" stroke="#5c3317" stroke-width="2" fill="none" />
+    <path d="M180,60 Q165,55 150,60" stroke="#5c3317" stroke-width="2" fill="none" />
+    
+    <!-- Glasses Frame -->
+    <path d="M110,85 L105,85 L95,85 Q93,95 95,105 L105,105 L110,105 Z" fill="url(#frameGradient)" filter="url(#shadow)" />
+    <path d="M190,85 L195,85 L205,85 Q207,95 205,105 L195,105 L190,105 Z" fill="url(#frameGradient)" filter="url(#shadow)" />
+    <path d="M110,95 L190,95" stroke="#8b5a2b" stroke-width="4" />
+    
+    <!-- Lenses -->
+    <ellipse cx="125" cy="95" rx="15" ry="12" fill="url(#lensGradient)" stroke="#8b5a2b" stroke-width="1" />
+    <ellipse cx="175" cy="95" rx="15" ry="12" fill="url(#lensGradient)" stroke="#8b5a2b" stroke-width="1" />
+    
+    <!-- Progressive Lens Segment Visualization (on right lens) -->
+    <path d="M165,95 L185,95" stroke="#ff6347" stroke-width="1" stroke-dasharray="2,1" />
+    <path d="M165,98 Q170,100 175,100 Q180,100 185,98" stroke="#1e90ff" stroke-width="1" />
+    <path d="M165,103 Q170,107 175,107 Q180,107 185,103" stroke="#32cd32" stroke-width="1" />
+    
+    <!-- Eyes -->
+    <ellipse cx="125" cy="95" rx="5" ry="4" fill="#3c3c3c" />
+    <ellipse cx="175" cy="95" rx="5" ry="4" fill="#3c3c3c" />
+    <circle cx="127" cy="94" r="1" fill="white" />
+    <circle cx="177" cy="94" r="1" fill="white" />
+    
+    <!-- Nose -->
+    <path d="M150,95 Q145,110 150,115 Q155,110 150,95" fill="#f0c0a0" />
+    
+    <!-- Mouth -->
+    <path d="M140,130 Q150,135 160,130" stroke="#cc6666" stroke-width="1" fill="none" />
+    
+    <!-- Measurement Indicator -->
+    <line x1="220" y1="95" x2="220" y2="107" stroke="#ff0000" stroke-width="1" />
+    <line x1="216" y1="95" x2="224" y2="95" stroke="#ff0000" stroke-width="1" />
+    <line x1="216" y1="107" x2="224" y2="107" stroke="#ff0000" stroke-width="1" />
+    <text x="230" y="103" font-family="Arial" font-size="8" fill="#ff0000">Seg Height</text>
+    
+    <!-- Annotation with Leader Lines -->
+    <line x1="175" y1="95" x2="215" y2="95" stroke="#555555" stroke-width="0.5" stroke-dasharray="2,1" />
+    <line x1="175" y1="107" x2="215" y2="107" stroke="#555555" stroke-width="0.5" stroke-dasharray="2,1" />
+    
+    <!-- Measurement Tool Visualization -->
+    <rect x="210" y="85" width="4" height="35" rx="1" fill="#cccccc" stroke="#999999" stroke-width="0.5" />
+    
+    <!-- Legend -->
+    <rect x="30" y="160" width="240" height="30" rx="5" fill="#f0f0f0" stroke="#dddddd" />
+    <circle cx="40" cy="170" r="3" fill="#ff6347" />
+    <text x="50" y="173" font-family="Arial" font-size="7">Fitting Cross/Pupil Center</text>
+    <circle cx="135" cy="170" r="3" fill="#1e90ff" />
+    <text x="145" y="173" font-family="Arial" font-size="7">Near Vision Zone Start</text>
+    <circle cx="225" cy="170" r="3" fill="#32cd32" />
+    <text x="235" y="173" font-family="Arial" font-size="7">Reading Area</text>
+    
+    <!-- Information Text -->
+    <text x="30" y="145" font-family="Arial" font-size="7" fill="#555555">Measure from bottom of frame to where the segment begins.</text>
+    <text x="30" y="155" font-family="Arial" font-size="7" fill="#555555">Typical measurements range from 15mm to 25mm.</text>
+</svg>

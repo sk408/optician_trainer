@@ -1,4 +1,5 @@
 import { TopicStudyContent } from '../../interfaces/StudyContent';
+import { pdMeasurementImages } from '../mediaAssets';
 
 export const pdMeasurementContent: TopicStudyContent = {
   topicId: 'pd-measurement',
@@ -60,10 +61,9 @@ export const pdMeasurementContent: TopicStudyContent = {
           id: 'pd-diagram',
           type: 'image',
           content: {
-            src: '/assets/images/study/pd-diagram.svg',
-            alt: 'Diagram showing binocular and monocular PD measurements',
-            caption: 'Binocular PD (total distance between pupils) and monocular PD (distance from each pupil to the center of the nose).',
-            width: '70%'
+            src: pdMeasurementImages.diagram.path,
+            alt: 'Diagram showing pupillary distance measurement',
+            caption: 'Pupillary distance (PD) is the distance between the centers of your pupils'
           }
         },
         {
@@ -137,10 +137,9 @@ export const pdMeasurementContent: TopicStudyContent = {
           id: 'pupilometer-image',
           type: 'image',
           content: {
-            src: '/assets/images/study/pupilometer.svg',
-            alt: 'Image of a pupilometer being used to measure PD',
-            caption: 'A typical pupilometer with forehead rest and eyepiece for measuring PD.',
-            width: '60%'
+            src: pdMeasurementImages.pupilometer.path,
+            alt: 'Image of a digital pupilometer',
+            caption: 'A digital pupilometer used to measure PD accurately'
           }
         },
         {

@@ -24,6 +24,7 @@ import {
   ExpandMore as ExpandMoreIcon,
   Warning as WarningIcon
 } from '@mui/icons-material';
+import { toolsImages } from '../../constants/mediaAssets';
 
 const AdjustmentsPanel: React.FC = () => {
   return (
@@ -57,7 +58,7 @@ const AdjustmentsPanel: React.FC = () => {
             <CardMedia
               component="img"
               height="140"
-              image="/assets/images/tools/frame-warmer.jpg"
+              image={toolsImages.frameWarmer.path}
               alt="Frame Warmer"
             />
             <CardContent>
@@ -76,7 +77,7 @@ const AdjustmentsPanel: React.FC = () => {
             <CardMedia
               component="img"
               height="140"
-              image="/assets/images/tools/nose-pad-pliers.jpg"
+              image={toolsImages.nosePadPliers.path}
               alt="Nose Pad Pliers"
             />
             <CardContent>
@@ -95,7 +96,7 @@ const AdjustmentsPanel: React.FC = () => {
             <CardMedia
               component="img"
               height="140"
-              image="/assets/images/tools/angling-pliers.jpg"
+              image={toolsImages.anglingPliers.path}
               alt="Angling Pliers"
             />
             <CardContent>
@@ -114,7 +115,7 @@ const AdjustmentsPanel: React.FC = () => {
             <CardMedia
               component="img"
               height="140"
-              image="/assets/images/tools/temple-forming-pliers.jpg"
+              image={toolsImages.templeFormingPliers.path}
               alt="Temple Forming Pliers"
             />
             <CardContent>

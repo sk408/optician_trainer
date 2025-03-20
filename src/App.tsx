@@ -32,6 +32,7 @@ const StudyDashboardPage = lazy(() => import('./pages/StudyDashboardPage'));
 const ExamPrepPage = lazy(() => import('./pages/ExamPrepPage'));
 const FlashcardsPage = lazy(() => import('./pages/FlashcardsPage'));
 const ComprehensiveExamPage = lazy(() => import('./pages/ComprehensiveExamPage'));
+const QuizPage = lazy(() => import('./pages/QuizPage'));
 
 // Tutorial pages for beginners
 const PrescriptionBasicsPage = lazy(() => import('./pages/tutorials/PrescriptionBasicsPage'));
@@ -47,108 +48,115 @@ const LoadingComponent = () => (
 );
 
 // Router configuration with Layout wrapper
-const router = createBrowserRouter([
+const router = createBrowserRouter(
+  [
+    {
+      path: '/',
+      element: <Layout />,
+      children: [
+        {
+          index: true,
+          element: <HomePage />,
+        },
+        {
+          path: 'patients',
+          element: <PatientsPage />,
+        },
+        {
+          path: 'testing/:patientId',
+          element: <TestingPage />,
+        },
+        {
+          path: 'eye-anatomy',
+          element: <EyeAnatomyPage />,
+        },
+        {
+          path: 'contact-lens-fitting',
+          element: <ContactLensFittingPage />,
+        },
+        {
+          path: 'troubleshooting-guide',
+          element: <TroubleshootingGuidePage />,
+        },
+        {
+          path: 'follow-up',
+          element: <FollowUpPage />,
+        },
+        // Existing ABO-NCLE exam preparation pages
+        {
+          path: 'dispensing-basics',
+          element: <DispensingBasicsPage />,
+        },
+        {
+          path: 'optical-theory',
+          element: <OpticalTheoryPage />,
+        },
+        // Tutorial pages for beginners
+        {
+          path: 'tutorial/prescription-basics',
+          element: <PrescriptionBasicsPage />,
+        },
+        {
+          path: 'tutorial/frame-selection',
+          // Temporary redirect to prescription basics until implemented
+          element: <PrescriptionBasicsPage />,
+        },
+        {
+          path: 'tutorial/lens-options',
+          // Temporary redirect to prescription basics until implemented
+          element: <PrescriptionBasicsPage />,
+        },
+        // Enhanced study system routes
+        {
+          path: 'study',
+          element: <StudyDashboardPage />,
+        },
+        {
+          path: 'study/abo',
+          element: <StudyDashboardPage />,
+        },
+        {
+          path: 'study/ncle',
+          element: <StudyDashboardPage />,
+        },
+        {
+          path: 'study/exam-prep',
+          element: <ExamPrepPage />,
+        },
+        {
+          path: 'study/flashcards',
+          element: <FlashcardsPage />,
+        },
+        // Wildcard route for individual topics - must come after specific routes
+        {
+          path: 'study/:topicId',
+          element: <StudyTopicPage />,
+        },
+        {
+          path: 'exam-prep',
+          element: <ExamPrepPage />,
+        },
+        // Quiz route
+        {
+          path: 'quiz/:examType/:section',
+          element: <QuizPage />,
+        },
+        // New comprehensive exam routes
+        {
+          path: 'comprehensive-exam/:examType',
+          element: <ComprehensiveExamPage />,
+        },
+        {
+          path: 'comprehensive-exam',
+          element: <ComprehensiveExamPage />,
+        },
+      ],
+    }
+  ],
   {
-    path: '/',
-    element: <Layout />,
-    children: [
-      {
-        index: true,
-        element: <HomePage />,
-      },
-      {
-        path: 'patients',
-        element: <PatientsPage />,
-      },
-      {
-        path: 'testing/:patientId',
-        element: <TestingPage />,
-      },
-      {
-        path: 'eye-anatomy',
-        element: <EyeAnatomyPage />,
-      },
-      {
-        path: 'contact-lens-fitting',
-        element: <ContactLensFittingPage />,
-      },
-      {
-        path: 'troubleshooting-guide',
-        element: <TroubleshootingGuidePage />,
-      },
-      {
-        path: 'follow-up',
-        element: <FollowUpPage />,
-      },
-      // Existing ABO-NCLE exam preparation pages
-      {
-        path: 'dispensing-basics',
-        element: <DispensingBasicsPage />,
-      },
-      {
-        path: 'optical-theory',
-        element: <OpticalTheoryPage />,
-      },
-      // Tutorial pages for beginners
-      {
-        path: 'tutorial/prescription-basics',
-        element: <PrescriptionBasicsPage />,
-      },
-      {
-        path: 'tutorial/frame-selection',
-        // Temporary redirect to prescription basics until implemented
-        element: <PrescriptionBasicsPage />,
-      },
-      {
-        path: 'tutorial/lens-options',
-        // Temporary redirect to prescription basics until implemented
-        element: <PrescriptionBasicsPage />,
-      },
-      // Enhanced study system routes
-      {
-        path: 'study',
-        element: <StudyDashboardPage />,
-      },
-      {
-        path: 'study/all-topics',
-        element: <AllTopicsPage />,
-      },
-      {
-        path: 'study/:topicId',
-        element: <StudyTopicPage />,
-      },
-      {
-        path: 'study/abo',
-        element: <StudyDashboardPage />,
-      },
-      {
-        path: 'study/ncle',
-        element: <StudyDashboardPage />,
-      },
-      {
-        path: 'study/exam-prep',
-        element: <ExamPrepPage />,
-      },
-      {
-        path: 'study/flashcards',
-        element: <FlashcardsPage />,
-      },
-      {
-        path: 'exam-prep',
-        element: <ExamPrepPage />,
-      },
-      // New comprehensive exam routes
-      {
-        path: 'comprehensive-exam/:examType',
-        element: <ComprehensiveExamPage />,
-      },
-      {
-        path: 'comprehensive-exam',
-        element: <ComprehensiveExamPage />,
-      },
-    ],
-  },
-]);
+    basename: '/optician_trainer'
+  }
+);
 
 function App() {
   return (

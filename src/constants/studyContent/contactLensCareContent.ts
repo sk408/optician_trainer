@@ -1,4 +1,5 @@
 import { TopicStudyContent } from '../../interfaces/StudyContent';
+import { contactLensCareImages } from '../mediaAssets';
 
 export const contactLensCareContent: TopicStudyContent = {
   topicId: 'cl-care',
@@ -229,7 +230,7 @@ export const contactLensCareContent: TopicStudyContent = {
           id: 'case-types',
           type: 'image',
           content: {
-            src: '/assets/images/study/lens-case-types.jpg',
+            src: contactLensCareImages.lensCaseTypes.path,
             alt: 'Various types of contact lens cases including standard, flat, and hydrogen peroxide cases',
             caption: 'Common contact lens case types: standard case (left), flat pack travel case (center), hydrogen peroxide case with neutralizing disc (right)',
             width: '70%'

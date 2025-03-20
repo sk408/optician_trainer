@@ -1,4 +1,5 @@
 import { TopicStudyContent } from '../../interfaces/StudyContent';
+import { lensDesignsImages } from '../mediaAssets';
 
 export const lensDesignsContent: TopicStudyContent = {
   topicId: 'lens-designs',
@@ -108,7 +109,7 @@ export const lensDesignsContent: TopicStudyContent = {
           id: 'progressive-image',
           type: 'image',
           content: {
-            src: '/assets/images/study/progressive-lens-design.png',
+            src: lensDesignsImages.progressiveLensDesign.path,
             alt: 'Diagram of progressive lens zones',
             caption: 'Major zones of a progressive addition lens: distance zone (top), intermediate corridor (middle), and reading zone (bottom)'
           }

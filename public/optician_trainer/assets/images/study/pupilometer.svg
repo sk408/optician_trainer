@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="800" height="600" fill="#f8f9fa"/>
+  
+  <!-- Title -->
+  <text x="400" y="50" font-family="Arial, sans-serif" font-size="24" text-anchor="middle" font-weight="bold">Pupilometer</text>
+  
+  <!-- Device Body -->
+  <g transform="translate(150, 100)">
+    <!-- Main Body -->
+    <rect x="50" y="100" width="400" height="200" rx="20" fill="#e0e0e0" stroke="#2c3e50" stroke-width="3"/>
+    
+    <!-- Eyepiece Structure -->
+    <rect x="110" y="80" width="280" height="60" rx="10" fill="#d0d0d0" stroke="#2c3e50" stroke-width="2"/>
+    
+    <!-- Eyepieces -->
+    <circle cx="170" cy="110" r="30" fill="#2c3e50" stroke="#000" stroke-width="2"/>
+    <circle cx="330" cy="110" r="30" fill="#2c3e50" stroke="#000" stroke-width="2"/>
+    
+    <!-- Eyepiece Interior -->
+    <circle cx="170" cy="110" r="25" fill="#87CEEB" stroke="#2c3e50" stroke-width="1"/>
+    <circle cx="330" cy="110" r="25" fill="#87CEEB" stroke="#2c3e50" stroke-width="1"/>
+    
+    <!-- Reticle Lines (Left Eyepiece) -->
+    <line x1="145" y1="110" x2="195" y2="110" stroke="#ff0000" stroke-width="1"/>
+    <line x1="170" y1="85" x2="170" y2="135" stroke="#ff0000" stroke-width="1"/>
+    
+    <!-- Reticle Lines (Right Eyepiece) -->
+    <line x1="305" y1="110" x2="355" y2="110" stroke="#ff0000" stroke-width="1"/>
+    <line x1="330" y1="85" x2="330" y2="135" stroke="#ff0000" stroke-width="1"/>
+    
+    <!-- PD Scale on Top -->
+    <rect x="120" y="60" width="260" height="20" rx="5" fill="#f5f5f5" stroke="#2c3e50" stroke-width="1"/>
+    
+    <!-- Scale Markings -->
+    <g stroke="#2c3e50" stroke-width="1">
+      <line x1="150" y1="60" x2="150" y2="70" />
+      <line x1="170" y1="60" x2="170" y2="75" />
+      <line x1="190" y1="60" x2="190" y2="70" />
+      <line x1="210" y1="60" x2="210" y2="70" />
+      <line x1="230" y1="60" x2="230" y2="70" />
+      <line x1="250" y1="60" x2="250" y2="75" />
+      <line x1="270" y1="60" x2="270" y2="70" />
+      <line x1="290" y1="60" x2="290" y2="70" />
+      <line x1="310" y1="60" x2="310" y2="70" />
+      <line x1="330" y1="60" x2="330" y2="75" />
+      <line x1="350" y1="60" x2="350" y2="70" />
+    </g>
+    
+    <!-- Scale Numbers -->
+    <g fill="#2c3e50" font-family="Arial, sans-serif" font-size="10" text-anchor="middle">
+      <text x="170" y="55">50</text>
+      <text x="210" y="55">58</text>
+      <text x="250" y="55">66</text>
+      <text x="290" y="55">74</text>
+      <text x="330" y="55">82</text>
+    </g>
+    
+    <!-- Current PD Indicator -->
+    <polygon points="250,55 245,60 255,60" fill="#ff0000"/>
+    
+    <!-- Display Window -->
+    <rect x="175" y="150" width="150" height="50" rx="5" fill="#000" stroke="#2c3e50" stroke-width="2"/>
+    <rect x="180" y="155" width="140" height="40" rx="3" fill="#4a6f8a"/>
+    
+    <!-- Display Text -->
+    <text x="250" y="180" font-family="'Courier New', monospace" font-size="22" text-anchor="middle" fill="#00ff00" font-weight="bold">64.5 mm</text>
+    
+    <!-- Control Buttons -->
+    <circle cx="140" cy="220" r="15" fill="#3498db" stroke="#2c3e50" stroke-width="2"/>
+    <text x="140" y="225" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="white">-</text>
+    
+    <circle cx="180" cy="220" r="15" fill="#3498db" stroke="#2c3e50" stroke-width="2"/>
+    <text x="180" y="225" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="white">+</text>
+    
+    <rect x="220" y="210" width="60" height="25" rx="5" fill="#2ecc71" stroke="#2c3e50" stroke-width="2"/>
+    <text x="250" y="227" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="white">SET</text>
+    
+    <rect x="300" y="210" width="100" height="25" rx="5" fill="#e74c3c" stroke="#2c3e50" stroke-width="2"/>
+    <text x="350" y="227" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="white">MEASURE</text>
+    
+    <!-- Power Button -->
+    <circle cx="430" cy="130" r="12" fill="#555" stroke="#2c3e50" stroke-width="2"/>
+    <circle cx="430" cy="130" r="5" fill="none" stroke="#fff" stroke-width="2"/>
+    <line x1="430" y1="116" x2="430" y2="124" stroke="#fff" stroke-width="2"/>
+    
+    <!-- Adjustment Wheel -->
+    <circle cx="70" cy="200" r="20" fill="#888" stroke="#2c3e50" stroke-width="2"/>
+    <path d="M70,190 L70,210 M60,200 L80,200" stroke="#2c3e50" stroke-width="2"/>
+    <circle cx="70" cy="200" r="5" fill="#666" stroke="#2c3e50" stroke-width="1"/>
+    <text x="70" y="240" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">Adjust IPD</text>
+  </g>
+  
+  <!-- Diagram Showing Use -->
+  <g transform="translate(100, 350)">
+    <!-- Face Outline (Simplified) -->
+    <ellipse cx="300" cy="100" rx="100" ry="120" fill="#ffebc9" fill-opacity="0.6" stroke="#2c3e50" stroke-width="1.5" stroke-dasharray="5,5"/>
+    
+    <!-- Eyes (Simplified) -->
+    <circle cx="260" cy="80" r="10" fill="#2c3e50" stroke="#000" stroke-width="1"/>
+    <circle cx="340" cy="80" r="10" fill="#2c3e50" stroke="#000" stroke-width="1"/>
+    
+    <!-- Pupilometer in Use -->
+    <rect x="190" y="30" width="220" height="80" rx="10" fill="#e0e0e0" fill-opacity="0.8" stroke="#2c3e50" stroke-width="2"/>
+    <circle cx="260" cy="70" r="20" fill="#2c3e50" stroke="#000" stroke-width="1.5"/>
+    <circle cx="340" cy="70" r="20" fill="#2c3e50" stroke="#000" stroke-width="1.5"/>
+    
+    <!-- Measurement Line -->
+    <line x1="260" y1="110" x2="340" y2="110" stroke="#ff0000" stroke-width="2" stroke-dasharray="5,5"/>
+    <line x1="260" y1="105" x2="260" y2="115" stroke="#ff0000" stroke-width="2"/>
+    <line x1="340" y1="105" x2="340" y2="115" stroke="#ff0000" stroke-width="2"/>
+    <text x="300" y="130" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#ff0000">PD = 64.5 mm</text>
+  </g>
+  
+  <!-- Reference Information -->
+  <g transform="translate(550, 350)">
+    <rect width="200" height="200" rx="10" fill="#f0f8ff" stroke="#2c3e50" stroke-width="1"/>
+    
+    <text x="100" y="30" font-family="Arial, sans-serif" font-size="16" text-anchor="middle" font-weight="bold">About Pupilometers</text>
+    
+    <text x="10" y="60" font-family="Arial, sans-serif" font-size="12">• Digital device for measuring PD</text>
+    <text x="10" y="85" font-family="Arial, sans-serif" font-size="12">• Measures both binocular</text>
+    <text x="15" y="100" font-family="Arial, sans-serif" font-size="12">  and monocular PD</text>
+    <text x="10" y="125" font-family="Arial, sans-serif" font-size="12">• More accurate than manual</text>
+    <text x="15" y="140" font-family="Arial, sans-serif" font-size="12">  measurement methods</text>
+    <text x="10" y="165" font-family="Arial, sans-serif" font-size="12">• Adjustable for different</text>
+    <text x="15" y="180" font-family="Arial, sans-serif" font-size="12">  viewing distances</text>
+  </g>
+</svg> 

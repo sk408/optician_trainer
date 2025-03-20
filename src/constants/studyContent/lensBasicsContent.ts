@@ -1,4 +1,5 @@
 import { TopicStudyContent } from '../../interfaces/StudyContent';
+import { lensBasicsImages } from '../mediaAssets';
 
 export const lensBasicsContent: TopicStudyContent = {
   topicId: 'lens-basics',
@@ -26,13 +27,12 @@ export const lensBasicsContent: TopicStudyContent = {
           }
         },
         {
-          id: 'lens-types-image',
+          id: 'basic-lens-types-image',
           type: 'image',
           content: {
-            src: '/assets/images/study/basic-lens-types.jpg',
-            alt: 'Diagram showing cross-sections of various lens types',
-            caption: 'Cross-sections of common ophthalmic lens types showing light path',
-            width: '85%'
+            src: lensBasicsImages.basicLensTypes.path,
+            alt: 'Different types of basic lenses',
+            caption: 'Overview of basic lens types: spherical, cylindrical, and prismatic'
           }
         },
         {
@@ -212,13 +212,12 @@ export const lensBasicsContent: TopicStudyContent = {
           }
         },
         {
-          id: 'pd-image',
+          id: 'pd-measurement-image',
           type: 'image',
           content: {
-            src: '/assets/images/study/pupillary-distance-measurement.jpg',
-            alt: 'Diagram showing how to measure pupillary distance',
-            caption: 'Measurement of pupillary distance using a pupillometer',
-            width: '70%'
+            src: lensBasicsImages.pupillaryDistanceMeasurement.path,
+            alt: 'Pupillary distance measurement technique',
+            caption: 'Measuring pupillary distance using a millimeter ruler'
           }
         },
         {
@@ -344,13 +343,12 @@ export const lensBasicsContent: TopicStudyContent = {
           }
         },
         {
-          id: 'progressive-image',
+          id: 'progressive-lens-design-image',
           type: 'image',
           content: {
-            src: '/assets/images/study/progressive-lens-design.jpg',
-            alt: 'Diagram showing the power zones in a progressive lens',
-            caption: 'Power zones and fitting cross in a progressive addition lens',
-            width: '80%'
+            src: lensBasicsImages.progressiveLensDesign.path,
+            alt: 'Progressive lens design showing different zones',
+            caption: 'Progressive lens design showing distance, intermediate, and near zones'
           }
         },
         {
@@ -547,13 +545,12 @@ export const lensBasicsContent: TopicStudyContent = {
           }
         },
         {
-          id: 'prescription-image',
+          id: 'sample-prescription-image',
           type: 'image',
           content: {
-            src: '/assets/images/study/sample-prescription.jpg',
-            alt: 'Sample eyeglass prescription form with annotations',
-            caption: 'Sample eyeglass prescription showing standard notation',
-            width: '75%'
+            src: lensBasicsImages.samplePrescription.path,
+            alt: 'Example of a complete eyeglass prescription',
+            caption: 'Sample prescription showing sphere, cylinder, axis, add power, and PD'
           }
         },
         {

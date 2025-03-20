@@ -1,0 +1,125 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="450" viewBox="0 0 700 450">
+    <title>Spherical Prescription</title>
+    <defs>
+        <linearGradient id="eyeGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#ffffff" />
+            <stop offset="100%" stop-color="#e0e0ff" />
+        </linearGradient>
+        <linearGradient id="lensGradientPlus" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#d0e8ff" stop-opacity="0.7" />
+            <stop offset="100%" stop-color="#a0c4ff" stop-opacity="0.7" />
+        </linearGradient>
+        <linearGradient id="lensGradientMinus" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#ffe0e0" stop-opacity="0.7" />
+            <stop offset="100%" stop-color="#ffb0b0" stop-opacity="0.7" />
+        </linearGradient>
+    </defs>
+    
+    <!-- Background -->
+    <rect width="700" height="450" fill="#f8f8f8" />
+    
+    <!-- Title -->
+    <text x="350" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="bold" text-anchor="middle" fill="#333333">Spherical Prescription (Rx)</text>
+    
+    <!-- Prescription Box -->
+    <rect x="200" y="60" width="300" height="80" fill="#ffffff" stroke="#333333" stroke-width="1.5" rx="5" ry="5" />
+    <line x1="200" y1="90" x2="500" y2="90" stroke="#333333" stroke-width="1" />
+    <line x1="250" y1="60" x2="250" y2="140" stroke="#333333" stroke-width="1" />
+    <line x1="325" y1="60" x2="325" y2="140" stroke="#333333" stroke-width="1" />
+    <line x1="400" y1="60" x2="400" y2="140" stroke="#333333" stroke-width="1" />
+    <line x1="450" y1="60" x2="450" y2="140" stroke="#333333" stroke-width="1" />
+    
+    <!-- Headers -->
+    <text x="225" y="80" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#333333">Eye</text>
+    <text x="287.5" y="80" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#333333">Sphere</text>
+    <text x="362.5" y="80" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#333333">Cylinder</text>
+    <text x="425" y="80" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#333333">Axis</text>
+    <text x="475" y="80" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#333333">Add</text>
+    
+    <!-- Sample Values -->
+    <text x="225" y="120" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#333333">OD</text>
+    <text x="287.5" y="120" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#0066cc">+2.50</text>
+    <text x="362.5" y="120" font-family="Arial, sans-serif" font-size="16" text-anchor="middle" fill="#333333">-0.75</text>
+    <text x="425" y="120" font-family="Arial, sans-serif" font-size="16" text-anchor="middle" fill="#333333">180</text>
+    <text x="475" y="120" font-family="Arial, sans-serif" font-size="16" text-anchor="middle" fill="#333333">+1.50</text>
+    
+    <!-- Plus Lens Diagram -->
+    <g transform="translate(175, 240)">
+        <text x="0" y="-50" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="#0066cc">Plus Lens (+)</text>
+        <text x="0" y="-30" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#0066cc">Hyperopia Correction</text>
+        
+        <!-- Lens -->
+        <path d="M -20,70 Q -40,40 -40,0 Q -40,-40 -20,-70 C -10,-70 10,-70 20,-70 Q 40,-40 40,0 Q 40,40 20,70 C 10,70 -10,70 -20,70 Z" fill="url(#lensGradientPlus)" stroke="#0066cc" stroke-width="1.5" />
+        
+        <!-- Arrows indicating thickness -->
+        <line x1="-60" y1="-60" x2="-20" y2="-60" stroke="#0066cc" stroke-width="1.5" marker-end="url(#arrowhead)" />
+        <line x1="-60" y1="60" x2="-20" y2="60" stroke="#0066cc" stroke-width="1.5" marker-end="url(#arrowhead)" />
+        <line x1="60" y1="0" x2="20" y2="0" stroke="#0066cc" stroke-width="1.5" marker-end="url(#arrowhead)" />
+        
+        <text x="-80" y="0" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#333333">Thicker</text>
+        <text x="-80" y="20" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#333333">at edges</text>
+        
+        <!-- Common Uses -->
+        <text x="0" y="120" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#333333">For hyperopia (farsightedness)</text>
+        <text x="0" y="140" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#333333">and presbyopia</text>
+    </g>
+    
+    <!-- Minus Lens Diagram -->
+    <g transform="translate(525, 240)">
+        <text x="0" y="-50" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="#cc0000">Minus Lens (-)</text>
+        <text x="0" y="-30" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#cc0000">Myopia Correction</text>
+        
+        <!-- Lens -->
+        <path d="M -20,70 Q 0,40 0,0 Q 0,-40 -20,-70 C -25,-70 -25,-70 -30,-70 Q -50,-40 -50,0 Q -50,40 -30,70 C -25,70 -25,70 -20,70 Z" fill="url(#lensGradientMinus)" stroke="#cc0000" stroke-width="1.5" />
+        <path d="M 20,70 Q 0,40 0,0 Q 0,-40 20,-70 C 25,-70 25,-70 30,-70 Q 50,-40 50,0 Q 50,40 30,70 C 25,70 25,70 20,70 Z" fill="url(#lensGradientMinus)" stroke="#cc0000" stroke-width="1.5" />
+        
+        <!-- Arrows indicating thickness -->
+        <line x1="-70" y1="0" x2="-30" y2="0" stroke="#cc0000" stroke-width="1.5" marker-end="url(#arrowhead)" />
+        <line x1="70" y1="-60" x2="30" y2="-60" stroke="#cc0000" stroke-width="1.5" marker-end="url(#arrowhead)" />
+        <line x1="70" y1="60" x2="30" y2="60" stroke="#cc0000" stroke-width="1.5" marker-end="url(#arrowhead)" />
+        
+        <text x="90" y="0" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#333333">Thicker</text>
+        <text x="90" y="20" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#333333">in center</text>
+        
+        <!-- Common Uses -->
+        <text x="0" y="120" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#333333">For myopia (nearsightedness)</text>
+        <text x="0" y="140" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#333333">and high minus powers</text>
+    </g>
+    
+    <!-- Diopter Scale -->
+    <rect x="150" y="380" width="400" height="30" fill="#ffffff" stroke="#333333" stroke-width="1" />
+    <line x1="150" y1="395" x2="550" y2="395" stroke="#333333" stroke-width="1.5" />
+    <line x1="350" y1="380" x2="350" y2="410" stroke="#333333" stroke-width="1.5" />
+    
+    <!-- Scale Markers -->
+    <line x1="150" y1="385" x2="150" y2="405" stroke="#333333" stroke-width="1" />
+    <line x1="250" y1="385" x2="250" y2="405" stroke="#333333" stroke-width="1" />
+    <line x1="450" y1="385" x2="450" y2="405" stroke="#333333" stroke-width="1" />
+    <line x1="550" y1="385" x2="550" y2="405" stroke="#333333" stroke-width="1" />
+    
+    <!-- Scale Labels -->
+    <text x="150" y="425" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#cc0000">-10.00D</text>
+    <text x="250" y="425" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#cc0000">-5.00D</text>
+    <text x="350" y="425" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#333333">0.00D</text>
+    <text x="450" y="425" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#0066cc">+5.00D</text>
+    <text x="550" y="425" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#0066cc">+10.00D</text>
+    
+    <text x="350" y="370" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#333333">Diopter Power Scale</text>
+    
+    <!-- Definitions -->
+    <foreignObject x="50" y="300" width="600" height="60">
+        <body xmlns="http://www.w3.org/1999/xhtml">
+            <div style="font-family: Arial, sans-serif; font-size: 14px; text-align: center; color: #333333;">
+                <p><strong>Diopter (D):</strong> Unit of measurement for lens power. Higher absolute value = stronger correction.</p>
+                <p><strong>Sphere Power:</strong> Uniform correction across all meridians of the eye.</p>
+            </div>
+        </body>
+    </foreignObject>
+    
+    <!-- Arrow Marker -->
+    <defs>
+        <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+            <polygon points="0 0, 10 3.5, 0 7" fill="#333333" />
+        </marker>
+    </defs>
+</svg>

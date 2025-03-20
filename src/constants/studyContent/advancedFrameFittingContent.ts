@@ -1,4 +1,5 @@
 import { TopicStudyContent } from '../../interfaces/StudyContent';
+import { advancedFrameFittingImages } from '../mediaAssets';
 
 export const advancedFrameFittingContent: TopicStudyContent = {
   topicId: 'advanced-frame-fitting',
@@ -29,7 +30,7 @@ export const advancedFrameFittingContent: TopicStudyContent = {
           id: 'face-shapes-image',
           type: 'image',
           content: {
-            src: '/assets/images/study/face-shapes.jpg',
+            src: advancedFrameFittingImages.faceShapes.path,
             alt: 'Different face shapes with recommended frame styles',
             caption: 'Common face shapes and their complementary frame styles',
             width: '80%'
@@ -276,7 +277,7 @@ export const advancedFrameFittingContent: TopicStudyContent = {
           id: 'frame-measurements-diagram',
           type: 'image',
           content: {
-            src: '/assets/images/study/frame-measurements.jpg',
+            src: advancedFrameFittingImages.frameMeasurements.path,
             alt: 'Diagram showing key frame measurements',
             caption: 'Standard frame measurements: A (eye size), B (bridge width), ED (effective diameter), DBL (distance between lenses)',
             width: '70%'

@@ -1,0 +1,151 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="750" height="600" viewBox="0 0 750 600">
+    <title>Basic Lens Types</title>
+    <defs>
+        <linearGradient id="lensGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#d0e8ff" stop-opacity="0.8" />
+            <stop offset="100%" stop-color="#a0c4ff" stop-opacity="0.8" />
+        </linearGradient>
+        <linearGradient id="blueGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#a0c4ff" stop-opacity="0.4" />
+            <stop offset="100%" stop-color="#4d94ff" stop-opacity="0.4" />
+        </linearGradient>
+        <linearGradient id="redGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#ffb0b0" stop-opacity="0.4" />
+            <stop offset="100%" stop-color="#ff7070" stop-opacity="0.4" />
+        </linearGradient>
+        <linearGradient id="progressiveGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#d0e8ff" stop-opacity="0.4" />
+            <stop offset="40%" stop-color="#a0d4ff" stop-opacity="0.4" />
+            <stop offset="60%" stop-color="#80b0ff" stop-opacity="0.4" />
+            <stop offset="100%" stop-color="#5090ff" stop-opacity="0.4" />
+        </linearGradient>
+    </defs>
+    
+    <!-- Background -->
+    <rect width="750" height="600" fill="#f8f8f8" />
+    
+    <!-- Title -->
+    <text x="375" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="bold" text-anchor="middle" fill="#333333">Basic Ophthalmic Lens Types</text>
+    
+    <!-- Single Vision Lens -->
+    <g transform="translate(187.5, 150)">
+        <text x="0" y="-60" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="#333333">Single Vision</text>
+        
+        <!-- Lens Shape -->
+        <circle cx="0" cy="0" r="70" fill="url(#lensGradient)" stroke="#333333" stroke-width="1.5" />
+        
+        <!-- Distance Vision zone -->
+        <circle cx="0" cy="0" r="70" fill="url(#blueGradient)" stroke="none" />
+        <text x="0" y="0" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#333333">Distance Vision</text>
+        <text x="0" y="20" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#333333">or</text>
+        <text x="0" y="40" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#333333">Near Vision</text>
+        
+        <!-- Description -->
+        <text x="0" y="100" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#333333">One prescription power</text>
+        <text x="0" y="120" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#333333">throughout entire lens</text>
+        
+        <!-- Common Uses -->
+        <text x="0" y="155" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#555555">Uses: Distance, reading, computer</text>
+        <text x="0" y="175" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#555555">Age Range: All ages</text>
+    </g>
+    
+    <!-- Bifocal Lens -->
+    <g transform="translate(562.5, 150)">
+        <text x="0" y="-60" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="#333333">Bifocal</text>
+        
+        <!-- Lens Shape -->
+        <circle cx="0" cy="0" r="70" fill="url(#lensGradient)" stroke="#333333" stroke-width="1.5" />
+        
+        <!-- Distance Vision zone -->
+        <path d="M -70,0 A 70,70 0 0,1 70,0 L 70,70 A 70,70 0 0,1 -70,70 Z" fill="url(#blueGradient)" stroke="none" />
+        <text x="0" y="-20" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#333333">Distance Vision</text>
+        
+        <!-- Near Vision segment -->
+        <path d="M -35,25 L 35,25 L 35,70 L -35,70 Z" fill="url(#redGradient)" stroke="#666666" stroke-width="1" />
+        <text x="0" y="50" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#333333">Near Vision</text>
+        
+        <!-- Description -->
+        <text x="0" y="100" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#333333">Two distinct power zones</text>
+        <text x="0" y="120" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#333333">with visible line segment</text>
+        
+        <!-- Common Uses -->
+        <text x="0" y="155" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#555555">Uses: Distance and reading</text>
+        <text x="0" y="175" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#555555">Age Range: Typically 40+</text>
+    </g>
+    
+    <!-- Trifocal Lens -->
+    <g transform="translate(187.5, 380)">
+        <text x="0" y="-60" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="#333333">Trifocal</text>
+        
+        <!-- Lens Shape -->
+        <circle cx="0" cy="0" r="70" fill="url(#lensGradient)" stroke="#333333" stroke-width="1.5" />
+        
+        <!-- Distance Vision zone -->
+        <path d="M -70,0 A 70,70 0 0,1 70,0 L 70,70 A 70,70 0 0,1 -70,70 Z" fill="url(#blueGradient)" stroke="none" />
+        <text x="0" y="-30" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#333333">Distance Vision</text>
+        
+        <!-- Intermediate Vision segment -->
+        <path d="M -35,10 L 35,10 L 35,35 L -35,35 Z" fill="#a0e0a0" fill-opacity="0.4" stroke="#666666" stroke-width="1" />
+        <text x="0" y="27" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#333333">Intermediate</text>
+        
+        <!-- Near Vision segment -->
+        <path d="M -35,35 L 35,35 L 35,70 L -35,70 Z" fill="url(#redGradient)" stroke="#666666" stroke-width="1" />
+        <text x="0" y="58" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#333333">Near Vision</text>
+        
+        <!-- Description -->
+        <text x="0" y="100" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#333333">Three distinct power zones</text>
+        <text x="0" y="120" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#333333">with visible line segments</text>
+        
+        <!-- Common Uses -->
+        <text x="0" y="155" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#555555">Uses: Distance, computer, reading</text>
+        <text x="0" y="175" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#555555">Age Range: Typically 40+</text>
+    </g>
+    
+    <!-- Progressive Lens -->
+    <g transform="translate(562.5, 380)">
+        <text x="0" y="-60" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="#333333">Progressive</text>
+        
+        <!-- Lens Shape -->
+        <circle cx="0" cy="0" r="70" fill="url(#lensGradient)" stroke="#333333" stroke-width="1.5" />
+        
+        <!-- Progressive Gradient -->
+        <circle cx="0" cy="0" r="70" fill="url(#progressiveGradient)" stroke="none" />
+        
+        <!-- Zone Labels -->
+        <text x="0" y="-30" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#333333">Distance Vision</text>
+        <text x="0" y="10" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#333333">Progressive</text>
+        <text x="0" y="30" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#333333">Corridor</text>
+        <text x="0" y="55" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#333333">Near Vision</text>
+        
+        <!-- Distortion Areas -->
+        <path d="M -70,0 Q -60,20 -40,30 Q -30,35 -25,70 L -70,70 Z" fill="#999999" fill-opacity="0.2" stroke="none" />
+        <path d="M 70,0 Q 60,20 40,30 Q 30,35 25,70 L 70,70 Z" fill="#999999" fill-opacity="0.2" stroke="none" />
+        <text x="-50" y="50" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#333333" transform="rotate(-45, -50, 50)">Peripheral</text>
+        <text x="50" y="50" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#333333" transform="rotate(45, 50, 50)">Distortion</text>
+        
+        <!-- Description -->
+        <text x="0" y="100" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#333333">Smooth power transition</text>
+        <text x="0" y="120" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#333333">with no visible lines</text>
+        
+        <!-- Common Uses -->
+        <text x="0" y="155" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#555555">Uses: All distances, cosmetically preferred</text>
+        <text x="0" y="175" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#555555">Age Range: Typically 40+</text>
+    </g>
+    
+    <!-- Legend -->
+    <g transform="translate(375, 550)">
+        <rect x="-225" y="-30" width="450" height="70" fill="white" stroke="#333333" stroke-width="1" rx="5" ry="5" />
+        
+        <rect x="-200" y="-15" width="30" height="15" fill="url(#blueGradient)" stroke="#333333" stroke-width="0.5" />
+        <text x="-160" y="-5" font-family="Arial, sans-serif" font-size="12" text-anchor="left" fill="#333333">Distance Vision Zone</text>
+        
+        <rect x="-200" y="10" width="30" height="15" fill="url(#redGradient)" stroke="#333333" stroke-width="0.5" />
+        <text x="-160" y="20" font-family="Arial, sans-serif" font-size="12" text-anchor="left" fill="#333333">Near Vision Zone</text>
+        
+        <rect x="50" y="-15" width="30" height="15" fill="#a0e0a0" fill-opacity="0.4" stroke="#333333" stroke-width="0.5" />
+        <text x="90" y="-5" font-family="Arial, sans-serif" font-size="12" text-anchor="left" fill="#333333">Intermediate Zone</text>
+        
+        <rect x="50" y="10" width="30" height="15" fill="url(#progressiveGradient)" stroke="#333333" stroke-width="0.5" />
+        <text x="90" y="20" font-family="Arial, sans-serif" font-size="12" text-anchor="left" fill="#333333">Progressive Corridor</text>
+    </g>
+</svg>

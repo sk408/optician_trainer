@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="800" height="600" fill="#f8f9fa"/>
+  
+  <!-- Title -->
+  <text x="400" y="50" font-family="Arial, sans-serif" font-size="24" text-anchor="middle" font-weight="bold">Pupillary Distance (PD) Measurement</text>
+  
+  <!-- Face Outline -->
+  <ellipse cx="400" cy="250" rx="150" ry="200" fill="#ffebc9" stroke="#2c3e50" stroke-width="2"/>
+  
+  <!-- Hair -->
+  <path d="M250,160 Q400,90 550,160 V100 Q400,20 250,100 Z" fill="#6c3c00" stroke="#2c3e50" stroke-width="1"/>
+  
+  <!-- Eyes -->
+  <g id="left-eye">
+    <!-- Sclera -->
+    <ellipse cx="330" cy="230" rx="35" ry="20" fill="white" stroke="#2c3e50" stroke-width="1.5"/>
+    
+    <!-- Iris -->
+    <circle cx="330" cy="230" r="12" fill="#4682b4" stroke="#2c3e50" stroke-width="1"/>
+    
+    <!-- Pupil -->
+    <circle cx="330" cy="230" r="6" fill="#2c3e50"/>
+    
+    <!-- Light Reflection -->
+    <circle cx="334" cy="226" r="2" fill="white"/>
+    
+    <!-- Pupil Center Marker -->
+    <circle cx="330" cy="230" r="2" fill="red"/>
+    
+    <!-- Eyebrow -->
+    <path d="M300,195 Q330,185 360,200" fill="none" stroke="#6c3c00" stroke-width="3"/>
+  </g>
+  
+  <g id="right-eye">
+    <!-- Sclera -->
+    <ellipse cx="470" cy="230" rx="35" ry="20" fill="white" stroke="#2c3e50" stroke-width="1.5"/>
+    
+    <!-- Iris -->
+    <circle cx="470" cy="230" r="12" fill="#4682b4" stroke="#2c3e50" stroke-width="1"/>
+    
+    <!-- Pupil -->
+    <circle cx="470" cy="230" r="6" fill="#2c3e50"/>
+    
+    <!-- Light Reflection -->
+    <circle cx="474" cy="226" r="2" fill="white"/>
+    
+    <!-- Pupil Center Marker -->
+    <circle cx="470" cy="230" r="2" fill="red"/>
+    
+    <!-- Eyebrow -->
+    <path d="M440,200 Q470,185 500,195" fill="none" stroke="#6c3c00" stroke-width="3"/>
+  </g>
+  
+  <!-- Nose -->
+  <path d="M390,230 Q400,280 410,230" fill="none" stroke="#2c3e50" stroke-width="1.5"/>
+  <path d="M385,270 Q400,290 415,270" fill="none" stroke="#2c3e50" stroke-width="1.5"/>
+  
+  <!-- Mouth -->
+  <path d="M350,320 Q400,340 450,320" fill="none" stroke="#2c3e50" stroke-width="1.5"/>
+  
+  <!-- PD Measurement Line -->
+  <line x1="330" y1="230" x2="470" y2="230" stroke="#ff0000" stroke-width="2"/>
+  <line x1="330" y1="235" x2="330" y2="225" stroke="#ff0000" stroke-width="2"/>
+  <line x1="470" y1="235" x2="470" y2="225" stroke="#ff0000" stroke-width="2"/>
+  
+  <!-- PD Value -->
+  <rect x="370" y="190" width="60" height="25" rx="5" fill="white" stroke="#ff0000" stroke-width="1"/>
+  <text x="400" y="207" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#ff0000" font-weight="bold">64mm</text>
+  
+  <!-- Glasses Frame (Outline) -->
+  <path d="M270,230 L325,230 Q340,200 360,230 L440,230 Q460,200 475,230 L530,230 Q520,170 470,175 L330,175 Q280,170 270,230 Z" fill="none" stroke="#2c3e50" stroke-width="2" stroke-dasharray="5,5"/>
+  
+  <!-- PD Types Description -->
+  <g transform="translate(100, 400)">
+    <rect width="600" height="150" rx="10" fill="#f0f8ff" stroke="#2c3e50" stroke-width="1"/>
+    
+    <!-- Binocular PD -->
+    <text x="300" y="30" font-family="Arial, sans-serif" font-size="18" text-anchor="middle" font-weight="bold">Types of Pupillary Distance Measurements</text>
+    
+    <text x="20" y="60" font-family="Arial, sans-serif" font-size="16" font-weight="bold">Binocular PD:</text>
+    <text x="20" y="80" font-family="Arial, sans-serif" font-size="14">• The distance between the centers of the pupils of both eyes</text>
+    <text x="20" y="100" font-family="Arial, sans-serif" font-size="14">• Typically ranges from 54-74mm in adults</text>
+    <text x="20" y="120" font-family="Arial, sans-serif" font-size="14">• Example: 64mm (as shown above)</text>
+    
+    <text x="350" y="60" font-family="Arial, sans-serif" font-size="16" font-weight="bold">Monocular PD:</text>
+    <text x="350" y="80" font-family="Arial, sans-serif" font-size="14">• Distance from the center of each pupil to the center of the bridge</text>
+    <text x="350" y="100" font-family="Arial, sans-serif" font-size="14">• More accurate for asymmetric faces</text>
+    <text x="350" y="120" font-family="Arial, sans-serif" font-size="14">• Example: Right 32mm, Left 32mm (symmetrical)</text>
+  </g>
+  
+  <!-- Bridge of Nose Marker -->
+  <line x1="400" y1="220" x2="400" y2="240" stroke="#2c3e50" stroke-width="1" stroke-dasharray="3,3"/>
+  <circle cx="400" cy="230" r="3" fill="#2c3e50"/>
+  <text x="400" y="255" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">Bridge</text>
+  
+  <!-- Monocular PD Indicators -->
+  <line x1="330" y1="260" x2="400" y2="260" stroke="#3498db" stroke-width="2"/>
+  <line x1="330" y1="265" x2="330" y2="255" stroke="#3498db" stroke-width="2"/>
+  <line x1="400" y1="265" x2="400" y2="255" stroke="#3498db" stroke-width="2"/>
+  <text x="365" y="275" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#3498db">32mm</text>
+  
+  <line x1="400" y1="260" x2="470" y2="260" stroke="#3498db" stroke-width="2"/>
+  <line x1="470" y1="265" x2="470" y2="255" stroke="#3498db" stroke-width="2"/>
+  <text x="435" y="275" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#3498db">32mm</text>
+</svg> 

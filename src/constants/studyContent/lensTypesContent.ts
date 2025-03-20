@@ -1,4 +1,5 @@
 import { TopicStudyContent } from '../../interfaces/StudyContent';
+import { lensImages } from '../mediaAssets';
 
 export const lensTypesContent: TopicStudyContent = {
   topicId: 'lens-types',
@@ -68,10 +69,18 @@ export const lensTypesContent: TopicStudyContent = {
           id: 'lens-diagram',
           type: 'image',
           content: {
-            src: '/assets/images/study/lens-diagram.jpg',
-            alt: 'Diagram showing the parts of a lens including optical center, principal axis, and focal point',
-            caption: 'Basic elements of a lens. Note how parallel light rays bend and converge at the focal point.',
-            width: '70%'
+            src: lensImages.diagram.path,
+            alt: 'Basic lens diagram showing key parts',
+            caption: 'Basic diagram of a lens showing optical center, focal length, and surfaces'
+          }
+        },
+        {
+          id: 'lens-shapes',
+          type: 'image',
+          content: {
+            src: lensImages.shapesComparison.path,
+            alt: 'Comparison of different lens shapes',
+            caption: 'Various lens shapes and their optical properties'
           }
         },
         {
@@ -158,10 +167,9 @@ export const lensTypesContent: TopicStudyContent = {
           id: 'lens-shape-image',
           type: 'image',
           content: {
-            src: '/assets/images/study/lens-shapes-comparison.jpg',
-            alt: 'Side-by-side comparison of convex and concave lens profiles',
-            caption: 'Side view comparison: Convex lens (left) bulges outward, while concave lens (right) curves inward',
-            width: '80%'
+            src: lensImages.shapesComparison.path,
+            alt: 'Comparison of different lens shapes',
+            caption: 'Various lens shapes and their optical properties'
           }
         },
         {
@@ -212,13 +220,12 @@ export const lensTypesContent: TopicStudyContent = {
           }
         },
         {
-          id: 'convex-image',
+          id: 'convex-lens',
           type: 'image',
           content: {
-            src: '/assets/images/study/convex-lens.jpg',
-            alt: 'Diagram of a convex lens showing light rays converging to a focal point',
-            caption: 'A convex lens converges parallel light rays to a focal point - like a flashlight focusing sunlight',
-            width: '70%'
+            src: lensImages.convexLens.path,
+            alt: 'Convex lens diagram',
+            caption: 'Convex (plus) lens showing convergence of light rays'
           }
         },
         {
@@ -304,13 +311,12 @@ export const lensTypesContent: TopicStudyContent = {
           }
         },
         {
-          id: 'concave-image',
+          id: 'concave-lens',
           type: 'image',
           content: {
-            src: '/assets/images/study/concave-lens.jpg',
-            alt: 'Diagram of a concave lens showing light rays diverging',
-            caption: 'A concave lens causes parallel light rays to diverge - like a shower head spreading water over a wider area',
-            width: '70%'
+            src: lensImages.concaveLens.path,
+            alt: 'Concave lens diagram',
+            caption: 'Concave (minus) lens showing divergence of light rays'
           }
         },
         {
@@ -400,13 +406,12 @@ export const lensTypesContent: TopicStudyContent = {
           }
         },
         {
-          id: 'lens-forms-image',
+          id: 'lens-forms',
           type: 'image',
           content: {
-            src: '/assets/images/study/lens-forms.jpg',
-            alt: 'Various lens forms including biconvex, biconcave, and meniscus',
-            caption: 'Common lens forms: (A) Biconvex (B) Plano-convex (C) Positive meniscus (D) Biconcave (E) Plano-concave (F) Negative meniscus',
-            width: '80%'
+            src: lensImages.lensForms.path,
+            alt: 'Various lens form designs',
+            caption: 'Different lens forms: plano-convex, biconvex, meniscus, etc.'
           }
         },
         {
@@ -487,13 +492,12 @@ export const lensTypesContent: TopicStudyContent = {
           }
         },
         {
-          id: 'spherical-image',
+          id: 'spherical-lens-types',
           type: 'image',
           content: {
-            src: '/assets/images/study/spherical-lens-types.jpg',
-            alt: 'Various types of spherical lenses',
-            caption: 'Common types of spherical lenses with different surface configurations',
-            width: '80%'
+            src: lensImages.sphericalLensTypes.path,
+            alt: 'Types of spherical lenses',
+            caption: 'Different types of spherical lenses and their optical properties'
           }
         },
         {
@@ -517,19 +521,11 @@ export const lensTypesContent: TopicStudyContent = {
         },
         {
           id: 'spherical-rx',
-          type: 'paragraph',
-          content: {
-            text: 'On a prescription, spherical power is indicated in the "sphere" or "sph" column. For example, a prescription of "+2.00 DS" or simply "+2.00" indicates a spherical lens with +2.00 diopters of power (DS stands for "diopters sphere").'
-          }
-        },
-        {
-          id: 'spherical-rx-image',
           type: 'image',
           content: {
-            src: '/assets/images/study/spherical-rx.jpg',
-            alt: 'Sample prescription showing spherical power notation',
-            caption: 'Sample prescription with spherical power highlighted. Note the absence of cylinder power.',
-            width: '60%'
+            src: lensImages.sphericalRx.path,
+            alt: 'Spherical prescription example',
+            caption: 'Example of a spherical prescription showing power in diopters'
           }
         },
         {
@@ -575,13 +571,12 @@ export const lensTypesContent: TopicStudyContent = {
           }
         },
         {
-          id: 'cylindrical-image',
+          id: 'cylindrical-lens',
           type: 'image',
           content: {
-            src: '/assets/images/study/cylindrical-lens.jpg',
-            alt: 'Diagram of a cylindrical lens showing different curvatures',
-            caption: 'A cylindrical lens with power in one meridian only. Notice how it\'s curved in one direction but straight in the perpendicular direction.',
-            width: '70%'
+            src: lensImages.cylindricalLens.path,
+            alt: 'Cylindrical lens diagram',
+            caption: 'Cylindrical lens showing different meridians of power'
           }
         },
         {
@@ -639,10 +634,9 @@ export const lensTypesContent: TopicStudyContent = {
           id: 'axis-diagram',
           type: 'image',
           content: {
-            src: '/assets/images/study/axis-diagram.jpg',
-            alt: 'Diagram showing axis notation in degrees',
-            caption: 'Axis notation for cylindrical lenses. The axis indicates the meridian that has no cylindrical power.',
-            width: '60%'
+            src: lensImages.axisDiagram.path,
+            alt: 'Axis diagram for astigmatism correction',
+            caption: 'Diagram showing how axis is specified for astigmatism correction'
           }
         },
         {

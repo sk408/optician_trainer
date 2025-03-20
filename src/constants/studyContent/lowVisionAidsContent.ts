@@ -1,4 +1,5 @@
 import { TopicStudyContent } from '../../interfaces/StudyContent';
+import { lowVisionImages } from '../mediaAssets';
 
 export const lowVisionAidsContent: TopicStudyContent = {
   topicId: 'low-vision-aids',
@@ -213,13 +214,12 @@ export const lowVisionAidsContent: TopicStudyContent = {
           }
         },
         {
-          id: 'magnifier-image',
+          id: 'magnifiers-image',
           type: 'image',
           content: {
-            src: '/assets/images/study/low-vision-magnifiers.jpg',
-            alt: 'Various types of optical magnifiers',
-            caption: 'Different types of handheld and stand magnifiers for near vision tasks',
-            width: 400
+            src: lowVisionImages.magnifiers.path,
+            alt: 'Various types of optical magnifiers for low vision',
+            caption: 'Different types of handheld and stand magnifiers used for low vision assistance'
           }
         },
         {
@@ -260,13 +260,12 @@ export const lowVisionAidsContent: TopicStudyContent = {
           }
         },
         {
-          id: 'bioptic-image',
+          id: 'bioptic-telescope-image',
           type: 'image',
           content: {
-            src: '/assets/images/study/bioptic-telescope.jpg',
+            src: lowVisionImages.biopticTelescope.path,
             alt: 'Bioptic telescope mounted on eyeglasses',
-            caption: 'Bioptic telescope system mounted on prescription eyeglasses',
-            width: 400
+            caption: 'Bioptic telescope system mounted on eyeglasses for distance vision enhancement'
           }
         },
         {
@@ -409,10 +408,9 @@ export const lowVisionAidsContent: TopicStudyContent = {
           id: 'cctv-image',
           type: 'image',
           content: {
-            src: '/assets/images/study/desktop-cctv.jpg',
-            alt: 'Desktop video magnifier system',
-            caption: 'Desktop video magnifier with adjustable monitor and reading table',
-            width: 400
+            src: lowVisionImages.desktopCctv.path,
+            alt: 'Desktop CCTV system for low vision',
+            caption: 'Desktop CCTV system magnifying text for easier reading'
           }
         },
         {

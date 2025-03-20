@@ -1,5 +1,5 @@
-
 import { TopicStudyContent } from '../../interfaces/StudyContent';
+import { specialPopulationsImages } from '../mediaAssets';
 
 export const specialPopulationsContent: TopicStudyContent = {
   topicId: 'special-populations',
@@ -120,7 +120,7 @@ export const specialPopulationsContent: TopicStudyContent = {
           id: 'presbyopia-image',
           type: 'image',
           content: {
-            src: '/assets/images/study/progressive-lens-design.jpg',
+            src: specialPopulationsImages.progressiveLensDesign.path,
             alt: 'Progressive lens design showing wider reading areas for elderly patients',
             caption: 'Progressive lens with enhanced reading area for elderly patients',
             width: '60%'
@@ -293,7 +293,7 @@ export const specialPopulationsContent: TopicStudyContent = {
           id: 'sports-tints-image',
           type: 'image',
           content: {
-            src: '/assets/images/study/sport-tints-comparison.jpg',
+            src: specialPopulationsImages.sportTintsComparison.path,
             alt: 'Comparison of different lens tints optimized for various sports',
             caption: 'Sport-specific lens tints for visual performance enhancement',
             width: '70%'
@@ -393,7 +393,7 @@ export const specialPopulationsContent: TopicStudyContent = {
           id: 'children-measurement-image',
           type: 'image',
           content: {
-            src: '/assets/images/study/pediatric-frame-fitting.jpg',
+            src: specialPopulationsImages.pediatricFrameFitting.path,
             alt: 'Proper measurement techniques for pediatric frame fitting',
             caption: 'Key measurements for proper pediatric frame fitting',
             width: '60%'

@@ -1,4 +1,5 @@
 import { TopicStudyContent } from '../../interfaces/StudyContent';
+import { laboratoryImages } from '../mediaAssets';
 
 export const laboratoryProceduresContent: TopicStudyContent = {
   topicId: 'laboratory-procedures',
@@ -29,7 +30,7 @@ export const laboratoryProceduresContent: TopicStudyContent = {
           id: 'fabrication-flowchart',
           type: 'image',
           content: {
-            src: '/assets/images/study/lens-fabrication-flowchart.jpg',
+            src: laboratoryImages.lensFabricationFlowchart.path,
             alt: 'Flowchart showing the lens fabrication process',
             caption: 'Lens fabrication process flowchart, from prescription verification to final inspection',
             width: '80%'

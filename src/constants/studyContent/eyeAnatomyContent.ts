@@ -1,4 +1,5 @@
 import { TopicStudyContent } from '../../interfaces/StudyContent';
+import { eyeAnatomyImages } from '../mediaAssets';
 
 export const eyeAnatomyContent: TopicStudyContent = {
   topicId: 'eye-anatomy',
@@ -26,13 +27,12 @@ export const eyeAnatomyContent: TopicStudyContent = {
           }
         },
         {
-          id: 'eye-diagram',
+          id: 'eye-anatomy-diagram',
           type: 'image',
           content: {
-            src: '/assets/images/study/eye-anatomy-diagram.jpg',
-            alt: 'Detailed diagram of human eye anatomy',
-            caption: 'Cross-section of the human eye showing major anatomical structures',
-            width: '90%'
+            src: eyeAnatomyImages.eyeAnatomyDiagram.path,
+            alt: 'Detailed diagram of eye anatomy',
+            caption: 'Cross-section of the human eye showing key anatomical structures'
           }
         },
         {
@@ -462,13 +462,12 @@ export const eyeAnatomyContent: TopicStudyContent = {
           }
         },
         {
-          id: 'visual-pathway-image',
+          id: 'visual-pathway-diagram',
           type: 'image',
           content: {
-            src: '/assets/images/study/visual-pathway-diagram.jpg',
-            alt: 'Diagram showing the path of light through the eye and visual signals to the brain',
-            caption: 'The visual pathway from light entering the eye to processing in the brain',
-            width: '85%'
+            src: eyeAnatomyImages.visualPathwayDiagram.path,
+            alt: 'Diagram of the visual pathway from eyes to brain',
+            caption: 'The visual pathway showing how information travels from the eyes to the visual cortex'
           }
         },
         {
@@ -527,10 +526,9 @@ export const eyeAnatomyContent: TopicStudyContent = {
           id: 'refractive-errors-diagram',
           type: 'image',
           content: {
-            src: '/assets/images/study/refractive-errors-diagram.jpg',
-            alt: 'Diagram showing how light focuses in different refractive errors',
-            caption: 'Light focusing patterns in emmetropia (normal vision), myopia, hyperopia, and astigmatism',
-            width: '90%'
+            src: eyeAnatomyImages.refractiveErrorsDiagram.path,
+            alt: 'Diagram showing different refractive errors',
+            caption: 'Comparison of how light focuses in various refractive errors'
           }
         },
         {

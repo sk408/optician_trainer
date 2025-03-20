@@ -1,0 +1,146 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="500" viewBox="0 0 700 500">
+    <title>Pupillary Distance Measurement</title>
+    <defs>
+        <linearGradient id="faceGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#ffdbac" />
+            <stop offset="100%" stop-color="#f1c27d" />
+        </linearGradient>
+        <radialGradient id="pupilGradient" cx="50%" cy="50%" r="50%" fx="30%" fy="30%">
+            <stop offset="0%" stop-color="#663300" />
+            <stop offset="100%" stop-color="#331a00" />
+        </radialGradient>
+        <radialGradient id="irisGradient" cx="50%" cy="50%" r="50%" fx="30%" fy="30%">
+            <stop offset="0%" stop-color="#7fbfff" />
+            <stop offset="100%" stop-color="#0066cc" />
+        </radialGradient>
+        <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+            <feGaussianBlur in="SourceAlpha" stdDeviation="3" />
+            <feOffset dx="2" dy="2" result="offsetblur" />
+            <feComponentTransfer>
+                <feFuncA type="linear" slope="0.3" />
+            </feComponentTransfer>
+            <feMerge>
+                <feMergeNode />
+                <feMergeNode in="SourceGraphic" />
+            </feMerge>
+        </filter>
+    </defs>
+    
+    <!-- Background -->
+    <rect width="700" height="500" fill="#f8f8f8" />
+    
+    <!-- Title -->
+    <text x="350" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="bold" text-anchor="middle" fill="#333333">Pupillary Distance (PD) Measurement</text>
+    
+    <!-- Face Outline -->
+    <g transform="translate(350, 220)">
+        <!-- Head Shape -->
+        <ellipse cx="0" cy="0" rx="150" ry="180" fill="url(#faceGradient)" stroke="#333333" stroke-width="1.5" />
+        
+        <!-- Left Eye -->
+        <g transform="translate(-65, -30)">
+            <!-- Sclera -->
+            <ellipse cx="0" cy="0" rx="35" ry="20" fill="white" stroke="#333333" stroke-width="1" />
+            <!-- Iris -->
+            <circle cx="0" cy="0" r="15" fill="url(#irisGradient)" stroke="#333333" stroke-width="0.5" />
+            <!-- Pupil -->
+            <circle cx="0" cy="0" r="6" fill="url(#pupilGradient)" />
+            <!-- Pupil Center Mark -->
+            <circle cx="0" cy="0" r="1" fill="red" />
+            <line x1="-3" y1="0" x2="3" y2="0" stroke="red" stroke-width="0.5" />
+            <line x1="0" y1="-3" x2="0" y2="3" stroke="red" stroke-width="0.5" />
+        </g>
+        
+        <!-- Right Eye -->
+        <g transform="translate(65, -30)">
+            <!-- Sclera -->
+            <ellipse cx="0" cy="0" rx="35" ry="20" fill="white" stroke="#333333" stroke-width="1" />
+            <!-- Iris -->
+            <circle cx="0" cy="0" r="15" fill="url(#irisGradient)" stroke="#333333" stroke-width="0.5" />
+            <!-- Pupil -->
+            <circle cx="0" cy="0" r="6" fill="url(#pupilGradient)" />
+            <!-- Pupil Center Mark -->
+            <circle cx="0" cy="0" r="1" fill="red" />
+            <line x1="-3" y1="0" x2="3" y2="0" stroke="red" stroke-width="0.5" />
+            <line x1="0" y1="-3" x2="0" y2="3" stroke="red" stroke-width="0.5" />
+        </g>
+        
+        <!-- Nose -->
+        <path d="M 0,-10 Q 10,20 0,30 Q -10,20 0,-10" fill="#f1c27d" stroke="#333333" stroke-width="1" />
+        
+        <!-- Mouth -->
+        <path d="M -30,70 Q 0,90 30,70" fill="none" stroke="#333333" stroke-width="1.5" />
+        
+        <!-- PD Measurement Line -->
+        <line x1="-65" y1="-30" x2="65" y2="-30" stroke="#ff0000" stroke-width="2" stroke-dasharray="5,3" />
+        <line x1="-65" y1="-40" x2="-65" y2="-20" stroke="#ff0000" stroke-width="2" />
+        <line x1="65" y1="-40" x2="65" y2="-20" stroke="#ff0000" stroke-width="2" />
+        
+        <!-- PD Measurement Label -->
+        <text x="0" y="-50" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="#ff0000">64mm</text>
+        <text x="0" y="-75" font-family="Arial, sans-serif" font-size="16" text-anchor="middle" fill="#333333">Binocular PD</text>
+        
+        <!-- Monocular PD Measurements -->
+        <line x1="0" y1="-30" x2="-65" y2="-30" stroke="#0066cc" stroke-width="1.5" stroke-dasharray="3,2" />
+        <line x1="0" y1="-30" x2="65" y2="-30" stroke="#0066cc" stroke-width="1.5" stroke-dasharray="3,2" />
+        <text x="-32.5" y="-15" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#0066cc">32mm</text>
+        <text x="32.5" y="-15" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#0066cc">32mm</text>
+        <text x="-90" y="-15" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#0066cc">Left PD</text>
+        <text x="90" y="-15" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#0066cc">Right PD</text>
+        
+        <!-- Nose Bridge Center Line -->
+        <line x1="0" y1="-70" x2="0" y2="30" stroke="#333333" stroke-width="1" stroke-dasharray="3,2" />
+        <text x="0" y="-85" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#333333">Center Line</text>
+    </g>
+    
+    <!-- Pupillometer Illustration -->
+    <g transform="translate(350, 400)">
+        <rect x="-150" y="-20" width="300" height="80" rx="10" ry="10" fill="#e0e0e0" stroke="#333333" stroke-width="1.5" filter="url(#shadow)" />
+        <text x="0" y="15" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#333333">Pupillometer</text>
+        <path d="M -120,-5 L -70,-5 L -70,5 L -120,5 Z M 70,-5 L 120,-5 L 120,5 L 70,5 Z" fill="#333333" />
+        <circle cx="-95" cy="0" r="15" stroke="#333333" stroke-width="1" fill="none" />
+        <circle cx="95" cy="0" r="15" stroke="#333333" stroke-width="1" fill="none" />
+        <line x1="-95" y1="-10" x2="-95" y2="10" stroke="#333333" stroke-width="0.5" />
+        <line x1="-105" y1="0" x2="-85" y2="0" stroke="#333333" stroke-width="0.5" />
+        <line x1="95" y1="-10" x2="95" y2="10" stroke="#333333" stroke-width="0.5" />
+        <line x1="85" y1="0" x2="105" y2="0" stroke="#333333" stroke-width="0.5" />
+        <rect x="-40" y="-15" width="80" height="30" fill="#ffffff" stroke="#333333" stroke-width="1" />
+        <text x="0" y="5" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#333333">64.0</text>
+    </g>
+    
+    <!-- Information Box -->
+    <rect x="50" y="100" width="250" height="180" rx="10" ry="10" fill="white" stroke="#333333" stroke-width="1.5" />
+    <text x="175" y="125" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#333333">Pupillary Distance (PD)</text>
+    <line x1="70" y1="135" x2="230" y2="135" stroke="#333333" stroke-width="1" />
+    <foreignObject x="60" y="145" width="230" height="125">
+        <body xmlns="http://www.w3.org/1999/xhtml">
+            <div style="font-family: Arial, sans-serif; font-size: 12px; color: #333333;">
+                <p><strong>Definition:</strong> Distance between the centers of the pupils.</p>
+                <p><strong>Types:</strong></p>
+                <ul style="margin-top: 2px; padding-left: 15px;">
+                    <li><strong>Binocular PD:</strong> Total distance between pupils</li>
+                    <li><strong>Monocular PD:</strong> Distance from bridge of nose to each pupil</li>
+                </ul>
+                <p><strong>Average Adult Range:</strong> 60-65mm</p>
+            </div>
+        </body>
+    </foreignObject>
+    
+    <!-- Measurement Methods Box -->
+    <rect x="400" y="100" width="250" height="180" rx="10" ry="10" fill="white" stroke="#333333" stroke-width="1.5" />
+    <text x="525" y="125" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#333333">Measurement Methods</text>
+    <line x1="420" y1="135" x2="630" y2="135" stroke="#333333" stroke-width="1" />
+    <foreignObject x="410" y="145" width="230" height="125">
+        <body xmlns="http://www.w3.org/1999/xhtml">
+            <div style="font-family: Arial, sans-serif; font-size: 12px; color: #333333;">
+                <ul style="margin-top: 0; padding-left: 15px;">
+                    <li><strong>Digital Pupillometer:</strong> Most accurate</li>
+                    <li><strong>PD Ruler/Stick:</strong> Common in optical shops</li>
+                    <li><strong>Corneal Reflection Method:</strong> Using penlight reflection</li>
+                    <li><strong>Digital Photo Method:</strong> Using reference object</li>
+                </ul>
+                <p><strong>Importance:</strong> Proper PD ensures optical centers align with pupils, preventing eye strain and distortion.</p>
+            </div>
+        </body>
+    </foreignObject>
+</svg>

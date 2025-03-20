@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="200" viewBox="0 0 300 200">
+    <title>Frame Measurements</title>
+    <defs>
+        <linearGradient id="frameGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#a0a0a0" />
+            <stop offset="50%" stop-color="#808080" />
+            <stop offset="100%" stop-color="#606060" />
+        </linearGradient>
+    </defs>
+    
+    <!-- Background -->
+    <rect width="300" height="200" fill="#f8f8f8" />
+    
+    <!-- Title -->
+    <text x="150" y="20" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#333">Frame Measurements</text>
+    
+    <!-- Eyeglass frame -->
+    <g transform="translate(50, 70)">
+        <!-- Left eye rim -->
+        <ellipse cx="50" cy="40" rx="40" ry="35" fill="none" stroke="url(#frameGradient)" stroke-width="4" />
+        
+        <!-- Right eye rim -->
+        <ellipse cx="150" cy="40" rx="40" ry="35" fill="none" stroke="url(#frameGradient)" stroke-width="4" />
+        
+        <!-- Bridge -->
+        <path d="M90,40 C95,35 105,35 110,40" fill="none" stroke="url(#frameGradient)" stroke-width="4" stroke-linecap="round" />
+        
+        <!-- Temple arms (partial) -->
+        <path d="M10,40 C5,40 0,40 -5,45" fill="none" stroke="url(#frameGradient)" stroke-width="4" stroke-linecap="round" />
+        <path d="M190,40 C195,40 200,40 205,45" fill="none" stroke="url(#frameGradient)" stroke-width="4" stroke-linecap="round" />
+    </g>
+    
+    <!-- Measurement Lines and Labels -->
+    <g transform="translate(50, 70)" fill="none" stroke="#0066cc" stroke-width="0.8">
+        <!-- Eye Size (A) -->
+        <line x1="50" y1="-10" x2="50" y2="-5" stroke-dasharray="2,1" />
+        <line x1="10" y1="-10" x2="90" y2="-10" />
+        <line x1="10" y1="-10" x2="10" y2="-5" stroke-dasharray="2,1" />
+        <text x="50" y="-15" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#0066cc">Eye Size (A)</text>
+        
+        <!-- Bridge Width (DBL) -->
+        <line x1="90" y1="30" x2="110" y2="30" />
+        <line x1="90" y1="30" x2="90" y2="35" stroke-dasharray="2,1" />
+        <line x1="110" y1="30" x2="110" y2="35" stroke-dasharray="2,1" />
+        <text x="100" y="25" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#0066cc">Bridge (DBL)</text>
+        
+        <!-- Temple Length -->
+        <path d="M190,40 C195,40 200,40 205,45 L215,55" fill="none" stroke="#0066cc" stroke-width="0.8" stroke-dasharray="2,1" />
+        <line x1="190" y1="50" x2="215" y2="50" />
+        <line x1="190" y1="50" x2="190" y2="45" stroke-dasharray="2,1" />
+        <line x1="215" y1="50" x2="215" y2="55" stroke-dasharray="2,1" />
+        <text x="202" y="45" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#0066cc">Temple</text>
+        
+        <!-- Lens Height (B) -->
+        <line x1="0" y1="40" x2="5" y2="40" stroke-dasharray="2,1" />
+        <line x1="0" y1="5" x2="0" y2="75" />
+        <line x1="0" y1="5" x2="5" y2="5" stroke-dasharray="2,1" />
+        <line x1="0" y1="75" x2="5" y2="75" stroke-dasharray="2,1" />
+        <text x="-5" y="40" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#0066cc" transform="rotate(-90 -5 40)">Height (B)</text>
+        
+        <!-- Total Width -->
+        <line x1="-10" y1="90" x2="210" y2="90" />
+        <line x1="-10" y1="90" x2="-10" y2="85" stroke-dasharray="2,1" />
+        <line x1="210" y1="90" x2="210" y2="85" stroke-dasharray="2,1" />
+        <text x="100" y="100" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#0066cc">Total Width</text>
+        
+        <!-- Effective Diameter (ED) -->
+        <circle cx="50" cy="40" r="42" stroke-dasharray="2,2" />
+        <text x="50" y="90" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#0066cc">ED</text>
+    </g>
+    
+    <!-- Measurement Information -->
+    <g transform="translate(30, 160)">
+        <text x="0" y="0" font-family="Arial, sans-serif" font-size="10" font-weight="bold" text-anchor="start" fill="#333">Standard Measurements:</text>
+        <text x="0" y="15" font-family="Arial, sans-serif" font-size="9" text-anchor="start" fill="#555">• Eye Size (A): Horizontal lens diameter (mm)</text>
+        <text x="0" y="30" font-family="Arial, sans-serif" font-size="9" text-anchor="start" fill="#555">• Height (B): Vertical lens height (mm)</text>
+        <text x="155" y="15" font-family="Arial, sans-serif" font-size="9" text-anchor="start" fill="#555">• Bridge (DBL): Distance between lenses (mm)</text>
+        <text x="155" y="30" font-family="Arial, sans-serif" font-size="9" text-anchor="start" fill="#555">• Temple: Length of temple arms (mm)</text>
+    </g>
+    
+    <!-- Notation Format -->
+    <rect x="60" y="132" width="180" height="20" rx="3" ry="3" fill="#e6e6e6" stroke="#999" stroke-width="0.5" />
+    <text x="150" y="145" font-family="Arial, sans-serif" font-size="10" font-weight="bold" text-anchor="middle" fill="#333">Format: Eye Size - Bridge - Temple</text>
+    <text x="150" y="195" font-family="Arial, sans-serif" font-size="8" text-anchor="middle" fill="#555">© Optician Trainer</text>
+</svg>

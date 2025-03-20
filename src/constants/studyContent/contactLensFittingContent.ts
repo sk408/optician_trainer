@@ -1,4 +1,5 @@
 import { TopicStudyContent } from '../../interfaces/StudyContent';
+import { contactLensFittingImages } from '../mediaAssets';
 
 export const contactLensFittingContent: TopicStudyContent = {
   topicId: 'cl-fitting',
@@ -123,7 +124,7 @@ export const contactLensFittingContent: TopicStudyContent = {
           id: 'soft-lens-fit-image',
           type: 'image',
           content: {
-            src: '/assets/images/study/soft-lens-fit.jpg',
+            src: contactLensFittingImages.softLensFit.path,
             alt: 'Properly fitted soft contact lens showing good centration and coverage',
             caption: 'A well-fitted soft contact lens showing appropriate centration, coverage, and slight movement with the blink',
             width: '60%'
@@ -262,7 +263,7 @@ export const contactLensFittingContent: TopicStudyContent = {
           id: 'fluorescein-patterns-image',
           type: 'image',
           content: {
-            src: '/assets/images/study/fluorescein-patterns.jpg',
+            src: contactLensFittingImages.fluoresceinPatterns.path,
             alt: 'Three fluorescein patterns showing steep, aligned, and flat fits',
             caption: 'Fluorescein patterns: (A) Steep fit with central pooling, (B) Aligned fit with even fluorescence, (C) Flat fit with central touch',
             width: '80%'

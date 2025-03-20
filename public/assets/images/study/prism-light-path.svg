@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="800" height="600" fill="#f8f9fa"/>
+  
+  <!-- Title -->
+  <text x="400" y="50" font-family="Arial, sans-serif" font-size="24" text-anchor="middle" font-weight="bold">Light Path Through Prism</text>
+  
+  <!-- Prism -->
+  <path d="M350,200 L550,200 L450,400 Z" fill="#a7c7e7" fill-opacity="0.6" stroke="#2c3e50" stroke-width="3"/>
+  
+  <!-- White Incident Ray -->
+  <line x1="200" y1="200" x2="350" y2="200" stroke="white" stroke-width="6"/>
+  <line x1="200" y1="200" x2="350" y2="200" stroke="#000" stroke-width="7" stroke-dasharray="1,15"/>
+  <polygon points="350,200 335,195 335,205" fill="white"/>
+  
+  <!-- Dispersed Rays -->
+  <!-- Red (longest wavelength) -->
+  <line x1="450" y1="400" x2="650" y2="350" stroke="#FF0000" stroke-width="3"/>
+  <polygon points="650,350 635,345 635,355" fill="#FF0000"/>
+  
+  <!-- Orange -->
+  <line x1="450" y1="400" x2="650" y2="370" stroke="#FF7F00" stroke-width="3"/>
+  
+  <!-- Yellow -->
+  <line x1="450" y1="400" x2="650" y2="390" stroke="#FFFF00" stroke-width="3"/>
+  
+  <!-- Green -->
+  <line x1="450" y1="400" x2="650" y2="410" stroke="#00FF00" stroke-width="3"/>
+  
+  <!-- Blue -->
+  <line x1="450" y1="400" x2="650" y2="430" stroke="#0000FF" stroke-width="3"/>
+  
+  <!-- Violet (shortest wavelength) -->
+  <line x1="450" y1="400" x2="650" y2="450" stroke="#8B00FF" stroke-width="3"/>
+  <polygon points="650,450 635,445 635,455" fill="#8B00FF"/>
+  
+  <!-- Refracted Ray Inside -->
+  <line x1="350" y1="200" x2="450" y2="400" stroke="white" stroke-width="4" stroke-dasharray="5,5"/>
+  
+  <!-- Labels -->
+  <text x="160" y="200" font-family="Arial, sans-serif" font-size="16" text-anchor="end">White Light</text>
+  <text x="450" y="300" font-family="Arial, sans-serif" font-size="18" text-anchor="middle">Prism</text>
+  
+  <!-- Color Labels -->
+  <text x="670" y="350" font-family="Arial, sans-serif" font-size="14" fill="#FF0000">Red</text>
+  <text x="670" y="370" font-family="Arial, sans-serif" font-size="14" fill="#FF7F00">Orange</text>
+  <text x="670" y="390" font-family="Arial, sans-serif" font-size="14" fill="#FFFF00">Yellow</text>
+  <text x="670" y="410" font-family="Arial, sans-serif" font-size="14" fill="#00FF00">Green</text>
+  <text x="670" y="430" font-family="Arial, sans-serif" font-size="14" fill="#0000FF">Blue</text>
+  <text x="670" y="450" font-family="Arial, sans-serif" font-size="14" fill="#8B00FF">Violet</text>
+  
+  <!-- Angle and Dispersion Explanation -->
+  <text x="400" y="500" font-family="Arial, sans-serif" font-size="16" text-anchor="middle">
+    White light is dispersed into its component colors when passing through a prism.
+  </text>
+  <text x="400" y="525" font-family="Arial, sans-serif" font-size="16" text-anchor="middle">
+    Different wavelengths (colors) refract at different angles due to dispersion.
+  </text>
+  <text x="400" y="550" font-family="Arial, sans-serif" font-size="16" text-anchor="middle">
+    Shorter wavelengths (violet) refract more than longer wavelengths (red).
+  </text>
+</svg> 

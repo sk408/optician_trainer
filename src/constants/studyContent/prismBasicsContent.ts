@@ -1,4 +1,5 @@
 import { TopicStudyContent } from '../../interfaces/StudyContent';
+import { prismImages } from '../mediaAssets';
 
 export const prismBasicsContent: TopicStudyContent = {
   topicId: 'prism',
@@ -57,10 +58,9 @@ export const prismBasicsContent: TopicStudyContent = {
           id: 'prism-diagram',
           type: 'image',
           content: {
-            src: '/assets/images/study/prism-diagram.svg',
-            alt: 'Diagram of optical prism showing the base, apex, and angle',
-            caption: 'Basic structure of an optical prism showing the base, apex, and prism angle.',
-            width: '60%'
+            src: prismImages.diagram.path,
+            alt: 'Basic prism diagram showing how light bends through a prism',
+            caption: 'Light bends toward the base when passing through a prism'
           }
         },
         {
@@ -111,10 +111,9 @@ export const prismBasicsContent: TopicStudyContent = {
           id: 'prism-light-path',
           type: 'image',
           content: {
-            src: '/assets/images/study/prism-light-path.svg',
-            alt: 'Light path through a prism showing deviation toward the base',
-            caption: 'Path of light through a prism, showing how it deviates toward the base of the prism.',
-            width: '70%'
+            src: prismImages.lightPath.path,
+            alt: 'Diagram showing the path of light through a prism',
+            caption: 'Light path through a prism showing deviation toward the base'
           }
         },
         {
@@ -167,10 +166,9 @@ export const prismBasicsContent: TopicStudyContent = {
           id: 'prism-diopter-visual',
           type: 'image',
           content: {
-            src: '/assets/images/study/prism-diopter.svg',
-            alt: 'Visual representation of prism diopter measurement',
-            caption: 'Illustration of how 1 prism diopter displaces an image by 1 cm at a distance of 1 meter.',
-            width: '70%'
+            src: prismImages.diopter.path,
+            alt: 'Diagram illustrating prism diopter measurement',
+            caption: 'Visual representation of how prism diopters are measured'
           }
         },
         {
@@ -232,10 +230,9 @@ export const prismBasicsContent: TopicStudyContent = {
           id: 'base-direction-diagram',
           type: 'image',
           content: {
-            src: '/assets/images/study/prism-directions.svg',
-            alt: 'Diagram showing the four basic prism directions and their effects on image position',
-            caption: 'The four primary prism base directions and how they affect the apparent position of objects.',
-            width: '80%'
+            src: prismImages.directions.path,
+            alt: 'Diagram showing different prism base directions',
+            caption: 'Prism base directions and their effects on image displacement'
           }
         },
         {
@@ -300,10 +297,9 @@ export const prismBasicsContent: TopicStudyContent = {
           id: 'fresnel-prism-image',
           type: 'image',
           content: {
-            src: '/assets/images/study/fresnel-prism.svg',
-            alt: 'Image of a Fresnel prism showing its thin profile and grooved structure',
-            caption: 'A Fresnel prism is a thin, flexible sheet with microscopic prism grooves that can be applied to eyeglass lenses.',
-            width: '60%'
+            src: prismImages.fresnelPrism.path,
+            alt: 'Diagram of a Fresnel prism',
+            caption: 'Structure of a Fresnel prism showing the thin, segmented design'
           }
         },
         {

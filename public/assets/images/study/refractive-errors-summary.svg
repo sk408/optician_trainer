@@ -1,0 +1,129 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500">
+  <title>Summary of Refractive Errors</title>
+  <defs>
+    <linearGradient id="eyeGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#e0e0ff" />
+    </linearGradient>
+    <linearGradient id="lensGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#d0e8ff" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#a0c4ff" stop-opacity="0.9" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="500" fill="#f8f8f8" />
+  
+  <!-- Title -->
+  <text x="400" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="bold" text-anchor="middle" fill="#333333">Summary of Refractive Errors</text>
+  
+  <!-- Normal Vision -->
+  <g transform="translate(200, 150)">
+    <text x="0" y="-60" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="#333333">Normal Vision</text>
+    
+    <!-- Eye Outline -->
+    <ellipse cx="0" cy="0" rx="90" ry="80" fill="url(#eyeGradient)" stroke="#333333" stroke-width="2" />
+    <path d="M -90,0 Q -110,-40 -90,-70" fill="none" stroke="#333333" stroke-width="1.5" />
+    
+    <!-- Lens -->
+    <ellipse cx="-45" cy="0" rx="15" ry="30" fill="url(#lensGradient)" stroke="#333333" stroke-width="1.5" />
+    
+    <!-- Retina -->
+    <path d="M 90,0 Q 70,70 0,80 Q -70,70 -90,0" fill="none" stroke="#cc0000" stroke-width="1.5" stroke-dasharray="5,3" />
+    
+    <!-- Light Rays -->
+    <path d="M -150,40 L -90,20 L 85,0" fill="none" stroke="#ffcc00" stroke-width="2" />
+    <path d="M -150,0 L -90,0 L 85,0" fill="none" stroke="#ffcc00" stroke-width="2" />
+    <path d="M -150,-40 L -90,-20 L 85,0" fill="none" stroke="#ffcc00" stroke-width="2" />
+    
+    <!-- Focal Point -->
+    <circle cx="85" cy="0" r="5" fill="#ff5555" />
+    
+    <!-- Caption -->
+    <text x="0" y="110" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#333333">Light focuses correctly on retina</text>
+  </g>
+  
+  <!-- Myopia -->
+  <g transform="translate(200, 320)">
+    <text x="0" y="-60" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="#333333">Myopia (Nearsightedness)</text>
+    
+    <!-- Eye Outline -->
+    <ellipse cx="0" cy="0" rx="110" ry="80" fill="url(#eyeGradient)" stroke="#333333" stroke-width="2" />
+    <path d="M -110,0 Q -130,-40 -110,-70" fill="none" stroke="#333333" stroke-width="1.5" />
+    
+    <!-- Lens -->
+    <ellipse cx="-55" cy="0" rx="15" ry="30" fill="url(#lensGradient)" stroke="#333333" stroke-width="1.5" />
+    
+    <!-- Retina -->
+    <path d="M 110,0 Q 85,70 0,80 Q -85,70 -110,0" fill="none" stroke="#cc0000" stroke-width="1.5" stroke-dasharray="5,3" />
+    
+    <!-- Light Rays -->
+    <path d="M -170,40 L -110,20 L 60,0 L 110,10" fill="none" stroke="#ffcc00" stroke-width="2" />
+    <path d="M -170,0 L -110,0 L 60,0 L 110,0" fill="none" stroke="#ffcc00" stroke-width="2" />
+    <path d="M -170,-40 L -110,-20 L 60,0 L 110,-10" fill="none" stroke="#ffcc00" stroke-width="2" />
+    
+    <!-- Focal Point -->
+    <circle cx="60" cy="0" r="5" fill="#ff5555" />
+    
+    <!-- Caption -->
+    <text x="0" y="110" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#333333">Light focuses in front of retina</text>
+  </g>
+  
+  <!-- Hyperopia -->
+  <g transform="translate(600, 150)">
+    <text x="0" y="-60" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="#333333">Hyperopia (Farsightedness)</text>
+    
+    <!-- Eye Outline -->
+    <ellipse cx="0" cy="0" rx="75" ry="80" fill="url(#eyeGradient)" stroke="#333333" stroke-width="2" />
+    <path d="M -75,0 Q -95,-40 -75,-70" fill="none" stroke="#333333" stroke-width="1.5" />
+    
+    <!-- Lens -->
+    <ellipse cx="-40" cy="0" rx="15" ry="30" fill="url(#lensGradient)" stroke="#333333" stroke-width="1.5" />
+    
+    <!-- Retina -->
+    <path d="M 75,0 Q 60,70 0,80 Q -60,70 -75,0" fill="none" stroke="#cc0000" stroke-width="1.5" stroke-dasharray="5,3" />
+    
+    <!-- Light Rays -->
+    <path d="M -150,40 L -75,20 L 75,10" fill="none" stroke="#ffcc00" stroke-width="2" />
+    <path d="M -150,0 L -75,0 L 75,0" fill="none" stroke="#ffcc00" stroke-width="2" />
+    <path d="M -150,-40 L -75,-20 L 75,-10" fill="none" stroke="#ffcc00" stroke-width="2" />
+    
+    <!-- Virtual Focal Point -->
+    <circle cx="110" cy="0" r="5" fill="#ff5555" stroke="#ff5555" stroke-width="1" stroke-dasharray="2,1" />
+    <line x1="75" y1="0" x2="145" y2="0" stroke="#ff5555" stroke-width="1" stroke-dasharray="2,1" />
+    
+    <!-- Caption -->
+    <text x="0" y="110" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#333333">Light focuses behind retina</text>
+  </g>
+  
+  <!-- Astigmatism -->
+  <g transform="translate(600, 320)">
+    <text x="0" y="-60" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="#333333">Astigmatism</text>
+    
+    <!-- Eye Outline -->
+    <ellipse cx="0" cy="0" rx="90" ry="80" fill="url(#eyeGradient)" stroke="#333333" stroke-width="2" />
+    <path d="M -90,0 Q -110,-30 -90,-70 Q -85,-75 -80,-70" fill="none" stroke="#333333" stroke-width="1.5" />
+    
+    <!-- Lens -->
+    <ellipse cx="-45" cy="0" rx="15" ry="30" fill="url(#lensGradient)" stroke="#333333" stroke-width="1.5" />
+    
+    <!-- Retina -->
+    <path d="M 90,0 Q 70,70 0,80 Q -70,70 -90,0" fill="none" stroke="#cc0000" stroke-width="1.5" stroke-dasharray="5,3" />
+    
+    <!-- Light Rays -->
+    <path d="M -150,40 L -90,20 L 60,5 L 90,10" fill="none" stroke="#ffcc00" stroke-width="2" />
+    <path d="M -150,0 L -90,0 L 80,0 L 90,0" fill="none" stroke="#ffcc00" stroke-width="2" />
+    <path d="M -150,-40 L -90,-20 L 60,-5 L 90,-10" fill="none" stroke="#ffcc00" stroke-width="2" />
+    
+    <!-- Multiple Focal Points -->
+    <circle cx="60" cy="5" r="3" fill="#ff5555" />
+    <circle cx="80" cy="0" r="3" fill="#ff5555" />
+    <circle cx="60" cy="-5" r="3" fill="#ff5555" />
+    
+    <!-- Caption -->
+    <text x="0" y="110" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#333333">Light focuses at multiple points</text>
+  </g>
+  
+  <!-- Footer -->
+  <text x="400" y="470" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#555555">Fig: Comparison of different refractive error types</text>
+</svg>

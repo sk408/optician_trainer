@@ -1,29 +1,29 @@
 import { ExamQuestion } from '../../../interfaces/ExamQuestions';
 
 /**
- * NCLE Exam Questions: Contact Lens Fitting and Evaluation
+ * NCLE Exam Questions: Contact Lens Fitting
  * 
  * Topics covered:
- * - Soft Contact Lens Fitting
- * - RGP Contact Lens Fitting
- * - Fitting Evaluation and Assessment
+ * - Soft contact lens fitting techniques
+ * - RGP contact lens fitting techniques
+ * - Specialty contact lens fitting
  */
 
-export const originalContactLensFittingQuestions: ExamQuestion[] = [
-  // Soft Contact Lens Fitting
+export const contactLensFittingQuestions: ExamQuestion[] = [
+  // Soft contact lens fitting
   {
     id: 'ncle-fitting-001',
-    question: 'What is the primary parameter used to select the initial base curve for a soft contact lens?',
+    question: 'Which of the following is the MOST important parameter when selecting the initial diagnostic soft contact lens?',
     options: [
-      'Corneal astigmatism',
-      'Keratometry readings',
-      'Pupil size',
-      'Spectacle prescription'
+      'Base curve',
+      'Lens material',
+      'Power',
+      'Center thickness'
     ],
-    correctAnswer: 1,
-    explanation: 'Keratometry readings are the primary parameter used to select the initial base curve for a soft contact lens. These measurements provide information about the curvature of the central cornea, which guides the selection of an appropriate lens curvature.',
-    category: 'cl-fitting',
-    subcategory: 'soft-cl-fitting',
+    correctAnswer: 0,
+    explanation: 'Base curve is the most important parameter when selecting an initial diagnostic soft contact lens, as it determines how the lens will fit on the cornea and affects comfort, centration, and movement.',
+    category: 'contact-lens-fitting',
+    subcategory: 'soft-lens-fitting',
     difficulty: 'easy'
   },
   {
@@ -284,12 +284,7 @@ export const originalContactLensFittingQuestions: ExamQuestion[] = [
     category: 'cl-fitting',
     subcategory: 'fit-evaluation',
     difficulty: 'easy'
-  }
-];
-
-// Adding more contact lens fitting questions
-export const additionalContactLensFittingQuestions: ExamQuestion[] = [
-  // Patient Assessment and Selection
+  },
   {
     id: 'ncle-fitting-019',
     question: 'Which of the following conditions would most likely contraindicate soft contact lens wear?',
@@ -386,98 +381,392 @@ export const additionalContactLensFittingQuestions: ExamQuestion[] = [
   // Fit Evaluation
   {
     id: 'ncle-fitting-025',
-    question: 'What is the optimal central corneal clearance for a scleral lens?',
+    question: 'What is the primary goal of a successful soft contact lens fit?',
     options: [
-      '50-75 microns',
-      '150-250 microns',
-      '300-500 microns',
-      '500-750 microns'
+      'Achieving 20/20 visual acuity',
+      'Minimizing solution sensitivity',
+      'Providing a lens that centers well with adequate movement and good comfort',
+      'Maximizing oxygen permeability'
     ],
-    correctAnswer: 1,
-    explanation: 'The optimal central corneal clearance for a scleral lens is 150-250 microns (approximately the thickness of a typical cornea). This amount provides adequate clearance to avoid corneal touch while not being excessive, which could lead to reduced oxygen transmission or bubbles under the lens.',
-    category: 'cl-fitting',
-    subcategory: 'fit-evaluation',
-    difficulty: 'hard'
+    correctAnswer: 2,
+    explanation: 'The primary goal of a successful soft contact lens fit is to provide a lens that centers well on the cornea, has adequate movement with blinking, and offers good comfort, which collectively ensures eye health and vision while maintaining patient satisfaction.',
+    category: 'contact-lens-fitting',
+    subcategory: 'soft-lens-fitting',
+    difficulty: 'easy'
   },
   {
     id: 'ncle-fitting-026',
-    question: 'Which of the following indicates that a soft toric lens is properly aligned?',
+    question: 'What is the typical range of movement considered acceptable for a well-fitted soft contact lens?',
     options: [
-      'The lens rotates 30 degrees clockwise',
-      'The lens rotates continually with each blink',
-      'The lens marking remains within 10 degrees of the desired orientation',
-      'The lens remains 1mm below the corneal apex'
+      '0.1 to 0.2 mm',
+      '0.25 to 0.5 mm',
+      '1.0 to 2.0 mm',
+      '2.5 to 3.0 mm'
     ],
-    correctAnswer: 2,
-    explanation: 'A properly aligned soft toric lens should have its marking remain within 10 degrees of the desired orientation. Minimal rotation is essential for toric lenses to correctly correct astigmatism, as significant rotation will result in residual astigmatism and reduced visual acuity.',
-    category: 'cl-fitting',
-    subcategory: 'fit-evaluation',
+    correctAnswer: 1,
+    explanation: 'A well-fitted soft contact lens typically exhibits 0.25 to 0.5 mm of movement with each blink. Less movement may indicate the lens is too tight, while more movement suggests it\'s too loose.',
+    category: 'contact-lens-fitting',
+    subcategory: 'soft-lens-fitting',
     difficulty: 'medium'
   },
   {
     id: 'ncle-fitting-027',
-    question: 'What is the most appropriate action when fitting a soft lens that shows excessive movement (>1mm)?',
+    question: 'Which of the following tests is used to evaluate tear exchange beneath a soft contact lens?',
     options: [
-      'Increase the lens diameter',
-      'Flatten the base curve',
-      'Steepen the base curve',
-      'Switch to a higher water content material'
+      'Schirmer test',
+      'Fluorescein pattern evaluation',
+      'Push-up test',
+      'Phenol red thread test'
     ],
-    correctAnswer: 2,
-    explanation: 'When a soft lens shows excessive movement (>1mm), the most appropriate action is to steepen the base curve. A steeper base curve will increase the tightness of the fit and reduce lens movement to a more acceptable level.',
-    category: 'cl-fitting',
-    subcategory: 'fit-evaluation',
+    correctAnswer: 1,
+    explanation: 'Fluorescein pattern evaluation can be used to assess tear exchange beneath a soft contact lens. Although fluorescein is typically associated with RGP fitting, high-molecular-weight fluorescein can be used with soft lenses to observe tear flow patterns.',
+    category: 'contact-lens-fitting',
+    subcategory: 'soft-lens-fitting',
     difficulty: 'medium'
   },
   {
     id: 'ncle-fitting-028',
-    question: 'Which finding would indicate a flat-fitting RGP lens?',
+    question: 'What is the recommended first step when evaluating a soft contact lens fit?',
     options: [
-      'Central pooling with peripheral touch',
-      'Central touch with peripheral clearance',
-      'Bubble formation under the central lens',
-      'Superior lens adherence'
+      'Evaluate lens movement',
+      'Check visual acuity',
+      'Assess lens centration',
+      'Perform over-refraction'
     ],
-    correctAnswer: 1,
-    explanation: 'Central touch with peripheral clearance is indicative of a flat-fitting RGP lens. In this fitting relationship, the lens bears excessively on the corneal apex while lifting away from the peripheral cornea, resulting in potential apical scarring, discomfort, and reduced tear exchange.',
-    category: 'cl-fitting',
-    subcategory: 'fit-evaluation',
-    difficulty: 'medium'
-  },
-  {
-    id: 'ncle-fitting-029',
-    question: 'What is the primary use of sodium fluorescein when evaluating an RGP lens fit?',
-    options: [
-      'To disinfect the lens',
-      'To visualize tear exchange patterns',
-      'To measure corneal thickness',
-      'To increase lens comfort during adaptation'
-    ],
-    correctAnswer: 1,
-    explanation: 'The primary use of sodium fluorescein when evaluating an RGP lens fit is to visualize tear exchange patterns. When viewed with a cobalt blue filter, fluorescein highlights areas of lens-cornea relationship, showing areas of touch, clearance, and proper tear exchange.',
-    category: 'cl-fitting',
-    subcategory: 'fit-evaluation',
+    correctAnswer: 2,
+    explanation: 'The recommended first step when evaluating a soft contact lens fit is to assess lens centration, as proper centration is fundamental to a good fit and affects subsequent evaluations of movement and vision.',
+    category: 'contact-lens-fitting',
+    subcategory: 'soft-lens-fitting',
     difficulty: 'easy'
   },
   {
-    id: 'ncle-fitting-030',
-    question: 'Which characteristic would indicate a successful multifocal contact lens fit?',
+    id: 'ncle-fitting-029',
+    question: 'What is the most common cause of a tight-fitting soft contact lens?',
     options: [
-      'Clear distance vision with blurred near vision',
-      'Variable vision quality at all distances',
-      'Smooth visual transitions between distances with acceptable vision at all ranges',
-      'Clear near vision with blurred distance vision'
+      'Base curve too flat',
+      'Base curve too steep',
+      'Diameter too small',
+      'Excessive lens power'
+    ],
+    correctAnswer: 1,
+    explanation: 'A tight-fitting soft contact lens is most commonly caused by a base curve that is too steep (smaller radius of curvature), which creates excessive gripping of the lens on the cornea and reduces movement.',
+    category: 'contact-lens-fitting',
+    subcategory: 'soft-lens-fitting',
+    difficulty: 'medium'
+  },
+  {
+    id: 'ncle-fitting-030',
+    question: 'Which of the following accurately describes the relationship between lens diameter and corneal diameter in soft contact lens fitting?',
+    options: [
+      'Lens diameter should be equal to corneal diameter',
+      'Lens diameter should be 1-2 mm smaller than corneal diameter',
+      'Lens diameter should be 2-4 mm larger than corneal diameter',
+      'Lens diameter is unrelated to corneal diameter'
     ],
     correctAnswer: 2,
-    explanation: 'A successful multifocal contact lens fit is characterized by smooth visual transitions between distances with acceptable vision at all ranges. While perfect vision at all distances is not always achievable, a good multifocal fit should provide functional vision for distance, intermediate, and near tasks without significant compromise.',
-    category: 'cl-fitting',
-    subcategory: 'fit-evaluation',
+    explanation: 'In soft contact lens fitting, the lens diameter should typically be 2-4 mm larger than the corneal diameter (horizontal visible iris diameter or HVID) to achieve proper corneal coverage and lens stability.',
+    category: 'contact-lens-fitting',
+    subcategory: 'soft-lens-fitting',
     difficulty: 'medium'
+  },
+  {
+    id: 'ncle-fitting-031',
+    question: 'What is the primary goal of RGP lens fluorescein pattern assessment?',
+    options: [
+      'To evaluate corneal staining',
+      'To determine the relationship between the lens and cornea',
+      'To measure tear quality',
+      'To evaluate visual acuity'
+    ],
+    correctAnswer: 1,
+    explanation: 'The primary goal of assessing the fluorescein pattern with RGP lenses is to determine the relationship between the lens and cornea, revealing areas of alignment, clearance, and touch that indicate the fitting relationship.',
+    category: 'contact-lens-fitting',
+    subcategory: 'rgp-lens-fitting',
+    difficulty: 'easy'
+  },
+  {
+    id: 'ncle-fitting-032',
+    question: 'Which fluorescein pattern typically indicates an optimally fitted spherical RGP lens on a spherical cornea?',
+    options: [
+      'Central pooling with peripheral bearing',
+      'Central bearing with peripheral clearance',
+      'Alignment with light touch in center and moderate edge clearance',
+      'Heavy central bearing and excessive edge lift'
+    ],
+    correctAnswer: 2,
+    explanation: 'An optimally fitted spherical RGP lens on a spherical cornea typically shows an alignment pattern with light touch in the center and moderate edge clearance, often described as an "alignment fit."',
+    category: 'contact-lens-fitting',
+    subcategory: 'rgp-lens-fitting',
+    difficulty: 'medium'
+  },
+  {
+    id: 'ncle-fitting-033',
+    question: 'Which of the following would be the MOST appropriate base curve selection for an initial RGP lens for a patient with K readings of 44.00/45.00 @ 180?',
+    options: [
+      '43.50 D (7.75 mm)',
+      '44.00 D (7.67 mm)',
+      '44.25 D (7.62 mm)',
+      '45.50 D (7.42 mm)'
+    ],
+    correctAnswer: 2,
+    explanation: 'For initial RGP lens selection, a common approach is to select a base curve slightly steeper (about 0.25D) than the flat K reading. With a flat K of 44.00D, an appropriate initial base curve would be 44.25D (7.62 mm).',
+    category: 'contact-lens-fitting',
+    subcategory: 'rgp-lens-fitting',
+    difficulty: 'hard'
+  },
+  {
+    id: 'ncle-fitting-034',
+    question: 'What is the typical range of movement considered acceptable for a well-fitted RGP lens?',
+    options: [
+      '0.1 to 0.2 mm',
+      '0.5 to 1.0 mm',
+      '1.0 to 2.0 mm',
+      '2.0 to 3.0 mm'
+    ],
+    correctAnswer: 1,
+    explanation: 'A well-fitted RGP lens typically exhibits 0.5 to 1.0 mm of movement with each blink, which is sufficient to allow tear exchange without excessive lens movement that could cause discomfort or vision fluctuation.',
+    category: 'contact-lens-fitting',
+    subcategory: 'rgp-lens-fitting',
+    difficulty: 'medium'
+  },
+  {
+    id: 'ncle-fitting-035',
+    question: 'What fluorescein pattern would indicate that an RGP lens base curve is too flat?',
+    options: [
+      'Central pooling with peripheral bearing',
+      'Central bearing with peripheral clearance',
+      'Equal alignment across the lens surface',
+      'Bubble formation under the lens'
+    ],
+    correctAnswer: 1,
+    explanation: 'When an RGP lens base curve is too flat, the fluorescein pattern shows central bearing (dark or thin fluorescein layer centrally) with peripheral clearance (bright pooling at the edges), indicating that the lens is flatter than the corneal curvature.',
+    category: 'contact-lens-fitting',
+    subcategory: 'rgp-lens-fitting',
+    difficulty: 'medium'
+  },
+  {
+    id: 'ncle-fitting-036',
+    question: 'What is the most appropriate initial approach for fitting a patient with keratoconus?',
+    options: [
+      'Standard soft toric lenses',
+      'Standard RGP lenses',
+      'Specialty RGP designs for keratoconus or scleral lenses',
+      'Hybrid contact lenses'
+    ],
+    correctAnswer: 2,
+    explanation: 'For keratoconus patients, specialty RGP designs for keratoconus or scleral lenses are the most appropriate initial approach, as they can vault over the irregular corneal surface to provide optimal vision correction and comfort.',
+    category: 'contact-lens-fitting',
+    subcategory: 'specialty-lens-fitting',
+    difficulty: 'medium'
+  },
+  {
+    id: 'ncle-fitting-037',
+    question: 'What is the primary advantage of scleral lenses over corneal RGP lenses?',
+    options: [
+      'Better oxygen transmission',
+      'Lower cost',
+      'Less lens awareness and improved comfort',
+      'Simpler fitting process'
+    ],
+    correctAnswer: 2,
+    explanation: 'The primary advantage of scleral lenses over corneal RGP lenses is reduced lens awareness and improved comfort, as they vault over the cornea and rest on the less sensitive sclera, minimizing lid-lens interaction.',
+    category: 'contact-lens-fitting',
+    subcategory: 'specialty-lens-fitting',
+    difficulty: 'medium'
+  },
+  {
+    id: 'ncle-fitting-038',
+    question: 'Which of the following is the appropriate sagittal depth range for a mini-scleral lens?',
+    options: [
+      '100-200 microns',
+      '200-300 microns',
+      '300-500 microns',
+      '1000-1500 microns'
+    ],
+    correctAnswer: 2,
+    explanation: 'Mini-scleral lenses typically have a sagittal depth range of approximately 300-500 microns, providing sufficient vault over the cornea without excessive fluid reservoir depth.',
+    category: 'contact-lens-fitting',
+    subcategory: 'specialty-lens-fitting',
+    difficulty: 'hard'
+  },
+  {
+    id: 'ncle-fitting-039',
+    question: 'What is the primary fitting concern when fitting multifocal contact lenses?',
+    options: [
+      'Lens centration and pupil coverage',
+      'Base curve selection',
+      'Lens thickness',
+      'Oxygen permeability'
+    ],
+    correctAnswer: 0,
+    explanation: 'The primary fitting concern with multifocal contact lenses is ensuring proper lens centration and appropriate pupil coverage, as the optical zones must align correctly with the visual axis for optimal vision at different distances.',
+    category: 'contact-lens-fitting',
+    subcategory: 'specialty-lens-fitting',
+    difficulty: 'medium'
+  },
+  {
+    id: 'ncle-fitting-040',
+    question: 'What is the purpose of the "push-up test" in RGP lens fitting?',
+    options: [
+      'To evaluate tear exchange',
+      'To assess lens movement',
+      'To measure lens adherence',
+      'To determine lens centration'
+    ],
+    correctAnswer: 2,
+    explanation: 'The push-up test in RGP lens fitting is used to assess lens adherence by observing how quickly the lens returns to its position after being displaced. Excessive adherence indicates a tight fit, while easy displacement suggests a loose fit.',
+    category: 'contact-lens-fitting',
+    subcategory: 'rgp-lens-fitting',
+    difficulty: 'medium'
+  },
+  {
+    id: 'ncle-fitting-041',
+    question: 'What is an important consideration when fitting high minus power soft contact lenses?',
+    options: [
+      'They should be fit looser than normal',
+      'They require larger diameters',
+      'They tend to be thinner and may exhibit reduced movement',
+      'They require higher water content materials'
+    ],
+    correctAnswer: 2,
+    explanation: 'High minus power soft contact lenses tend to be thinner, especially at the center, which can result in reduced lens movement. This needs to be considered during fitting to ensure adequate movement for tear exchange.',
+    category: 'contact-lens-fitting',
+    subcategory: 'soft-lens-fitting',
+    difficulty: 'hard'
+  },
+  {
+    id: 'ncle-fitting-042',
+    question: 'What should be evaluated during a contact lens follow-up visit?',
+    options: [
+      'Only visual acuity',
+      'Only comfort and wearing time',
+      'Only lens fitting characteristics',
+      'Visual acuity, comfort, lens fitting, and corneal health'
+    ],
+    correctAnswer: 3,
+    explanation: 'During a contact lens follow-up visit, a comprehensive evaluation should include visual acuity, comfort assessment, lens fitting characteristics (movement, centration), and corneal health to ensure safe and successful contact lens wear.',
+    category: 'contact-lens-fitting',
+    subcategory: 'soft-lens-fitting',
+    difficulty: 'easy'
+  },
+  {
+    id: 'ncle-fitting-043',
+    question: 'What is the primary purpose of over-refraction during contact lens fitting?',
+    options: [
+      'To determine if the lens is fitting properly',
+      'To evaluate if the lens power needs adjustment',
+      'To assess corneal health',
+      'To check for lens deposits'
+    ],
+    correctAnswer: 1,
+    explanation: 'The primary purpose of performing an over-refraction during contact lens fitting is to determine if the lens power needs adjustment to provide optimal vision correction while the lens is on the eye.',
+    category: 'contact-lens-fitting',
+    subcategory: 'soft-lens-fitting',
+    difficulty: 'easy'
+  },
+  {
+    id: 'ncle-fitting-044',
+    question: 'What is the typical approach to determining toric soft lens axis orientation?',
+    options: [
+      'Using the spectacle prescription axis directly',
+      'Observing lens markings and compensating for rotational misalignment',
+      'Using an auto-refractor over the lens',
+      'Estimating based on K readings'
+    ],
+    correctAnswer: 1,
+    explanation: 'To determine toric soft lens axis orientation, the practitioner observes the position of the lens markings to assess rotational misalignment, then compensates for any rotation when ordering the final lens (LARS rule: Left Add, Right Subtract).',
+    category: 'contact-lens-fitting',
+    subcategory: 'soft-lens-fitting',
+    difficulty: 'medium'
+  },
+  {
+    id: 'ncle-fitting-045',
+    question: 'What determines the fitting relationship of a scleral lens over the cornea?',
+    options: [
+      'Base curve only',
+      'Lens diameter only',
+      'Sagittal depth of the lens',
+      'Lens power'
+    ],
+    correctAnswer: 2,
+    explanation: 'The sagittal depth of the scleral lens determines its fitting relationship over the cornea, controlling how much the lens vaults over the corneal surface and creating the fluid reservoir between the lens and cornea.',
+    category: 'contact-lens-fitting',
+    subcategory: 'specialty-lens-fitting',
+    difficulty: 'hard'
+  },
+  {
+    id: 'ncle-fitting-046',
+    question: 'What lens design would be most appropriate for a patient with regular astigmatism of -2.50DC?',
+    options: [
+      'Spherical soft lens',
+      'Toric soft lens',
+      'Spherical RGP lens',
+      'Bitoric RGP lens'
+    ],
+    correctAnswer: 1,
+    explanation: 'For a patient with regular astigmatism of -2.50DC, a toric soft lens would be most appropriate as this amount of astigmatism is significant enough to affect vision quality and is unlikely to be fully corrected with a spherical lens mask effect.',
+    category: 'contact-lens-fitting',
+    subcategory: 'soft-lens-fitting',
+    difficulty: 'medium'
+  },
+  {
+    id: 'ncle-fitting-047',
+    question: 'Which of the following would indicate an RGP lens is fitting too steeply?',
+    options: [
+      'Excessive lens movement',
+      'Central bearing',
+      'Central pooling',
+      'Interpalpebral positioning'
+    ],
+    correctAnswer: 2,
+    explanation: 'Central pooling of fluorescein (appearing as a bright green area in the center of the lens) indicates that an RGP lens is fitting too steeply, with the lens vaulting over the central cornea instead of properly aligning with it.',
+    category: 'contact-lens-fitting',
+    subcategory: 'rgp-lens-fitting',
+    difficulty: 'medium'
+  },
+  {
+    id: 'ncle-fitting-048',
+    question: 'What is the appropriate starting point for RGP lens diameter selection?',
+    options: [
+      'Always use 9.0 mm',
+      'Always use 10.0 mm',
+      'Base it on the corneal diameter, typically 1.5-2.0 mm smaller than HVID',
+      'Match it exactly to the corneal diameter'
+    ],
+    correctAnswer: 2,
+    explanation: 'The appropriate starting point for RGP lens diameter selection is based on the corneal diameter (HVID), typically 1.5-2.0 mm smaller than HVID, which positions the lens properly on the cornea while allowing appropriate lid interaction.',
+    category: 'contact-lens-fitting',
+    subcategory: 'rgp-lens-fitting',
+    difficulty: 'medium'
+  },
+  {
+    id: 'ncle-fitting-049',
+    question: 'What is the most important consideration when selecting a lens design for presbyopic patients?',
+    options: [
+      'Lens material only',
+      'Patient\'s visual demands and lifestyle',
+      'Base curve only',
+      'Tear quality only'
+    ],
+    correctAnswer: 1,
+    explanation: 'When selecting a lens design for presbyopic patients, the most important consideration is understanding the patient\'s visual demands and lifestyle, which helps determine whether multifocal, monovision, or another approach would best meet their needs.',
+    category: 'contact-lens-fitting',
+    subcategory: 'specialty-lens-fitting',
+    difficulty: 'easy'
+  },
+  {
+    id: 'ncle-fitting-050',
+    question: 'What is the primary advantage of fitting a corneo-scleral lens rather than a corneal RGP lens for a patient with keratoconus?',
+    options: [
+      'Lower cost',
+      'Increased oxygen transmission',
+      'Greater stability and comfort',
+      'Reduced care requirements'
+    ],
+    correctAnswer: 2,
+    explanation: 'The primary advantage of fitting a corneo-scleral lens rather than a corneal RGP for keratoconus is greater stability and comfort, as the larger diameter lens distributes bearing over a larger area and reduces lens movement, decreasing lens awareness and improving comfort.',
+    category: 'contact-lens-fitting',
+    subcategory: 'specialty-lens-fitting',
+    difficulty: 'hard'
   }
-];
-
-// Combine original and additional questions
-export const contactLensFittingQuestions: ExamQuestion[] = [
-  ...originalContactLensFittingQuestions,
-  ...additionalContactLensFittingQuestions
 ]; 

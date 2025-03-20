@@ -30,6 +30,11 @@ import {
 } from '@mui/icons-material';
 import { aboExamSections } from '../constants/aboTopics';
 import { ncleExamSections } from '../constants/ncleTopics';
+import { 
+  aboQuizQuestions, 
+  ncleQuizQuestions,
+  getQuizQuestionsByCategory
+} from '../content/exam';
 
 // Interface for quiz data
 interface QuizData {
@@ -49,32 +54,138 @@ interface QuizData {
 const generateQuizzes = (): QuizData[] => {
   const quizzes: QuizData[] = [];
   
-  // Generate section quizzes for ABO
-  aboExamSections.forEach(section => {
-    quizzes.push({
-      id: `abo-${section.id}`,
-      title: `${section.title} Quiz`,
-      description: `Test your knowledge on ${section.title.toLowerCase()} concepts`,
-      examType: 'ABO',
-      section: section.id,
-      numQuestions: Math.round(section.weightPercentage / 5),
-      estimatedTimeMinutes: Math.round(section.weightPercentage / 2),
-      difficulty: 'beginner'
-    });
+  // Add quizzes for ABO categories we've created
+  quizzes.push({
+    id: 'abo-opticalTheory',
+    title: 'Optical Theory Quiz',
+    description: 'Test your knowledge on basic principles of light, types of lenses, and lens forms',
+    examType: 'ABO',
+    section: 'opticalTheory',
+    numQuestions: aboQuizQuestions.opticalTheory?.length || 25,
+    estimatedTimeMinutes: 30,
+    difficulty: 'beginner'
   });
   
-  // Generate section quizzes for NCLE
-  ncleExamSections.forEach(section => {
-    quizzes.push({
-      id: `ncle-${section.id}`,
-      title: `${section.title} Quiz`,
-      description: `Test your knowledge on ${section.title.toLowerCase()} concepts`,
-      examType: 'NCLE',
-      section: section.id,
-      numQuestions: Math.round(section.weightPercentage / 5),
-      estimatedTimeMinutes: Math.round(section.weightPercentage / 2),
-      difficulty: 'beginner'
-    });
+  quizzes.push({
+    id: 'abo-dispensing',
+    title: 'Dispensing Procedures Quiz',
+    description: 'Test your knowledge on frame fitting, adjustments, and dispensing techniques',
+    examType: 'ABO',
+    section: 'dispensing',
+    numQuestions: aboQuizQuestions.dispensing?.length || 25,
+    estimatedTimeMinutes: 30,
+    difficulty: 'beginner'
+  });
+  
+  quizzes.push({
+    id: 'abo-lensApplications',
+    title: 'Lens Applications Quiz',
+    description: 'Test your knowledge on lens materials, lens treatments, and specialty lenses',
+    examType: 'ABO',
+    section: 'lensApplications',
+    numQuestions: aboQuizQuestions.lensApplications?.length || 25,
+    estimatedTimeMinutes: 30,
+    difficulty: 'beginner'
+  });
+  
+  quizzes.push({
+    id: 'abo-regulations',
+    title: 'Regulations and Standards Quiz',
+    description: 'Test your knowledge on prescription interpretation, ANSI standards, and safety eyewear',
+    examType: 'ABO',
+    section: 'regulations',
+    numQuestions: aboQuizQuestions.regulations?.length || 25,
+    estimatedTimeMinutes: 30,
+    difficulty: 'beginner'
+  });
+  
+  quizzes.push({
+    id: 'abo-measurements',
+    title: 'Measurements Quiz',
+    description: 'Test your knowledge on PD measurement, vertical measurements, and lens thickness calculations',
+    examType: 'ABO',
+    section: 'measurements',
+    numQuestions: aboQuizQuestions.measurements?.length || 25,
+    estimatedTimeMinutes: 30,
+    difficulty: 'beginner'
+  });
+  
+  quizzes.push({
+    id: 'abo-toolsEquipment',
+    title: 'Tools & Equipment Quiz',
+    description: 'Test your knowledge on optical tools, equipment, and their proper usage',
+    examType: 'ABO',
+    section: 'toolsEquipment',
+    numQuestions: aboQuizQuestions.toolsEquipment?.length || 25,
+    estimatedTimeMinutes: 30,
+    difficulty: 'beginner'
+  });
+  
+  // Add quizzes for NCLE categories we've created
+  quizzes.push({
+    id: 'ncle-preFitting',
+    title: 'Pre-Fitting Quiz',
+    description: 'Test your knowledge on contact lens overview, eye anatomy, and corneal topography',
+    examType: 'NCLE',
+    section: 'preFitting',
+    numQuestions: ncleQuizQuestions.preFitting?.length || 25,
+    estimatedTimeMinutes: 30,
+    difficulty: 'beginner'
+  });
+  
+  quizzes.push({
+    id: 'ncle-diagnosticFitting',
+    title: 'Diagnostic Fitting Quiz',
+    description: 'Test your knowledge on contact lens fitting basics, soft lens parameters, and RGP lens parameters',
+    examType: 'NCLE',
+    section: 'diagnosticFitting',
+    numQuestions: ncleQuizQuestions.diagnosticFitting?.length || 25,
+    estimatedTimeMinutes: 30,
+    difficulty: 'beginner'
+  });
+  
+  quizzes.push({
+    id: 'ncle-contactLensMaterials',
+    title: 'Contact Lens Materials Quiz',
+    description: 'Test your knowledge on material properties, silicone hydrogel materials, and RGP materials',
+    examType: 'NCLE',
+    section: 'contactLensMaterials',
+    numQuestions: ncleQuizQuestions.contactLensMaterials?.length || 25,
+    estimatedTimeMinutes: 30,
+    difficulty: 'beginner'
+  });
+  
+  quizzes.push({
+    id: 'ncle-patientEducation',
+    title: 'Patient Education Quiz',
+    description: 'Test your knowledge on lens wear and care instruction, problem identification, and compliance issues',
+    examType: 'NCLE',
+    section: 'patientEducation',
+    numQuestions: ncleQuizQuestions.patientEducation?.length || 25,
+    estimatedTimeMinutes: 30,
+    difficulty: 'beginner'
+  });
+  
+  quizzes.push({
+    id: 'ncle-followUpCare',
+    title: 'Follow-Up Care Quiz',
+    description: 'Test your knowledge on follow-up evaluations, problem-solving assessments, and lens replacement guidelines',
+    examType: 'NCLE',
+    section: 'followUpCare',
+    numQuestions: ncleQuizQuestions.followUpCare?.length || 25,
+    estimatedTimeMinutes: 30,
+    difficulty: 'beginner'
+  });
+  
+  quizzes.push({
+    id: 'ncle-regulatory',
+    title: 'Regulatory & Standards Quiz',
+    description: 'Test your knowledge on contact lens regulations, standards, and documentation requirements',
+    examType: 'NCLE',
+    section: 'regulatory',
+    numQuestions: ncleQuizQuestions.regulatory?.length || 25,
+    estimatedTimeMinutes: 30,
+    difficulty: 'beginner'
   });
   
   // Add full practice tests
@@ -115,9 +226,12 @@ const ExamPrepPage: React.FC = () => {
     // In a real app, this would come from an API
     const quizData = generateQuizzes();
     
+    // Filter out quizzes with fewer than 15 questions
+    const filteredQuizData = quizData.filter(quiz => quiz.numQuestions >= 15);
+    
     // Get completed quizzes from localStorage
     const completedQuizzes = JSON.parse(localStorage.getItem('completedQuizzes') || '[]');
-    const quizzesWithProgress = quizData.map(quiz => ({
+    const quizzesWithProgress = filteredQuizData.map(quiz => ({
       ...quiz,
       completed: completedQuizzes.some((cq: any) => cq.id === quiz.id),
       score: completedQuizzes.find((cq: any) => cq.id === quiz.id)?.score || 0
@@ -324,10 +438,8 @@ const ExamPrepPage: React.FC = () => {
                     fullWidth 
                     variant={quiz.completed ? "outlined" : "contained"} 
                     color="primary"
-                    // In a real app, this would link to the actual quiz
                     component={RouterLink}
-                    to="#"
-                    onClick={() => alert('Quiz functionality would be implemented here')}
+                    to={`/quiz/${quiz.examType.toLowerCase()}/${quiz.section}`}
                     startIcon={quiz.completed ? <TimerIcon /> : <QuizIcon />}
                   >
                     {quiz.completed ? 'Retake Quiz' : 'Start Quiz'}

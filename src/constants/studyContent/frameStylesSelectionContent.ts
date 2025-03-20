@@ -1,4 +1,5 @@
 import { TopicStudyContent } from '../../interfaces/StudyContent';
+import { frameBasicsImages } from '../mediaAssets';
 
 export const frameStylesSelectionContent: TopicStudyContent = {
   topicId: 'frame-styles-selection',
@@ -215,8 +216,8 @@ export const frameStylesSelectionContent: TopicStudyContent = {
           id: 'measurement-diagram',
           type: 'image',
           content: {
-            url: 'frame_measurements_diagram.jpg',
-            altText: 'Diagram showing standard frame measurements: eye size, bridge width, and temple length',
+            src: frameBasicsImages.frameMeasurementsDiagram.path,
+            alt: 'Diagram showing standard frame measurements: eye size, bridge width, and temple length',
             caption: 'Standard eyeglass frame measurements'
           }
         },
@@ -351,76 +352,64 @@ export const frameStylesSelectionContent: TopicStudyContent = {
       ]
     }
   ],
-  quiz: {
-    title: 'Frame Styles and Selection Quiz',
-    questions: [
-      {
-        id: 'face-shape-q1',
-        type: 'multiple-choice',
-        question: 'Which frame shape is generally most flattering for a patient with a round face?',
-        options: [
-          'Round frames',
-          'Oval frames',
-          'Rectangular or angular frames',
-          'Cat-eye frames'
-        ],
-        correctAnswer: 2,
-        explanation: 'Angular or rectangular frames create contrast with a round face, adding definition and making the face appear longer and less round.'
-      },
-      {
-        id: 'prescription-q1',
-        type: 'multiple-choice',
-        question: 'For a patient with a high minus prescription (-8.00D), which frame characteristic would be most beneficial?',
-        options: [
-          'Large frame size',
-          'Small, round eye shape',
-          'Rimless construction',
-          'Bold, light-colored frame'
-        ],
-        correctAnswer: 1,
-        explanation: 'Small, round frames minimize edge thickness in high minus prescriptions by reducing the distance from the optical center to the edge of the lens.'
-      },
-      {
-        id: 'sizing-q1',
-        type: 'multiple-choice',
-        question: 'In a standard frame measurement of 52□18-140, what does the 140 represent?',
-        options: [
-          'Total frame width in millimeters',
-          'Temple length in millimeters',
-          'Vertical lens height in millimeters',
-          'Diagonal lens measurement in millimeters'
-        ],
-        correctAnswer: 1,
-        explanation: 'In standard frame measurements, the third number (140) represents the temple length in millimeters.'
-      },
-      {
-        id: 'material-q1',
-        type: 'multiple-choice',
-        question: 'Which frame material would be most appropriate for a patient with nickel allergies who needs durable, lightweight frames?',
-        options: [
-          'Nickel-silver alloy',
-          'Stainless steel',
-          'Titanium',
-          'Beryllium'
-        ],
-        correctAnswer: 2,
-        explanation: 'Titanium is hypoallergenic, extremely lightweight, and durable, making it an ideal choice for patients with metal allergies.'
-      },
-      {
-        id: 'lifestyle-q1',
-        type: 'multiple-choice',
-        question: 'What frame feature would be most important for a construction worker who needs prescription eyewear?',
-        options: [
-          'Fashion-forward design',
-          'Lightweight materials',
-          'ANSI Z87 safety rating',
-          'Rimless construction'
-        ],
-        correctAnswer: 2,
-        explanation: 'ANSI Z87 safety rating is essential for occupational safety eyewear used in construction environments where impact hazards are present.'
-      }
-    ]
-  },
+  summary: 'Frame selection is a critical skill for opticians, combining technical knowledge of optics with aesthetic considerations and patient-specific needs. Understanding face shapes, prescription requirements, lifestyle factors, proper sizing, and material properties allows for frame recommendations that optimize both vision and appearance. The art of frame selection requires balancing optical considerations with fashion and personal style, resulting in eyewear that patients will wear comfortably and confidently.',
+  practiceQuestions: [
+    {
+      question: 'Which frame shape is generally most flattering for a patient with a round face?',
+      options: [
+        'Round frames',
+        'Oval frames',
+        'Rectangular or angular frames',
+        'Cat-eye frames'
+      ],
+      correctAnswer: 2,
+      explanation: 'Angular or rectangular frames create contrast with a round face, adding definition and making the face appear longer and less round.'
+    },
+    {
+      question: 'For a patient with a high minus prescription (-8.00D), which frame characteristic would be most beneficial?',
+      options: [
+        'Large frame size',
+        'Small, round eye shape',
+        'Rimless construction',
+        'Bold, light-colored frame'
+      ],
+      correctAnswer: 1,
+      explanation: 'Small, round frames minimize edge thickness in high minus prescriptions by reducing the distance from the optical center to the edge of the lens.'
+    },
+    {
+      question: 'In a standard frame measurement of 52□18-140, what does the 140 represent?',
+      options: [
+        'Total frame width in millimeters',
+        'Temple length in millimeters',
+        'Vertical lens height in millimeters',
+        'Diagonal lens measurement in millimeters'
+      ],
+      correctAnswer: 1,
+      explanation: 'In standard frame measurements, the third number (140) represents the temple length in millimeters.'
+    },
+    {
+      question: 'Which frame material would be most appropriate for a patient with nickel allergies who needs durable, lightweight frames?',
+      options: [
+        'Nickel-silver alloy',
+        'Stainless steel',
+        'Titanium',
+        'Beryllium'
+      ],
+      correctAnswer: 2,
+      explanation: 'Titanium is hypoallergenic, extremely lightweight, and durable, making it an ideal choice for patients with metal allergies.'
+    },
+    {
+      question: 'What frame feature would be most important for a construction worker who needs prescription eyewear?',
+      options: [
+        'Fashion-forward design',
+        'Lightweight materials',
+        'ANSI Z87 safety rating',
+        'Rimless construction'
+      ],
+      correctAnswer: 2,
+      explanation: 'ANSI Z87 safety rating is essential for occupational safety eyewear used in construction environments where impact hazards are present.'
+    }
+  ],
   references: [
     'Brooks CW, Borish IM. System for Ophthalmic Dispensing. 3rd ed. Butterworth-Heinemann; 2007.',
     'Jalie M. Ophthalmic Lenses and Dispensing. 3rd ed. Butterworth-Heinemann; 2008.',

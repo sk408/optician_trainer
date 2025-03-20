@@ -1,60 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="700px" height="400px" viewBox="0 0 700 400" xmlns="http://www.w3.org/2000/svg">
-  <!-- Background -->
-  <rect x="0" y="0" width="700" height="400" fill="#f8f9fa" />
-  
-  <!-- Title -->
-  <text x="350" y="30" font-family="Arial" font-size="20" text-anchor="middle" font-weight="bold">Light Refraction</text>
-  
-  <!-- Medium boundaries -->
-  <rect x="50" y="50" width="600" height="175" fill="#e6f7ff" opacity="0.6" />
-  <rect x="50" y="225" width="600" height="175" fill="#cce5ff" opacity="0.8" />
-  
-  <!-- Medium labels -->
-  <text x="100" y="100" font-family="Arial" font-size="18" font-weight="bold">Medium 1</text>
-  <text x="120" y="125" font-family="Arial" font-size="14">(Air, n = 1.00)</text>
-  
-  <text x="100" y="300" font-family="Arial" font-size="18" font-weight="bold">Medium 2</text>
-  <text x="120" y="325" font-family="Arial" font-size="14">(Glass, n = 1.52)</text>
-  
-  <!-- Boundary line -->
-  <line x1="50" y1="225" x2="650" y2="225" stroke="#3366cc" stroke-width="2" />
-  
-  <!-- Normal line -->
-  <line x1="350" y1="100" x2="350" y2="350" stroke="#999999" stroke-width="1" stroke-dasharray="5,5" />
-  <text x="355" y="95" font-family="Arial" font-size="12">Normal</text>
-  
-  <!-- Incident ray -->
-  <line x1="250" y1="125" x2="350" y2="225" stroke="#ff6600" stroke-width="3" />
-  <polygon points="250,125 259,129 255,118" fill="#ff6600" />
-  
-  <!-- Incident ray label -->
-  <text x="260" y="115" font-family="Arial" font-size="14">Incident Ray</text>
-  
-  <!-- Refracted ray -->
-  <line x1="350" y1="225" x2="425" y2="350" stroke="#0066ff" stroke-width="3" />
-  <polygon points="425,350 417,344 427,341" fill="#0066ff" />
-  
-  <!-- Refracted ray label -->
-  <text x="430" y="340" font-family="Arial" font-size="14">Refracted Ray</text>
-  
-  <!-- Angles -->
-  <path d="M350,225 A50,50 0 0,1 325,185" stroke="#ff6600" fill="none" stroke-width="1.5" />
-  <text x="320" y="180" font-family="Arial" font-size="14" fill="#ff6600">θ₁</text>
-  
-  <path d="M350,225 A40,40 0 0,0 370,255" stroke="#0066ff" fill="none" stroke-width="1.5" />
-  <text x="375" y="255" font-family="Arial" font-size="14" fill="#0066ff">θ₂</text>
-  
-  <!-- Explanation text -->
-  <text x="500" y="120" font-family="Arial" font-size="14">When light passes from one medium</text>
-  <text x="500" y="140" font-family="Arial" font-size="14">to another with a different density,</text>
-  <text x="500" y="160" font-family="Arial" font-size="14">its path bends. This is refraction.</text>
-  
-  <text x="500" y="300" font-family="Arial" font-size="14">Light bends toward the normal when</text>
-  <text x="500" y="320" font-family="Arial" font-size="14">entering a denser medium (θ₂ < θ₁)</text>
-  
-  <!-- Formula -->
-  <rect x="450" y="195" width="200" height="60" rx="5" ry="5" fill="#ffffff" stroke="#3366cc" stroke-width="1" />
-  <text x="550" y="225" font-family="Arial" font-size="16" text-anchor="middle">n₁ sin(θ₁) = n₂ sin(θ₂)</text>
-  <text x="550" y="245" font-family="Arial" font-size="12" text-anchor="middle">Snell's Law</text>
+<!-- Background -->
+<rect x="0" y="0" width="700" height="400" fill="#f8f9fa" />
+<!-- Title -->
+<text x="350" y="30" font-family="Arial" font-size="20" text-anchor="middle" font-weight="bold">Light Refraction</text>
+<!-- Medium boundaries -->
+<rect x="50" y="50" width="600" height="175" fill="#e6f7ff" opacity="0.6" />
+<rect x="50" y="225" width="600" height="175" fill="#cce5ff" opacity="0.8" />
+<!-- Medium labels -->
+<text x="100" y="100" font-family="Arial" font-size="18" font-weight="bold">Medium 1</text>
+<text x="120" y="125" font-family="Arial" font-size="14">(Air, n = 1.00)</text>
+<text x="100" y="300" font-family="Arial" font-size="18" font-weight="bold">Medium 2</text>
+<text x="120" y="325" font-family="Arial" font-size="14">(Glass, n = 1.52)</text>
+<!-- Boundary line -->
+<line x1="50" y1="225" x2="650" y2="225" stroke="#3366cc" stroke-width="2" />
+<!-- Normal line -->
+<line x1="350" y1="100" x2="350" y2="350" stroke="#999999" stroke-width="1" stroke-dasharray="5,5" />
+<text x="355" y="95" font-family="Arial" font-size="12">Normal</text>
+<!-- Incident ray -->
+<line x1="250" y1="125" x2="350" y2="225" stroke="#ff6600" stroke-width="3" />
+<polygon points="250,125 259,129 255,118" fill="#ff6600" />
+<!-- Incident ray label -->
+<text x="260" y="115" font-family="Arial" font-size="14">Incident Ray</text>
+<!-- Refracted ray -->
+<line x1="350" y1="225" x2="425" y2="350" stroke="#0066ff" stroke-width="3" />
+<polygon points="425,350 417,344 427,341" fill="#0066ff" />
+<!-- Refracted ray label -->
+<text x="430" y="340" font-family="Arial" font-size="14">Refracted Ray</text>
+<!-- Angles -->
+<path d="M350,225 A50,50 0 0,1 325,185" stroke="#ff6600" fill="none" stroke-width="1.5" />
+<text x="320" y="180" font-family="Arial" font-size="14" fill="#ff6600">θ₁</text>
+<path d="M350,225 A40,40 0 0,0 370,255" stroke="#0066ff" fill="none" stroke-width="1.5" />
+<text x="375" y="255" font-family="Arial" font-size="14" fill="#0066ff">θ₂</text>
+<!-- Explanation text -->
+<text x="500" y="120" font-family="Arial" font-size="14">When light passes from one medium</text>
+<text x="500" y="140" font-family="Arial" font-size="14">to another with a different density,</text>
+<text x="500" y="160" font-family="Arial" font-size="14">its path bends. This is refraction.</text>
+<text x="500" y="300" font-family="Arial" font-size="14">Light bends toward the normal when</text>
+<text x="500" y="320" font-family="Arial" font-size="14">entering a denser medium (θ₂ &lt; θ₁)</text>
+<!-- Formula -->
+<rect x="450" y="195" width="200" height="60" rx="5" ry="5" fill="#ffffff" stroke="#3366cc" stroke-width="1" />
+<text x="550" y="225" font-family="Arial" font-size="16" text-anchor="middle">n₁ sin(θ₁) = n₂ sin(θ₂)</text>
+<text x="550" y="245" font-family="Arial" font-size="12" text-anchor="middle">Snell's Law</text>
 </svg> 

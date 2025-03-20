@@ -1,4 +1,5 @@
 import { TopicStudyContent } from '../../interfaces/StudyContent';
+import { basicOpticsImages } from '../mediaAssets';
 
 export const basicOpticsContent: TopicStudyContent = {
   topicId: 'basic-optics',
@@ -59,7 +60,7 @@ export const basicOpticsContent: TopicStudyContent = {
           id: 'em-spectrum-image',
           type: 'image',
           content: {
-            src: '/assets/images/study/electromagnetic-spectrum.svg',
+            src: basicOpticsImages.electromagneticSpectrum.path,
             alt: 'The electromagnetic spectrum showing visible light in relation to other radiation types',
             caption: 'The electromagnetic spectrum with visible light highlighted. Note that visible light is only a small portion of the full spectrum - equivalent to about one octave on a piano with many octaves.',
             width: '80%'
@@ -222,7 +223,7 @@ export const basicOpticsContent: TopicStudyContent = {
           id: 'reflection-image',
           type: 'image',
           content: {
-            src: '/assets/images/study/reflection-types.svg',
+            src: basicOpticsImages.reflectionTypes.path,
             alt: 'Diagram showing specular vs diffuse reflection',
             caption: 'Specular reflection (left) vs. diffuse reflection (right). Notice how parallel light rays stay parallel in specular reflection but scatter in diffuse reflection.',
             width: '70%'
@@ -297,7 +298,7 @@ export const basicOpticsContent: TopicStudyContent = {
           id: 'refraction-image',
           type: 'image',
           content: {
-            src: '/assets/images/study/refraction.svg',
+            src: basicOpticsImages.refraction.path,
             alt: 'Diagram showing light refraction between two mediums',
             caption: 'Light refracting as it passes from air into glass and then back into air. Notice how the light ray changes direction at each boundary between materials.',
             width: '70%'
@@ -502,7 +503,7 @@ export const basicOpticsContent: TopicStudyContent = {
           id: 'snells-image',
           type: 'image',
           content: {
-            src: '/assets/images/study/snells-law.svg',
+            src: basicOpticsImages.snellsLaw.path,
             alt: 'Diagram illustrating Snell\'s Law with incident and refracted light rays',
             caption: 'Illustration of Snell\'s Law showing the relationship between angles and indices of refraction',
             width: '70%'

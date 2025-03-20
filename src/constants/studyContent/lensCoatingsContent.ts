@@ -1,4 +1,5 @@
 import { TopicStudyContent } from '../../interfaces/StudyContent';
+import { lensCoatingImages } from '../mediaAssets';
 
 export const lensCoatingsContent: TopicStudyContent = {
   topicId: 'lens-coatings',
@@ -132,12 +133,12 @@ export const lensCoatingsContent: TopicStudyContent = {
           }
         },
         {
-          id: 'ar-image',
+          id: 'ar-coating-comparison',
           type: 'image',
           content: {
-            src: '/assets/images/study/ar-coating-comparison.png',
-            alt: 'Comparison of a lens with and without anti-reflective coating',
-            caption: 'Left: Lens without AR coating showing reflections. Right: Lens with AR coating showing minimal reflections.'
+            src: lensCoatingImages.arCoatingComparison.path,
+            alt: 'Comparison of lenses with and without AR coating',
+            caption: 'Left: Lens without AR coating showing reflections. Right: Lens with AR coating showing reduced reflections.'
           }
         },
         {

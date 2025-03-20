@@ -1,4 +1,5 @@
 import { TopicStudyContent } from '../../interfaces/StudyContent';
+import { contactLensOverviewImages } from '../mediaAssets';
 
 export const contactLensOverviewContent: TopicStudyContent = {
   topicId: 'cl-overview',
@@ -141,7 +142,7 @@ export const contactLensOverviewContent: TopicStudyContent = {
           id: 'material-comparison',
           type: 'image',
           content: {
-            src: '/assets/images/study/cl-material-comparison.jpg',
+            src: contactLensOverviewImages.clMaterialComparison.path,
             alt: 'Comparison of soft and RGP contact lenses',
             caption: 'Side-by-side comparison of soft (left) and RGP (right) contact lenses',
             width: '80%'
@@ -399,7 +400,7 @@ export const contactLensOverviewContent: TopicStudyContent = {
           id: 'parameters-image',
           type: 'image',
           content: {
-            src: '/assets/images/study/contact-lens-parameters.jpg',
+            src: contactLensOverviewImages.contactLensParameters.path,
             alt: 'Diagram illustrating key contact lens parameters',
             caption: 'Key parameters of a contact lens: base curve, diameter, power, and thickness profile',
             width: '75%'

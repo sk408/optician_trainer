@@ -1,0 +1,156 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <title>Visual Pathway Diagram</title>
+  <defs>
+    <linearGradient id="brainGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffcccc" />
+      <stop offset="100%" stop-color="#ffaaaa" />
+    </linearGradient>
+    <linearGradient id="opticNerveGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffffcc" />
+      <stop offset="100%" stop-color="#fff288" />
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="3" />
+      <feOffset dx="2" dy="2" result="offsetblur" />
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.3" />
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#0066cc" />
+    </marker>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="600" fill="#f8f8f8" />
+  
+  <!-- Title -->
+  <text x="400" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="bold" text-anchor="middle" fill="#333333">Visual Pathway: Eye to Brain</text>
+  
+  <!-- Brain Outline - Sagittal View -->
+  <path d="M 400,150 
+           C 500,120 600,150 650,250
+           C 680,320 650,400 600,450
+           C 550,500 480,530 400,520
+           C 320,530 250,500 200,450
+           C 150,400 120,320 150,250
+           C 200,150 300,120 400,150 Z" 
+        fill="url(#brainGradient)" stroke="#333333" stroke-width="1.5" />
+  
+  <!-- Visual Cortex -->
+  <path d="M 400,520 
+           C 350,510 310,480 280,440
+           C 310,460 350,470 400,470
+           C 450,470 490,460 520,440
+           C 490,480 450,510 400,520 Z" 
+        fill="#ff8888" stroke="#cc0000" stroke-width="1.5" />
+  <text x="400" y="495" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#333333">Primary Visual Cortex</text>
+  <text x="400" y="515" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#333333">(Occipital Lobe)</text>
+  
+  <!-- LGN (Lateral Geniculate Nucleus) - Left -->
+  <ellipse cx="285" cy="370" rx="20" ry="15" fill="#ff9966" stroke="#cc6600" stroke-width="1.5" />
+  <text x="285" y="400" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#333333">Left LGN</text>
+  
+  <!-- LGN - Right -->
+  <ellipse cx="515" cy="370" rx="20" ry="15" fill="#ff9966" stroke="#cc6600" stroke-width="1.5" />
+  <text x="515" y="400" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#333333">Right LGN</text>
+  
+  <!-- Optic Chiasm -->
+  <path d="M 360,280 C 380,270 420,270 440,280 L 440,300 C 420,310 380,310 360,300 Z" fill="#ffffaa" stroke="#999900" stroke-width="1.5" />
+  <text x="400" y="330" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#333333">Optic Chiasm</text>
+  
+  <!-- Optic Tracts -->
+  <!-- Left -->
+  <path d="M 360,290 C 320,300 300,320 285,355" fill="none" stroke="#cccc00" stroke-width="4" stroke-linecap="round" />
+  <text x="310" y="315" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#333333">Left Optic Tract</text>
+  
+  <!-- Right -->
+  <path d="M 440,290 C 480,300 500,320 515,355" fill="none" stroke="#cccc00" stroke-width="4" stroke-linecap="round" />
+  <text x="490" y="315" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#333333">Right Optic Tract</text>
+  
+  <!-- Optic Radiations -->
+  <!-- Left -->
+  <path d="M 285,385 C 300,400 310,420 340,450 C 360,465 380,470 400,470" fill="none" stroke="#cccc00" stroke-width="3" stroke-dasharray="7,3" />
+  <text x="320" y="440" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#333333">Left Optic Radiation</text>
+  
+  <!-- Right -->
+  <path d="M 515,385 C 500,400 490,420 460,450 C 440,465 420,470 400,470" fill="none" stroke="#cccc00" stroke-width="3" stroke-dasharray="7,3" />
+  <text x="480" y="440" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#333333">Right Optic Radiation</text>
+  
+  <!-- Eyes -->
+  <!-- Left Eye -->
+  <circle cx="250" cy="180" r="40" fill="white" stroke="#333333" stroke-width="1.5" />
+  <circle cx="250" cy="180" r="15" fill="#99ccff" stroke="#0066cc" stroke-width="1" />
+  <circle cx="250" cy="180" r="5" fill="#000000" />
+  <text x="250" y="235" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#333333">Left Eye</text>
+  
+  <!-- Right Eye -->
+  <circle cx="550" cy="180" r="40" fill="white" stroke="#333333" stroke-width="1.5" />
+  <circle cx="550" cy="180" r="15" fill="#99ccff" stroke="#0066cc" stroke-width="1" />
+  <circle cx="550" cy="180" r="5" fill="#000000" />
+  <text x="550" y="235" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#333333">Right Eye</text>
+  
+  <!-- Optic Nerves -->
+  <!-- Left -->
+  <path d="M 280,200 C 320,230 340,250 360,280" fill="none" stroke="#cccc00" stroke-width="4" stroke-linecap="round" />
+  <text x="320" y="220" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#333333">Left Optic Nerve</text>
+  
+  <!-- Right -->
+  <path d="M 520,200 C 480,230 460,250 440,280" fill="none" stroke="#cccc00" stroke-width="4" stroke-linecap="round" />
+  <text x="480" y="220" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#333333">Right Optic Nerve</text>
+  
+  <!-- Visual Field Indicators -->
+  <!-- Left Visual Field -->
+  <path d="M 200,100 A 60,60 0 0,1 200,260" fill="none" stroke="#0066cc" stroke-width="2" stroke-dasharray="5,3" />
+  <text x="165" y="180" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#0066cc" transform="rotate(-90, 165, 180)">Left Visual Field</text>
+  
+  <!-- Right Visual Field -->
+  <path d="M 600,100 A 60,60 0 0,0 600,260" fill="none" stroke="#cc0000" stroke-width="2" stroke-dasharray="5,3" />
+  <text x="635" y="180" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#cc0000" transform="rotate(90, 635, 180)">Right Visual Field</text>
+  
+  <!-- Visual Field Mapping Lines -->
+  <!-- From Left Field to Right Visual Cortex -->
+  <path d="M 210,150 L 260,175 L 380,280 L 515,370 L 450,450" fill="none" stroke="#0066cc" stroke-width="1.5" stroke-dasharray="3,2" />
+  
+  <!-- From Right Field to Left Visual Cortex -->
+  <path d="M 590,150 L 540,175 L 420,280 L 285,370 L 350,450" fill="none" stroke="#cc0000" stroke-width="1.5" stroke-dasharray="3,2" />
+  
+  <!-- Annotations -->
+  <!-- Visual Field Crossing Annotation -->
+  <path d="M 400,280 L 400,240 L 450,240" fill="none" stroke="#333333" stroke-width="1" stroke-dasharray="2,1" />
+  <rect x="450" y="220" width="200" height="40" rx="10" ry="10" fill="white" stroke="#333333" stroke-width="1" filter="url(#shadow)" />
+  <text x="550" y="240" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#333333">Nasal fibers cross at chiasm</text>
+  <text x="550" y="255" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#333333">Temporal fibers remain uncrossed</text>
+  
+  <!-- LGN Annotation -->
+  <path d="M 515,370 L 600,370" fill="none" stroke="#333333" stroke-width="1" stroke-dasharray="2,1" />
+  <rect x="600" y="350" width="180" height="40" rx="10" ry="10" fill="white" stroke="#333333" stroke-width="1" filter="url(#shadow)" />
+  <text x="690" y="370" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#333333">Lateral Geniculate Nucleus (LGN)</text>
+  <text x="690" y="385" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#333333">Visual relay center in thalamus</text>
+  
+  <!-- Visual Cortex Annotation -->
+  <path d="M 400,495 L 150,495" fill="none" stroke="#333333" stroke-width="1" stroke-dasharray="2,1" />
+  <rect x="20" y="475" width="130" height="40" rx="10" ry="10" fill="white" stroke="#333333" stroke-width="1" filter="url(#shadow)" />
+  <text x="85" y="495" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#333333">V1 - Primary Visual Cortex</text>
+  <text x="85" y="510" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#333333">(Brodmann Area 17)</text>
+  
+  <!-- Legend -->
+  <rect x="580" y="100" width="200" height="100" rx="5" ry="5" fill="white" stroke="#333333" stroke-width="1" />
+  <text x="680" y="120" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#333333">LEGEND</text>
+  
+  <line x1="600" y1="140" x2="630" y2="140" stroke="#cccc00" stroke-width="4" />
+  <text x="680" y="144" font-family="Arial, sans-serif" font-size="12" fill="#333333">Optic Nerve/Tract</text>
+  
+  <line x1="600" y1="165" x2="630" y2="165" stroke="#cccc00" stroke-width="3" stroke-dasharray="7,3" />
+  <text x="680" y="169" font-family="Arial, sans-serif" font-size="12" fill="#333333">Optic Radiation</text>
+  
+  <line x1="600" y1="190" x2="630" y2="190" stroke="#0066cc" stroke-width="1.5" stroke-dasharray="3,2" />
+  <text x="680" y="194" font-family="Arial, sans-serif" font-size="12" fill="#333333">Signal Path</text>
+  
+  <!-- Footer Note -->
+  <text x="400" y="580" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#555555">Note: Left visual field information is processed by the right hemisphere, and right visual field information is processed by the left hemisphere.</text>
+</svg>

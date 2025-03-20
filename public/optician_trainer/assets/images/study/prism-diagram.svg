@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="800" height="600" fill="#f8f9fa"/>
+  
+  <!-- Title -->
+  <text x="400" y="50" font-family="Arial, sans-serif" font-size="24" text-anchor="middle" font-weight="bold">Optical Prism Diagram</text>
+  
+  <!-- Prism -->
+  <path d="M300,200 L500,200 L400,400 Z" fill="#a7c7e7" fill-opacity="0.6" stroke="#2c3e50" stroke-width="3"/>
+  
+  <!-- Incident Ray -->
+  <line x1="200" y1="150" x2="300" y2="200" stroke="#ff6b6b" stroke-width="3"/>
+  <polygon points="300,200 290,190 285,203" fill="#ff6b6b"/>
+  
+  <!-- Refracted Ray Inside -->
+  <line x1="300" y1="200" x2="400" y2="400" stroke="#ff6b6b" stroke-width="3" stroke-dasharray="5,5"/>
+  
+  <!-- Emergent Ray -->
+  <line x1="400" y1="400" x2="500" y2="450" stroke="#ff6b6b" stroke-width="3"/>
+  <polygon points="500,450 490,440 485,453" fill="#ff6b6b"/>
+  
+  <!-- Normal at Entry -->
+  <line x1="300" y1="150" x2="300" y2="250" stroke="#2c3e50" stroke-width="1" stroke-dasharray="5,5"/>
+  
+  <!-- Normal at Exit -->
+  <line x1="380" y1="420" x2="420" y2="380" stroke="#2c3e50" stroke-width="1" stroke-dasharray="5,5"/>
+  
+  <!-- Angle Labels -->
+  <path d="M250,180 A 40,40 0 0,1 285,190" fill="none" stroke="#333" stroke-width="1"/>
+  <text x="260" y="170" font-family="Arial, sans-serif" font-size="16">θ₁</text>
+  
+  <path d="M320,210 A 40,40 0 0,1 350,220" fill="none" stroke="#333" stroke-width="1"/>
+  <text x="340" y="200" font-family="Arial, sans-serif" font-size="16">θ₂</text>
+  
+  <path d="M420,410 A 40,40 0 0,1 450,420" fill="none" stroke="#333" stroke-width="1"/>
+  <text x="440" y="400" font-family="Arial, sans-serif" font-size="16">θ₃</text>
+  
+  <!-- Labels -->
+  <text x="220" y="130" font-family="Arial, sans-serif" font-size="16" text-anchor="middle">Incident Ray</text>
+  <text x="350" y="300" font-family="Arial, sans-serif" font-size="16" text-anchor="middle">Prism</text>
+  <text x="550" y="460" font-family="Arial, sans-serif" font-size="16" text-anchor="middle">Emergent Ray</text>
+  <text x="300" y="130" font-family="Arial, sans-serif" font-size="14" text-anchor="middle">Normal</text>
+  <text x="440" y="370" font-family="Arial, sans-serif" font-size="14" text-anchor="middle">Normal</text>
+  
+  <!-- Legend -->
+  <rect x="600" y="200" width="150" height="150" fill="#f8f9fa" stroke="#2c3e50" stroke-width="1"/>
+  <text x="675" y="220" font-family="Arial, sans-serif" font-size="16" text-anchor="middle" font-weight="bold">Legend</text>
+  
+  <line x1="610" y1="240" x2="640" y2="240" stroke="#ff6b6b" stroke-width="3"/>
+  <text x="675" y="245" font-family="Arial, sans-serif" font-size="14">Light Ray</text>
+  
+  <line x1="610" y1="270" x2="640" y2="270" stroke="#2c3e50" stroke-width="1" stroke-dasharray="5,5"/>
+  <text x="675" y="275" font-family="Arial, sans-serif" font-size="14">Normal</text>
+  
+  <rect x="610" y="290" width="30" height="20" fill="#a7c7e7" fill-opacity="0.6" stroke="#2c3e50" stroke-width="1"/>
+  <text x="675" y="305" font-family="Arial, sans-serif" font-size="14">Prism Medium</text>
+  
+  <!-- Caption -->
+  <text x="400" y="500" font-family="Arial, sans-serif" font-size="16" text-anchor="middle">
+    Light is refracted twice when passing through a prism,
+  </text>
+  <text x="400" y="525" font-family="Arial, sans-serif" font-size="16" text-anchor="middle">
+    causing the light to bend according to Snell's Law.
+  </text>
+</svg> 

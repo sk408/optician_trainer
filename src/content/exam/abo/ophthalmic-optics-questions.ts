@@ -377,92 +377,317 @@ export const ophthalmicOpticsQuestions: ExamQuestion[] = [
   },
   {
     id: 'abo-optics-025',
-    question: 'How does vertical prismatic effect in a lens affect the perceived image?',
+    question: 'What is the focal length of a +2.00 D lens?',
     options: [
-      'It shifts the image horizontally',
-      'It shifts the image vertically',
-      'It rotates the image',
-      'It magnifies the image'
+      '0.50 meters',
+      '2.00 meters',
+      '0.25 meters',
+      '5.00 meters'
     ],
-    correctAnswer: 1,
-    explanation: 'Vertical prismatic effect (base up or base down) shifts the perceived image vertically. Base up prism shifts the image downward, and base down prism shifts the image upward.',
+    correctAnswer: 0,
+    explanation: 'The focal length (in meters) is the reciprocal of the lens power in diopters. For a +2.00 D lens, the focal length is 1/2.00 = 0.50 meters or 50 centimeters.',
     category: 'ophthalmic-optics',
-    subcategory: 'prism',
+    subcategory: 'lens-power',
     difficulty: 'easy'
   },
   {
     id: 'abo-optics-026',
-    question: 'What is the result when combining 2Δ base up and 3Δ base down prisms?',
+    question: 'What happens to the focal length of a lens when its power increases?',
     options: [
-      '5Δ base down',
-      '5Δ base up',
-      '1Δ base down',
-      '1Δ base up'
+      'The focal length increases',
+      'The focal length decreases',
+      'The focal length remains unchanged',
+      'The focal length becomes negative'
+    ],
+    correctAnswer: 1,
+    explanation: 'As lens power increases, the focal length decreases. This is because focal length (in meters) is the reciprocal of lens power (in diopters).',
+    category: 'ophthalmic-optics',
+    subcategory: 'lens-power',
+    difficulty: 'easy'
+  },
+  {
+    id: 'abo-optics-027',
+    question: 'Which of the following formulas represents the vergence equation?',
+    options: [
+      'D₁ + D₂ = D₃',
+      'L₁ + L₂ = L₃',
+      'L₁ + D₂ = D₃',
+      'D₁ + L₂ = 1'
+    ],
+    correctAnswer: 0,
+    explanation: 'The vergence equation is D₁ + D₂ = D₃, where D₁ is the incident vergence, D₂ is the lens power, and D₃ is the emergent vergence.',
+    category: 'ophthalmic-optics',
+    subcategory: 'lens-power',
+    difficulty: 'medium'
+  },
+  {
+    id: 'abo-optics-028',
+    question: 'What is the power of a lens with a focal length of 25 centimeters?',
+    options: [
+      '+0.25 D',
+      '+0.40 D',
+      '+2.50 D',
+      '+4.00 D'
+    ],
+    correctAnswer: 3,
+    explanation: 'The power (in diopters) is the reciprocal of the focal length in meters. For a focal length of 25 centimeters (0.25 meters), the power is 1/0.25 = 4.00 D.',
+    category: 'ophthalmic-optics',
+    subcategory: 'lens-power',
+    difficulty: 'easy'
+  },
+  {
+    id: 'abo-optics-029',
+    question: 'What does the Abbe value of a lens material indicate?',
+    options: [
+      'Index of refraction',
+      'Resistance to impact',
+      'Dispersion characteristics',
+      'Light transmission'
     ],
     correctAnswer: 2,
-    explanation: 'When combining prisms in opposite directions, subtract the smaller from the larger. Since 3Δ base down is larger than 2Δ base up, the result is 3Δ - 2Δ = 1Δ in the direction of the larger prism, which is base down.',
+    explanation: 'The Abbe value (or V-value) indicates the dispersion characteristics of an optical material. A higher Abbe value indicates less chromatic aberration (color dispersion).',
+    category: 'ophthalmic-optics',
+    subcategory: 'lens-power',
+    difficulty: 'medium'
+  },
+  {
+    id: 'abo-optics-030',
+    question: 'Which lens has more plus power?',
+    options: [
+      'A lens with a back vertex power of +3.00 D',
+      'A lens with a front vertex power of +3.00 D',
+      'Both have the same power',
+      'It depends on the lens thickness'
+    ],
+    correctAnswer: 0,
+    explanation: 'For a plus lens, the back vertex power is slightly greater than the front vertex power due to the lens thickness. The opposite is true for minus lenses.',
+    category: 'ophthalmic-optics',
+    subcategory: 'lens-power',
+    difficulty: 'hard'
+  },
+  {
+    id: 'abo-optics-031',
+    question: 'What is the effect of increasing the index of refraction in a lens of given power?',
+    options: [
+      'The lens becomes thicker',
+      'The lens becomes thinner',
+      'The lens power increases',
+      'The lens focal length decreases'
+    ],
+    correctAnswer: 1,
+    explanation: 'Increasing the index of refraction allows a lens to be made thinner while maintaining the same power, which is why high-index materials are used for high-power prescriptions.',
+    category: 'ophthalmic-optics',
+    subcategory: 'lens-power',
+    difficulty: 'medium'
+  },
+  {
+    id: 'abo-optics-032',
+    question: 'Which of the following lens materials typically has the highest index of refraction?',
+    options: [
+      'CR-39 (standard plastic)',
+      'Crown glass',
+      '1.74 high-index plastic',
+      'Polycarbonate'
+    ],
+    correctAnswer: 2,
+    explanation: '1.74 high-index plastic has the highest index of refraction among the options listed. CR-39 is approximately 1.498, crown glass is about 1.523, and polycarbonate is around 1.586.',
+    category: 'ophthalmic-optics',
+    subcategory: 'lens-power',
+    difficulty: 'medium'
+  },
+  {
+    id: 'abo-optics-033',
+    question: 'How much prism would be induced if a +2.50 D lens is decentered 4 mm?',
+    options: [
+      '0.1 prism diopters',
+      '1.0 prism diopters',
+      '2.5 prism diopters',
+      '10.0 prism diopters'
+    ],
+    correctAnswer: 1,
+    explanation: 'Prentice\'s Rule states that induced prism = power × decentration (in cm). In this case, 2.50 × 0.4 = 1.0 prism diopters.',
     category: 'ophthalmic-optics',
     subcategory: 'prism',
     difficulty: 'medium'
   },
   {
-    id: 'abo-optics-027',
-    question: 'A patient needs 4Δ base in for each eye. Using split prism, how much prism should be prescribed for each eye?',
+    id: 'abo-optics-034',
+    question: 'In what direction does the base of an induced prism point when a plus lens is decentered?',
     options: [
-      '4Δ base in for each eye',
-      '2Δ base in for each eye',
-      '8Δ base in for one eye only',
-      '4Δ base in for right eye, 4Δ base out for left eye'
+      'In the same direction as the decentration',
+      'In the opposite direction from the decentration',
+      'Always base-in',
+      'Always base-out'
     ],
-    correctAnswer: 1,
-    explanation: 'Split prism divides the total prismatic correction equally between the two eyes. For 4Δ base in for each eye (total of 8Δ), each eye would get 2Δ base in when using split prism.',
+    correctAnswer: 0,
+    explanation: 'For a plus lens, the base of the induced prism is in the same direction as the decentration. For a minus lens, it is in the opposite direction.',
+    category: 'ophthalmic-optics',
+    subcategory: 'prism',
+    difficulty: 'medium'
+  },
+  {
+    id: 'abo-optics-035',
+    question: 'What is the primary purpose of prescribing prism in eyeglasses?',
+    options: [
+      'To increase visual acuity',
+      'To correct refractive errors',
+      'To align images for patients with binocular vision issues',
+      'To reduce lens thickness'
+    ],
+    correctAnswer: 2,
+    explanation: 'Prism is prescribed primarily to align images for patients with binocular vision issues such as strabismus or phoria, helping to prevent double vision or reduce eye strain.',
+    category: 'ophthalmic-optics',
+    subcategory: 'prism',
+    difficulty: 'easy'
+  },
+  {
+    id: 'abo-optics-036',
+    question: 'What is the total amount of horizontal prism when combining 2Δ base-in for the right eye and 3Δ base-out for the left eye?',
+    options: [
+      '5Δ base-in',
+      '5Δ base-out',
+      '1Δ base-in',
+      '1Δ base-out'
+    ],
+    correctAnswer: 3,
+    explanation: 'When combining horizontal prisms, base-in is considered negative and base-out is positive. Therefore, -2Δ (BI) + 3Δ (BO) = 1Δ base-out.',
     category: 'ophthalmic-optics',
     subcategory: 'prism',
     difficulty: 'hard'
   },
   {
-    id: 'abo-optics-028',
-    question: 'What prismatic effect is created when a spherical lens is decentered?',
+    id: 'abo-optics-037',
+    question: 'Which of the following is true about Fresnel prisms?',
     options: [
-      'No prismatic effect',
-      'Vertical prismatic effect only',
-      'Horizontal prismatic effect only',
-      'Prismatic effect in the direction of decentration'
+      'They are thicker than conventional prisms',
+      'They have better optical quality than conventional prisms',
+      'They are typically used for permanent prescriptions',
+      'They are thin press-on prisms with concentric grooves'
     ],
     correctAnswer: 3,
-    explanation: 'When a spherical lens is decentered, prismatic effect is created in the direction of the decentration. The magnitude is calculated using Prentice\'s Rule (P = F × h).',
+    explanation: 'Fresnel prisms are thin, press-on prisms with concentric grooves that create prismatic effect without the thickness of conventional prisms. They are often used temporarily or for high amounts of prism.',
     category: 'ophthalmic-optics',
     subcategory: 'prism',
     difficulty: 'medium'
   },
   {
-    id: 'abo-optics-029',
-    question: 'What happens to the prismatic effect in a lens when its power increases (assuming the same decentration)?',
+    id: 'abo-optics-038',
+    question: 'When using Prentice\'s Rule, what units must be used for decentration?',
     options: [
-      'The prismatic effect decreases',
-      'The prismatic effect increases',
-      'The prismatic effect remains the same',
-      'The prismatic effect changes direction'
+      'Millimeters',
+      'Centimeters',
+      'Inches',
+      'Meters'
     ],
     correctAnswer: 1,
-    explanation: 'According to Prentice\'s Rule (P = F × h), when the lens power (F) increases while the decentration (h) remains the same, the prismatic effect (P) increases proportionally.',
+    explanation: 'When using Prentice\'s Rule (P = c × F), decentration (c) must be expressed in centimeters for the formula to work correctly.',
     category: 'ophthalmic-optics',
     subcategory: 'prism',
     difficulty: 'medium'
   },
   {
-    id: 'abo-optics-030',
-    question: 'Why might Fresnel prisms be prescribed over conventional prism?',
+    id: 'abo-optics-039',
+    question: 'What is the effect of a base-up prism in front of the right eye?',
     options: [
-      'They provide better optical quality',
-      'They are less expensive to manufacture',
-      'They are thinner and lighter, especially for higher powers',
-      'They have less chromatic aberration'
+      'The image appears to move upward',
+      'The image appears to move downward',
+      'The image appears to move to the right',
+      'The image appears to move to the left'
     ],
-    correctAnswer: 2,
-    explanation: 'Fresnel prisms are thin, press-on plastic sheets that can be applied to spectacle lenses. They are prescribed over conventional prism because they are much thinner and lighter, especially for higher prismatic powers, though they do have some optical compromises like reduced clarity and increased light scatter.',
+    correctAnswer: 1,
+    explanation: 'Prism displaces the image in the direction opposite to its base. A base-up prism will displace the image downward.',
     category: 'ophthalmic-optics',
     subcategory: 'prism',
+    difficulty: 'medium'
+  },
+  {
+    id: 'abo-optics-040',
+    question: 'How much prism is induced at a point 5 mm from the optical center of a -4.00 D lens?',
+    options: [
+      '2.0 prism diopters, base toward the optical center',
+      '2.0 prism diopters, base away from the optical center',
+      '20.0 prism diopters, base toward the optical center',
+      '20.0 prism diopters, base away from the optical center'
+    ],
+    correctAnswer: 0,
+    explanation: 'Using Prentice\'s Rule: P = c × F = 0.5 cm × 4.00 D = 2.0 prism diopters. For a minus lens, the base points toward the optical center.',
+    category: 'ophthalmic-optics',
+    subcategory: 'prism',
+    difficulty: 'hard'
+  },
+  {
+    id: 'abo-optics-041',
+    question: 'What is the equivalent power of two thin lenses with powers of +2.00 D and -1.50 D placed in contact?',
+    options: [
+      '+0.50 D',
+      '+3.50 D',
+      '-0.50 D',
+      '-3.50 D'
+    ],
+    correctAnswer: 0,
+    explanation: 'When thin lenses are placed in contact, their powers add algebraically: +2.00 D + (-1.50 D) = +0.50 D.',
+    category: 'ophthalmic-optics',
+    subcategory: 'lens-power',
     difficulty: 'easy'
+  },
+  {
+    id: 'abo-optics-042',
+    question: 'What is the primary advantage of aspheric lens designs compared to spherical lenses?',
+    options: [
+      'They are less expensive to manufacture',
+      'They provide better peripheral vision with reduced aberrations',
+      'They are more durable and scratch-resistant',
+      'They have higher index of refraction'
+    ],
+    correctAnswer: 1,
+    explanation: 'Aspheric lenses have flatter peripheral curves that reduce aberrations and distortions in peripheral vision, particularly in higher prescriptions.',
+    category: 'ophthalmic-optics',
+    subcategory: 'lens-power',
+    difficulty: 'medium'
+  },
+  {
+    id: 'abo-optics-043',
+    question: 'What is the effective power of a +3.00 D lens placed 15 mm from the eye?',
+    options: [
+      '+3.00 D',
+      '+3.14 D',
+      '+2.87 D',
+      '+3.45 D'
+    ],
+    correctAnswer: 2,
+    explanation: 'The effective power is calculated using the formula: Fe = F / (1 - d×F), where F is the lens power in diopters and d is the distance in meters. Fe = 3.00 / (1 - 0.015×3.00) = 3.00 / 0.955 = 2.87 D (approximately).',
+    category: 'ophthalmic-optics',
+    subcategory: 'lens-power',
+    difficulty: 'hard'
+  },
+  {
+    id: 'abo-optics-044',
+    question: 'Which lens material has the highest Abbe value?',
+    options: [
+      'Crown glass',
+      'Polycarbonate',
+      'Trivex',
+      '1.74 high-index plastic'
+    ],
+    correctAnswer: 0,
+    explanation: 'Crown glass typically has the highest Abbe value (around 58-60) among these materials, indicating less chromatic aberration. Polycarbonate has a relatively low Abbe value of around 30.',
+    category: 'ophthalmic-optics',
+    subcategory: 'lens-power',
+    difficulty: 'medium'
+  },
+  {
+    id: 'abo-optics-045',
+    question: 'What is the effect of a cylinder lens on incident light?',
+    options: [
+      'It converges light equally in all meridians',
+      'It diverges light equally in all meridians',
+      'It refracts light differently in different meridians',
+      'It has no effect on light rays'
+    ],
+    correctAnswer: 2,
+    explanation: 'A cylinder lens refracts light differently in different meridians. It has power in one principal meridian and no power in the perpendicular meridian.',
+    category: 'ophthalmic-optics',
+    subcategory: 'lens-power',
+    difficulty: 'medium'
   }
 ]; 

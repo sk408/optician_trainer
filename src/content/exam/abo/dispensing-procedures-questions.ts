@@ -4,13 +4,28 @@ import { ExamQuestion } from '../../../interfaces/ExamQuestions';
  * ABO Exam Questions: Dispensing Procedures
  * 
  * Topics covered:
- * - Frame Selection and Fitting
- * - Patient Measurements
- * - Frame Adjustments and Repairs
+ * - Frame fitting and adjustments
+ * - Measuring parameters
+ * - Delivery and troubleshooting
  */
 
 export const dispensingProceduresQuestions: ExamQuestion[] = [
-  // Frame Selection and Fitting
+  // Frame fitting and adjustments
+  {
+    id: 'abo-dispensing-001',
+    question: 'What is the primary purpose of adjusting the pantoscopic tilt of a frame?',
+    options: [
+      'To improve the cosmetic appearance of the frame',
+      'To properly position the optical centers of the lenses',
+      'To adjust the frame for progressive lenses',
+      'To make the temples more comfortable'
+    ],
+    correctAnswer: 2,
+    explanation: 'Pantoscopic tilt adjustment is primarily important for progressive lenses to ensure proper positioning of the distance, intermediate, and near viewing zones.',
+    category: 'dispensing',
+    subcategory: 'frame-adjustments',
+    difficulty: 'medium'
+  },
   {
     id: 'abo-disp-001',
     question: 'Which of the following is the most important factor when selecting a frame for a patient with a strong minus prescription?',
@@ -343,6 +358,321 @@ export const dispensingProceduresQuestions: ExamQuestion[] = [
     explanation: 'Adjusting the nose pads to raise the frame slightly would help if a patient complains about poor intermediate vision with progressive lenses. This adjustment allows the patient to look through a different part of the progressive corridor, potentially improving intermediate vision.',
     category: 'dispensing-procedures',
     subcategory: 'adjustments',
+    difficulty: 'hard'
+  },
+  {
+    id: 'abo-dispensing-025',
+    question: 'When measuring a monocular PD, from which point on the pupil should the measurement be taken?',
+    options: [
+      'The top edge of the pupil',
+      'The bottom edge of the pupil',
+      'The center of the pupil',
+      'The edge of the iris'
+    ],
+    correctAnswer: 2,
+    explanation: 'Monocular PD should be measured from the center of the pupil to the center of the bridge of the nose, then from the bridge to the center of the other pupil.',
+    category: 'dispensing',
+    subcategory: 'measuring-parameters',
+    difficulty: 'easy'
+  },
+  {
+    id: 'abo-dispensing-026',
+    question: 'What is the purpose of measuring vertex distance?',
+    options: [
+      'To determine the proper frame size',
+      'To calculate lens thickness',
+      'To compensate for power changes in high-powered lenses',
+      'To determine the pantoscopic tilt'
+    ],
+    correctAnswer: 2,
+    explanation: 'Vertex distance measurement is necessary to compensate for power changes that occur when high-powered lenses are positioned at a different distance from the eye than was used during refraction.',
+    category: 'dispensing',
+    subcategory: 'measuring-parameters',
+    difficulty: 'medium'
+  },
+  {
+    id: 'abo-dispensing-027',
+    question: 'What frame adjustment would you make if a patient complains that the frames slide down their nose?',
+    options: [
+      'Decrease pantoscopic tilt',
+      'Tighten the nose pads or decrease the bridge width',
+      'Loosen the temples',
+      'Increase the face form angle'
+    ],
+    correctAnswer: 1,
+    explanation: 'To prevent frames from sliding down the nose, you would tighten the nose pads by bringing them closer together or use a frame with a smaller bridge width that fits the patient\'s nose better.',
+    category: 'dispensing',
+    subcategory: 'frame-adjustments',
+    difficulty: 'easy'
+  },
+  {
+    id: 'abo-dispensing-028',
+    question: 'How is the effective diameter (ED) of a lens calculated?',
+    options: [
+      'The average of the lens height and width',
+      'The widest part of the lens',
+      'The square root of the sum of the squares of the A and B dimensions',
+      'The square root of (A² + B²) divided by 2'
+    ],
+    correctAnswer: 3,
+    explanation: 'The effective diameter is calculated using the formula ED = √[(A² + B²)/2], where A is the horizontal dimension and B is the vertical dimension of the lens shape.',
+    category: 'dispensing',
+    subcategory: 'measuring-parameters',
+    difficulty: 'hard'
+  },
+  {
+    id: 'abo-dispensing-029',
+    question: 'What is the appropriate temple length for a patient if the distance from the frame endpiece to the apex of the ear is 90mm?',
+    options: [
+      '90mm',
+      '100mm',
+      '110mm',
+      '130mm'
+    ],
+    correctAnswer: 2,
+    explanation: 'The appropriate temple length should be approximately 15-20mm longer than the measured distance from the frame endpiece to the apex of the ear. For a measurement of 90mm, a 110mm temple would be appropriate.',
+    category: 'dispensing',
+    subcategory: 'frame-adjustments',
+    difficulty: 'medium'
+  },
+  {
+    id: 'abo-dispensing-030',
+    question: 'Which of the following would NOT be a suitable adjustment for a patient experiencing pressure behind the ears?',
+    options: [
+      'Reducing temple tension',
+      'Adjusting the temple bend to better match ear contour',
+      'Shortening the temples',
+      'Rounding sharp temple ends'
+    ],
+    correctAnswer: 2,
+    explanation: 'Shortening the temples would not relieve pressure behind the ears and might actually increase discomfort. The other options would help reduce pressure and improve comfort.',
+    category: 'dispensing',
+    subcategory: 'frame-adjustments',
+    difficulty: 'medium'
+  },
+  {
+    id: 'abo-dispensing-031',
+    question: 'What is the purpose of a face form angle (wrap) adjustment?',
+    options: [
+      'To align the frame with the vertical plane of the face',
+      'To improve comfort at the nose bridge',
+      'To align the frame with the horizontal plane of the face',
+      'To maintain alignment of the frame with the contour of the face'
+    ],
+    correctAnswer: 3,
+    explanation: 'Face form angle (or wrap) adjustment helps maintain alignment of the frame with the horizontal contour of the face, ensuring that the lenses are properly positioned in front of the eyes and the frame fits comfortably.',
+    category: 'dispensing',
+    subcategory: 'frame-adjustments',
+    difficulty: 'medium'
+  },
+  {
+    id: 'abo-dispensing-032',
+    question: 'When should bifocal height be measured from the pupil center rather than the lower lid?',
+    options: [
+      'For high minus lenses',
+      'For high plus lenses',
+      'For patients with ptosis',
+      'For occupational lenses'
+    ],
+    correctAnswer: 2,
+    explanation: 'For patients with ptosis (drooping eyelid), measuring bifocal height from the pupil center is more appropriate since the lower lid position is not in its normal anatomical position.',
+    category: 'dispensing',
+    subcategory: 'measuring-parameters',
+    difficulty: 'hard'
+  },
+  {
+    id: 'abo-dispensing-033',
+    question: 'What is the primary purpose of the retroscopic tilt in eyeglasses?',
+    options: [
+      'To improve the cosmetic appearance',
+      'To keep the lenses parallel to the frontal plane of the face',
+      'To distribute weight more evenly',
+      'To improve the field of view through progressive lenses'
+    ],
+    correctAnswer: 1,
+    explanation: 'Retroscopic tilt (negative pantoscopic tilt) keeps the lenses parallel to the frontal plane of the face, which can be necessary for certain prescriptions or facial features, though it is less common than pantoscopic tilt.',
+    category: 'dispensing',
+    subcategory: 'frame-adjustments',
+    difficulty: 'medium'
+  },
+  {
+    id: 'abo-dispensing-034',
+    question: 'During frame selection, which of the following is the MOST important consideration for a high-minus prescription?',
+    options: [
+      'Temple length',
+      'Frame material',
+      'Frame eye size and shape',
+      'Nosepads versus integrated bridge'
+    ],
+    correctAnswer: 2,
+    explanation: 'For high-minus prescriptions, a smaller eye size and a frame shape that positions the optical center close to the pupil helps minimize edge thickness and weight, making frame eye size and shape the most important consideration.',
+    category: 'dispensing',
+    subcategory: 'frame-adjustments',
+    difficulty: 'medium'
+  },
+  {
+    id: 'abo-dispensing-035',
+    question: 'What is the recommended minimum vertical height for progressive lenses?',
+    options: [
+      '14mm',
+      '18mm',
+      '22mm',
+      '28mm'
+    ],
+    correctAnswer: 2,
+    explanation: 'The recommended minimum vertical height for most progressive lenses is typically 22mm, though this can vary by design. This ensures adequate room for the distance, intermediate, and near zones.',
+    category: 'dispensing',
+    subcategory: 'measuring-parameters',
+    difficulty: 'medium'
+  },
+  {
+    id: 'abo-dispensing-036',
+    question: 'When measuring segment height for a bifocal, where should the top of the segment be positioned relative to the lower lid?',
+    options: [
+      'At the lower lid',
+      'Slightly below the lower lid',
+      'Tangent to or slightly above the lower lid',
+      'At the pupil center'
+    ],
+    correctAnswer: 2,
+    explanation: 'The top of a bifocal segment should be positioned tangent to or slightly above the lower lid to provide comfortable near vision and minimize interference with distance vision.',
+    category: 'dispensing',
+    subcategory: 'measuring-parameters',
+    difficulty: 'easy'
+  },
+  {
+    id: 'abo-dispensing-037',
+    question: 'A patient is experiencing "swim" effect with their new progressive lenses. What is the most likely cause?',
+    options: [
+      'Incorrect PD measurement',
+      'Incorrect fitting height',
+      'Insufficient pantoscopic tilt',
+      'All of the above'
+    ],
+    correctAnswer: 3,
+    explanation: 'The "swim" effect in progressive lenses can be caused by incorrect PD measurement, incorrect fitting height, or insufficient pantoscopic tilt. All these factors affect how the wearer perceives through different parts of the lens.',
+    category: 'dispensing',
+    subcategory: 'delivery-troubleshooting',
+    difficulty: 'hard'
+  },
+  {
+    id: 'abo-dispensing-038',
+    question: 'What is the primary purpose of a nosepad adjustment on a metal frame?',
+    options: [
+      'To improve the cosmetic appearance',
+      'To position the lenses at the correct height',
+      'To adjust the pantoscopic tilt',
+      'To distribute the weight of the eyewear'
+    ],
+    correctAnswer: 1,
+    explanation: 'The primary purpose of nosepad adjustments on metal frames is to position the lenses at the correct height in front of the eyes, ensuring proper alignment of the optical centers and any multifocal segments.',
+    category: 'dispensing',
+    subcategory: 'frame-adjustments',
+    difficulty: 'easy'
+  },
+  {
+    id: 'abo-dispensing-039',
+    question: 'What tool would be most appropriate for adjusting plastic frames?',
+    options: [
+      'Needle-nose pliers',
+      'Hot air frame warmer',
+      'Screwdriver',
+      'Nosepad pliers'
+    ],
+    correctAnswer: 1,
+    explanation: 'A hot air frame warmer is the most appropriate tool for adjusting plastic frames as it softens the material to allow for adjustments without cracking or breaking the plastic.',
+    category: 'dispensing',
+    subcategory: 'frame-adjustments',
+    difficulty: 'easy'
+  },
+  {
+    id: 'abo-dispensing-040',
+    question: 'When dispensing new progressive lenses, what should you demonstrate to the patient?',
+    options: [
+      'Only how to find the reading portion',
+      'Only how to use the distance portion',
+      'How to find and use distance, intermediate, and near zones',
+      'How to clean their lenses properly'
+    ],
+    correctAnswer: 2,
+    explanation: 'When dispensing progressive lenses, you should demonstrate how to find and use all three viewing zones (distance, intermediate, and near), as proper use of each zone is essential for patient comfort and satisfaction.',
+    category: 'dispensing',
+    subcategory: 'delivery-troubleshooting',
+    difficulty: 'medium'
+  },
+  {
+    id: 'abo-dispensing-041',
+    question: 'A patient with a high astigmatic correction is experiencing visual distortion. What frame adjustment might help?',
+    options: [
+      'Increasing the pantoscopic tilt',
+      'Decreasing the pantoscopic tilt',
+      'Ensuring the frame is level and properly aligned',
+      'Widening the bridge'
+    ],
+    correctAnswer: 2,
+    explanation: 'For patients with high astigmatic corrections, ensuring the frame is level and properly aligned is crucial as any rotation of the cylinder axis can cause significant visual distortion.',
+    category: 'dispensing',
+    subcategory: 'delivery-troubleshooting',
+    difficulty: 'hard'
+  },
+  {
+    id: 'abo-dispensing-042',
+    question: 'Which of the following is the correct way to verify the PD on mounted eyewear?',
+    options: [
+      'Measure from one lens edge to the other',
+      'Measure from the temporal edge of one lens to the nasal edge of the other',
+      'Mark the optical centers and measure the distance between them',
+      'Measure from the center of the bridge to each lens center'
+    ],
+    correctAnswer: 2,
+    explanation: 'To verify the PD on mounted eyewear, you should mark the optical centers of each lens and measure the distance between these marks. This confirms that the lenses were made to the specified PD.',
+    category: 'dispensing',
+    subcategory: 'delivery-troubleshooting',
+    difficulty: 'medium'
+  },
+  {
+    id: 'abo-dispensing-043',
+    question: 'What is the proper method for measuring segment height for a flat-top bifocal?',
+    options: [
+      'From the bottom of the lens to the top of the segment',
+      'From the center of the pupil to the top of the segment',
+      'From the lower lid to the top of the segment',
+      'From the bottom of the lens to the bottom of the segment'
+    ],
+    correctAnswer: 1,
+    explanation: 'Segment height for a flat-top bifocal is properly measured from the center of the pupil to the top of the segment when the patient is looking straight ahead in a normal head position.',
+    category: 'dispensing',
+    subcategory: 'measuring-parameters',
+    difficulty: 'medium'
+  },
+  {
+    id: 'abo-dispensing-044',
+    question: 'What is meant by "boxing system" in frame and lens measurements?',
+    options: [
+      'The method of packaging frames for shipment',
+      'A system where frame dimensions are measured within an imaginary rectangle',
+      'A system for measuring pupillary distance',
+      'The method of verifying lens power'
+    ],
+    correctAnswer: 1,
+    explanation: 'The boxing system is a standardized method where frame dimensions are measured within an imaginary rectangle that completely encloses the lens shape, providing consistent measurements for A, B, and ED dimensions.',
+    category: 'dispensing',
+    subcategory: 'measuring-parameters',
+    difficulty: 'medium'
+  },
+  {
+    id: 'abo-dispensing-045',
+    question: 'A patient with a +5.00D prescription complains that objects appear larger than expected. What is the most likely cause?',
+    options: [
+      'The lens power is too strong',
+      'The vertex distance is greater than during refraction',
+      'The vertex distance is less than during refraction',
+      'The optical centers are too far apart'
+    ],
+    correctAnswer: 1,
+    explanation: 'If the vertex distance of the glasses is greater than what was used during refraction, a high plus lens will effectively have more plus power, causing objects to appear larger. This requires vertex compensation.',
+    category: 'dispensing',
+    subcategory: 'delivery-troubleshooting',
     difficulty: 'hard'
   }
 ]; 

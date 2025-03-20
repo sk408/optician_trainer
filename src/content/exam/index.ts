@@ -26,6 +26,22 @@ import { contactLensFittingQuestions } from './ncle/contact-lens-fitting-questio
 import { patientEducationQuestions } from './ncle/patient-education-questions';
 import { ExamQuestion } from '../../interfaces/ExamQuestions';
 
+// ABO Quiz questions
+import { opticalTheoryQuizQuestions } from './abo/optical-theory-quiz-questions';
+import { dispensingQuizQuestions } from './abo/dispensing-quiz-questions';
+import { lensApplicationsQuizQuestions } from './abo/lens-applications-quiz-questions';
+import { regulationsQuizQuestions } from './abo/regulations-quiz-questions';
+import { measurementsQuizQuestions } from './abo/measurements-quiz-questions';
+import { toolsEquipmentQuizQuestions } from './abo/tools-equipment-quiz-questions';
+
+// NCLE Quiz questions
+import { preFittingQuizQuestions } from './ncle/pre-fitting-quiz-questions';
+import { diagnosticFittingQuizQuestions } from './ncle/diagnostic-fitting-quiz-questions';
+import { contactLensMaterialsQuizQuestions } from './ncle/contact-lens-materials-quiz-questions';
+import { patientEducationQuizQuestions } from './ncle/patient-education-quiz-questions';
+import { followUpCareQuizQuestions } from './ncle/follow-up-care-quiz-questions';
+import { regulatoryQuizQuestions } from './ncle/regulatory-quiz-questions';
+
 // Export structures
 export const examStructures = {
   abo: aboExamStructure,
@@ -54,6 +70,26 @@ export const ncleQuestions = [
   ...patientEducationQuestions,
   // Add more question categories as they are created
 ];
+
+// Export ABO quiz questions
+export const aboQuizQuestions = {
+  opticalTheory: opticalTheoryQuizQuestions,
+  dispensing: dispensingQuizQuestions,
+  lensApplications: lensApplicationsQuizQuestions,
+  regulations: regulationsQuizQuestions,
+  measurements: measurementsQuizQuestions,
+  toolsEquipment: toolsEquipmentQuizQuestions
+};
+
+// Export NCLE quiz questions
+export const ncleQuizQuestions = {
+  preFitting: preFittingQuizQuestions,
+  diagnosticFitting: diagnosticFittingQuizQuestions,
+  contactLensMaterials: contactLensMaterialsQuizQuestions,
+  patientEducation: patientEducationQuizQuestions,
+  followUpCare: followUpCareQuizQuestions,
+  regulatory: regulatoryQuizQuestions
+};
 
 /**
  * Get exam questions by type
@@ -85,6 +121,20 @@ export const getQuestionsByCategory = (examType: 'abo' | 'ncle', categoryId: str
 export const getQuestionsBySubcategory = (examType: 'abo' | 'ncle', categoryId: string, subcategoryId: string) => {
   const categoryQuestions = getQuestionsByCategory(examType, categoryId);
   return categoryQuestions.filter(q => q.subcategory === subcategoryId);
+};
+
+/**
+ * Get quiz questions by type and category
+ * @param examType 'abo' or 'ncle'
+ * @param categoryId The category ID to retrieve
+ * @returns Array of quiz questions for the specified category
+ */
+export const getQuizQuestionsByCategory = (examType: 'abo' | 'ncle', categoryId: string): ExamQuestion[] => {
+  if (examType === 'abo') {
+    return aboQuizQuestions[categoryId as keyof typeof aboQuizQuestions] || [];
+  } else {
+    return ncleQuizQuestions[categoryId as keyof typeof ncleQuizQuestions] || [];
+  }
 };
 
 /**

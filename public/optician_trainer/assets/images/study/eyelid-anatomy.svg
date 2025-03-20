@@ -1,0 +1,164 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="#f9f9f9"/>
+  
+  <!-- Title -->
+  <text x="400" y="50" font-family="Arial, sans-serif" font-size="24" text-anchor="middle" font-weight="bold">Eyelid Anatomy</text>
+  
+  <!-- Main eyelid diagram - front view -->
+  <g transform="translate(250, 200)">
+    <!-- Eye shape (sclera and iris) -->
+    <ellipse cx="0" cy="0" rx="80" ry="45" fill="#FFFFFF" stroke="#333" stroke-width="1.5"/>
+    <circle cx="0" cy="0" r="25" fill="#6D9EEB" stroke="#333" stroke-width="0.5"/>
+    <circle cx="0" cy="0" r="10" fill="#000000"/>
+    
+    <!-- Upper eyelid -->
+    <path d="M-90,-5 C-70,-60 70,-60 90,-5" fill="#F5D0C5" stroke="#333" stroke-width="2"/>
+    <path d="M-90,-5 C-70,-40 70,-40 90,-5" fill="none" stroke="#333" stroke-width="1.5"/>
+    
+    <!-- Lower eyelid -->
+    <path d="M-90,5 C-70,40 70,40 90,5" fill="#F5D0C5" stroke="#333" stroke-width="2"/>
+    
+    <!-- Eyelashes -->
+    <g transform="translate(-70, -40)">
+      <line x1="0" y1="0" x2="-5" y2="-10" stroke="#333" stroke-width="1.5"/>
+      <line x1="10" y1="-3" x2="5" y2="-13" stroke="#333" stroke-width="1.5"/>
+      <line x1="20" y1="-5" x2="15" y2="-15" stroke="#333" stroke-width="1.5"/>
+      <line x1="30" y1="-7" x2="25" y2="-17" stroke="#333" stroke-width="1.5"/>
+      <line x1="40" y1="-8" x2="35" y2="-18" stroke="#333" stroke-width="1.5"/>
+      <line x1="50" y1="-9" x2="45" y2="-19" stroke="#333" stroke-width="1.5"/>
+      <line x1="60" y1="-10" x2="55" y2="-20" stroke="#333" stroke-width="1.5"/>
+      <line x1="70" y1="-9" x2="65" y2="-19" stroke="#333" stroke-width="1.5"/>
+      <line x1="80" y1="-8" x2="75" y2="-18" stroke="#333" stroke-width="1.5"/>
+      <line x1="90" y1="-7" x2="85" y2="-17" stroke="#333" stroke-width="1.5"/>
+      <line x1="100" y1="-5" x2="95" y2="-15" stroke="#333" stroke-width="1.5"/>
+      <line x1="110" y1="-3" x2="105" y2="-13" stroke="#333" stroke-width="1.5"/>
+      <line x1="120" y1="0" x2="115" y2="-10" stroke="#333" stroke-width="1.5"/>
+    </g>
+    
+    <!-- Lower eyelashes -->
+    <g transform="translate(-70, 40)">
+      <line x1="10" y1="-3" x2="8" y2="3" stroke="#333" stroke-width="1"/>
+      <line x1="20" y1="-5" x2="18" y2="1" stroke="#333" stroke-width="1"/>
+      <line x1="30" y1="-7" x2="28" y2="-1" stroke="#333" stroke-width="1"/>
+      <line x1="40" y1="-8" x2="38" y2="-2" stroke="#333" stroke-width="1"/>
+      <line x1="50" y1="-9" x2="48" y2="-3" stroke="#333" stroke-width="1"/>
+      <line x1="60" y1="-10" x2="58" y2="-4" stroke="#333" stroke-width="1"/>
+      <line x1="70" y1="-9" x2="68" y2="-3" stroke="#333" stroke-width="1"/>
+      <line x1="80" y1="-8" x2="78" y2="-2" stroke="#333" stroke-width="1"/>
+      <line x1="90" y1="-7" x2="88" y2="-1" stroke="#333" stroke-width="1"/>
+      <line x1="100" y1="-5" x2="98" y2="1" stroke="#333" stroke-width="1"/>
+      <line x1="110" y1="-3" x2="108" y2="3" stroke="#333" stroke-width="1"/>
+    </g>
+    
+    <!-- Labeling lines -->
+    <line x1="-100" y1="-40" x2="-130" y2="-60" stroke="#333" stroke-width="1" stroke-dasharray="3,2"/>
+    <text x="-135" y="-65" font-family="Arial, sans-serif" font-size="12" text-anchor="end">Upper Eyelid</text>
+    
+    <line x1="-95" y1="30" x2="-130" y2="50" stroke="#333" stroke-width="1" stroke-dasharray="3,2"/>
+    <text x="-135" y="55" font-family="Arial, sans-serif" font-size="12" text-anchor="end">Lower Eyelid</text>
+    
+    <line x1="95" y1="-40" x2="130" y2="-60" stroke="#333" stroke-width="1" stroke-dasharray="3,2"/>
+    <text x="135" y="-65" font-family="Arial, sans-serif" font-size="12" text-anchor="start">Eyelashes</text>
+  </g>
+  
+  <!-- Cross-section view of eyelid -->
+  <g transform="translate(550, 200)">
+    <!-- Title for this section -->
+    <text x="0" y="-110" font-family="Arial, sans-serif" font-size="16" text-anchor="middle" font-weight="bold">Eyelid Cross-Section</text>
+    
+    <!-- Eyelid cross-section shape -->
+    <path d="M-100,30 C-90,-20 90,-20 100,30" fill="#F5D0C5" stroke="#333" stroke-width="2"/>
+    <path d="M-100,30 C-80,60 80,60 100,30" fill="#F8E0CB" stroke="#333" stroke-width="2"/>
+    
+    <!-- Eye globe indicator (partial) -->
+    <path d="M-100,30 C-80,90 80,90 100,30" fill="#FFFFFF" stroke="#333" stroke-width="1" stroke-dasharray="5,3"/>
+    <text x="0" y="80" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">Eye Globe</text>
+    
+    <!-- Meibomian glands -->
+    <g transform="translate(-70, 0)">
+      <line x1="0" y1="0" x2="0" y2="25" stroke="#FF9999" stroke-width="3"/>
+      <line x1="15" y1="0" x2="15" y2="25" stroke="#FF9999" stroke-width="3"/>
+      <line x1="30" y1="0" x2="30" y2="25" stroke="#FF9999" stroke-width="3"/>
+      <line x1="45" y1="0" x2="45" y2="25" stroke="#FF9999" stroke-width="3"/>
+      <line x1="60" y1="0" x2="60" y2="25" stroke="#FF9999" stroke-width="3"/>
+      <line x1="75" y1="0" x2="75" y2="25" stroke="#FF9999" stroke-width="3"/>
+      <line x1="90" y1="0" x2="90" y2="25" stroke="#FF9999" stroke-width="3"/>
+      <line x1="105" y1="0" x2="105" y2="25" stroke="#FF9999" stroke-width="3"/>
+      <line x1="120" y1="0" x2="120" y2="25" stroke="#FF9999" stroke-width="3"/>
+    </g>
+    
+    <!-- Eyelashes -->
+    <g transform="translate(-75, -20)">
+      <line x1="0" y1="0" x2="-10" y2="-10" stroke="#333" stroke-width="1.5"/>
+      <line x1="15" y1="0" x2="5" y2="-10" stroke="#333" stroke-width="1.5"/>
+      <line x1="30" y1="0" x2="20" y2="-10" stroke="#333" stroke-width="1.5"/>
+      <line x1="45" y1="0" x2="35" y2="-10" stroke="#333" stroke-width="1.5"/>
+      <line x1="60" y1="0" x2="50" y2="-10" stroke="#333" stroke-width="1.5"/>
+      <line x1="75" y1="0" x2="65" y2="-10" stroke="#333" stroke-width="1.5"/>
+      <line x1="90" y1="0" x2="80" y2="-10" stroke="#333" stroke-width="1.5"/>
+      <line x1="105" y1="0" x2="95" y2="-10" stroke="#333" stroke-width="1.5"/>
+      <line x1="120" y1="0" x2="110" y2="-10" stroke="#333" stroke-width="1.5"/>
+      <line x1="135" y1="0" x2="125" y2="-10" stroke="#333" stroke-width="1.5"/>
+      <line x1="150" y1="0" x2="140" y2="-10" stroke="#333" stroke-width="1.5"/>
+    </g>
+    
+    <!-- Labeling lines for cross-section -->
+    <line x1="-90" y1="-20" x2="-130" y2="-30" stroke="#333" stroke-width="1" stroke-dasharray="3,2"/>
+    <text x="-135" y="-35" font-family="Arial, sans-serif" font-size="12" text-anchor="end">Skin</text>
+    
+    <line x1="-60" y1="5" x2="-130" y2="5" stroke="#333" stroke-width="1" stroke-dasharray="3,2"/>
+    <text x="-135" y="10" font-family="Arial, sans-serif" font-size="12" text-anchor="end">Meibomian Glands</text>
+    
+    <line x1="0" y1="25" x2="130" y2="25" stroke="#333" stroke-width="1" stroke-dasharray="3,2"/>
+    <text x="135" y="30" font-family="Arial, sans-serif" font-size="12" text-anchor="start">Tarsal Plate</text>
+    
+    <line x1="90" y1="-10" x2="130" y2="-30" stroke="#333" stroke-width="1" stroke-dasharray="3,2"/>
+    <text x="135" y="-35" font-family="Arial, sans-serif" font-size="12" text-anchor="start">Eyelash</text>
+  </g>
+  
+  <!-- Explanatory information -->
+  <g transform="translate(400, 380)">
+    <rect x="-350" y="-30" width="700" height="200" fill="#f0f0f0" stroke="#ccc" stroke-width="1" rx="5" ry="5"/>
+    
+    <text x="0" y="-10" font-family="Arial, sans-serif" font-size="16" text-anchor="middle" font-weight="bold">Eyelid Structures and Functions</text>
+    
+    <g transform="translate(-330, 20)">
+      <rect width="15" height="15" fill="#F5D0C5"/>
+      <text x="25" y="12" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Skin:</text>
+      <text x="150" y="12" font-family="Arial, sans-serif" font-size="14">Thinnest skin of the body; protects underlying structures</text>
+    </g>
+    
+    <g transform="translate(-330, 50)">
+      <rect width="15" height="15" fill="#FF9999"/>
+      <text x="25" y="12" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Meibomian Glands:</text>
+      <text x="150" y="12" font-family="Arial, sans-serif" font-size="14">Produce oil (meibum) for tear film lipid layer</text>
+    </g>
+    
+    <g transform="translate(-330, 80)">
+      <rect width="15" height="15" fill="#F8E0CB"/>
+      <text x="25" y="12" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Tarsal Plate:</text>
+      <text x="150" y="12" font-family="Arial, sans-serif" font-size="14">Dense connective tissue providing structural support</text>
+    </g>
+    
+    <g transform="translate(-330, 110)">
+      <text x="0" y="12" font-family="Arial, sans-serif" font-size="14" font-weight="bold">—</text>
+      <text x="25" y="12" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Eyelashes:</text>
+      <text x="150" y="12" font-family="Arial, sans-serif" font-size="14">Protect eye from debris; more numerous on upper lid</text>
+    </g>
+    
+    <g transform="translate(-330, 140)">
+      <text x="0" y="12" font-family="Arial, sans-serif" font-size="14" font-weight="bold">⌒</text>
+      <text x="25" y="12" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Eyelid Margin:</text>
+      <text x="150" y="12" font-family="Arial, sans-serif" font-size="14">Contains meibomian gland openings and lash follicles</text>
+    </g>
+  </g>
+  
+  <!-- Contact lens information -->
+  <g transform="translate(400, 100)">
+    <rect x="-350" y="-30" width="700" height="60" fill="#e6f2ff" stroke="#0066cc" stroke-width="1" rx="5" ry="5"/>
+    <text x="0" y="-10" font-family="Arial, sans-serif" font-size="16" text-anchor="middle" font-weight="bold">Contact Lens Relevance</text>
+    <text x="0" y="15" font-family="Arial, sans-serif" font-size="14" text-anchor="middle">Eyelid tension, position, and blink mechanics significantly affect contact lens fit,</text>
+    <text x="0" y="40" font-family="Arial, sans-serif" font-size="14" text-anchor="middle">movement, comfort, and tear exchange. Meibomian gland health impacts lens deposits and comfort.</text>
+  </g>
+</svg> 

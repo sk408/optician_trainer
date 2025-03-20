@@ -1,4 +1,5 @@
 import { TopicStudyContent } from '../../interfaces/StudyContent';
+import { contactLensComplicationsImages } from '../mediaAssets';
 
 export const contactLensComplicationsContent: TopicStudyContent = {
   topicId: 'cl-complications',
@@ -118,7 +119,7 @@ export const contactLensComplicationsContent: TopicStudyContent = {
           id: 'neovascularization-image',
           type: 'image',
           content: {
-            src: '/assets/images/study/corneal-neovascularization.jpg',
+            src: contactLensComplicationsImages.cornealNeovascularization.path,
             alt: 'Corneal neovascularization in a contact lens wearer',
             caption: 'Corneal neovascularization secondary to chronic contact lens-induced hypoxia',
             width: '60%'

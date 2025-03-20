@@ -186,15 +186,27 @@ const HomePage: React.FC = () => {
               Browse Study Materials
             </Button>
 
+
             <Button 
               variant="contained" 
-              color="secondary" 
+              color="success" 
               component={RouterLink} 
-              to="/comprehensive-exam"
+              to="/study/exam-prep"
               size="large"
-              startIcon={<AssignmentIcon />}
+              startIcon={<SchoolIcon />}
             >
-              Practice Certification Exams
+              Exam Preparation
+            </Button>
+
+            <Button 
+              variant="outlined" 
+              color="info" 
+              component={RouterLink} 
+              to="/study/flashcards"
+              size="large"
+              startIcon={<StudyIcon />}
+            >
+              Study Flashcards
             </Button>
           </Box>
           
@@ -699,6 +711,23 @@ const HomePage: React.FC = () => {
               startIcon={<StudyIcon />}
             >
               Study Flashcards
+            </Button>
+            <Button 
+              variant="outlined" 
+              sx={{ 
+                color: 'white', 
+                borderColor: 'white',
+                '&:hover': {
+                  borderColor: 'white',
+                  bgcolor: 'rgba(255,255,255,0.1)'
+                }
+              }} 
+              component={RouterLink} 
+              to="/study/exam-prep"
+              size="large"
+              startIcon={<AssignmentIcon />}
+            >
+              Exam Preparation
             </Button>
           </Box>
         </Container>

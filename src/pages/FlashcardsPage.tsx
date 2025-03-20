@@ -204,16 +204,29 @@ const FlashcardsPage: React.FC = () => {
                         height: '100%', 
                         display: 'flex', 
                         flexDirection: 'column',
-                        position: 'relative'
+                        position: 'relative',
+                        transition: 'transform 0.6s, box-shadow 0.3s ease',
+                        transform: flipped ? 'rotateX(5deg)' : 'rotateX(0deg)',
+                        '&:hover': {
+                          transform: flipped ? 'rotateX(5deg) translateY(-4px)' : 'translateY(-4px)',
+                          boxShadow: 6,
+                        }
                       }}
                     >
-                      <Box sx={{ position: 'relative' }}>
+                      <Box sx={{ 
+                        position: 'relative',
+                        transition: 'opacity 0.3s ease, transform 0.5s ease', 
+                        opacity: flipped ? 0 : 1,
+                        transform: flipped ? 'scale(0.95)' : 'scale(1)'
+                      }}>
                         {filteredCards[currentIndex].imageUrl && !flipped && (
                           <CardMedia
                             component="img"
                             height="140"
                             image={filteredCards[currentIndex].imageUrl}
                             alt={filteredCards[currentIndex].term}
+                            onClick={flipCard}
+                            sx={{ cursor: 'pointer' }}
                           />
                         )}
                         <CardHeader
@@ -231,7 +244,7 @@ const FlashcardsPage: React.FC = () => {
                           title={
                             <Box display="flex" alignItems="center">
                               <Typography variant="h6">
-                                {flipped ? "Definition" : filteredCards[currentIndex].term}
+                                {!flipped ? filteredCards[currentIndex].term : ""}
                               </Typography>
                               <Chip 
                                 label={filteredCards[currentIndex].examType} 
@@ -247,38 +260,81 @@ const FlashcardsPage: React.FC = () => {
                               />
                             </Box>
                           }
-                          subheader={!flipped ? `Category: ${filteredCards[currentIndex].category}` : null}
+                          subheader={!flipped ? `Category: ${filteredCards[currentIndex].category}` : ""}
                         />
                       </Box>
                       
-                      <CardContent sx={{ flexGrow: 1, pt: 1, pb: 1 }}>
+                      <CardContent sx={{ 
+                        flexGrow: 1, 
+                        pt: 1, 
+                        pb: 1,
+                        position: 'relative' 
+                      }}>
                         <Box 
                           sx={{ 
                             minHeight: '200px',
                             display: 'flex',
                             flexDirection: 'column',
-                            justifyContent: 'center'
+                            justifyContent: 'center',
+                            position: 'relative'
                           }}
                         >
-                          <Typography variant="body1" gutterBottom>
-                            {flipped ? filteredCards[currentIndex].definition : (
-                              <Box 
-                                sx={{
-                                  height: '100%',
-                                  display: 'flex',
-                                  alignItems: 'center',
-                                  justifyContent: 'center',
-                                  cursor: 'pointer',
-                                  p: 4
+                          {!flipped ? (
+                            <Box 
+                              sx={{
+                                height: '100%',
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                cursor: 'pointer',
+                                p: 4,
+                                transition: 'opacity 0.3s ease',
+                                opacity: 1
+                              }}
+                              onClick={flipCard}
+                            >
+                              <Typography variant="body2" color="text.secondary" align="center">
+                                (Click anywhere on card to see definition)
+                              </Typography>
+                            </Box>
+                          ) : (
+                            <Box 
+                              sx={{
+                                cursor: 'pointer',
+                                p: 1,
+                                position: 'absolute',
+                                top: 0,
+                                left: 0,
+                                right: 0,
+                                bottom: 0,
+                                display: 'flex',
+                                flexDirection: 'column',
+                                transition: 'opacity 0.3s ease, transform 0.5s ease',
+                                opacity: flipped ? 1 : 0,
+                                transform: flipped ? 'scale(1)' : 'scale(0.95)'
+                              }}
+                              onClick={flipCard}
+                            >
+                              <Typography variant="h6" sx={{ mb: 2 }}>
+                                Definition:
+                              </Typography>
+                              <Typography variant="body1">
+                                {filteredCards[currentIndex].definition}
+                              </Typography>
+                              <Typography 
+                                variant="caption" 
+                                color="text.secondary" 
+                                sx={{ 
+                                  position: 'absolute', 
+                                  bottom: '8px', 
+                                  right: '8px',
+                                  opacity: 0.8
                                 }}
-                                onClick={flipCard}
                               >
-                                <Typography variant="body2" color="text.secondary" align="center">
-                                  (Click anywhere on card to see definition)
-                                </Typography>
-                              </Box>
-                            )}
-                          </Typography>
+                                (Click anywhere to flip back)
+                              </Typography>
+                            </Box>
+                          )}
                           
                           {flipped && (
                             <Collapse in={showDetails}>
@@ -329,9 +385,11 @@ const FlashcardsPage: React.FC = () => {
                         >
                           Next
                         </Button>
-                        <IconButton onClick={flipCard}>
-                          <FlipIcon />
-                        </IconButton>
+                        <Tooltip title={flipped ? "Flip to front" : "Flip to back"}>
+                          <IconButton onClick={flipCard}>
+                            <FlipIcon />
+                          </IconButton>
+                        </Tooltip>
                         {flipped && (
                           <Tooltip title="Show detailed explanation">
                             <IconButton onClick={toggleDetails}>
@@ -430,7 +488,7 @@ const FlashcardsPage: React.FC = () => {
                     <Box sx={{ mt: 3 }}>
                       <Typography variant="body2" sx={{ display: 'flex', alignItems: 'center' }}>
                         <InfoIcon fontSize="small" sx={{ mr: 1, color: 'text.secondary' }} />
-                        Click cards to flip between term and definition. Use the details button to see examples and additional information.
+                        Click anywhere on the card, including the image, to flip between term and definition. Use the details button to see examples and additional information.
                       </Typography>
                     </Box>
                   </Paper>

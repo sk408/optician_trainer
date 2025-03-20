@@ -1,0 +1,124 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="200" viewBox="0 0 300 200">
+    <title>Eyelid Anatomy</title>
+    <defs>
+        <linearGradient id="skinGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#f8d5c2" />
+            <stop offset="100%" stop-color="#e6b89c" />
+        </linearGradient>
+        <linearGradient id="conjunctivaGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#ffcccb" />
+            <stop offset="100%" stop-color="#ff9e9d" />
+        </linearGradient>
+        <linearGradient id="muscleGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#ee928d" />
+            <stop offset="100%" stop-color="#cc6e69" />
+        </linearGradient>
+        <linearGradient id="tarsalGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#c4daed" />
+            <stop offset="100%" stop-color="#a3c2e3" />
+        </linearGradient>
+        <linearGradient id="glandGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#ffecb3" />
+            <stop offset="100%" stop-color="#ffd966" />
+        </linearGradient>
+    </defs>
+    
+    <!-- Background -->
+    <rect width="300" height="200" fill="#f8f8f8" />
+    
+    <!-- Title -->
+    <text x="150" y="20" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#333">Eyelid Anatomy</text>
+    
+    <!-- Sagittal section of upper eyelid -->
+    <g transform="translate(40, 60)">
+        <!-- Skin and subcutaneous tissue -->
+        <path d="M0,0 C40,-10 80,-12 120,-8 C160,-4 200,0 220,5 L220,15 C200,10 160,6 120,10 C80,14 40,12 0,10 Z" fill="url(#skinGradient)" stroke="#333" stroke-width="0.5" />
+        <text x="225" y="5" font-family="Arial, sans-serif" font-size="9" text-anchor="start" fill="#333">Skin</text>
+        <line x1="220" y1="5" x2="224" y2="5" stroke="#333" stroke-width="0.5" />
+        
+        <!-- Orbicularis oculi muscle -->
+        <path d="M0,10 C40,12 80,14 120,10 C160,6 200,10 220,15 L220,25 C200,20 160,16 120,20 C80,24 40,22 0,20 Z" fill="url(#muscleGradient)" stroke="#333" stroke-width="0.5" />
+        <text x="225" y="20" font-family="Arial, sans-serif" font-size="9" text-anchor="start" fill="#333">Orbicularis Oculi</text>
+        <line x1="220" y1="20" x2="224" y2="20" stroke="#333" stroke-width="0.5" />
+        
+        <!-- Orbital septum -->
+        <path d="M0,20 C40,22 80,24 120,20 C160,16 200,20 220,25 L220,30 C200,25 160,21 120,25 C80,29 40,27 0,25 Z" fill="#d9d9d9" stroke="#333" stroke-width="0.5" />
+        <text x="225" y="27" font-family="Arial, sans-serif" font-size="9" text-anchor="start" fill="#333">Orbital Septum</text>
+        <line x1="220" y1="27" x2="224" y2="27" stroke="#333" stroke-width="0.5" />
+        
+        <!-- Levator aponeurosis -->
+        <path d="M20,25 C60,27 100,29 140,25 C180,21 200,25 220,30 L220,35 C200,30 180,26 140,30 C100,34 60,32 20,30 Z" fill="#bfbfbf" stroke="#333" stroke-width="0.5" />
+        <text x="225" y="32" font-family="Arial, sans-serif" font-size="9" text-anchor="start" fill="#333">Levator Aponeurosis</text>
+        <line x1="220" y1="32" x2="224" y2="32" stroke="#333" stroke-width="0.5" />
+        
+        <!-- Tarsus with meibomian glands -->
+        <path d="M20,30 C60,32 100,34 140,30 C180,26 200,30 220,35 L220,50 C200,45 180,41 140,45 C100,49 60,47 20,45 Z" fill="url(#tarsalGradient)" stroke="#333" stroke-width="0.5" />
+        <text x="225" y="40" font-family="Arial, sans-serif" font-size="9" text-anchor="start" fill="#333">Tarsal Plate</text>
+        <line x1="220" y1="40" x2="224" y2="40" stroke="#333" stroke-width="0.5" />
+        
+        <!-- Meibomian glands - vertical lines -->
+        <g stroke="#ffd966" stroke-width="1">
+            <line x1="30" y1="32" x2="30" y2="43" />
+            <line x1="45" y1="33" x2="45" y2="44" />
+            <line x1="60" y1="34" x2="60" y2="45" />
+            <line x1="75" y1="33" x2="75" y2="44" />
+            <line x1="90" y1="32" x2="90" y2="43" />
+            <line x1="105" y1="32" x2="105" y2="43" />
+            <line x1="120" y1="33" x2="120" y2="44" />
+            <line x1="135" y1="34" x2="135" y2="45" />
+            <line x1="150" y1="33" x2="150" y2="44" />
+            <line x1="165" y1="32" x2="165" y2="43" />
+            <line x1="180" y1="31" x2="180" y2="42" />
+            <line x1="195" y1="32" x2="195" y2="43" />
+            <line x1="210" y1="33" x2="210" y2="44" />
+        </g>
+        <text x="225" y="45" font-family="Arial, sans-serif" font-size="9" text-anchor="start" fill="#333">Meibomian Glands</text>
+        <line x1="210" y1="44" x2="224" y2="45" stroke="#333" stroke-width="0.5" />
+        
+        <!-- Conjunctiva -->
+        <path d="M20,45 C60,47 100,49 140,45 C180,41 200,45 220,50 L220,55 C200,50 180,46 140,50 C100,54 60,52 20,50 Z" fill="url(#conjunctivaGradient)" stroke="#333" stroke-width="0.5" />
+        <text x="225" y="52" font-family="Arial, sans-serif" font-size="9" text-anchor="start" fill="#333">Conjunctiva</text>
+        <line x1="220" y1="52" x2="224" y2="52" stroke="#333" stroke-width="0.5" />
+        
+        <!-- Eyelashes -->
+        <g stroke="#333" stroke-width="0.7">
+            <line x1="20" y1="50" x2="15" y2="58" />
+            <line x1="30" y1="50" x2="26" y2="59" />
+            <line x1="40" y1="50" x2="37" y2="60" />
+            <line x1="50" y1="50" x2="48" y2="60" />
+            <line x1="60" y1="50" x2="58" y2="61" />
+            <line x1="70" y1="50" x2="69" y2="61" />
+            <line x1="80" y1="50" x2="80" y2="60" />
+            <line x1="90" y1="50" x2="91" y2="61" />
+            <line x1="100" y1="50" x2="102" y2="61" />
+            <line x1="110" y1="50" x2="113" y2="60" />
+            <line x1="120" y1="50" x2="124" y2="59" />
+            <line x1="130" y1="50" x2="135" y2="58" />
+            <line x1="140" y1="50" x2="145" y2="57" />
+            <line x1="150" y1="50" x2="154" y2="56" />
+            <line x1="160" y1="50" x2="163" y2="55" />
+        </g>
+        <text x="225" y="58" font-family="Arial, sans-serif" font-size="9" text-anchor="start" fill="#333">Eyelashes</text>
+        <line x1="160" y1="55" x2="224" y2="58" stroke="#333" stroke-width="0.5" />
+    </g>
+    
+    <!-- Key Structures -->
+    <g transform="translate(40, 150)">
+        <!-- Color key boxes -->
+        <rect x="0" y="0" width="10" height="10" fill="url(#skinGradient)" stroke="#333" stroke-width="0.3" />
+        <rect x="0" y="15" width="10" height="10" fill="url(#muscleGradient)" stroke="#333" stroke-width="0.3" />
+        <rect x="0" y="30" width="10" height="10" fill="url(#tarsalGradient)" stroke="#333" stroke-width="0.3" />
+        <rect x="125" y="0" width="10" height="10" fill="url(#conjunctivaGradient)" stroke="#333" stroke-width="0.3" />
+        <rect x="125" y="15" width="10" height="10" fill="url(#glandGradient)" stroke="#333" stroke-width="0.3" />
+        
+        <!-- Labels -->
+        <text x="15" y="9" font-family="Arial, sans-serif" font-size="9" text-anchor="start" fill="#333">Skin and subcutaneous tissue</text>
+        <text x="15" y="24" font-family="Arial, sans-serif" font-size="9" text-anchor="start" fill="#333">Orbicularis oculi muscle</text>
+        <text x="15" y="39" font-family="Arial, sans-serif" font-size="9" text-anchor="start" fill="#333">Tarsal plate</text>
+        <text x="140" y="9" font-family="Arial, sans-serif" font-size="9" text-anchor="start" fill="#333">Conjunctiva</text>
+        <text x="140" y="24" font-family="Arial, sans-serif" font-size="9" text-anchor="start" fill="#333">Meibomian glands</text>
+    </g>
+    
+    <!-- Copyright -->
+    <text x="150" y="195" font-family="Arial, sans-serif" font-size="8" text-anchor="middle" fill="#555">© Optician Trainer</text>
+</svg>

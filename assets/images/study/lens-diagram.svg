@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300">
+    <title>Lens Diagram</title>
+    <defs>
+        <linearGradient id="convex-lens-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#e6f7ff" stop-opacity="0.8" />
+            <stop offset="50%" stop-color="#99d6ff" stop-opacity="0.9" />
+            <stop offset="100%" stop-color="#e6f7ff" stop-opacity="0.8" />
+        </linearGradient>
+        <linearGradient id="concave-lens-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#e6f7ff" stop-opacity="0.8" />
+            <stop offset="50%" stop-color="#e6f7ff" stop-opacity="0.5" />
+            <stop offset="100%" stop-color="#e6f7ff" stop-opacity="0.8" />
+        </linearGradient>
+    </defs>
+    
+    <!-- Background -->
+    <rect width="400" height="300" fill="#f8f8f8"/>
+    
+    <!-- Title -->
+    <text x="200" y="30" font-family="Arial" font-size="20" font-weight="bold" text-anchor="middle" fill="#333">Lens Diagram</text>
+    
+    <!-- Convex (Positive) Lens -->
+    <g transform="translate(110, 110)">
+        <!-- Lens Outline -->
+        <path d="M-30,60 C0,60 0,60 30,60 C20,40 20,-40 30,-60 C0,-60 0,-60 -30,-60 C-20,-40 -20,40 -30,60 Z" 
+              fill="url(#convex-lens-gradient)" stroke="#666" stroke-width="1" />
+        
+        <!-- Optical Axis -->
+        <line x1="-100" y1="0" x2="100" y2="0" stroke="#333" stroke-width="1" stroke-dasharray="2,2" />
+        
+        <!-- Light Rays -->
+        <line x1="-90" y1="-40" x2="0" y2="0" stroke="#ff3333" stroke-width="1.5" />
+        <line x1="-90" y1="0" x2="0" y2="0" stroke="#ff3333" stroke-width="1.5" />
+        <line x1="-90" y1="40" x2="0" y2="0" stroke="#ff3333" stroke-width="1.5" />
+        
+        <!-- Converging Rays -->
+        <line x1="0" y1="0" x2="80" y2="-5" stroke="#ff3333" stroke-width="1.5" />
+        <line x1="0" y1="0" x2="80" y2="0" stroke="#ff3333" stroke-width="1.5" />
+        <line x1="0" y1="0" x2="80" y2="5" stroke="#ff3333" stroke-width="1.5" />
+        
+        <!-- Focal Point -->
+        <circle cx="60" cy="0" r="3" fill="#ff3333" />
+        
+        <!-- Label -->
+        <text x="0" y="80" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle" fill="#333">Convex (Positive) Lens</text>
+        <text x="0" y="95" font-family="Arial" font-size="12" text-anchor="middle" fill="#333">Converges Light</text>
+        <text x="60" y="-10" font-family="Arial" font-size="12" text-anchor="middle" fill="#333">F</text>
+    </g>
+    
+    <!-- Concave (Negative) Lens -->
+    <g transform="translate(290, 110)">
+        <!-- Lens Outline -->
+        <path d="M-30,60 C-10,60 -10,60 30,60 C20,40 20,-40 30,-60 C-10,-60 -10,-60 -30,-60 C-20,-40 -20,40 -30,60 Z" 
+              fill="url(#concave-lens-gradient)" stroke="#666" stroke-width="1" />
+        
+        <!-- Optical Axis -->
+        <line x1="-100" y1="0" x2="100" y2="0" stroke="#333" stroke-width="1" stroke-dasharray="2,2" />
+        
+        <!-- Light Rays -->
+        <line x1="-90" y1="-40" x2="0" y2="-30" stroke="#3366ff" stroke-width="1.5" />
+        <line x1="-90" y1="0" x2="0" y2="0" stroke="#3366ff" stroke-width="1.5" />
+        <line x1="-90" y1="40" x2="0" y2="30" stroke="#3366ff" stroke-width="1.5" />
+        
+        <!-- Diverging Rays -->
+        <line x1="0" y1="-30" x2="90" y2="-60" stroke="#3366ff" stroke-width="1.5" />
+        <line x1="0" y1="0" x2="90" y2="0" stroke="#3366ff" stroke-width="1.5" />
+        <line x1="0" y1="30" x2="90" y2="60" stroke="#3366ff" stroke-width="1.5" />
+        
+        <!-- Virtual Focal Point -->
+        <circle cx="-60" cy="0" r="3" fill="#3366ff" />
+        
+        <!-- Dashed Lines to Show Virtual Focus -->
+        <line x1="0" y1="-30" x2="-80" y2="-10" stroke="#3366ff" stroke-width="1" stroke-dasharray="4,2" />
+        <line x1="0" y1="30" x2="-80" y2="10" stroke="#3366ff" stroke-width="1" stroke-dasharray="4,2" />
+        
+        <!-- Label -->
+        <text x="0" y="80" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle" fill="#333">Concave (Negative) Lens</text>
+        <text x="0" y="95" font-family="Arial" font-size="12" text-anchor="middle" fill="#333">Diverges Light</text>
+        <text x="-60" y="-10" font-family="Arial" font-size="12" text-anchor="middle" fill="#333">F</text>
+    </g>
+    
+    <!-- Legend -->
+    <g transform="translate(200, 230)">
+        <text x="0" y="0" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle" fill="#333">Key Features</text>
+        
+        <line x1="-180" y1="20" x2="-160" y2="20" stroke="#ff3333" stroke-width="1.5" />
+        <text x="-100" y="25" font-family="Arial" font-size="12" text-anchor="start" fill="#333">Converging Light Rays</text>
+        
+        <line x1="-180" y1="40" x2="-160" y2="40" stroke="#3366ff" stroke-width="1.5" />
+        <text x="-100" y="45" font-family="Arial" font-size="12" text-anchor="start" fill="#333">Diverging Light Rays</text>
+        
+        <line x1="30" y1="20" x2="50" y2="20" stroke="#333" stroke-width="1" stroke-dasharray="2,2" />
+        <text x="60" y="25" font-family="Arial" font-size="12" text-anchor="start" fill="#333">Optical Axis</text>
+        
+        <circle cx="40" cy="40" r="3" fill="#333" />
+        <text x="60" y="45" font-family="Arial" font-size="12" text-anchor="start" fill="#333">Focal Point (F)</text>
+    </g>
+</svg>

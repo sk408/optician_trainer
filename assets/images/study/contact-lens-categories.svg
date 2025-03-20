@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="200" viewBox="0 0 300 200">
+    <title>Contact Lens Categories</title>
+    <defs>
+        <linearGradient id="softLensGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#bfe6ff" stop-opacity="0.8" />
+            <stop offset="100%" stop-color="#69c5ff" stop-opacity="0.7" />
+        </linearGradient>
+        <linearGradient id="rgpLensGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#c2e0c2" stop-opacity="0.9" />
+            <stop offset="100%" stop-color="#69b569" stop-opacity="0.8" />
+        </linearGradient>
+        <linearGradient id="hybridLensGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#d9bfff" stop-opacity="0.8" />
+            <stop offset="100%" stop-color="#a569ff" stop-opacity="0.7" />
+        </linearGradient>
+        <linearGradient id="scleralLensGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#ffbfbf" stop-opacity="0.8" />
+            <stop offset="100%" stop-color="#ff6969" stop-opacity="0.7" />
+        </linearGradient>
+    </defs>
+    
+    <!-- Background -->
+    <rect width="300" height="200" fill="#f0f0f0" />
+    
+    <!-- Chart Title -->
+    <text x="150" y="20" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">Contact Lens Categories</text>
+    
+    <!-- Soft Lens -->
+    <g transform="translate(50, 60)">
+        <ellipse cx="25" cy="20" rx="25" ry="20" fill="url(#softLensGradient)" stroke="#389ad5" stroke-width="1" />
+        <text x="25" y="60" font-family="Arial" font-size="10" text-anchor="middle">Soft Lens</text>
+        <text x="25" y="74" font-family="Arial" font-size="8" text-anchor="middle">• Hydrogel</text>
+        <text x="25" y="85" font-family="Arial" font-size="8" text-anchor="middle">• Silicone Hydrogel</text>
+    </g>
+    
+    <!-- RGP Lens -->
+    <g transform="translate(125, 60)">
+        <ellipse cx="25" cy="20" rx="25" ry="20" fill="url(#rgpLensGradient)" stroke="#389a44" stroke-width="1" />
+        <text x="25" y="60" font-family="Arial" font-size="10" text-anchor="middle">RGP Lens</text>
+        <text x="25" y="74" font-family="Arial" font-size="8" text-anchor="middle">• Rigid Gas Permeable</text>
+        <text x="25" y="85" font-family="Arial" font-size="8" text-anchor="middle">• High Oxygen Flow</text>
+    </g>
+    
+    <!-- Hybrid Lens -->
+    <g transform="translate(200, 60)">
+        <ellipse cx="25" cy="20" rx="25" ry="20" fill="url(#hybridLensGradient)" stroke="#6638d5" stroke-width="1" />
+        <text x="25" y="60" font-family="Arial" font-size="10" text-anchor="middle">Hybrid Lens</text>
+        <text x="25" y="74" font-family="Arial" font-size="8" text-anchor="middle">• RGP Center</text>
+        <text x="25" y="85" font-family="Arial" font-size="8" text-anchor="middle">• Soft Skirt</text>
+    </g>
+    
+    <!-- Scleral Lens -->
+    <g transform="translate(125, 120)">
+        <ellipse cx="25" cy="20" rx="35" ry="20" fill="url(#scleralLensGradient)" stroke="#d53838" stroke-width="1" />
+        <text x="25" y="60" font-family="Arial" font-size="10" text-anchor="middle">Scleral Lens</text>
+        <text x="25" y="74" font-family="Arial" font-size="8" text-anchor="middle">• Covers Entire Cornea</text>
+        <text x="25" y="85" font-family="Arial" font-size="8" text-anchor="middle">• Rests on Sclera</text>
+    </g>
+    
+    <!-- Arrows connecting categories -->
+    <path d="M87,70 L113,70" stroke="#666" stroke-width="1" stroke-dasharray="2" />
+    <path d="M162,70 L188,70" stroke="#666" stroke-width="1" stroke-dasharray="2" />
+    <path d="M150,95 L150,115" stroke="#666" stroke-width="1" stroke-dasharray="2" />
+</svg>

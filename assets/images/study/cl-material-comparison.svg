@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="200" viewBox="0 0 300 200">
+    <title>Contact Lens Material Comparison</title>
+    <defs>
+        <linearGradient id="softLensGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#a8d5ff" stop-opacity="0.6" />
+            <stop offset="100%" stop-color="#5cb3ff" stop-opacity="0.8" />
+        </linearGradient>
+        <linearGradient id="rgpLensGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#90ee90" stop-opacity="0.6" />
+            <stop offset="100%" stop-color="#32cd32" stop-opacity="0.8" />
+        </linearGradient>
+        <linearGradient id="siliconeHydrogelGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#c8a2c8" stop-opacity="0.6" />
+            <stop offset="100%" stop-color="#9370db" stop-opacity="0.8" />
+        </linearGradient>
+        <filter id="dropShadow" x="-20%" y="-20%" width="140%" height="140%">
+            <feGaussianBlur in="SourceAlpha" stdDeviation="2" />
+            <feOffset dx="1" dy="1" result="offsetblur" />
+            <feComponentTransfer>
+                <feFuncA type="linear" slope="0.2" />
+            </feComponentTransfer>
+            <feMerge>
+                <feMergeNode />
+                <feMergeNode in="SourceGraphic" />
+            </feMerge>
+        </filter>
+    </defs>
+    
+    <!-- Background -->
+    <rect width="300" height="200" fill="#f8f8f8" />
+    
+    <!-- Title -->
+    <text x="150" y="20" font-family="Arial" font-size="12" font-weight="bold" text-anchor="middle">Contact Lens Material Comparison</text>
+    
+    <!-- Comparison Chart Background -->
+    <rect x="20" y="35" width="260" height="130" rx="5" fill="white" stroke="#dddddd" stroke-width="1" />
+    
+    <!-- Column Headers -->
+    <rect x="20" y="35" width="70" height="20" rx="3" fill="#f0f0f0" />
+    <rect x="90" y="35" width="70" height="20" rx="3" fill="#f0f0f0" />
+    <rect x="160" y="35" width="70" height="20" rx="3" fill="#f0f0f0" />
+    <rect x="230" y="35" width="50" height="20" rx="3" fill="#f0f0f0" />
+    
+    <text x="55" y="48" font-family="Arial" font-size="8" font-weight="bold" text-anchor="middle">Material Type</text>
+    <text x="125" y="48" font-family="Arial" font-size="8" font-weight="bold" text-anchor="middle">Oxygen Perm.</text>
+    <text x="195" y="48" font-family="Arial" font-size="8" font-weight="bold" text-anchor="middle">Water Content</text>
+    <text x="255" y="48" font-family="Arial" font-size="8" font-weight="bold" text-anchor="middle">Comfort</text>
+    
+    <!-- Row 1: Hydrogel -->
+    <rect x="20" y="55" width="70" height="30" fill="url(#softLensGradient)" filter="url(#dropShadow)" />
+    <text x="55" y="73" font-family="Arial" font-size="8" font-weight="bold" text-anchor="middle">Hydrogel</text>
+    
+    <!-- Oxygen Permeability Rating -->
+    <rect x="90" y="55" width="70" height="30" fill="white" stroke="#dddddd" stroke-width="1" />
+    <rect x="95" y="65" width="60" height="10" rx="5" fill="#f0f0f0" />
+    <rect x="95" y="65" width="30" height="10" rx="5" fill="#5cb3ff" />
+    <text x="125" y="73" font-family="Arial" font-size="7" text-anchor="middle">Low (8-35)</text>
+    
+    <!-- Water Content Rating -->
+    <rect x="160" y="55" width="70" height="30" fill="white" stroke="#dddddd" stroke-width="1" />
+    <rect x="165" y="65" width="60" height="10" rx="5" fill="#f0f0f0" />
+    <rect x="165" y="65" width="54" height="10" rx="5" fill="#5cb3ff" />
+    <text x="195" y="73" font-family="Arial" font-size="7" text-anchor="middle">High (38-70%)</text>
+    
+    <!-- Comfort Rating -->
+    <rect x="230" y="55" width="50" height="30" fill="white" stroke="#dddddd" stroke-width="1" />
+    <text x="255" y="73" font-family="Arial" font-size="7" text-anchor="middle">⭐⭐⭐⭐</text>
+    
+    <!-- Row 2: Silicone Hydrogel -->
+    <rect x="20" y="85" width="70" height="30" fill="url(#siliconeHydrogelGradient)" filter="url(#dropShadow)" />
+    <text x="55" y="98" font-family="Arial" font-size="8" font-weight="bold" text-anchor="middle">Silicone</text>
+    <text x="55" y="108" font-family="Arial" font-size="8" font-weight="bold" text-anchor="middle">Hydrogel</text>
+    
+    <!-- Oxygen Permeability Rating -->
+    <rect x="90" y="85" width="70" height="30" fill="white" stroke="#dddddd" stroke-width="1" />
+    <rect x="95" y="95" width="60" height="10" rx="5" fill="#f0f0f0" />
+    <rect x="95" y="95" width="54" height="10" rx="5" fill="#9370db" />
+    <text x="125" y="103" font-family="Arial" font-size="7" text-anchor="middle">High (60-140)</text>
+    
+    <!-- Water Content Rating -->
+    <rect x="160" y="85" width="70" height="30" fill="white" stroke="#dddddd" stroke-width="1" />
+    <rect x="165" y="95" width="60" height="10" rx="5" fill="#f0f0f0" />
+    <rect x="165" y="95" width="36" height="10" rx="5" fill="#9370db" />
+    <text x="195" y="103" font-family="Arial" font-size="7" text-anchor="middle">Med (25-45%)</text>
+    
+    <!-- Comfort Rating -->
+    <rect x="230" y="85" width="50" height="30" fill="white" stroke="#dddddd" stroke-width="1" />
+    <text x="255" y="103" font-family="Arial" font-size="7" text-anchor="middle">⭐⭐⭐⭐⭐</text>
+    
+    <!-- Row 3: RGP -->
+    <rect x="20" y="115" width="70" height="30" fill="url(#rgpLensGradient)" filter="url(#dropShadow)" />
+    <text x="55" y="133" font-family="Arial" font-size="8" font-weight="bold" text-anchor="middle">RGP</text>
+    
+    <!-- Oxygen Permeability Rating -->
+    <rect x="90" y="115" width="70" height="30" fill="white" stroke="#dddddd" stroke-width="1" />
+    <rect x="95" y="125" width="60" height="10" rx="5" fill="#f0f0f0" />
+    <rect x="95" y="125" width="48" height="10" rx="5" fill="#32cd32" />
+    <text x="125" y="133" font-family="Arial" font-size="7" text-anchor="middle">High (40-100)</text>
+    
+    <!-- Water Content Rating -->
+    <rect x="160" y="115" width="70" height="30" fill="white" stroke="#dddddd" stroke-width="1" />
+    <rect x="165" y="125" width="60" height="10" rx="5" fill="#f0f0f0" />
+    <rect x="165" y="125" width="6" height="10" rx="5" fill="#32cd32" />
+    <text x="195" y="133" font-family="Arial" font-size="7" text-anchor="middle">Low (0-1%)</text>
+    
+    <!-- Comfort Rating -->
+    <rect x="230" y="115" width="50" height="30" fill="white" stroke="#dddddd" stroke-width="1" />
+    <text x="255" y="133" font-family="Arial" font-size="7" text-anchor="middle">⭐⭐⭐</text>
+    
+    <!-- Legend -->
+    <text x="20" y="175" font-family="Arial" font-size="7" fill="#666666">Dk = Oxygen Permeability</text>
+    <text x="20" y="185" font-family="Arial" font-size="7" fill="#666666">RGP = Rigid Gas Permeable</text>
+    <text x="140" y="175" font-family="Arial" font-size="7" fill="#666666">Higher Dk = Better oxygen flow</text>
+    <text x="140" y="185" font-family="Arial" font-size="7" fill="#666666">Higher water = More comfort (typically)</text>
+</svg>

@@ -1,87 +1,148 @@
-<svg width="800px" height="500px" viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
-  <!-- Background -->
-  <rect x="0" y="0" width="800" height="500" fill="#f0f8ff"/>
-  <text x="400" y="40" font-family="Arial" font-size="24" font-weight="bold" text-anchor="middle">Eye Anatomy</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500">
+  <title>Eye Anatomy Diagram</title>
+  <style>
+    .title { font-family: Arial, sans-serif; font-size: 24px; font-weight: bold; text-anchor: middle; }
+    .subtitle { font-family: Arial, sans-serif; font-size: 14px; font-style: italic; text-anchor: middle; }
+    .label { font-family: Arial, sans-serif; font-size: 14px; text-anchor: start; }
+    .label-small { font-family: Arial, sans-serif; font-size: 12px; text-anchor: start; }
+    .line { stroke: #333; stroke-width: 1; stroke-dasharray: 3,3; }
+    .part-outline { fill: none; stroke: #000; stroke-width: 1.5; }
+    .cornea { fill: #cce5ff; fill-opacity: 0.6; stroke: #000; stroke-width: 1.5; }
+    .iris { fill: #8c7853; stroke: #000; stroke-width: 1; }
+    .pupil { fill: #000; stroke: none; }
+    .lens { fill: #e6f7ff; fill-opacity: 0.7; stroke: #000; stroke-width: 1.5; }
+    .vitreous { fill: #e6f7ff; fill-opacity: 0.3; stroke: none; }
+    .retina { fill: #ffd6cc; stroke: #000; stroke-width: 1; }
+    .sclera { fill: #fff; stroke: #000; stroke-width: 1.5; }
+    .optic-nerve { fill: #f9f9f9; stroke: #000; stroke-width: 1.5; }
+    .conjunctiva { fill: #ffcccc; fill-opacity: 0.4; stroke: #000; stroke-width: 1; }
+    .ciliary-body { fill: #bfbfbf; stroke: #000; stroke-width: 1; }
+    .choroid { fill: #994d00; fill-opacity: 0.5; stroke: #000; stroke-width: 1; }
+    .highlight { fill: #fff; fill-opacity: 0.5; }
+  </style>
   
-  <!-- Eye Cross Section -->
-  <!-- Outer Eye Shape (Sclera) -->
-  <ellipse cx="400" cy="250" rx="200" ry="180" fill="white" stroke="#333" stroke-width="3"/>
+  <rect width="800" height="500" fill="#ffffff" />
   
-  <!-- Cornea -->
-  <path d="M 200,250 C 220,150 380,80 400,80 C 420,80 580,150 600,250" fill="#e6f2ff" stroke="#333" stroke-width="2"/>
+  <!-- Title -->
+  <text x="400" y="40" class="title">Eye Anatomy Diagram</text>
+  <text x="400" y="65" class="subtitle">Essential structures relevant to opticianry</text>
   
-  <!-- Iris -->
-  <circle cx="400" cy="170" r="70" fill="#668cff" stroke="#333" stroke-width="2"/>
+  <!-- Eye Diagram -->
+  <g transform="translate(250, 250)">
+    <!-- Sclera (white of eye) -->
+    <path d="M0,0 C0,-100 150,-100 300,0 C150,100 0,100 0,0 Z" class="sclera" />
+    
+    <!-- Choroid -->
+    <path d="M20,0 C20,-80 150,-80 280,0 C150,80 20,80 20,0 Z" class="choroid" />
+    
+    <!-- Retina -->
+    <path d="M40,0 C40,-60 150,-60 260,0 C150,60 40,60 40,0 Z" class="retina" />
+    
+    <!-- Vitreous Humor -->
+    <path d="M60,0 C60,-50 150,-50 240,0 C150,50 60,50 60,0 Z" class="vitreous" />
+    
+    <!-- Lens -->
+    <ellipse cx="110" cy="0" rx="25" ry="40" transform="rotate(-5 110 0)" class="lens" />
+    <ellipse cx="110" cy="0" rx="15" ry="30" transform="rotate(-5 110 0)" class="highlight" />
+    
+    <!-- Iris -->
+    <ellipse cx="70" cy="0" rx="40" ry="40" class="iris" />
+    
+    <!-- Pupil -->
+    <circle cx="70" cy="0" r="15" class="pupil" />
+    
+    <!-- Cornea -->
+    <path d="M30,-40 Q40,-50 70,-50 Q100,-50 110,-40 Q120,-20 110,0 Q100,20 70,20 Q40,20 30,0 Q20,-20 30,-40 Z" class="cornea" />
+    
+    <!-- Conjunctiva -->
+    <path d="M-20,-60 Q0,-70 70,-70 Q140,-70 160,-60 Q180,-40 160,0 Q140,40 70,40 Q0,40 -20,0 Q-40,-40 -20,-60 Z" class="conjunctiva" />
+    
+    <!-- Ciliary Body -->
+    <path d="M80,-30 Q100,-35 120,-30 Q130,-25 130,-15 Q130,-5 120,0 L80,0 Q70,-5 70,-15 Q70,-25 80,-30 Z" class="ciliary-body" />
+    <path d="M80,30 Q100,35 120,30 Q130,25 130,15 Q130,5 120,0 L80,0 Q70,5 70,15 Q70,25 80,30 Z" class="ciliary-body" />
+    
+    <!-- Optic Nerve -->
+    <path d="M280,0 C290,0 300,20 300,0 C300,-20 290,0 280,0 Z" class="optic-nerve" />
+    <path d="M260,0 L310,0" stroke="#000" stroke-width="3" />
+    
+    <!-- Anterior Chamber -->
+    <path d="M70,-15 Q85,-25 100,-15 Q110,-5 100,5 Q85,15 70,5 Q60,-5 70,-15 Z" fill="#cce5ff" fill-opacity="0.3" stroke="#000" stroke-width="1" stroke-dasharray="2,2" />
+    <text x="90" y="0" font-family="Arial" font-size="8" text-anchor="middle">Anterior Chamber</text>
+    
+    <!-- Highlight in cornea -->
+    <ellipse cx="50" cy="-20" rx="10" ry="5" class="highlight" />
+  </g>
   
-  <!-- Pupil -->
-  <circle cx="400" cy="170" r="30" fill="#000" stroke="#333" stroke-width="1"/>
+  <!-- Labels -->
+  <g>
+    <!-- Cornea -->
+    <line x1="320" y1="210" x2="220" y2="140" class="line" />
+    <text x="210" y="130" class="label">Cornea</text>
+    <text x="210" y="145" class="label-small">Clear front surface, major refractive element</text>
+    
+    <!-- Iris -->
+    <line x1="320" y1="250" x2="200" y2="260" class="line" />
+    <text x="180" y="260" class="label">Iris</text>
+    <text x="180" y="275" class="label-small">Controls amount of light entering eye</text>
+    
+    <!-- Pupil -->
+    <line x1="320" y1="250" x2="200" y2="290" class="line" />
+    <text x="180" y="300" class="label">Pupil</text>
+    <text x="180" y="315" class="label-small">Opening that allows light to enter</text>
+    
+    <!-- Lens -->
+    <line x1="360" y1="250" x2="450" y2="180" class="line" />
+    <text x="460" y="180" class="label">Lens</text>
+    <text x="460" y="195" class="label-small">Focuses light on retina, adjusts focus for distance</text>
+    
+    <!-- Retina -->
+    <line x1="440" y1="250" x2="520" y2="240" class="line" />
+    <text x="530" y="240" class="label">Retina</text>
+    <text x="530" y="255" class="label-small">Light-sensitive tissue, contains photoreceptors</text>
+    
+    <!-- Sclera -->
+    <line x1="270" y1="300" x2="200" y2="360" class="line" />
+    <text x="180" y="370" class="label">Sclera</text>
+    <text x="180" y="385" class="label-small">White protective outer layer</text>
+    
+    <!-- Optic Nerve -->
+    <line x1="530" y1="250" x2="580" y2="290" class="line" />
+    <text x="590" y="290" class="label">Optic Nerve</text>
+    <text x="590" y="305" class="label-small">Transmits visual signals to brain</text>
+    
+    <!-- Vitreous -->
+    <line x1="400" y1="250" x2="450" y2="320" class="line" />
+    <text x="460" y="330" class="label">Vitreous Humor</text>
+    <text x="460" y="345" class="label-small">Gel-like substance filling posterior chamber</text>
+    
+    <!-- Ciliary Body -->
+    <line x1="350" y1="280" x2="450" y2="360" class="line" />
+    <text x="460" y="370" class="label">Ciliary Body</text>
+    <text x="460" y="385" class="label-small">Controls lens shape for accommodation</text>
+    
+    <!-- Conjunctiva -->
+    <line x1="240" y1="210" x2="160" y2="190" class="line" />
+    <text x="120" y="190" class="label">Conjunctiva</text>
+    <text x="120" y="205" class="label-small">Mucous membrane covering white of eye</text>
+  </g>
   
-  <!-- Lens -->
-  <ellipse cx="400" cy="170" rx="40" ry="60" fill="none" stroke="#333" stroke-width="2" transform="translate(0,30)"/>
+  <!-- Optical Path Illustration -->
+  <g transform="translate(400, 250)">
+    <!-- Light path -->
+    <path d="M-170,-100 L-10,0 L150,20" fill="none" stroke="#ff9900" stroke-width="2" stroke-dasharray="5,3" />
+    <path d="M-170,-80 L20,0 L150,0" fill="none" stroke="#ff9900" stroke-width="2" stroke-dasharray="5,3" />
+    <path d="M-170,-60 L50,0 L150,-20" fill="none" stroke="#ff9900" stroke-width="2" stroke-dasharray="5,3" />
+  </g>
   
-  <!-- Retina -->
-  <path d="M 600,250 C 580,350 420,400 400,400 C 380,400 220,350 200,250" fill="#ffe6e6" stroke="#333" stroke-width="2"/>
+  <!-- Refractive Properties Box -->
+  <g transform="translate(600, 120)">
+    <rect x="0" y="0" width="160" height="90" rx="5" ry="5" fill="#f9f9f9" stroke="#333" stroke-width="1" />
+    <text x="80" y="20" font-family="Arial" font-size="12" text-anchor="middle" font-weight="bold">Refractive Powers</text>
+    <text x="10" y="40" font-family="Arial" font-size="10">Cornea: +43.00D</text>
+    <text x="10" y="60" font-family="Arial" font-size="10">Lens: +20.00D (variable)</text>
+    <text x="10" y="80" font-family="Arial" font-size="10">Total Eye: +58.00D (emmetropic)</text>
+  </g>
   
-  <!-- Optic Nerve -->
-  <path d="M 400,400 C 400,420 380,450 350,470" fill="none" stroke="#333" stroke-width="4"/>
-  <ellipse cx="330" cy="470" rx="20" ry="10" fill="#ffe6e6" stroke="#333" stroke-width="2"/>
-  
-  <!-- Vitreous Humor -->
-  <ellipse cx="400" cy="280" rx="150" ry="100" fill="none" stroke="#66ccff" stroke-width="1" stroke-dasharray="5,3"/>
-  
-  <!-- Aqueous Humor -->
-  <path d="M 350,170 C 350,160 370,120 400,120 C 430,120 450,160 450,170" fill="none" stroke="#66ccff" stroke-width="1" stroke-dasharray="5,3"/>
-  
-  <!-- Annotations -->
-  
-  <!-- Cornea -->
-  <line x1="320" y1="120" x2="180" y2="80" stroke="#0066cc" stroke-width="1.5" stroke-dasharray="5,3"/>
-  <text x="150" y="70" font-family="Arial" font-size="14" font-weight="bold" fill="#0066cc">Cornea</text>
-  <text x="150" y="90" font-family="Arial" font-size="12" fill="#0066cc">Clear front surface of the eye</text>
-  
-  <!-- Iris -->
-  <line x1="450" y1="140" x2="550" y2="100" stroke="#0033cc" stroke-width="1.5" stroke-dasharray="5,3"/>
-  <text x="560" y="90" font-family="Arial" font-size="14" font-weight="bold" fill="#0033cc">Iris</text>
-  <text x="560" y="110" font-family="Arial" font-size="12" fill="#0033cc">Colored part that controls pupil size</text>
-  
-  <!-- Pupil -->
-  <line x1="400" y1="170" x2="300" y2="140" stroke="#000000" stroke-width="1.5" stroke-dasharray="5,3"/>
-  <text x="230" y="130" font-family="Arial" font-size="14" font-weight="bold" fill="#000000">Pupil</text>
-  <text x="230" y="150" font-family="Arial" font-size="12" fill="#000000">Opening that lets light in</text>
-  
-  <!-- Lens -->
-  <line x1="400" y1="230" x2="500" y2="230" stroke="#cc6600" stroke-width="1.5" stroke-dasharray="5,3"/>
-  <text x="510" y="220" font-family="Arial" font-size="14" font-weight="bold" fill="#cc6600">Lens</text>
-  <text x="510" y="240" font-family="Arial" font-size="12" fill="#cc6600">Focuses light onto the retina</text>
-  
-  <!-- Retina -->
-  <line x1="500" y1="350" x2="600" y2="300" stroke="#cc0000" stroke-width="1.5" stroke-dasharray="5,3"/>
-  <text x="610" y="290" font-family="Arial" font-size="14" font-weight="bold" fill="#cc0000">Retina</text>
-  <text x="610" y="310" font-family="Arial" font-size="12" fill="#cc0000">Light-sensitive tissue</text>
-  
-  <!-- Optic Nerve -->
-  <line x1="330" y1="470" x2="250" y2="460" stroke="#660066" stroke-width="1.5" stroke-dasharray="5,3"/>
-  <text x="150" y="450" font-family="Arial" font-size="14" font-weight="bold" fill="#660066">Optic Nerve</text>
-  <text x="150" y="470" font-family="Arial" font-size="12" fill="#660066">Carries visual signals to brain</text>
-  
-  <!-- Sclera -->
-  <line x1="200" y1="250" x2="120" y2="230" stroke="#333333" stroke-width="1.5" stroke-dasharray="5,3"/>
-  <text x="80" y="220" font-family="Arial" font-size="14" font-weight="bold" fill="#333333">Sclera</text>
-  <text x="80" y="240" font-family="Arial" font-size="12" fill="#333333">White part of the eye</text>
-  
-  <!-- Vitreous Humor -->
-  <line x1="400" y1="280" x2="300" y2="320" stroke="#66ccff" stroke-width="1.5" stroke-dasharray="5,3"/>
-  <text x="200" y="320" font-family="Arial" font-size="14" font-weight="bold" fill="#66ccff">Vitreous Humor</text>
-  <text x="200" y="340" font-family="Arial" font-size="12" fill="#66ccff">Gel that fills the eye</text>
-  
-  <!-- Aqueous Humor -->
-  <line x1="350" y1="150" x2="280" y2="180" stroke="#66ccff" stroke-width="1.5" stroke-dasharray="5,3"/>
-  <text x="200" y="180" font-family="Arial" font-size="14" font-weight="bold" fill="#66ccff">Aqueous Humor</text>
-  <text x="200" y="200" font-family="Arial" font-size="12" fill="#66ccff">Fluid between cornea and lens</text>
-  
-  <!-- Vision Process Description -->
-  <rect x="150" y="400" width="500" height="80" rx="10" ry="10" fill="#f0f0f0" stroke="#333" stroke-width="1"/>
-  <text x="400" y="425" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">Vision Process</text>
-  <text x="400" y="450" font-family="Arial" font-size="12" text-anchor="middle">Light enters through the cornea → passes through the pupil → is focused by the lens →</text>
-  <text x="400" y="470" font-family="Arial" font-size="12" text-anchor="middle">strikes the retina → is converted to electrical signals → travels via optic nerve to the brain</text>
+  <!-- Footer -->
+  <text x="400" y="480" font-family="Arial" font-size="12" text-anchor="middle">© Optician Trainer - Eye Anatomy Diagram</text>
 </svg> 

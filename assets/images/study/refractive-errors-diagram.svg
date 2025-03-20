@@ -1,0 +1,244 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <title>Refractive Errors and Corrections</title>
+  <defs>
+    <linearGradient id="eyeGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#e0e0ff" />
+    </linearGradient>
+    <linearGradient id="lensGradientPlus" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#d0e8ff" stop-opacity="0.7" />
+      <stop offset="100%" stop-color="#a0c4ff" stop-opacity="0.7" />
+    </linearGradient>
+    <linearGradient id="lensGradientMinus" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffe0e0" stop-opacity="0.7" />
+      <stop offset="100%" stop-color="#ffb0b0" stop-opacity="0.7" />
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="2" />
+      <feOffset dx="2" dy="2" result="offsetblur" />
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.2" />
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="600" fill="#f8f8f8" />
+  
+  <!-- Title -->
+  <text x="400" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="bold" text-anchor="middle" fill="#333333">Refractive Errors and Their Corrections</text>
+  
+  <!-- NORMAL VISION -->
+  <g transform="translate(200, 130)">
+    <text x="0" y="-45" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#333333">NORMAL VISION</text>
+    
+    <!-- Eye -->
+    <ellipse cx="0" cy="0" rx="90" ry="70" fill="url(#eyeGradient)" stroke="#333333" stroke-width="1.5" />
+    <path d="M -90,0 Q -110,-40 -90,-65" fill="none" stroke="#333333" stroke-width="1.5" />
+    <ellipse cx="-45" cy="0" rx="15" ry="35" fill="url(#lensGradientPlus)" stroke="#333333" stroke-width="1" />
+    <path d="M 90,0 Q 70,60 0,70 Q -70,60 -90,0" fill="none" stroke="#cc0000" stroke-width="1" stroke-dasharray="3,2" />
+    
+    <!-- Light Rays -->
+    <line x1="-180" y1="30" x2="-90" y2="15" stroke="#ffcc00" stroke-width="1.5" />
+    <line x1="-180" y1="0" x2="-90" y2="0" stroke="#ffcc00" stroke-width="1.5" />
+    <line x1="-180" y1="-30" x2="-90" y2="-15" stroke="#ffcc00" stroke-width="1.5" />
+    
+    <!-- Converging Rays -->
+    <line x1="-90" y1="15" x2="85" y2="0" stroke="#ffcc00" stroke-width="1.5" />
+    <line x1="-90" y1="0" x2="85" y2="0" stroke="#ffcc00" stroke-width="1.5" />
+    <line x1="-90" y1="-15" x2="85" y2="0" stroke="#ffcc00" stroke-width="1.5" />
+    
+    <!-- Focus Point -->
+    <circle cx="85" cy="0" r="4" fill="#ff3333" />
+    
+    <!-- Description -->
+    <text x="0" y="95" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#333333">Light focuses precisely on the retina</text>
+    <text x="0" y="115" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#333333">Clear vision at all distances</text>
+  </g>
+  
+  <!-- MYOPIA -->
+  <g transform="translate(600, 130)">
+    <text x="0" y="-45" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#333333">MYOPIA (Nearsightedness)</text>
+    
+    <!-- Elongated Eye -->
+    <ellipse cx="0" cy="0" rx="110" ry="70" fill="url(#eyeGradient)" stroke="#333333" stroke-width="1.5" />
+    <path d="M -110,0 Q -130,-40 -110,-65" fill="none" stroke="#333333" stroke-width="1.5" />
+    <ellipse cx="-55" cy="0" rx="15" ry="35" fill="url(#lensGradientPlus)" stroke="#333333" stroke-width="1" />
+    <path d="M 110,0 Q 85,60 0,70 Q -85,60 -110,0" fill="none" stroke="#cc0000" stroke-width="1" stroke-dasharray="3,2" />
+    
+    <!-- Light Rays -->
+    <line x1="-200" y1="30" x2="-110" y2="15" stroke="#ffcc00" stroke-width="1.5" />
+    <line x1="-200" y1="0" x2="-110" y2="0" stroke="#ffcc00" stroke-width="1.5" />
+    <line x1="-200" y1="-30" x2="-110" y2="-15" stroke="#ffcc00" stroke-width="1.5" />
+    
+    <!-- Converging Rays -->
+    <line x1="-110" y1="15" x2="60" y2="0" stroke="#ffcc00" stroke-width="1.5" />
+    <line x1="-110" y1="0" x2="60" y2="0" stroke="#ffcc00" stroke-width="1.5" />
+    <line x1="-110" y1="-15" x2="60" y2="0" stroke="#ffcc00" stroke-width="1.5" />
+    
+    <!-- Focus Point (In front of retina) -->
+    <circle cx="60" cy="0" r="4" fill="#ff3333" />
+    
+    <!-- Diverging Rays -->
+    <line x1="60" y1="0" x2="105" y2="10" stroke="#ffcc00" stroke-width="1" stroke-dasharray="3,1" />
+    <line x1="60" y1="0" x2="105" y2="0" stroke="#ffcc00" stroke-width="1" stroke-dasharray="3,1" />
+    <line x1="60" y1="0" x2="105" y2="-10" stroke="#ffcc00" stroke-width="1" stroke-dasharray="3,1" />
+    
+    <!-- Description -->
+    <text x="0" y="95" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#333333">Light focuses in front of the retina</text>
+    <text x="0" y="115" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#333333">Difficulty seeing distant objects</text>
+  </g>
+  
+  <!-- MYOPIA CORRECTION -->
+  <g transform="translate(600, 280)">
+    <text x="0" y="-25" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#333333">CORRECTION: Concave (Minus) Lens</text>
+    
+    <!-- Elongated Eye -->
+    <ellipse cx="0" cy="0" rx="110" ry="70" fill="url(#eyeGradient)" stroke="#333333" stroke-width="1.5" />
+    <path d="M -110,0 Q -130,-40 -110,-65" fill="none" stroke="#333333" stroke-width="1.5" />
+    <ellipse cx="-55" cy="0" rx="15" ry="35" fill="url(#lensGradientPlus)" stroke="#333333" stroke-width="1" />
+    <path d="M 110,0 Q 85,60 0,70 Q -85,60 -110,0" fill="none" stroke="#cc0000" stroke-width="1" stroke-dasharray="3,2" />
+    
+    <!-- Concave Lens -->
+    <path d="M -165,35 C -155,25 -155,-25 -165,-35 C -175,-25 -175,25 -165,35" fill="url(#lensGradientMinus)" stroke="#cc0000" stroke-width="1.5" />
+    
+    <!-- Light Rays -->
+    <line x1="-200" y1="30" x2="-175" y2="30" stroke="#ffcc00" stroke-width="1.5" />
+    <line x1="-200" y1="0" x2="-175" y2="0" stroke="#ffcc00" stroke-width="1.5" />
+    <line x1="-200" y1="-30" x2="-175" y2="-30" stroke="#ffcc00" stroke-width="1.5" />
+    
+    <!-- Diverging Through Concave Lens -->
+    <line x1="-165" y1="30" x2="-110" y2="10" stroke="#ffcc00" stroke-width="1.5" />
+    <line x1="-165" y1="0" x2="-110" y2="0" stroke="#ffcc00" stroke-width="1.5" />
+    <line x1="-165" y1="-30" x2="-110" y2="-10" stroke="#ffcc00" stroke-width="1.5" />
+    
+    <!-- Converging Rays -->
+    <line x1="-110" y1="10" x2="105" y2="0" stroke="#ffcc00" stroke-width="1.5" />
+    <line x1="-110" y1="0" x2="105" y2="0" stroke="#ffcc00" stroke-width="1.5" />
+    <line x1="-110" y1="-10" x2="105" y2="0" stroke="#ffcc00" stroke-width="1.5" />
+    
+    <!-- Focus Point (On retina) -->
+    <circle cx="105" cy="0" r="4" fill="#ff3333" />
+    
+    <!-- Description -->
+    <text x="0" y="95" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#333333">Concave lens diverges light rays</text>
+    <text x="0" y="115" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#333333">Focus is moved back onto the retina</text>
+  </g>
+  
+  <!-- HYPEROPIA -->
+  <g transform="translate(200, 320)">
+    <text x="0" y="-45" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#333333">HYPEROPIA (Farsightedness)</text>
+    
+    <!-- Shorter Eye -->
+    <ellipse cx="0" cy="0" rx="75" ry="70" fill="url(#eyeGradient)" stroke="#333333" stroke-width="1.5" />
+    <path d="M -75,0 Q -95,-40 -75,-65" fill="none" stroke="#333333" stroke-width="1.5" />
+    <ellipse cx="-40" cy="0" rx="15" ry="35" fill="url(#lensGradientPlus)" stroke="#333333" stroke-width="1" />
+    <path d="M 75,0 Q 60,60 0,70 Q -60,60 -75,0" fill="none" stroke="#cc0000" stroke-width="1" stroke-dasharray="3,2" />
+    
+    <!-- Light Rays -->
+    <line x1="-180" y1="30" x2="-75" y2="15" stroke="#ffcc00" stroke-width="1.5" />
+    <line x1="-180" y1="0" x2="-75" y2="0" stroke="#ffcc00" stroke-width="1.5" />
+    <line x1="-180" y1="-30" x2="-75" y2="-15" stroke="#ffcc00" stroke-width="1.5" />
+    
+    <!-- Converging Rays - Would focus behind retina -->
+    <line x1="-75" y1="15" x2="75" y2="8" stroke="#ffcc00" stroke-width="1.5" />
+    <line x1="-75" y1="0" x2="75" y2="0" stroke="#ffcc00" stroke-width="1.5" />
+    <line x1="-75" y1="-15" x2="75" y2="-8" stroke="#ffcc00" stroke-width="1.5" />
+    
+    <!-- Virtual Focus Point (Behind retina) -->
+    <circle cx="115" cy="0" r="4" fill="#ff3333" stroke="#ff3333" stroke-width="1" stroke-dasharray="2,1" />
+    <line x1="75" y1="0" x2="115" y2="0" stroke="#ff3333" stroke-width="1" stroke-dasharray="2,1" />
+    
+    <!-- Description -->
+    <text x="0" y="95" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#333333">Light would focus behind the retina</text>
+    <text x="0" y="115" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#333333">Difficulty seeing near objects</text>
+  </g>
+  
+  <!-- HYPEROPIA CORRECTION -->
+  <g transform="translate(200, 470)">
+    <text x="0" y="-25" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#333333">CORRECTION: Convex (Plus) Lens</text>
+    
+    <!-- Shorter Eye -->
+    <ellipse cx="0" cy="0" rx="75" ry="70" fill="url(#eyeGradient)" stroke="#333333" stroke-width="1.5" />
+    <path d="M -75,0 Q -95,-40 -75,-65" fill="none" stroke="#333333" stroke-width="1.5" />
+    <ellipse cx="-40" cy="0" rx="15" ry="35" fill="url(#lensGradientPlus)" stroke="#333333" stroke-width="1" />
+    <path d="M 75,0 Q 60,60 0,70 Q -60,60 -75,0" fill="none" stroke="#cc0000" stroke-width="1" stroke-dasharray="3,2" />
+    
+    <!-- Convex Lens -->
+    <path d="M -165,-35 C -185,-25 -185,25 -165,35 C -145,25 -145,-25 -165,-35" fill="url(#lensGradientPlus)" stroke="#0066cc" stroke-width="1.5" />
+    
+    <!-- Light Rays -->
+    <line x1="-200" y1="30" x2="-185" y2="30" stroke="#ffcc00" stroke-width="1.5" />
+    <line x1="-200" y1="0" x2="-185" y2="0" stroke="#ffcc00" stroke-width="1.5" />
+    <line x1="-200" y1="-30" x2="-185" y2="-30" stroke="#ffcc00" stroke-width="1.5" />
+    
+    <!-- Converging Through Convex Lens -->
+    <line x1="-165" y1="30" x2="-75" y2="20" stroke="#ffcc00" stroke-width="1.5" />
+    <line x1="-165" y1="0" x2="-75" y2="0" stroke="#ffcc00" stroke-width="1.5" />
+    <line x1="-165" y1="-30" x2="-75" y2="-20" stroke="#ffcc00" stroke-width="1.5" />
+    
+    <!-- Converging Rays -->
+    <line x1="-75" y1="20" x2="70" y2="0" stroke="#ffcc00" stroke-width="1.5" />
+    <line x1="-75" y1="0" x2="70" y2="0" stroke="#ffcc00" stroke-width="1.5" />
+    <line x1="-75" y1="-20" x2="70" y2="0" stroke="#ffcc00" stroke-width="1.5" />
+    
+    <!-- Focus Point (On retina) -->
+    <circle cx="70" cy="0" r="4" fill="#ff3333" />
+    
+    <!-- Description -->
+    <text x="0" y="95" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#333333">Convex lens converges light rays</text>
+    <text x="0" y="115" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#333333">Focus is moved forward onto the retina</text>
+  </g>
+  
+  <!-- ASTIGMATISM -->
+  <g transform="translate(600, 450)">
+    <text x="0" y="-75" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#333333">ASTIGMATISM</text>
+    
+    <!-- Eye with Irregular Cornea -->
+    <ellipse cx="0" cy="0" rx="90" ry="70" fill="url(#eyeGradient)" stroke="#333333" stroke-width="1.5" />
+    <path d="M -90,0 Q -110,-30 -90,-65 Q -85,-75 -80,-65" fill="none" stroke="#333333" stroke-width="1.5" />
+    <ellipse cx="-45" cy="0" rx="15" ry="35" fill="url(#lensGradientPlus)" stroke="#333333" stroke-width="1" />
+    <path d="M 90,0 Q 70,60 0,70 Q -70,60 -90,0" fill="none" stroke="#cc0000" stroke-width="1" stroke-dasharray="3,2" />
+    
+    <!-- Light Rays -->
+    <line x1="-180" y1="30" x2="-90" y2="15" stroke="#ffcc00" stroke-width="1.5" />
+    <line x1="-180" y1="0" x2="-90" y2="0" stroke="#ffcc00" stroke-width="1.5" />
+    <line x1="-180" y1="-30" x2="-90" y2="-15" stroke="#ffcc00" stroke-width="1.5" />
+    
+    <!-- Multiple Focus Points -->
+    <line x1="-90" y1="15" x2="60" y2="5" stroke="#ffcc00" stroke-width="1.5" />
+    <line x1="-90" y1="0" x2="75" y2="0" stroke="#ffcc00" stroke-width="1.5" />
+    <line x1="-90" y1="-15" x2="60" y2="-5" stroke="#ffcc00" stroke-width="1.5" />
+    
+    <circle cx="60" cy="5" r="3" fill="#ff3333" />
+    <circle cx="75" cy="0" r="3" fill="#ff3333" />
+    <circle cx="60" cy="-5" r="3" fill="#ff3333" />
+    
+    <!-- Astigmatism Correction -->
+    <rect x="-140" y="-15" width="30" height="30" rx="5" ry="5" stroke="#0066cc" stroke-width="1" fill="none" stroke-dasharray="2,1" />
+    <text x="-125" y="35" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#0066cc">Cylindrical</text>
+    <text x="-125" y="50" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#0066cc">Lens</text>
+    
+    <!-- Description -->
+    <text x="0" y="95" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#333333">Irregularly curved cornea or lens</text>
+    <text x="0" y="115" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#333333">Light focuses at multiple points</text>
+    <text x="0" y="135" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#333333">Corrected with cylindrical lens</text>
+  </g>
+  
+  <!-- Legend -->
+  <rect x="650" y="500" width="130" height="80" rx="5" ry="5" fill="white" stroke="#333333" stroke-width="1" />
+  <text x="715" y="520" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#333333">LEGEND</text>
+  
+  <line x1="665" y1="535" x2="685" y2="535" stroke="#ffcc00" stroke-width="1.5" />
+  <text x="730" y="540" font-family="Arial, sans-serif" font-size="11" fill="#333333">Light Rays</text>
+  
+  <circle cx="675" cy="555" r="3" fill="#ff3333" />
+  <text x="730" y="560" font-family="Arial, sans-serif" font-size="11" fill="#333333">Focal Point</text>
+  
+  <path d="M 665,575 L 685,575" stroke="#cc0000" stroke-width="1" stroke-dasharray="3,2" />
+  <text x="730" y="580" font-family="Arial, sans-serif" font-size="11" fill="#333333">Retina</text>
+</svg>

@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="200" viewBox="0 0 300 200">
+    <title>Sports Eyewear Strap</title>
+    <defs>
+        <linearGradient id="frameGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#555" />
+            <stop offset="100%" stop-color="#222" />
+        </linearGradient>
+        <linearGradient id="lensGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#90caf9" stop-opacity="0.7" />
+            <stop offset="100%" stop-color="#42a5f5" stop-opacity="0.5" />
+        </linearGradient>
+        <linearGradient id="neopreneBandGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#f44336" />
+            <stop offset="100%" stop-color="#b71c1c" />
+        </linearGradient>
+        <linearGradient id="tubularBandGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#43a047" />
+            <stop offset="100%" stop-color="#1b5e20" />
+        </linearGradient>
+        <linearGradient id="floatingBandGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#ffb74d" />
+            <stop offset="100%" stop-color="#ef6c00" />
+        </linearGradient>
+    </defs>
+    
+    <!-- Background -->
+    <rect width="300" height="200" fill="#f0f0f0" />
+    
+    <!-- Title -->
+    <text x="150" y="20" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">Sports Eyewear Straps</text>
+    
+    <!-- Neoprene Strap -->
+    <g transform="translate(50, 50)">
+        <!-- Glasses -->
+        <path d="M0,10 L20,12 A25,25 0 0,0 65,12 L85,10" fill="none" stroke="#000" stroke-width="1.5" />
+        <!-- Left lens -->
+        <ellipse cx="30" cy="12" rx="10" ry="8" fill="url(#lensGradient)" stroke="#000" stroke-width="1" />
+        <!-- Right lens -->
+        <ellipse cx="55" cy="12" rx="10" ry="8" fill="url(#lensGradient)" stroke="#000" stroke-width="1" />
+        <!-- Strap connector left -->
+        <path d="M0,10 L-5,10 L-8,14 L-5,18 L-5,10" fill="#555" stroke="#000" stroke-width="0.5" />
+        <!-- Strap connector right -->
+        <path d="M85,10 L90,10 L93,14 L90,18 L90,10" fill="#555" stroke="#000" stroke-width="0.5" />
+        <!-- Neoprene band -->
+        <path d="M-8,14 C-20,20 -40,20 -50,14 C-60,8 -80,8 -90,14" stroke-width="7" stroke="url(#neopreneBandGradient)" stroke-linecap="round" fill="none" />
+        <path d="M93,14 C105,20 125,20 135,14 C145,8 165,8 175,14" stroke-width="7" stroke="url(#neopreneBandGradient)" stroke-linecap="round" fill="none" />
+        <!-- Label -->
+        <text x="42.5" y="35" font-family="Arial" font-size="10" font-weight="bold" text-anchor="middle">Neoprene Strap</text>
+        <text x="42.5" y="48" font-family="Arial" font-size="8" text-anchor="middle">• Wide, comfortable</text>
+        <text x="42.5" y="58" font-family="Arial" font-size="8" text-anchor="middle">• Water sports</text>
+    </g>
+    
+    <!-- Tubular Strap -->
+    <g transform="translate(50, 115)">
+        <!-- Glasses -->
+        <path d="M0,10 L20,12 A25,25 0 0,0 65,12 L85,10" fill="none" stroke="#000" stroke-width="1.5" />
+        <!-- Left lens -->
+        <ellipse cx="30" cy="12" rx="10" ry="8" fill="url(#lensGradient)" stroke="#000" stroke-width="1" />
+        <!-- Right lens -->
+        <ellipse cx="55" cy="12" rx="10" ry="8" fill="url(#lensGradient)" stroke="#000" stroke-width="1" />
+        <!-- Strap connector left -->
+        <path d="M0,10 L-5,10 L-8,14 L-5,18 L-5,10" fill="#555" stroke="#000" stroke-width="0.5" />
+        <!-- Strap connector right -->
+        <path d="M85,10 L90,10 L93,14 L90,18 L90,10" fill="#555" stroke="#000" stroke-width="0.5" />
+        <!-- Tubular band -->
+        <path d="M-8,14 C-20,14 -40,14 -50,14 C-60,14 -80,14 -90,14" stroke-width="3.5" stroke="url(#tubularBandGradient)" stroke-linecap="round" fill="none" />
+        <path d="M93,14 C105,14 125,14 135,14 C145,14 165,14 175,14" stroke-width="3.5" stroke="url(#tubularBandGradient)" stroke-linecap="round" fill="none" />
+        <!-- Label -->
+        <text x="42.5" y="35" font-family="Arial" font-size="10" font-weight="bold" text-anchor="middle">Tubular Strap</text>
+        <text x="42.5" y="48" font-family="Arial" font-size="8" text-anchor="middle">• Lightweight, elastic</text>
+        <text x="42.5" y="58" font-family="Arial" font-size="8" text-anchor="middle">• Running, cycling</text>
+    </g>
+    
+    <!-- Floating Strap -->
+    <g transform="translate(180, 85)">
+        <!-- Glasses -->
+        <path d="M0,10 L20,12 A25,25 0 0,0 65,12 L85,10" fill="none" stroke="#000" stroke-width="1.5" />
+        <!-- Left lens -->
+        <ellipse cx="30" cy="12" rx="10" ry="8" fill="url(#lensGradient)" stroke="#000" stroke-width="1" />
+        <!-- Right lens -->
+        <ellipse cx="55" cy="12" rx="10" ry="8" fill="url(#lensGradient)" stroke="#000" stroke-width="1" />
+        <!-- Strap connector left -->
+        <path d="M0,10 L-5,10 L-8,14 L-5,18 L-5,10" fill="#555" stroke="#000" stroke-width="0.5" />
+        <!-- Strap connector right -->
+        <path d="M85,10 L90,10 L93,14 L90,18 L90,10" fill="#555" stroke="#000" stroke-width="0.5" />
+        <!-- Floating band with buoyancy -->
+        <path d="M-8,14 C-20,16 -40,18 -50,14 C-60,10 -80,12 -90,14" stroke-width="5" stroke="url(#floatingBandGradient)" stroke-linecap="round" fill="none" />
+        <path d="M93,14 C105,16 125,18 135,14 C145,10 165,12 175,14" stroke-width="5" stroke="url(#floatingBandGradient)" stroke-linecap="round" fill="none" />
+        <circle cx="-70" cy="14" r="3" fill="#fff" stroke="#f57c00" stroke-width="1" />
+        <circle cx="155" cy="14" r="3" fill="#fff" stroke="#f57c00" stroke-width="1" />
+        <!-- Label -->
+        <text x="42.5" y="35" font-family="Arial" font-size="10" font-weight="bold" text-anchor="middle">Floating Strap</text>
+        <text x="42.5" y="48" font-family="Arial" font-size="8" text-anchor="middle">• Buoyant material</text>
+        <text x="42.5" y="58" font-family="Arial" font-size="8" text-anchor="middle">• Swimming, boating</text>
+    </g>
+    
+    <!-- Key Points Box -->
+    <g transform="translate(150, 180)">
+        <rect x="-120" y="0" width="240" height="15" rx="3" ry="3" fill="#e8eaf6" stroke="#3f51b5" stroke-width="1" />
+        <text x="0" y="10" font-family="Arial" font-size="8" text-anchor="middle">Proper fit should be snug but not tight • Adjustable straps are preferred</text>
+    </g>
+</svg>

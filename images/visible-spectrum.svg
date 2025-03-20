@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="200" viewBox="0 0 300 200">
+    <title>Visible Spectrum</title>
+    <defs>
+        <linearGradient id="spectrum" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#780070" /> <!-- Violet -->
+            <stop offset="16.67%" stop-color="#4600BA" /> <!-- Indigo -->
+            <stop offset="33.33%" stop-color="#0026FF" /> <!-- Blue -->
+            <stop offset="50%" stop-color="#00A3FF" /> <!-- Cyan -->
+            <stop offset="66.67%" stop-color="#00FF54" /> <!-- Green -->
+            <stop offset="83.33%" stop-color="#FFF700" /> <!-- Yellow -->
+            <stop offset="100%" stop-color="#FF0000" /> <!-- Red -->
+        </linearGradient>
+    </defs>
+    
+    <!-- Background -->
+    <rect width="300" height="200" fill="#f8f8f8" />
+    
+    <!-- Title -->
+    <text x="150" y="30" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#333">Visible Light Spectrum</text>
+    
+    <!-- Spectrum Bar -->
+    <rect x="25" y="50" width="250" height="60" rx="5" ry="5" fill="url(#spectrum)" />
+    
+    <!-- Wavelength Scale -->
+    <line x1="25" y1="120" x2="275" y2="120" stroke="#333" stroke-width="1" />
+    
+    <!-- Scale Ticks and Labels -->
+    <line x1="25" y1="120" x2="25" y2="125" stroke="#333" stroke-width="1" />
+    <text x="25" y="140" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#333">380nm</text>
+    
+    <line x1="67" y1="120" x2="67" y2="125" stroke="#333" stroke-width="1" />
+    <text x="67" y="140" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#333">450nm</text>
+    
+    <line x1="109" y1="120" x2="109" y2="125" stroke="#333" stroke-width="1" />
+    <text x="109" y="140" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#333">490nm</text>
+    
+    <line x1="150" y1="120" x2="150" y2="125" stroke="#333" stroke-width="1" />
+    <text x="150" y="140" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#333">570nm</text>
+    
+    <line x1="192" y1="120" x2="192" y2="125" stroke="#333" stroke-width="1" />
+    <text x="192" y="140" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#333">590nm</text>
+    
+    <line x1="233" y1="120" x2="233" y2="125" stroke="#333" stroke-width="1" />
+    <text x="233" y="140" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#333">620nm</text>
+    
+    <line x1="275" y1="120" x2="275" y2="125" stroke="#333" stroke-width="1" />
+    <text x="275" y="140" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#333">750nm</text>
+    
+    <!-- Color Labels -->
+    <text x="25" y="70" font-family="Arial, sans-serif" font-size="10" text-anchor="start" fill="white" font-weight="bold">Violet</text>
+    <text x="67" y="70" font-family="Arial, sans-serif" font-size="10" text-anchor="start" fill="white" font-weight="bold">Indigo</text>
+    <text x="109" y="70" font-family="Arial, sans-serif" font-size="10" text-anchor="start" fill="white" font-weight="bold">Blue</text>
+    <text x="150" y="70" font-family="Arial, sans-serif" font-size="10" text-anchor="start" fill="white" font-weight="bold">Green</text>
+    <text x="192" y="70" font-family="Arial, sans-serif" font-size="10" text-anchor="start" fill="white" font-weight="bold">Yellow</text>
+    <text x="233" y="70" font-family="Arial, sans-serif" font-size="10" text-anchor="start" fill="white" font-weight="bold">Orange</text>
+    <text x="260" y="70" font-family="Arial, sans-serif" font-size="10" text-anchor="start" fill="white" font-weight="bold">Red</text>
+    
+    <!-- Bottom Note -->
+    <text x="150" y="170" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#555">Visible light ranges from ~380nm to ~750nm</text>
+    <text x="150" y="190" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#555">© Optician Trainer</text>
+</svg>

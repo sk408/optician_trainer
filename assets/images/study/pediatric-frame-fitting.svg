@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="200" viewBox="0 0 300 200">
+    <title>Pediatric Frame Fitting</title>
+    <defs>
+        <linearGradient id="faceGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#ffe0b2" />
+            <stop offset="100%" stop-color="#ffcc80" />
+        </linearGradient>
+        <linearGradient id="frameGradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#4fc3f7" />
+            <stop offset="100%" stop-color="#0288d1" />
+        </linearGradient>
+        <linearGradient id="frameGradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#ef9a9a" />
+            <stop offset="100%" stop-color="#e57373" />
+        </linearGradient>
+        <linearGradient id="lensGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#e3f2fd" stop-opacity="0.6" />
+            <stop offset="100%" stop-color="#bbdefb" stop-opacity="0.4" />
+        </linearGradient>
+    </defs>
+    
+    <!-- Background -->
+    <rect width="300" height="200" fill="#f0f0f0" />
+    
+    <!-- Title -->
+    <text x="150" y="20" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">Pediatric Frame Fitting Guidelines</text>
+    
+    <!-- Good Fit Example -->
+    <g transform="translate(75, 75)">
+        <!-- Face outline -->
+        <ellipse cx="0" cy="0" rx="30" ry="40" fill="url(#faceGradient)" stroke="#f57c00" stroke-width="1" />
+        
+        <!-- Frames - good fit -->
+        <path d="M-25,-5 L-18,-5 A15,12 0 0,1 18,-5 L25,-5" fill="none" stroke="url(#frameGradient1)" stroke-width="2" />
+        <path d="M-25,-5 L-28,-4 L-30,-8 L-25,-8 Z" fill="url(#frameGradient1)" stroke="#000" stroke-width="0.5" />
+        <path d="M25,-5 L28,-4 L30,-8 L25,-8 Z" fill="url(#frameGradient1)" stroke="#000" stroke-width="0.5" />
+        
+        <!-- Lenses -->
+        <ellipse cx="-13" cy="-5" rx="10" ry="8" fill="url(#lensGradient)" stroke="#0288d1" stroke-width="0.5" />
+        <ellipse cx="13" cy="-5" rx="10" ry="8" fill="url(#lensGradient)" stroke="#0288d1" stroke-width="0.5" />
+        
+        <!-- Eyes -->
+        <circle cx="-13" cy="-5" r="3" fill="#5d4037" stroke="#000" stroke-width="0.5" />
+        <circle cx="13" cy="-5" r="3" fill="#5d4037" stroke="#000" stroke-width="0.5" />
+        
+        <!-- Nose -->
+        <path d="M-2,0 C0,5 2,5 4,0" fill="none" stroke="#f57c00" stroke-width="1" />
+        
+        <!-- Mouth - Happy -->
+        <path d="M-10,15 C-5,20 5,20 10,15" fill="none" stroke="#f57c00" stroke-width="1" />
+        
+        <!-- Check marks -->
+        <path d="M-20,-25 L-25,-20 L-15,-15" fill="none" stroke="#4caf50" stroke-width="2" stroke-linecap="round" />
+        <path d="M20,-25 L15,-20 L25,-15" fill="none" stroke="#4caf50" stroke-width="2" stroke-linecap="round" />
+        
+        <!-- Label -->
+        <text x="0" y="40" font-family="Arial" font-size="10" font-weight="bold" text-anchor="middle" fill="#388e3c">Good Fit</text>
+    </g>
+    
+    <!-- Poor Fit Example -->
+    <g transform="translate(185, 75)">
+        <!-- Face outline -->
+        <ellipse cx="0" cy="0" rx="30" ry="40" fill="url(#faceGradient)" stroke="#f57c00" stroke-width="1" />
+        
+        <!-- Frames - poor fit, too large -->
+        <path d="M-30,-5 L-20,-5 A20,15 0 0,1 20,-5 L30,-5" fill="none" stroke="url(#frameGradient2)" stroke-width="2" />
+        <path d="M-30,-5 L-33,-4 L-35,-8 L-30,-8 Z" fill="url(#frameGradient2)" stroke="#000" stroke-width="0.5" />
+        <path d="M30,-5 L33,-4 L35,-8 L30,-8 Z" fill="url(#frameGradient2)" stroke="#000" stroke-width="0.5" />
+        
+        <!-- Lenses -->
+        <ellipse cx="-15" cy="-5" rx="13" ry="10" fill="url(#lensGradient)" stroke="#e57373" stroke-width="0.5" />
+        <ellipse cx="15" cy="-5" rx="13" ry="10" fill="url(#lensGradient)" stroke="#e57373" stroke-width="0.5" />
+        
+        <!-- Eyes -->
+        <circle cx="-13" cy="-5" r="3" fill="#5d4037" stroke="#000" stroke-width="0.5" />
+        <circle cx="13" cy="-5" r="3" fill="#5d4037" stroke="#000" stroke-width="0.5" />
+        
+        <!-- Nose -->
+        <path d="M-2,0 C0,5 2,5 4,0" fill="none" stroke="#f57c00" stroke-width="1" />
+        
+        <!-- Mouth - Neutral -->
+        <path d="M-10,15 L10,15" fill="none" stroke="#f57c00" stroke-width="1" />
+        
+        <!-- X marks -->
+        <path d="M-25,-25 L-15,-15 M-15,-25 L-25,-15" fill="none" stroke="#f44336" stroke-width="2" stroke-linecap="round" />
+        <path d="M15,-25 L25,-15 M25,-25 L15,-15" fill="none" stroke="#f44336" stroke-width="2" stroke-linecap="round" />
+        
+        <!-- Label -->
+        <text x="0" y="40" font-family="Arial" font-size="10" font-weight="bold" text-anchor="middle" fill="#d32f2f">Poor Fit</text>
+    </g>
+    
+    <!-- Fitting Guidelines -->
+    <g transform="translate(150, 140)">
+        <rect x="-125" y="0" width="250" height="45" rx="5" ry="5" fill="#e8f5e9" stroke="#2e7d32" stroke-width="1" />
+        <text x="0" y="12" font-family="Arial" font-size="9" font-weight="bold" text-anchor="middle">Pediatric Frame Fitting Essentials:</text>
+        <text x="0" y="24" font-family="Arial" font-size="8" text-anchor="middle">• Frame width should align with face width</text>
+        <text x="0" y="34" font-family="Arial" font-size="8" text-anchor="middle">• Bridge must fit securely without slipping</text>
+        <text x="0" y="43" font-family="Arial" font-size="8" text-anchor="middle">• Temples should be appropriate length with gentle curve</text>
+    </g>
+    
+    <!-- Measurements -->
+    <g transform="translate(75, 75)">
+        <!-- Width measurement -->
+        <line x1="-30" y1="-20" x2="30" y2="-20" stroke="#01579b" stroke-width="1" stroke-dasharray="2" />
+        <line x1="-30" y1="-20" x2="-30" y2="-24" stroke="#01579b" stroke-width="1" />
+        <line x1="30" y1="-20" x2="30" y2="-24" stroke="#01579b" stroke-width="1" />
+    </g>
+    
+    <g transform="translate(185, 75)">
+        <!-- Width measurement - too wide -->
+        <line x1="-35" y1="-20" x2="35" y2="-20" stroke="#b71c1c" stroke-width="1" stroke-dasharray="2" />
+        <line x1="-35" y1="-20" x2="-35" y2="-24" stroke="#b71c1c" stroke-width="1" />
+        <line x1="35" y1="-20" x2="35" y2="-24" stroke="#b71c1c" stroke-width="1" />
+        <text x="0" y="-25" font-family="Arial" font-size="6" text-anchor="middle" fill="#b71c1c">Too Wide</text>
+    </g>
+</svg>

@@ -1,0 +1,161 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="#f9f9f9"/>
+  
+  <!-- Title -->
+  <text x="400" y="40" font-family="Arial, sans-serif" font-size="24" text-anchor="middle" font-weight="bold">Common Refractive Errors</text>
+  
+  <!-- NORMAL VISION -->
+  <g transform="translate(0, 0)">
+    <!-- Section title -->
+    <text x="400" y="85" font-family="Arial, sans-serif" font-size="18" text-anchor="middle" font-weight="bold">Emmetropia (Normal Vision)</text>
+    
+    <!-- Eye outline -->
+    <ellipse cx="400" cy="130" rx="150" ry="50" fill="#FFFFFF" stroke="#333" stroke-width="2"/>
+    
+    <!-- Cornea -->
+    <path d="M250,130 C230,100 230,160 250,130" fill="#E6F5F8" stroke="#333" stroke-width="1"/>
+    
+    <!-- Lens -->
+    <ellipse cx="290" cy="130" rx="10" ry="25" fill="#E6F5F8" stroke="#333" stroke-width="1"/>
+    
+    <!-- Retina -->
+    <path d="M550,130 C530,100 530,160 550,130" fill="none" stroke="#FF9999" stroke-width="2"/>
+    
+    <!-- Focal point -->
+    <circle cx="505" cy="130" r="4" fill="#FF0000"/>
+    
+    <!-- Light rays -->
+    <line x1="150" y1="100" x2="290" y2="130" stroke="#6D9EEB" stroke-width="1.5"/>
+    <line x1="290" y1="130" x2="505" y2="130" stroke="#6D9EEB" stroke-width="1.5"/>
+    <line x1="150" y1="160" x2="290" y2="130" stroke="#6D9EEB" stroke-width="1.5"/>
+    <line x1="290" y1="130" x2="505" y2="130" stroke="#6D9EEB" stroke-width="1.5"/>
+    
+    <!-- Description -->
+    <text x="700" y="125" font-family="Arial, sans-serif" font-size="14" text-anchor="middle">Light focuses exactly on retina</text>
+    <text x="700" y="145" font-family="Arial, sans-serif" font-size="14" text-anchor="middle">Clear vision at all distances</text>
+  </g>
+  
+  <!-- MYOPIA -->
+  <g transform="translate(0, 140)">
+    <!-- Section title -->
+    <text x="400" y="85" font-family="Arial, sans-serif" font-size="18" text-anchor="middle" font-weight="bold">Myopia (Nearsightedness)</text>
+    
+    <!-- Eye outline -->
+    <ellipse cx="400" cy="130" rx="180" ry="50" fill="#FFFFFF" stroke="#333" stroke-width="2"/>
+    
+    <!-- Cornea -->
+    <path d="M220,130 C200,100 200,160 220,130" fill="#E6F5F8" stroke="#333" stroke-width="1"/>
+    
+    <!-- Lens -->
+    <ellipse cx="260" cy="130" rx="10" ry="25" fill="#E6F5F8" stroke="#333" stroke-width="1"/>
+    
+    <!-- Retina -->
+    <path d="M580,130 C560,100 560,160 580,130" fill="none" stroke="#FF9999" stroke-width="2"/>
+    
+    <!-- Focal point -->
+    <circle cx="450" cy="130" r="4" fill="#FF0000"/>
+    
+    <!-- Light rays -->
+    <line x1="150" y1="100" x2="260" y2="130" stroke="#6D9EEB" stroke-width="1.5"/>
+    <line x1="260" y1="130" x2="450" y2="130" stroke="#6D9EEB" stroke-width="1.5"/>
+    <line x1="450" y1="130" x2="580" y2="140" stroke="#6D9EEB" stroke-width="1.5" stroke-dasharray="3,2"/>
+    <line x1="150" y1="160" x2="260" y2="130" stroke="#6D9EEB" stroke-width="1.5"/>
+    <line x1="260" y1="130" x2="450" y2="130" stroke="#6D9EEB" stroke-width="1.5"/>
+    <line x1="450" y1="130" x2="580" y2="120" stroke="#6D9EEB" stroke-width="1.5" stroke-dasharray="3,2"/>
+    
+    <!-- Correction lens -->
+    <g transform="translate(155, 130)">
+      <path d="M0,-25 C10,-20 10,20 0,25 C-10,20 -10,-20 0,-25" fill="#E6F5F8" stroke="#333" stroke-width="1"/>
+      <text x="0" y="40" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">Concave Lens</text>
+    </g>
+    
+    <!-- Description -->
+    <text x="700" y="115" font-family="Arial, sans-serif" font-size="14" text-anchor="middle">Light focuses in front of retina</text>
+    <text x="700" y="135" font-family="Arial, sans-serif" font-size="14" text-anchor="middle">Clear near vision, blurry distance</text>
+    <text x="700" y="155" font-family="Arial, sans-serif" font-size="14" text-anchor="middle">Corrected with minus lenses</text>
+  </g>
+  
+  <!-- HYPEROPIA -->
+  <g transform="translate(0, 280)">
+    <!-- Section title -->
+    <text x="400" y="85" font-family="Arial, sans-serif" font-size="18" text-anchor="middle" font-weight="bold">Hyperopia (Farsightedness)</text>
+    
+    <!-- Eye outline -->
+    <ellipse cx="400" cy="130" rx="125" ry="50" fill="#FFFFFF" stroke="#333" stroke-width="2"/>
+    
+    <!-- Cornea -->
+    <path d="M275,130 C255,100 255,160 275,130" fill="#E6F5F8" stroke="#333" stroke-width="1"/>
+    
+    <!-- Lens -->
+    <ellipse cx="315" cy="130" rx="10" ry="25" fill="#E6F5F8" stroke="#333" stroke-width="1"/>
+    
+    <!-- Retina -->
+    <path d="M525,130 C505,100 505,160 525,130" fill="none" stroke="#FF9999" stroke-width="2"/>
+    
+    <!-- Focal point (behind retina) -->
+    <circle cx="570" cy="130" r="4" fill="#FF0000"/>
+    
+    <!-- Light rays -->
+    <line x1="150" y1="100" x2="315" y2="130" stroke="#6D9EEB" stroke-width="1.5"/>
+    <line x1="315" y1="130" x2="525" y2="120" stroke="#6D9EEB" stroke-width="1.5"/>
+    <line x1="525" y1="120" x2="570" y2="130" stroke="#6D9EEB" stroke-width="1.5" stroke-dasharray="3,2"/>
+    <line x1="150" y1="160" x2="315" y2="130" stroke="#6D9EEB" stroke-width="1.5"/>
+    <line x1="315" y1="130" x2="525" y2="140" stroke="#6D9EEB" stroke-width="1.5"/>
+    <line x1="525" y1="140" x2="570" y2="130" stroke="#6D9EEB" stroke-width="1.5" stroke-dasharray="3,2"/>
+    
+    <!-- Correction lens -->
+    <g transform="translate(155, 130)">
+      <path d="M0,-25 C-10,-20 -10,20 0,25 C10,20 10,-20 0,-25" fill="#E6F5F8" stroke="#333" stroke-width="1"/>
+      <text x="0" y="40" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">Convex Lens</text>
+    </g>
+    
+    <!-- Description -->
+    <text x="700" y="115" font-family="Arial, sans-serif" font-size="14" text-anchor="middle">Light focuses behind retina</text>
+    <text x="700" y="135" font-family="Arial, sans-serif" font-size="14" text-anchor="middle">Difficulty focusing up close</text>
+    <text x="700" y="155" font-family="Arial, sans-serif" font-size="14" text-anchor="middle">Corrected with plus lenses</text>
+  </g>
+  
+  <!-- ASTIGMATISM -->
+  <g transform="translate(0, 420)">
+    <!-- Section title -->
+    <text x="400" y="85" font-family="Arial, sans-serif" font-size="18" text-anchor="middle" font-weight="bold">Astigmatism</text>
+    
+    <!-- Eye outline -->
+    <ellipse cx="400" cy="130" rx="150" ry="50" fill="#FFFFFF" stroke="#333" stroke-width="2"/>
+    
+    <!-- Irregularly shaped cornea -->
+    <path d="M250,130 C240,90 220,160 250,130" fill="#E6F5F8" stroke="#333" stroke-width="1"/>
+    
+    <!-- Lens -->
+    <ellipse cx="290" cy="130" rx="10" ry="25" fill="#E6F5F8" stroke="#333" stroke-width="1"/>
+    
+    <!-- Retina -->
+    <path d="M550,130 C530,100 530,160 550,130" fill="none" stroke="#FF9999" stroke-width="2"/>
+    
+    <!-- Multiple focal points -->
+    <circle cx="485" cy="110" r="4" fill="#FF0000"/>
+    <circle cx="520" cy="140" r="4" fill="#FF0000"/>
+    
+    <!-- Light rays (multiple focal points) -->
+    <line x1="150" y1="100" x2="290" y2="130" stroke="#6D9EEB" stroke-width="1.5"/>
+    <line x1="290" y1="130" x2="485" y2="110" stroke="#6D9EEB" stroke-width="1.5"/>
+    <line x1="485" y1="110" x2="550" y2="110" stroke="#6D9EEB" stroke-width="1.5" stroke-dasharray="3,2"/>
+    <line x1="150" y1="160" x2="290" y2="130" stroke="#6D9EEB" stroke-width="1.5"/>
+    <line x1="290" y1="130" x2="520" y2="140" stroke="#6D9EEB" stroke-width="1.5"/>
+    <line x1="520" y1="140" x2="550" y2="140" stroke="#6D9EEB" stroke-width="1.5" stroke-dasharray="3,2"/>
+    
+    <!-- Correction lens -->
+    <g transform="translate(155, 130)">
+      <ellipse cx="0" cy="0" rx="20" ry="25" fill="none" stroke="#333" stroke-width="1"/>
+      <line x1="-15" y1="-25" x2="15" y2="25" stroke="#333" stroke-width="1"/>
+      <line x1="-15" y1="25" x2="15" y2="-25" stroke="#333" stroke-width="1"/>
+      <text x="0" y="40" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">Toric Lens</text>
+    </g>
+    
+    <!-- Description -->
+    <text x="700" y="115" font-family="Arial, sans-serif" font-size="14" text-anchor="middle">Light focuses at multiple points</text>
+    <text x="700" y="135" font-family="Arial, sans-serif" font-size="14" text-anchor="middle">Blurred or distorted vision</text>
+    <text x="700" y="155" font-family="Arial, sans-serif" font-size="14" text-anchor="middle">Corrected with cylindrical lenses</text>
+  </g>
+</svg> 

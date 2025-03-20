@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="#f9f9f9"/>
+  
+  <!-- Title -->
+  <text x="400" y="50" font-family="Arial, sans-serif" font-size="24" text-anchor="middle" font-weight="bold">Tear Film Layers</text>
+  
+  <!-- Corneal cross-section with tear film layers -->
+  <g transform="translate(400, 250)">
+    <!-- Cornea base -->
+    <path d="M-300,0 C-250,-100 250,-100 300,0" fill="#E6F5F8" stroke="#333" stroke-width="2"/>
+    <text x="0" y="30" font-family="Arial, sans-serif" font-size="18" text-anchor="middle" font-weight="bold">Corneal Epithelium</text>
+    
+    <!-- Mucin layer (innermost) -->
+    <path d="M-300,0 C-250,-110 250,-110 300,0" fill="none" stroke="#BDECB6" stroke-width="6"/>
+    <text x="-330" y="-30" font-family="Arial, sans-serif" font-size="16" text-anchor="end" font-weight="bold">Mucin Layer</text>
+    <line x1="-320" y1="-35" x2="-290" y2="-5" stroke="#333" stroke-width="1" stroke-dasharray="5,3"/>
+    
+    <!-- Aqueous layer (middle) -->
+    <path d="M-300,0 C-250,-125 250,-125 300,0" fill="none" stroke="#A1D6E2" stroke-width="12"/>
+    <text x="-330" y="-60" font-family="Arial, sans-serif" font-size="16" text-anchor="end" font-weight="bold">Aqueous Layer</text>
+    <line x1="-320" y1="-65" x2="-290" y2="-15" stroke="#333" stroke-width="1" stroke-dasharray="5,3"/>
+    
+    <!-- Lipid layer (outermost) -->
+    <path d="M-300,0 C-250,-135 250,-135 300,0" fill="none" stroke="#F9CB9C" stroke-width="6"/>
+    <text x="-330" y="-90" font-family="Arial, sans-serif" font-size="16" text-anchor="end" font-weight="bold">Lipid Layer</text>
+    <line x1="-320" y1="-95" x2="-290" y2="-30" stroke="#333" stroke-width="1" stroke-dasharray="5,3"/>
+  </g>
+  
+  <!-- Layer descriptions -->
+  <g transform="translate(400, 380)">
+    <rect x="-350" y="0" width="700" height="150" fill="#f0f0f0" stroke="#ccc" stroke-width="1" rx="5" ry="5"/>
+    
+    <g transform="translate(-330, 30)">
+      <rect width="15" height="15" fill="#F9CB9C"/>
+      <text x="25" y="12" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Lipid Layer:</text>
+      <text x="150" y="12" font-family="Arial, sans-serif" font-size="14">Outermost layer, produced by meibomian glands</text>
+      <text x="150" y="32" font-family="Arial, sans-serif" font-size="14">Prevents evaporation and provides smooth optical surface</text>
+    </g>
+    
+    <g transform="translate(-330, 70)">
+      <rect width="15" height="15" fill="#A1D6E2"/>
+      <text x="25" y="12" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Aqueous Layer:</text>
+      <text x="150" y="12" font-family="Arial, sans-serif" font-size="14">Middle layer, produced by lacrimal glands</text>
+      <text x="150" y="32" font-family="Arial, sans-serif" font-size="14">Contains nutrients, oxygen, proteins, and antibodies</text>
+    </g>
+    
+    <g transform="translate(-330, 110)">
+      <rect width="15" height="15" fill="#BDECB6"/>
+      <text x="25" y="12" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Mucin Layer:</text>
+      <text x="150" y="12" font-family="Arial, sans-serif" font-size="14">Innermost layer, produced by conjunctival goblet cells</text>
+      <text x="150" y="32" font-family="Arial, sans-serif" font-size="14">Helps tear film adhere to hydrophobic corneal epithelium</text>
+    </g>
+  </g>
+  
+  <!-- Contact lens information -->
+  <g transform="translate(400, 120)">
+    <rect x="-320" y="-30" width="640" height="80" fill="#e6f2ff" stroke="#0066cc" stroke-width="1" rx="5" ry="5"/>
+    <text x="0" y="-10" font-family="Arial, sans-serif" font-size="16" text-anchor="middle" font-weight="bold">Contact Lens Interaction</text>
+    <text x="0" y="15" font-family="Arial, sans-serif" font-size="14" text-anchor="middle">Contact lenses interact with and can disrupt the tear film.</text>
+    <text x="0" y="40" font-family="Arial, sans-serif" font-size="14" text-anchor="middle">Healthy tear film is essential for lens comfort, vision quality, and eye health.</text>
+  </g>
+  
+  <!-- Layer thickness note -->
+  <g transform="translate(150, 250)">
+    <rect x="-100" y="-70" width="200" height="140" fill="#f0f0f0" stroke="#333" stroke-width="1" rx="5" ry="5"/>
+    <text x="0" y="-50" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" font-weight="bold">Typical Layer Thickness</text>
+    <line x1="-80" y1="-35" x2="80" y2="-35" stroke="#333" stroke-width="1"/>
+    
+    <text x="-80" y="-15" font-family="Arial, sans-serif" font-size="12" text-anchor="start">Lipid Layer:</text>
+    <text x="80" y="-15" font-family="Arial, sans-serif" font-size="12" text-anchor="end">0.1 μm</text>
+    
+    <text x="-80" y="10" font-family="Arial, sans-serif" font-size="12" text-anchor="start">Aqueous Layer:</text>
+    <text x="80" y="10" font-family="Arial, sans-serif" font-size="12" text-anchor="end">7-8 μm</text>
+    
+    <text x="-80" y="35" font-family="Arial, sans-serif" font-size="12" text-anchor="start">Mucin Layer:</text>
+    <text x="80" y="35" font-family="Arial, sans-serif" font-size="12" text-anchor="end">0.2-0.5 μm</text>
+    
+    <text x="0" y="60" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" font-style="italic">Total thickness: ~7-10 μm</text>
+  </g>
+  
+  <!-- Dry eye indicators -->
+  <g transform="translate(650, 250)">
+    <rect x="-100" y="-90" width="200" height="180" fill="#ffe6e6" stroke="#cc0000" stroke-width="1" rx="5" ry="5"/>
+    <text x="0" y="-70" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" font-weight="bold">Dry Eye Signs</text>
+    <line x1="-80" y1="-55" x2="80" y2="-55" stroke="#333" stroke-width="1"/>
+    
+    <g transform="translate(-80, -35)">
+      <circle cx="0" cy="0" r="4" fill="#cc0000"/>
+      <text x="10" y="4" font-family="Arial, sans-serif" font-size="12" text-anchor="start">Reduced tear film breakup time</text>
+    </g>
+    
+    <g transform="translate(-80, -10)">
+      <circle cx="0" cy="0" r="4" fill="#cc0000"/>
+      <text x="10" y="4" font-family="Arial, sans-serif" font-size="12" text-anchor="start">Increased evaporation rate</text>
+    </g>
+    
+    <g transform="translate(-80, 15)">
+      <circle cx="0" cy="0" r="4" fill="#cc0000"/>
+      <text x="10" y="4" font-family="Arial, sans-serif" font-size="12" text-anchor="start">Decreased tear meniscus height</text>
+    </g>
+    
+    <g transform="translate(-80, 40)">
+      <circle cx="0" cy="0" r="4" fill="#cc0000"/>
+      <text x="10" y="4" font-family="Arial, sans-serif" font-size="12" text-anchor="start">Epithelial staining with dyes</text>
+    </g>
+    
+    <g transform="translate(-80, 65)">
+      <circle cx="0" cy="0" r="4" fill="#cc0000"/>
+      <text x="10" y="4" font-family="Arial, sans-serif" font-size="12" text-anchor="start">Symptoms of discomfort</text>
+    </g>
+  </g>
+</svg> 

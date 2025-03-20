@@ -48,16 +48,33 @@ The core component for displaying optimized SVGs with features:
 />
 ```
 
-### 2. SVG Optimization Script
+### 2. SVG Processing Scripts
 
-The script processes all SVGs in the project:
+The project includes scripts to optimize SVGs and maintain a clean assets folder:
+
+#### SVG Optimization Script
+Processes all SVGs in the project:
 - Adds viewBox if missing
-- Optimizes paths and attributes
+- Optimizes paths and attributes with SVGO
 - Creates mobile-optimized versions for complex diagrams
+- Provides fallback basic cleanup for problematic SVGs
 
-Run with:
+#### Duplicate Cleanup Script
+Removes any duplicate mobile files that might be created during development:
+- Scans for `.mobile.mobile.svg` files
+- Automatically removes them to prevent redundancy
+
+#### Running the Scripts
+
+Run both scripts together with:
 ```bash
-npm run optimize-svgs
+npm run svg-process
+```
+
+Or individually:
+```bash
+npm run optimize-svgs    # Only optimize SVGs
+npm run cleanup-duplicates    # Only clean up duplicates
 ```
 
 ### 3. CSS Optimizations
@@ -81,7 +98,7 @@ Create mobile-specific versions when diagrams:
 
 1. Create SVGs with proper viewBox attributes
 2. Use semantic text elements with relative sizing
-3. Run the optimization script before committing
+3. Run the optimization script before committing (`npm run svg-process`)
 4. Test on various device sizes
 5. Create custom mobile versions for complex diagrams
 
@@ -113,8 +130,10 @@ Common issues:
 - Missing viewBox attribute causes scaling problems
 - Text too small on mobile devices
 - SVGs don't scale properly in containers
+- Duplicate mobile versions being created
 
 Fixes:
 - Run optimization script to add viewBox
 - Create mobile-optimized version with larger text
-- Ensure parent containers allow proper scaling 
+- Ensure parent containers allow proper scaling
+- Run cleanup script to remove duplicate mobile files 

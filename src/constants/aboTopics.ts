@@ -369,15 +369,17 @@ export const allBeginnerAboTopics = aboExamSections
 // Recommended structured learning path for absolute beginners
 export const beginnerAboLearningPath = [
   'basic-optics',
+  'refractive-errors',
+  'eye-anatomy',
   'lens-types',
-  'prescription-reading',
   'lens-materials',
-  'frame-parts',
-  'frame-selection',
-  'measurements',
-  'dispensing-basics',
-  'lens-verification',
-  'regulations'
+  'lens-coatings',
+  'frame-basics',
+  'frame-adjustment',
+  'pd-measurement',
+  'sunglasses-tints',
+  'children-eyewear',
+  'patient-communication'
 ];
 
 // Module-based learning structure for beginners
@@ -386,24 +388,24 @@ export const beginnerModules = [
     id: 'foundations',
     title: 'Opticianry Foundations',
     description: 'Essential concepts every optician needs to know',
-    topicIds: ['basic-optics', 'lens-types', 'prescription-reading']
+    topicIds: ['basic-optics', 'lens-types', 'refractive-errors', 'eye-anatomy']
   },
   {
     id: 'frames',
     title: 'Frame Knowledge',
     description: 'Understanding eyewear frames and selection',
-    topicIds: ['frame-parts', 'frame-selection', 'frame-adjustments']
+    topicIds: ['frame-basics', 'frame-adjustment', 'sunglasses-tints', 'children-eyewear']
   },
   {
-    id: 'dispensing',
-    title: 'Dispensing Basics',
-    description: 'Core skills for properly dispensing eyewear',
-    topicIds: ['measurements', 'dispensing-basics', 'lens-verification']
+    id: 'lenses',
+    title: 'Lens Technologies',
+    description: 'Understanding lens options and applications',
+    topicIds: ['lens-materials', 'lens-coatings', 'occupational-lenses', 'sports-vision']
   },
   {
     id: 'professional',
     title: 'Professional Practice',
-    description: 'Regulations and patient management',
-    topicIds: ['regulations', 'ethics', 'patient-communication']
+    description: 'Clinical skills and patient management',
+    topicIds: ['pd-measurement', 'patient-communication', 'dispensing-measurements', 'regulations-standards']
   }
 ]; 

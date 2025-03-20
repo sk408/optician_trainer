@@ -546,5 +546,62 @@ export const sunglassesAndTintsContent: TopicStudyContent = {
     'American National Standards Institute. (2018). "ANSI Z80.3-2018: Ophthalmics - Nonprescription Sunglasses and Fashion Eyewear Requirements."',
     'Carlson, K. H., & Kurtz, D. (2004). "Clinical Procedures for Ocular Examination." (3rd ed.). McGraw-Hill Medical.',
     'Brooks, C. W., & Borish, I. M. (2007). "System for Ophthalmic Dispensing." (3rd ed.). Butterworth-Heinemann.'
+  ],
+  practiceQuestions: [
+    {
+      question: 'What is the most important feature of sunglasses for eye health?',
+      options: [
+        'Dark tint',
+        '100% UV protection',
+        'Polarization',
+        'Photochromic technology'
+      ],
+      correctAnswer: 1,
+      explanation: '100% UV protection is the most critical feature for eye health, as it shields the eyes from harmful UVA and UVB radiation that can cause cataracts, macular degeneration, and other conditions. Tint darkness is not directly related to UV protection.'
+    },
+    {
+      question: 'Which lens tint color would be most appropriate for enhancing contrast while driving?',
+      options: [
+        'Blue',
+        'Green',
+        'Amber/Brown',
+        'Gray'
+      ],
+      correctAnswer: 2,
+      explanation: 'Amber or brown tints enhance contrast by filtering blue light and are excellent for driving, especially in hazy or foggy conditions. They improve depth perception and outline definition, making road features more visible.'
+    },
+    {
+      question: 'What is the main advantage of polarized sunglasses over non-polarized sunglasses?',
+      options: [
+        'Better UV protection',
+        'Darker tint',
+        'Reduction of glare from reflective surfaces',
+        'Better color perception'
+      ],
+      correctAnswer: 2,
+      explanation: 'Polarized lenses selectively filter horizontally oriented light waves, which significantly reduces glare from reflective surfaces like water, snow, and roads. This reduction in glare improves visual comfort and safety in bright conditions.'
+    },
+    {
+      question: 'Which of the following would be a disadvantage of photochromic lenses for a patient who drives frequently?',
+      options: [
+        'They don\'t activate well behind car windshields',
+        'They provide inadequate UV protection',
+        'They are too dark for driving conditions',
+        'They change color too quickly for safe driving'
+      ],
+      correctAnswer: 0,
+      explanation: 'Most photochromic lenses are activated by UV light, which is largely blocked by car windshields. This means they may not darken adequately while driving, making them less effective for this specific use case.'
+    },
+    {
+      question: 'What lens feature is most important for water sports enthusiasts?',
+      options: [
+        'Mirror coating',
+        'Gradient tint',
+        'Polarization',
+        'Blue tint'
+      ],
+      correctAnswer: 2,
+      explanation: 'Polarization is essential for water sports as it eliminates glare from the water surface, allowing better visibility into and through the water. This improves visual comfort and can enhance safety during water activities.'
+    }
   ]
 }; 

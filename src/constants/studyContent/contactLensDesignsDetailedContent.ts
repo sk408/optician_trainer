@@ -468,5 +468,62 @@ export const contactLensDesignsDetailedContent: TopicStudyContent = {
     'Fadel D. Modern scleral lenses: Mini versus large. Cont Lens Anterior Eye. 2017;40(4):200-207.',
     'Van der Worp E, et al. Modern scleral contact lenses: A review. Cont Lens Anterior Eye. 2014;37(4):240-250.',
     'Michaud L, et al. The official CLEAR report by BCLA: Orthokeratology. Cont Lens Anterior Eye. 2021;44(2):240-269.'
+  ],
+  practiceQuestions: [
+    {
+      question: 'Which contact lens design feature is most important for stabilizing a toric soft lens?',
+      options: [
+        'Thin center thickness',
+        'Prism ballast, truncation, or dual thin zones',
+        'Aspheric back surface',
+        'High water content'
+      ],
+      correctAnswer: 1,
+      explanation: 'Toric soft lenses require stabilization features to maintain correct orientation. Prism ballast (thicker bottom), truncation (flat bottom edge), or dual thin zones (at 3 and 9 o\'clock positions) are the primary design methods used to prevent lens rotation and maintain cylinder axis alignment.'
+    },
+    {
+      question: 'What is the primary advantage of a scleral lens design compared to corneal RGP lenses?',
+      options: [
+        'Better oxygen transmission',
+        'Lower cost and easier fitting',
+        'Vault over the cornea creating a fluid reservoir',
+        'More frequent replacement schedule'
+      ],
+      correctAnswer: 2,
+      explanation: 'The primary advantage of scleral lenses is their ability to completely vault over the cornea, creating a fluid reservoir between the lens and corneal surface. This design protects the irregular or compromised cornea from mechanical contact and provides constant hydration to the ocular surface.'
+    },
+    {
+      question: 'Which lens design would be most appropriate for a patient with keratoconus?',
+      options: [
+        'Spherical soft lens',
+        'Monovision soft lenses',
+        'Specialty RGP or scleral lens',
+        'Orthokeratology lens'
+      ],
+      correctAnswer: 2,
+      explanation: 'Patients with keratoconus have irregular corneal surfaces that cannot be properly corrected with standard soft lenses. Specialty RGP lenses (including corneal GPs, scleral lenses, or hybrid lenses) provide the best visual acuity by creating a new, regular optical surface that masks the corneal irregularity.'
+    },
+    {
+      question: 'What is the primary purpose of the junctionless design in modern RGP lenses?',
+      options: [
+        'To increase oxygen transmission',
+        'To improve centration and reduce edge awareness',
+        'To increase lens durability',
+        'To allow overnight wear'
+      ],
+      correctAnswer: 1,
+      explanation: 'Junctionless designs eliminate the distinct junction between optical zone and peripheral curves, creating a smooth, continuous curvature change. This improves lens centration, reduces edge awareness and foreign body sensation, and enhances overall comfort for the wearer.'
+    },
+    {
+      question: 'What is the primary mechanism of orthokeratology lens designs?',
+      options: [
+        'They correct vision during wear only like standard contact lenses',
+        'They reshape the cornea during sleep to provide temporary daytime vision correction',
+        'They permanently alter corneal structure after long-term use',
+        'They deliver medications to treat corneal diseases'
+      ],
+      correctAnswer: 1,
+      explanation: 'Orthokeratology lenses are designed to temporarily reshape the cornea during overnight wear. The reverse geometry design applies controlled pressure that flattens the central cornea for myopia correction or steepens it for hyperopia correction. This reshaping provides temporary vision correction during daytime hours without lenses.'
+    }
   ]
 }; 

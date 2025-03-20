@@ -645,5 +645,62 @@ export const eyeAnatomyClContent: TopicStudyContent = {
     'Phillips, A. J., & Speedwell, L. (2018). Contact Lenses (6th ed.). Elsevier.',
     'Craig, J. P., Nelson, J. D., Azar, D. T., et al. (2017). TFOS DEWS II Report Executive Summary. The Ocular Surface, 15(4), 802-812.',
     'Sulley, A., Young, G., & Hunt, C. (2019). Factors in the success of new contact lens wearers. Contact Lens and Anterior Eye, 42(5), 498-503.'
+  ],
+  practiceQuestions: [
+    {
+      question: 'Which corneal layer is responsible for most of the cornea\'s structural strength and thickness?',
+      options: [
+        'Epithelium',
+        'Bowman\'s layer',
+        'Stroma',
+        'Endothelium'
+      ],
+      correctAnswer: 2,
+      explanation: 'The stroma makes up approximately 90% of the cornea\'s thickness and provides its structural strength through organized collagen fibrils.'
+    },
+    {
+      question: 'Which of the following is NOT a component of the tear film?',
+      options: [
+        'Lipid layer',
+        'Aqueous layer',
+        'Mucin layer',
+        'Stromal layer'
+      ],
+      correctAnswer: 3,
+      explanation: 'The tear film consists of three main layers: lipid (outermost), aqueous (middle), and mucin (innermost). The stromal layer is part of the cornea, not the tear film.'
+    },
+    {
+      question: 'What measurement is typically used to determine the base curve of a contact lens?',
+      options: [
+        'Horizontal visible iris diameter (HVID)',
+        'Keratometry readings (K readings)',
+        'Pupil size',
+        'Tear meniscus height'
+      ],
+      correctAnswer: 1,
+      explanation: 'Keratometry readings (K readings) measure the curvature of the anterior corneal surface and are primarily used to determine the appropriate base curve for contact lenses.'
+    },
+    {
+      question: 'What is the primary concern with a contact lens that compromises corneal oxygen supply?',
+      options: [
+        'Increased risk of corneal neovascularization and hypoxic stress',
+        'Improved visual acuity',
+        'Extended wear time',
+        'Reduced risk of deposits'
+      ],
+      correctAnswer: 0,
+      explanation: 'Inadequate oxygen supply (hypoxia) can lead to serious complications including corneal neovascularization (growth of new blood vessels), epithelial microcysts, striae, and corneal edema.'
+    },
+    {
+      question: 'Which structure serves as the junction between the cornea and sclera?',
+      options: [
+        'Conjunctiva',
+        'Limbus',
+        'Iris',
+        'Pupil'
+      ],
+      correctAnswer: 1,
+      explanation: 'The limbus is the transition zone between the cornea and sclera. It contains stem cells that are vital for corneal health and regeneration, making it an important area to monitor during contact lens wear.'
+    }
   ]
 }; 

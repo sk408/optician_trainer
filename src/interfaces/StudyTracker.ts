@@ -78,15 +78,17 @@ export const BEGINNER_ABO_PLAN: Omit<StudyPlan, 'id'> = {
   estimatedHours: 25,
   topicSequence: [
     'basic-optics',
+    'refractive-errors',
+    'eye-anatomy',
     'lens-types',
-    'frame-fit',
     'lens-materials',
-    'rx-interpretation',
+    'lens-coatings',
+    'frame-basics',
+    'frame-adjustment',
     'pd-measurement',
-    'basic-tools',
-    'frame-adjustments',
-    'lens-treatments',
-    'lensometers'
+    'sunglasses-tints',
+    'children-eyewear',
+    'patient-communication'
   ],
   isActive: false
 };
@@ -100,15 +102,14 @@ export const BEGINNER_NCLE_PLAN: Omit<StudyPlan, 'id'> = {
   topicSequence: [
     'cl-overview',
     'eye-anatomy-cl',
-    'soft-cl-materials',
-    'cl-insertion-removal',
-    'cl-hygiene',
-    'cl-care-systems',
-    'cl-fitting-basics',
-    'soft-lens-parameters',
-    'cl-wear-schedules',
-    'cl-complications-basics',
-    'cl-regulations'
+    'contact-lens-design-materials',
+    'cl-care',
+    'cl-pre-fitting',
+    'cl-fitting',
+    'cl-fitting-evaluation',
+    'contact-lens-education-followup',
+    'cl-complications',
+    'patient-communication'
   ],
   isActive: false
 };
@@ -121,26 +122,26 @@ export const COMBINED_BEGINNER_PLAN: Omit<StudyPlan, 'id'> = {
   estimatedHours: 45,
   topicSequence: [
     'basic-optics',
+    'refractive-errors',
+    'eye-anatomy',
     'lens-types',
+    'lens-materials',
     'cl-overview',
     'eye-anatomy-cl',
-    'frame-fit',
-    'lens-materials',
-    'soft-cl-materials',
-    'rx-interpretation',
+    'contact-lens-design-materials',
+    'frame-basics',
+    'frame-adjustment',
     'pd-measurement',
-    'cl-insertion-removal',
-    'cl-hygiene',
-    'basic-tools',
-    'frame-adjustments',
-    'cl-care-systems',
-    'lens-treatments',
-    'cl-fitting-basics',
-    'soft-lens-parameters',
-    'cl-wear-schedules',
-    'lensometers',
-    'cl-complications-basics',
-    'cl-regulations'
+    'cl-care',
+    'cl-pre-fitting',
+    'lens-coatings',
+    'sunglasses-tints',
+    'cl-fitting',
+    'cl-fitting-evaluation',
+    'children-eyewear',
+    'contact-lens-education-followup',
+    'cl-complications',
+    'patient-communication'
   ],
   isActive: false
 }; 

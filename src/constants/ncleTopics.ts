@@ -342,13 +342,12 @@ export const allBeginnerNcleTopics = ncleExamSections
 export const beginnerNcleLearningPath = [
   'cl-overview',
   'eye-anatomy-cl',
-  'soft-cl-materials',
-  'cl-insertion-removal',
-  'cl-hygiene',
-  'cl-care-systems',
-  'cl-fitting-basics',
-  'soft-lens-parameters',
-  'cl-wear-schedules',
-  'cl-complications-basics',
-  'cl-regulations'
+  'contact-lens-design-materials',
+  'cl-care',
+  'cl-pre-fitting',
+  'cl-fitting',
+  'cl-fitting-evaluation',
+  'contact-lens-education-followup',
+  'cl-complications',
+  'patient-communication'
 ]; 

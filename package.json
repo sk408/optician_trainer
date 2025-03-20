@@ -12,7 +12,9 @@
     "preview": "vite preview",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
-    "optimize-svgs": "node scripts/optimize-svgs.js"
+    "optimize-svgs": "node scripts/optimize-svgs.js",
+    "cleanup-duplicates": "node scripts/cleanup-duplicates.js",
+    "svg-process": "npm run optimize-svgs && npm run cleanup-duplicates"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",

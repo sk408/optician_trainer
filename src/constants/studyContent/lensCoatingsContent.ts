@@ -756,5 +756,62 @@ export const lensCoatingsContent: TopicStudyContent = {
     'American Optometric Association. (2022). Blue Light Impact in Vision.',
     'The Vision Council. (2023). Lens Processing and Technology Report.',
     'Transitions Optical, Inc. (2022). Photochromic Performance Guide.'
+  ],
+  practiceQuestions: [
+    {
+      question: 'Which coating is most important for high-index lenses?',
+      options: [
+        'Scratch-resistant coating',
+        'Anti-reflective coating',
+        'UV protection',
+        'Blue light filtering'
+      ],
+      correctAnswer: 1,
+      explanation: 'Anti-reflective coating is most important for high-index lenses because these materials naturally reflect more light (up to 50% more than standard plastic). AR coating reduces these reflections, improving optical clarity and cosmetic appearance.'
+    },
+    {
+      question: 'What is the main disadvantage of photochromic lenses?',
+      options: [
+        'They are much more expensive than regular lenses',
+        'They don\'t work effectively behind windshields',
+        'They can\'t be combined with anti-reflective coatings',
+        'They significantly reduce visual acuity'
+      ],
+      correctAnswer: 1,
+      explanation: 'The main disadvantage of photochromic lenses is that they don\'t activate effectively behind car windshields, as modern automotive glass blocks much of the UV light that triggers the darkening reaction. This limits their usefulness for driving.'
+    },
+    {
+      question: 'Which lens material provides inherent UV protection without requiring additional treatments?',
+      options: [
+        'CR-39 (standard plastic)',
+        'Crown glass',
+        'Polycarbonate',
+        'Trivex'
+      ],
+      correctAnswer: 2,
+      explanation: 'Polycarbonate inherently blocks 100% of UVA and UVB radiation without requiring additional treatments or coatings. Trivex also provides inherent UV protection, while CR-39 and crown glass require additional UV treatments.'
+    },
+    {
+      question: 'What is the primary purpose of blue light filtering coatings?',
+      options: [
+        'To prevent retinal disease',
+        'To reduce digital eye strain and improve sleep quality',
+        'To make lenses appear more attractive',
+        'To protect against UV radiation'
+      ],
+      correctAnswer: 1,
+      explanation: 'The primary purpose of blue light filtering is to reduce digital eye strain when using electronic devices and to potentially improve sleep quality by limiting exposure to blue light in the evening, which can disrupt circadian rhythms.'
+    },
+    {
+      question: 'How does scratch-resistant coating work?',
+      options: [
+        'By making the lens surface softer so it absorbs impacts',
+        'By filling in microscopic surface imperfections',
+        'By creating a harder surface layer on the lens',
+        'By making the lens thicker'
+      ],
+      correctAnswer: 2,
+      explanation: 'Scratch-resistant coatings work by creating a harder surface layer on the lens that resists abrasion better than the base lens material. They typically use silicone-based compounds or metal oxides to achieve this hardened surface.'
+    }
   ]
 }; 

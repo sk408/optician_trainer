@@ -38,6 +38,7 @@ import { aboExamSections, StudyTopic } from '../constants/aboTopics';
 import { ncleExamSections } from '../constants/ncleTopics';
 import StudyContentRenderer from '../components/study/StudyContentRenderer';
 import { TopicStudyContent } from '../interfaces/StudyContent';
+import { opticalTheoryQuizQuestions } from '../content/exam/abo/optical-theory-quiz-questions';
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -308,9 +309,68 @@ const StudyTopicPage: React.FC = () => {
       if (content) {
         setStudyContent(content);
         
-        // Generate quiz questions based on the content
-        const questions = generateQuizQuestions(foundTopic, content);
-        setQuizQuestions(questions);
+        // For specific topics, use dedicated quiz questions instead of generating them
+        if (topicId === 'basic-optics') {
+          // Filter optical theory questions to only include basic optics subcategory
+          const basicOpticsQuestions = opticalTheoryQuizQuestions.filter(q => 
+            q.subcategory === 'basic-optics'
+          );
+          
+          console.log('Using proper basic optics questions:', basicOpticsQuestions.length);
+          
+          // Map to QuizQuestion type and use up to 10 questions
+          const mappedQuestions = basicOpticsQuestions.slice(0, 10).map(q => ({
+            id: q.id,
+            question: q.question,
+            options: q.options,
+            correctAnswer: q.correctAnswer,
+            explanation: q.explanation
+          }));
+          setQuizQuestions(mappedQuestions);
+        } else if (topicId === 'lens-types') {
+          // Filter optical theory questions to only include lens types subcategory
+          const lensTypesQuestions = opticalTheoryQuizQuestions.filter(q => 
+            q.subcategory === 'lens-types'
+          );
+          // Map to QuizQuestion type and use up to 10 questions
+          const mappedQuestions = lensTypesQuestions.slice(0, 10).map(q => ({
+            id: q.id,
+            question: q.question,
+            options: q.options,
+            correctAnswer: q.correctAnswer,
+            explanation: q.explanation
+          }));
+          setQuizQuestions(mappedQuestions);
+        } else if (topicId === 'prism-basics') {
+          // Filter optical theory questions to only include prism subcategory
+          const prismQuestions = opticalTheoryQuizQuestions.filter(q => 
+            q.subcategory === 'prism'
+          );
+          // Map to QuizQuestion type and use up to 10 questions
+          const mappedQuestions = prismQuestions.slice(0, 10).map(q => ({
+            id: q.id,
+            question: q.question,
+            options: q.options,
+            correctAnswer: q.correctAnswer,
+            explanation: q.explanation
+          }));
+          setQuizQuestions(mappedQuestions);
+        } else if (content.practiceQuestions && content.practiceQuestions.length > 0) {
+          // If the content has dedicated practice questions, use those
+          // Ensure all questions have an id property
+          const mappedContentQuestions = content.practiceQuestions.map((q, index) => ({
+            id: q.id || `${topicId}-practice-${index}`,
+            question: q.question,
+            options: q.options, 
+            correctAnswer: q.correctAnswer,
+            explanation: q.explanation || `The correct answer is ${q.options[q.correctAnswer]}`
+          }));
+          setQuizQuestions(mappedContentQuestions);
+        } else {
+          // Otherwise generate quiz questions based on the content
+          const questions = generateQuizQuestions(foundTopic, content);
+          setQuizQuestions(questions);
+        }
       } else {
         // If no content, try to create a fallback
         const fallbackContent = StudyContentService.createFallbackContent(topicId, foundTopic);

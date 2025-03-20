@@ -654,5 +654,62 @@ export const childrenEyewearContent: TopicStudyContent = {
     'Brooks, C. W., & Borish, I. M. (2007). System for Ophthalmic Dispensing (3rd ed.). Butterworth-Heinemann.',
     'Cotter, S. A., et al. (2015). "Optometric Clinical Practice Guideline: Pediatric Eye and Vision Examination." American Optometric Association.',
     'Paff, T., & Outerbridge, C. (2018). "A Practical Guide to Dispensing Children\'s Eyewear." Review of Optometry, 155(9), 42-48.'
+  ],
+  practiceQuestions: [
+    {
+      question: 'What is the most appropriate lens material for children\'s eyewear?',
+      options: [
+        'Crown glass',
+        'CR-39 plastic',
+        'Polycarbonate or Trivex',
+        'High-index plastic'
+      ],
+      correctAnswer: 2,
+      explanation: 'Polycarbonate or Trivex are the most appropriate materials for children\'s eyewear due to their impact resistance, lightweight properties, and inherent UV protection. Safety considerations are paramount for children\'s eyewear, making these materials the standard of care.'
+    },
+    {
+      question: 'Which frame feature is most important when fitting eyewear for a 4-year-old child?',
+      options: [
+        'Fashion-forward design',
+        'Secure fit with appropriate bridge and temple design',
+        'Spring hinges',
+        'Metal material'
+      ],
+      correctAnswer: 1,
+      explanation: 'Secure fit is the most critical factor for a young child\'s eyewear. An appropriate bridge design (often with adjustable nosepads or a saddle bridge) and properly fitted temples ensure the glasses stay in place and provide proper optical alignment.'
+    },
+    {
+      question: 'When dispensing eyewear to a child with a strong prescription for amblyopia treatment, which factor is most important?',
+      options: [
+        'Choosing the most fashionable frame',
+        'Minimizing lens thickness',
+        'Ensuring consistent wear through proper fit and comfort',
+        'Selecting the least expensive option'
+      ],
+      correctAnswer: 2,
+      explanation: 'For amblyopia treatment to be effective, consistent wear is essential. Ensuring the eyewear fits comfortably and securely promotes compliance with the prescribed treatment, which is crucial for successful visual development.'
+    },
+    {
+      question: 'Which approach is most effective when communicating with a 7-year-old about their new glasses?',
+      options: [
+        'Using the same technical terms you would use with adults',
+        'Speaking only to the parents and ignoring the child',
+        'Using age-appropriate language and including the child in the conversation',
+        'Highlighting potential teasing they might experience'
+      ],
+      correctAnswer: 2,
+      explanation: 'Using age-appropriate language and including the child directly in the conversation respects their role in their own care, encourages ownership of their eyewear, and helps build their understanding and cooperation. A 7-year-old can understand simple explanations about their vision and eyewear.'
+    },
+    {
+      question: 'What is the appropriate certification standard to look for in children\'s sports eyewear?',
+      options: [
+        'CE Mark',
+        'ANSI Z87.1',
+        'ASTM F803',
+        'ISO 9001'
+      ],
+      correctAnswer: 2,
+      explanation: 'ASTM F803 is the standard specifically designed for sports eye protectors, which includes appropriate impact testing for sports eyewear. This certification ensures the eyewear provides adequate protection for sports activities with significant eye injury risk.'
+    }
   ]
 }; 

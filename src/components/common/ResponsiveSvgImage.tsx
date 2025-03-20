@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Box, Card, CardContent, CardMedia, Typography, useMediaQuery, useTheme, Skeleton } from '@mui/material';
+import { Box, Card, CardContent, CardMedia, Typography, useMediaQuery, useTheme, Skeleton, CardProps } from '@mui/material';
 import { MediaAsset } from '../../constants/mediaAssets';
 
 interface ResponsiveSvgImageProps {
@@ -83,6 +83,9 @@ const ResponsiveSvgImage: React.FC<ResponsiveSvgImageProps> = ({
     setIsLoading(false);
   };
   
+  // Define card variant type correctly
+  const cardVariant: CardProps['variant'] = withBorder ? "outlined" : "elevation";
+  
   return (
     <Box 
       my={3} 
@@ -92,7 +95,7 @@ const ResponsiveSvgImage: React.FC<ResponsiveSvgImageProps> = ({
     >
       <Card 
         elevation={0}
-        variant={withBorder ? "outlined" : "elevation"}
+        variant={cardVariant}
         sx={{ 
           bgcolor: withBackground ? 'background.paper' : 'transparent',
           overflow: 'hidden',

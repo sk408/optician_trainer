@@ -654,5 +654,62 @@ export const patientCommunicationContent: TopicStudyContent = {
     'Classe, J. G. (2004). Business Aspects of Optometry. Butterworth-Heinemann.',
     'Squire, L. F., et al. (2017). Fundamentals of Ophthalmic Practice Management. American Academy of Ophthalmology.',
     'Bennett, E. S. (2008). Communication Skills for the Eye Care Professional. Butterworth-Heinemann.'
+  ],
+  practiceQuestions: [
+    {
+      question: 'Which approach is most effective when explaining progressive lenses to a new presbyopic patient?',
+      options: [
+        'Use technical terms like "progressive power gradient" to sound knowledgeable',
+        'Relate the lenses to their daily activities and how the different zones will help them see at all distances',
+        'Tell them it\'s similar to bifocals but without the line',
+        'Focus on explaining the manufacturing process to build credibility'
+      ],
+      correctAnswer: 1,
+      explanation: 'Relating the lens design to patients\' daily activities (reading, computer use, driving) helps them understand the functional benefits rather than technical aspects. This patient-centered approach focuses on how the product solves their specific problems.'
+    },
+    {
+      question: 'When a patient is experiencing adaptation difficulties with new glasses, the first step should be to:',
+      options: [
+        'Assume the prescription is wrong and recommend they return to the doctor',
+        'Tell them they just need more time to adapt',
+        'Listen carefully to their specific concerns and ask clarifying questions',
+        'Offer to remake the glasses immediately'
+      ],
+      correctAnswer: 2,
+      explanation: 'Active listening is the critical first step in addressing adaptation issues. Understanding the specific nature of the problem through careful questioning helps determine whether it\'s an adaptation issue, a fitting problem, or a prescription concern before taking action.'
+    },
+    {
+      question: 'Which questioning technique would be most effective to understand a patient\'s visual needs at work?',
+      options: [
+        'Yes/no questions like "Do you use a computer at work?"',
+        'Open-ended questions like "Can you walk me through a typical day at your workplace?"',
+        'Leading questions like "You probably use a computer all day, right?"',
+        'Assumptive questions like "Since you work in an office, you must need computer glasses"'
+      ],
+      correctAnswer: 1,
+      explanation: 'Open-ended questions encourage patients to provide detailed information about their specific visual demands and environment. This approach reveals more useful details than yes/no questions or assumptions based on occupation.'
+    },
+    {
+      question: 'When recommending high-index lenses to a patient with a strong prescription, which approach is most effective?',
+      options: [
+        'Explain the refractive index values and how they compare to standard materials',
+        'Simply state that these are the best lenses for strong prescriptions',
+        'Connect the lens features (thinner, lighter) to patient benefits (more comfortable, better appearance)',
+        'Focus on the higher cost as an indicator of quality'
+      ],
+      correctAnswer: 2,
+      explanation: 'Connecting specific features to tangible benefits helps patients understand the value of the recommendation in terms that matter to them. This approach focuses on what the patient gains rather than technical specifications or generalizations about quality.'
+    },
+    {
+      question: 'Which of the following is the most important factor in building long-term patient relationships?',
+      options: [
+        'Offering the lowest prices in the area',
+        'Maintaining consistent contact through marketing emails',
+        'Providing honest advice and following through on promises',
+        'Having the largest frame selection'
+      ],
+      correctAnswer: 2,
+      explanation: 'Trust built through honest advice and reliable follow-through forms the foundation of long-term patient relationships. While selection and price matter, patients primarily return to practices where they feel their best interests are the priority.'
+    }
   ]
 }; 

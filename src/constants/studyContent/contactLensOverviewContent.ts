@@ -548,5 +548,62 @@ export const contactLensOverviewContent: TopicStudyContent = {
     'Efron, N. (2018). Contact Lens Practice (3rd ed.). Elsevier.',
     'American Academy of Ophthalmology. (2021). Contact Lens Basics.',
     'Contact Lens Association of Ophthalmologists. (2022). CLAO Guidelines for Contact Lens Fitting.'
+  ],
+  practiceQuestions: [
+    {
+      question: 'Which material significantly improved oxygen permeability in soft contact lenses?',
+      options: [
+        'PMMA (polymethyl methacrylate)',
+        'Hydrogel',
+        'Silicone hydrogel',
+        'Glass'
+      ],
+      correctAnswer: 2,
+      explanation: 'Silicone hydrogel, introduced in 1999, revolutionized soft contact lenses by dramatically increasing oxygen permeability while maintaining the comfort of hydrogel lenses.'
+    },
+    {
+      question: 'What is the primary difference between RGP (rigid gas permeable) and soft contact lenses?',
+      options: [
+        'RGP lenses are made of glass while soft lenses are made of plastic',
+        'RGP lenses are rigid and maintain their shape on the eye, while soft lenses conform to the eye surface',
+        'RGP lenses are disposable while soft lenses are permanent',
+        'RGP lenses correct astigmatism while soft lenses cannot'
+      ],
+      correctAnswer: 1,
+      explanation: 'RGP lenses maintain their shape when placed on the eye, while soft lenses are flexible and conform to the shape of the cornea.'
+    },
+    {
+      question: 'What does "Dk" measure in contact lenses?',
+      options: [
+        'Diameter and curvature',
+        'Durability and comfort',
+        'Density and keratometry',
+        'Oxygen permeability'
+      ],
+      correctAnswer: 3,
+      explanation: 'Dk is a measurement of oxygen permeability - the ability of a contact lens material to allow oxygen to pass through to the cornea. Higher Dk values indicate greater oxygen transmission.'
+    },
+    {
+      question: 'Which type of contact lens typically provides sharper vision for patients with irregular corneas?',
+      options: [
+        'Daily disposable soft lenses',
+        'Extended wear soft lenses',
+        'Rigid gas permeable (RGP) lenses',
+        'Cosmetic tinted lenses'
+      ],
+      correctAnswer: 2,
+      explanation: 'RGP lenses maintain their shape on the eye, creating a new optical surface and providing sharper vision for patients with irregular corneas or significant astigmatism.'
+    },
+    {
+      question: 'What are toric contact lenses designed to correct?',
+      options: [
+        'Presbyopia',
+        'Myopia',
+        'Hyperopia',
+        'Astigmatism'
+      ],
+      correctAnswer: 3,
+      explanation: 'Toric contact lenses are specifically designed to correct astigmatism, featuring different powers in different meridians of the lens.'
+    }
   ]
 }; 

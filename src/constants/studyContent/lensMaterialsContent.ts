@@ -675,5 +675,62 @@ export const lensMaterialsContent: TopicStudyContent = {
     'Fannin, T. E., & Grosvenor, T. (1996). Clinical Optics. Butterworth-Heinemann.',
     'American Board of Opticianry. (2022). Exam Content Outline.',
     'The Vision Council. (2023). Consumer Guide to Ophthalmic Lens Materials.'
+  ],
+  practiceQuestions: [
+    {
+      question: 'Which lens material has the highest Abbe value?',
+      options: [
+        'Polycarbonate',
+        'CR-39',
+        'High-index 1.74',
+        'Trivex'
+      ],
+      correctAnswer: 1,
+      explanation: 'CR-39 has the highest Abbe value (around 58) among common lens materials, resulting in less chromatic aberration and better optical quality. Higher-index materials and polycarbonate have lower Abbe values, which can cause more color fringing, especially in stronger prescriptions.'
+    },
+    {
+      question: 'For a patient with a high minus prescription (-8.00D) who wants the thinnest possible lenses, which material would be most appropriate?',
+      options: [
+        'CR-39',
+        'Polycarbonate',
+        'High-index 1.67',
+        'Ultra high-index 1.74'
+      ],
+      correctAnswer: 3,
+      explanation: 'Ultra high-index 1.74 material would provide the thinnest lenses for a high minus prescription. The higher the refractive index, the thinner the lens will be, particularly important for strong prescriptions to reduce edge thickness.'
+    },
+    {
+      question: 'Which lens material would be most appropriate for a child who plays sports and has a moderate prescription (+3.00D)?',
+      options: [
+        'CR-39',
+        'Glass',
+        'Polycarbonate',
+        'High-index 1.67'
+      ],
+      correctAnswer: 2,
+      explanation: 'Polycarbonate is the most appropriate choice for a child who plays sports due to its superior impact resistance and inherent UV protection. Safety is the primary concern for children\'s eyewear, making polycarbonate the standard of care despite its lower Abbe value.'
+    },
+    {
+      question: 'What property does Trivex lens material offer that makes it a good alternative to polycarbonate?',
+      options: [
+        'Lower cost',
+        'Higher refractive index',
+        'Better optical quality (higher Abbe value)',
+        'Superior scratch resistance'
+      ],
+      correctAnswer: 2,
+      explanation: 'Trivex offers better optical quality (higher Abbe value) than polycarbonate while still providing excellent impact resistance. This makes it a premium alternative for patients who need safety features but also want enhanced optical clarity.'
+    },
+    {
+      question: 'Why is anti-reflective coating particularly important for high-index lens materials?',
+      options: [
+        'High-index materials scratch more easily',
+        'High-index materials reflect significantly more light due to their higher refractive index',
+        'High-index materials have more UV transmission',
+        'High-index materials have better impact resistance with AR coating'
+      ],
+      correctAnswer: 1,
+      explanation: 'High-index materials reflect significantly more light (up to 50% more than CR-39) due to their higher refractive index. This increased reflection can cause glare and reduce light transmission, making AR coating particularly important for improving both the optical performance and cosmetic appearance of high-index lenses.'
+    }
   ]
 }; 

@@ -414,5 +414,62 @@ export const contactLensPreFittingContent: TopicStudyContent = {
     'Gasson A, Morris J. The Contact Lens Manual: A Practical Guide to Fitting. 4th ed. Butterworth-Heinemann; 2010.',
     'Nichols JJ, Willcox MD, Bron AJ, et al. The TFOS International Workshop on Contact Lens Discomfort: Executive Summary. Invest Ophthalmol Vis Sci. 2013;54(11):TFOS7-TFOS13.',
     'Wolffsohn JS, Arita R, Chalmers R, et al. TFOS DEWS II Diagnostic Methodology report. Ocul Surf. 2017;15(3):539-574.'
+  ],
+  practiceQuestions: [
+    {
+      question: 'Which test best assesses the stability of the tear film for contact lens wear?',
+      options: [
+        'Keratometry',
+        'Schirmer test',
+        'Tear break-up time (TBUT)',
+        'Corneal topography'
+      ],
+      correctAnswer: 2,
+      explanation: 'Tear break-up time (TBUT) specifically measures tear film stability by recording the time between a blink and the first appearance of dry spots on the cornea. A short TBUT indicates poor tear film stability, which can lead to discomfort and dryness with contact lens wear.'
+    },
+    {
+      question: 'What is the primary purpose of corneal topography in contact lens pre-fitting evaluation?',
+      options: [
+        'To measure pupil size and function',
+        'To evaluate tear production volume',
+        'To map corneal shape and identify irregularities',
+        'To assess eyelid tension'
+      ],
+      correctAnswer: 2,
+      explanation: 'Corneal topography maps the anterior corneal surface, providing detailed information about corneal curvature, shape, and any irregularities. This information is crucial for selecting appropriate lens designs, especially for patients with conditions like astigmatism or keratoconus.'
+    },
+    {
+      question: 'Which of the following is an absolute contraindication for contact lens wear?',
+      options: [
+        'Mild dry eye syndrome',
+        'Active corneal infection',
+        'History of seasonal allergies',
+        'Low astigmatism'
+      ],
+      correctAnswer: 1,
+      explanation: 'An active corneal infection is an absolute contraindication for contact lens wear as lenses can exacerbate the infection and potentially lead to serious complications like corneal ulcers. Contact lens fitting should be delayed until the infection is completely resolved.'
+    },
+    {
+      question: 'Which patient history factor would most likely indicate a potential challenge for soft contact lens wear?',
+      options: [
+        'Previous LASIK surgery 5 years ago with stable refraction',
+        'Part-time computer use (2-3 hours daily)',
+        'Taking oral antihistamines for seasonal allergies',
+        'Occasional weekend participation in swimming'
+      ],
+      correctAnswer: 2,
+      explanation: 'Oral antihistamines often cause systemic dryness, including dry eyes, which can significantly impact contact lens comfort and wearing time. This medication would necessitate careful consideration of lens material (higher water content) and possibly artificial tear supplementation.'
+    },
+    {
+      question: 'Which test provides the most basic measurement needed for initial contact lens selection?',
+      options: [
+        'Keratometry',
+        'Specular microscopy',
+        'Pupillometry',
+        'Lid tension test'
+      ],
+      correctAnswer: 0,
+      explanation: 'Keratometry provides measurements of the corneal curvature, which is the most fundamental parameter for initial contact lens selection. These K readings help determine the base curve of the lens, which is essential for proper lens fit.'
+    }
   ]
 }; 

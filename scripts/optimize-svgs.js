@@ -1,8 +1,14 @@
 // Script to optimize SVGs using SVGO
-const fs = require('fs');
-const path = require('path');
-const { optimize } = require('svgo');
-const glob = require('glob');
+import fs from 'fs';
+import path from 'path';
+import { optimize } from 'svgo';
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
+import { glob } from 'glob';
+
+// Get current directory in ES modules
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 // SVGO configuration for optimization
 const svgoConfig = {
@@ -13,10 +19,6 @@ const svgoConfig = {
         overrides: {
           // Keep viewBox attribute even if it could be removed
           removeViewBox: false,
-          // Remove IDs that aren't needed
-          cleanupIDs: true,
-          // Convert style to attributes
-          convertStyleToAttrs: true,
           // Remove unnecessary metadata
           removeMetadata: true,
           // Remove comments
@@ -39,6 +41,9 @@ const svgoConfig = {
         },
       },
     },
+    // Add as separate plugins rather than in overrides
+    'cleanupIds',
+    'convertStyleToAttrs',
     // Add responsive properties
     {
       name: 'addAttributesToSVGElement',
@@ -107,17 +112,42 @@ async function optimizeSvg(filePath) {
       }
     }
     
-    // Optimize the SVG
-    const result = optimize(fs.readFileSync(filePath, 'utf8'), {
-      path: filePath,
-      ...svgoConfig
-    });
-    
-    // Write the optimized content back
-    fs.writeFileSync(filePath, result.data, 'utf8');
-    console.log(`✓ Optimized: ${filePath}`);
+    try {
+      // Attempt to fix common XML parsing issues
+      let fixedSvg = svg
+        // Fix invalid XML entity names
+        .replace(/&(?!(amp;|lt;|gt;|quot;|apos;|#\d+;|#x[0-9a-fA-F]+;))/g, '&amp;')
+        // Fix other common XML issues
+        .replace(/<([^>]*)\s+>/, '<$1>')
+        .replace(/>[\s\r\n]*<\//g, '></');
+        
+      // Optimize the SVG
+      const result = optimize(fixedSvg, {
+        path: filePath,
+        ...svgoConfig
+      });
+      
+      // Write the optimized content back
+      fs.writeFileSync(filePath, result.data, 'utf8');
+      console.log(`✓ Optimized: ${filePath}`);
+      return true;
+    } catch (parseError) {
+      console.error(`Error parsing SVG ${filePath}:`, parseError);
+      console.log('Attempting basic cleanup without SVGO...');
+      
+      // If SVGO fails, at least try to make it responsive
+      let basicCleanedSvg = svg
+        .replace(/&(?!(amp;|lt;|gt;|quot;|apos;|#\d+;|#x[0-9a-fA-F]+;))/g, '&amp;')
+        .replace(/<svg/, '<svg width="100%" height="auto" ')
+        .replace(/<text/g, '<text text-rendering="optimizeLegibility" ');
+        
+      fs.writeFileSync(filePath, basicCleanedSvg, 'utf8');
+      console.log(`✓ Basic cleanup applied to: ${filePath}`);
+      return false;
+    }
   } catch (e) {
     console.error(`Error processing ${filePath}:`, e);
+    return false;
   }
 }
 
@@ -180,14 +210,22 @@ async function main() {
         continue;
       }
       
-      // Get all SVG files in the directory
-      const files = glob.sync(`${directory}/**/*.svg`);
+      // Get all SVG files in the directory using glob
+      const files = await glob(`${directory}/**/*.svg`);
       console.log(`Found ${files.length} SVG files in ${directory}`);
       
       // Process each SVG file
       for (const file of files) {
-        await optimizeSvg(file);
-        await createMobileOptimized(file);
+        // Skip already mobile-optimized files for mobile version creation
+        const isAlreadyMobile = file.includes('.mobile.svg');
+        
+        // Optimize all SVGs
+        const optimized = await optimizeSvg(file);
+        
+        // Only create mobile versions for non-mobile files
+        if (optimized && !isAlreadyMobile) {
+          await createMobileOptimized(file);
+        }
       }
     } catch (e) {
       console.error(`Error processing directory ${directory}:`, e);
